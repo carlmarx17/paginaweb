@@ -17,10 +17,9 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/home.css">
 
-    <!-- React & Babel for JSX -->
+    <!-- React -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
@@ -83,10 +82,10 @@
     </section>
 
     <!-- React Components -->
-    <script type="text/babel" src="js/components/QuickFact.jsx"></script>
-    <script type="text/babel">
+    <script src="js/components/QuickFact.js"></script>
+    <script type="module">
         const root = ReactDOM.createRoot(document.getElementById('quick-fact-root'));
-        root.render(<QuickFact />);
+        root.render(React.createElement(window.QuickFact));
     </script>
 
     <!-- Servicios -->

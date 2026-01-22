@@ -1,4 +1,4 @@
-const { useState, useEffect } = React;
+const { useState, useEffect, createElement: h } = React;
 
 const QuickFact = () => {
     const facts = [
@@ -25,8 +25,8 @@ const QuickFact = () => {
 
     const fact = facts[currentFact];
 
-    return (
-        <div style={{
+    return h('div', {
+        style: {
             maxWidth: '500px',
             margin: '0 auto',
             padding: '1.5rem',
@@ -40,8 +40,10 @@ const QuickFact = () => {
             alignItems: 'center',
             gap: '1.5rem',
             textAlign: 'left'
-        }}>
-            <div style={{
+        }
+    },
+        h('div', {
+            style: {
                 width: '50px',
                 height: '50px',
                 borderRadius: '50%',
@@ -51,11 +53,13 @@ const QuickFact = () => {
                 justifyContent: 'center',
                 flexShrink: 0,
                 boxShadow: '0 4px 12px rgba(37, 99, 235, 0.3)'
-            }}>
-                <i className={`fas ${fact.icon}`} style={{ color: 'white' }}></i>
-            </div>
-            <div>
-                <span style={{
+            }
+        },
+            h('i', { className: `fas ${fact.icon}`, style: { color: 'white' } })
+        ),
+        h('div', null,
+            h('span', {
+                style: {
                     fontSize: '0.75rem',
                     fontWeight: 800,
                     textTransform: 'uppercase',
@@ -63,16 +67,18 @@ const QuickFact = () => {
                     color: 'var(--color-acento)',
                     display: 'block',
                     marginBottom: '0.25rem'
-                }}>{fact.topic}</span>
-                <p style={{
+                }
+            }, fact.topic),
+            h('p', {
+                style: {
                     margin: 0,
                     fontSize: '1rem',
                     lineHeight: '1.5',
                     color: 'rgba(255, 255, 255, 0.9)',
                     fontWeight: 500
-                }}>{fact.text}</p>
-            </div>
-        </div >
+                }
+            }, fact.text)
+        )
     );
 };
 
