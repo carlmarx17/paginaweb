@@ -19,99 +19,54 @@
 
 <body>
 
-    <!-- Header Biblioteca -->
+    <!-- React & Babel for JSX -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <header class="library-header">
         <div class="container"
             style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <a href="../index.html" class="logo"
                 style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <div class="logo-icon" style="background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
+                <div class="logo-icon" style="background: var(--gradiente-secundario);">
                     <i class="fas fa-book-sparkles"></i>
                 </div>
                 <div>
                     <h1
-                        style="font-size: 1.2rem; margin: 0; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
+                        style="font-size: 1.2rem; margin: 0; background: var(--gradiente-secundario); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
                         Universo de Saberes</h1>
                     <span
                         style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; font-weight: 700;">Ciencia
                         & Humanidades</span>
                 </div>
             </a>
-
-            <!-- Buscador -->
-            <div class="search-box">
-                <i class="fas fa-search search-icon"></i>
-                <input type="text" id="searchInput" placeholder="Buscar: Genética, Cálculo, Aritmética..."
-                    aria-label="Buscar guías">
-            </div>
+            <!-- React will handle the search box inside the main container -->
         </div>
     </header>
 
-    <main class="container" style="padding: 2rem 1rem;">
-
-        <!-- Barra de Filtros -->
-        <div class="filters-bar">
-            <!-- Categorías -->
-            <div style="flex: 1;">
-                <h3
-                    style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; font-weight: 800; margin-bottom: 0.8rem;">
-                    <i class="fas fa-layer-group"></i> Explorar Materias
-                </h3>
-                <div class="filter-group" id="typeFilters">
-                    <button class="filter-btn active" data-filter="all">Todo</button>
-                    <button class="filter-btn" data-filter="matematicas">
-                        <i class="fas fa-calculator" style="margin-right: 5px; color: #f43f5e;"></i> Matemáticas
-                    </button>
-                    <button class="filter-btn" data-filter="fisica">
-                        <i class="fas fa-atom" style="margin-right: 5px; color: #06b6d4;"></i> Física
-                    </button>
-                    <button class="filter-btn" data-filter="quimica">
-                        <i class="fas fa-flask" style="margin-right: 5px; color: #14b8a6;"></i> Química
-                    </button>
-                    <button class="filter-btn" data-filter="biologia">
-                        <i class="fas fa-dna" style="margin-right: 5px; color: #22c55e;"></i> Biología
-                    </button>
-                    <button class="filter-btn" data-filter="literatura">
-                        <i class="fas fa-book-open" style="margin-right: 5px; color: #10b981;"></i> Literatura
-                    </button>
-                </div>
-            </div>
-
-            <!-- Filtro Nivel (Oculto por defecto) -->
-            <div id="levelFilterContainer" class="hidden"
-                style="border-left: 1px solid #e2e8f0; padding-left: 1.5rem; margin-left: 1rem;">
-                <h3
-                    style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; font-weight: 800; margin-bottom: 0.8rem;">
-                    <i class="fas fa-signal"></i> Nivel
-                </h3>
-                <div class="filter-group"> <!-- Reusing styling -->
-                    <!-- Note: library.js currently assumes logic based on data set, we need to ensure IDs match if referenced -->
-                    <!-- library.js handles class 'active' logic generically for .filter-btn -->
-                </div>
+    <main class="container" style="padding: 3rem 1rem;">
+        <!-- React App Mount Point -->
+        <div id="guias-root">
+            <div style="text-align: center; padding: 4rem;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--color-secundario);"></i>
+                <p style="margin-top: 1rem; color: var(--slate-500);">Cargando experiencia interactiva...</p>
             </div>
         </div>
-
-        <!-- Contador -->
-        <div style="margin-bottom: 1.5rem; color: #94a3b8; font-size: 0.9rem; font-weight: 600;">
-            <span id="resultCount">Cargando guías...</span>
-        </div>
-
-        <!-- Grid de Resultados -->
-        <div id="guidesGrid" class="guides-grid">
-            <!-- Cards will be injected here by JS -->
-        </div>
-
-        <!-- Estado Vacío -->
-        <div id="emptyState" class="hidden" style="text-align: center; padding: 4rem 1rem;">
-            <div
-                style="width: 80px; height: 80px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #cbd5e1; font-size: 2rem;">
-                <i class="fas fa-search"></i>
-            </div>
-            <h3 style="font-size: 1.2rem; font-weight: 700; color: #334155; margin-bottom: 0.5rem;">Sin resultados</h3>
-            <p style="color: #64748b;">Intenta con otros términos de búsqueda.</p>
-        </div>
-
     </main>
+
+    <!-- React Logic -->
+    <script type="text/babel" src="../js/components/SearchFilter.jsx"></script>
+    <script type="module">
+        import { guidesData } from '../js/data.js';
+        import { openModal } from '../js/library-utils.js'; // I'll refactor library.js a bit
+
+        const root = ReactDOM.createRoot(document.getElementById('guias-root'));
+        root.render(React.createElement(window.SearchFilter, { data: guidesData, openModal: window.openModal }));
+    </script>
+
+    <!-- Legacy utils for Modal (refactored from library.js) -->
+    <script src="../js/library-utils.js"></script>
 
     <!-- Scripts -->
     <!-- Type module allows using imports in library.js -->

@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorías de Ciencias - Carlos Martínez</title>
-    
+
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/home.css">
-    
-    <!-- External Scripts -->
+
+    <!-- React & Babel for JSX -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <!-- Navbar -->
     <header class="navbar">
@@ -49,20 +56,38 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content">
+            <div class="hero-badge"
+                style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 50px; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px);">
+                <i class="fas fa-sparkles" style="color: var(--color-acento);"></i>
+                <span
+                    style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Educación
+                    de Alto Nivel</span>
+            </div>
             <h1>Tutorías de Ciencias Personalizadas</h1>
-            <p>Aprende Matemáticas, Física, Química y más con un tutor experimentado. Clases online o presenciales adaptadas a tu ritmo y necesidades específicas.</p>
+            <p>Domina las Matemáticas, Física y Química con una metodología adaptada a tu ritmo. Convierte la
+                complejidad en conocimiento sólido.</p>
+
+            <div id="quick-fact-root" style="margin-bottom: 3rem;"></div>
+
             <div class="hero-buttons">
-                <a href="#contacto" class="btn">
-                    <i class="fas fa-calendar-check btn-icon"></i>
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i>
                     Reserva tu Clase Gratis
                 </a>
                 <a href="#servicios" class="btn btn-secondary">
-                    <i class="fas fa-book-open btn-icon"></i>
-                    Ver Servicios
+                    <i class="fas fa-book-open"></i>
+                    Nuestras Materias
                 </a>
             </div>
         </div>
     </section>
+
+    <!-- React Components -->
+    <script type="text/babel" src="js/components/QuickFact.jsx"></script>
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('quick-fact-root'));
+        root.render(<QuickFact />);
+    </script>
 
     <!-- Servicios -->
     <section class="servicios" id="servicios">
@@ -74,7 +99,8 @@
                         <i class="fas fa-calculator"></i>
                     </div>
                     <h4>Matemáticas</h4>
-                    <p>Álgebra, cálculo, geometría y estadística. Desde nivel básico hasta preparación universitaria.</p>
+                    <p>Álgebra, cálculo, geometría y estadística. Desde nivel básico hasta preparación universitaria.
+                    </p>
                     <ul class="servicio-features">
                         <li><i class="fas fa-check"></i> Tutorías personalizadas</li>
                         <li><i class="fas fa-check"></i> Resolución de problemas</li>
@@ -116,9 +142,13 @@
             <div class="sobre-mi-content">
                 <div class="sobre-mi-texto">
                     <h3>Carlos Martínez</h3>
-                    <p>Soy físico con 8 años de experiencia ayudando a estudiantes a alcanzar sus metas académicas. Actualmente curso la Maestría en Astronomía y cuento con diplomados en enseñanza que respaldan mi compromiso con la educación de calidad.</p>
-                    <p>Mi metodología se basa en entender las necesidades individuales de cada alumno y adaptar las clases para que sean efectivas, dinámicas y motivadoras. Creo en hacer la ciencia accesible y fascinante para todos.</p>
-                    
+                    <p>Soy físico con 8 años de experiencia ayudando a estudiantes a alcanzar sus metas académicas.
+                        Actualmente curso la Maestría en Astronomía y cuento con diplomados en enseñanza que respaldan
+                        mi compromiso con la educación de calidad.</p>
+                    <p>Mi metodología se basa en entender las necesidades individuales de cada alumno y adaptar las
+                        clases para que sean efectivas, dinámicas y motivadoras. Creo en hacer la ciencia accesible y
+                        fascinante para todos.</p>
+
                     <div class="sobre-mi-details">
                         <div class="detail-item">
                             <div class="detail-icon">
@@ -200,7 +230,7 @@
                             <p>Clases online y presenciales en Bogotá, Colombia</p>
                         </div>
                     </div>
-                    
+
                     <div class="social-contact">
                         <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -208,7 +238,7 @@
                         <a href="https://wa.me/573103106954" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                
+
                 <form class="contacto-form" id="contactForm">
                     <div class="form-group">
                         <label for="nombre">Nombre Completo *</label>
@@ -234,7 +264,8 @@
                     </div>
                     <div class="form-group">
                         <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="Describe qué tipo de ayuda necesitas..." required></textarea>
+                        <textarea id="mensaje" name="mensaje" placeholder="Describe qué tipo de ayuda necesitas..."
+                            required></textarea>
                     </div>
                     <button type="submit" class="btn" style="width: 100%;">
                         <i class="fas fa-paper-plane btn-icon"></i>
@@ -251,7 +282,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Carlos Martínez</h4>
-                    <p>Tutorías de ciencias personalizadas para estudiantes de todos los niveles. Comprometido con tu éxito académico.</p>
+                    <p>Tutorías de ciencias personalizadas para estudiantes de todos los niveles. Comprometido con tu
+                        éxito académico.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Enlaces Rápidos</h4>
@@ -267,7 +299,8 @@
                 <div class="footer-column">
                     <h4>Contacto</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:carlossibaja644@gmail.com"><i class="fas fa-envelope"></i> carlossibaja644@gmail.com</a></li>
+                        <li><a href="mailto:carlossibaja644@gmail.com"><i class="fas fa-envelope"></i>
+                                carlossibaja644@gmail.com</a></li>
                         <li><a href="tel:+573103106954"><i class="fas fa-phone"></i> +57 310 310 6954</a></li>
                         <li><a href="https://wa.me/573103106954"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
                     </ul>
@@ -311,4 +344,5 @@
     <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
+
 </html>
