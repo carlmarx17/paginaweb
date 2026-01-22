@@ -211,8 +211,8 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--color-primario-oscuro);
-    color: var(--color-slate-400);
+    background: var(--color-primario);
+    color: var(--slate-400);
     padding: 60px 0 20px;
     margin-top: 80px;
 }
@@ -227,6 +227,55 @@ section {
 .footer h4 {
     color: white;
     margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column p {
+    line-height: 1.8;
+    color: var(--slate-400);
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--slate-400);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-links i {
+    font-size: 0.875rem;
+    width: 16px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--slate-500);
+    font-size: 0.9rem;
 }
 
 /* Animations */

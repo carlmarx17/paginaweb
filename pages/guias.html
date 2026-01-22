@@ -18,11 +18,13 @@
 </head>
 
 <body>
+    <!-- Navegación compartida se inyectará aquí -->
+    <div id="shared-navbar"></div>
 
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    <header class="library-header">
+    <header class="library-header" style="margin-top: 70px;">
         <div class="container"
             style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <a href="../index.html" class="logo"
@@ -67,6 +69,10 @@
     <script src="../js/library-utils.js"></script>
 
     <!-- Scripts -->
+    <!-- Footer compartido se inyectará aquí -->
+    <div id="shared-footer"></div>
+
+    <script src="../js/shared-nav.js"></script>
     <!-- Type module allows using imports in library.js -->
     <script type="module" src="../js/library.js"></script>
 </body>

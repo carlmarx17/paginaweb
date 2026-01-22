@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias Científicas - Carlos Martínez</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/library.css">
+    <style>
+        /* Estilos específicos para la página de noticias */
+        .news-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: var(--color-fondo);
+        }
+
+        .news-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+
+        .news-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            background: var(--gradiente-secundario);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .news-header p {
+            font-size: 1.2rem;
+            color: var(--color-texto-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .news-filters {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--slate-200);
+            background: var(--color-superficie);
+            color: var(--color-texto);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradiente-secundario);
+            color: white;
+            border-color: var(--color-secundario);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .news-card {
+            background: var(--color-superficie);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: all 0.3s ease;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-intensa);
+            border-color: var(--color-secundario);
+        }
+
+        .news-card-image {
+            width: 100%;
+            height: 200px;
+            background: var(--gradiente-secundario);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-card-image .icon-placeholder {
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .news-card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card-category {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            background: var(--slate-100);
+            color: var(--slate-700);
+        }
+
+        .news-card-category.fisica {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--color-secundario);
+        }
+
+        .news-card-category.quimica {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--color-acento);
+        }
+
+        .news-card-category.biologia {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--color-exito);
+        }
+
+        .news-card-category.astronomia {
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+        }
+
+        .news-card-category.matematicas {
+            background: rgba(236, 72, 153, 0.1);
+            color: #ec4899;
+        }
+
+        .news-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--color-texto);
+            line-height: 1.3;
+        }
+
+        .news-card-excerpt {
+            color: var(--color-texto-muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .news-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--slate-200);
+            font-size: 0.875rem;
+            color: var(--color-texto-muted);
+        }
+
+        .news-card-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .news-card-read-more {
+            color: var(--color-secundario);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .news-card-read-more:hover {
+            gap: 0.75rem;
+        }
+
+        .news-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--color-texto-muted);
+        }
+
+        .news-empty i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+
+            .filter-btn {
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navegación compartida se inyectará aquí -->
+    <div id="shared-navbar"></div>
+
+    <main class="news-page">
+        <div class="container">
+            <div class="news-header">
+                <h1><i class="fas fa-newspaper"></i> Noticias Científicas</h1>
+                <p>Mantente al día con los últimos descubrimientos, avances y noticias del mundo de la ciencia</p>
+            </div>
+
+            <div class="news-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Todas
+                </button>
+                <button class="filter-btn" data-filter="fisica">
+                    <i class="fas fa-atom"></i> Física
+                </button>
+                <button class="filter-btn" data-filter="quimica">
+                    <i class="fas fa-flask"></i> Química
+                </button>
+                <button class="filter-btn" data-filter="biologia">
+                    <i class="fas fa-dna"></i> Biología
+                </button>
+                <button class="filter-btn" data-filter="astronomia">
+                    <i class="fas fa-rocket"></i> Astronomía
+                </button>
+                <button class="filter-btn" data-filter="matematicas">
+                    <i class="fas fa-calculator"></i> Matemáticas
+                </button>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+                <!-- Las noticias se cargarán dinámicamente aquí -->
+                <div class="news-empty">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>No hay noticias disponibles</h3>
+                    <p>Las noticias se publicarán aquí próximamente</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer compartido se inyectará aquí -->
+    <div id="shared-footer"></div>
+
+    <!-- Scripts -->
+    <script src="../js/shared-nav.js"></script>
+    <script src="../js/news.js"></script>
+</body>
+
+</html>
