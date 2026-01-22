@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Factorización | Aprende Matemáticas Jugando - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <div>
+        
+        
+        
+
+        
+        <div>
+            <div onclick="explicarConcepto('primos')">
+                <span>🔢</span>
+                <h3>Números Primos</h3>
+                <p>Números que solo son divisibles entre 1 y sí mismos. ¡Los átomos de las matemáticas!</p>
+                <div>Básico</div>
+            </div>
+            <div onclick="explicarConcepto('compuestos')">
+                <span>🧩</span>
+                <h3>Números Compuestos</h3>
+                <p>Números que pueden descomponerse en factores más pequeños. ¡Como un rompecabezas!</p>
+                <div>Intermedio</div>
+            </div>
+            <div onclick="mostrarFactorizacion()">
+                <span>🌳</span>
+                <h3>Árbol de Factores</h3>
+                <p>Representación gráfica que muestra cómo un número se descompone en factores primos.</p>
+                <div>Visual</div>
+            </div>
+        </div>
+
+        
+        <div>
+            <div>🎨 Laboratorio de Factorización</div>
+            <h2>¡Visualiza cualquier factorización!</h2>
+            <p>Experimenta con diferentes números y observa cómo se descomponen en factores.</p>
+
+            <div>
+                <div>
+                    <button onclick="cambiarTipo('numero')">🔢 Número</button>
+                    <button onclick="cambiarTipo('expresion')">📐 Expresión</button>
+                </div>
+
+                <div>
+                    <canvas id="canvasArbol"></canvas>
+                </div>
+
+                <div id="controles-numero">
+                    <button onclick="modificarNumero(-1)">-</button>
+                    <div>
+                        <label>Número a factorizar</label>
+                        <input type="number" id="numero-factorizar" value="24" min="2" max="1000" onchange="dibujarArbol()">
+                        <div>Ingresa un número entero</div>
+                    </div>
+                    <button onclick="modificarNumero(1)">+</button>
+                </div>
+
+                <div id="controles-expresion">
+                    <div>
+                        <label>Expresión a factorizar</label>
+                        <input type="text" id="expresion-factorizar" value="x^2+5x+6" onchange="dibujarExpresion()">
+                        <div>Ej: x^2+5x+6, 2x^2-8</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <button onclick="calcularMCD()">
+                        <i></i> Calcular MCD
+                    </button>
+                    <button onclick="calcularMCM()">
+                        <i></i> Calcular MCM
+                    </button>
+                </div>
+                
+                <div id="info-visual"></div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h2>📈 Tu Progreso en Factorización</h2>
+            <div>
+                <span>Nivel: <strong id="nivel-actual">Principiante</strong></span>
+                <span>Progreso:</span>
+            </div>
+            <div>
+                <div id="barra-progreso"></div>
+            </div>
+            
+            <div>
+                <div>
+                    <i></i>
+                    <h4>Números Primos</h4>
+                    <p>¡Completado!</p>
+                </div>
+                <div id="logro-operaciones">
+                    <i></i>
+                    <h4>Factor Común</h4>
+                    <p>En progreso</p>
+                </div>
+                <div id="logro-equivalentes">
+                    <i></i>
+                    <h4>Trinomios</h4>
+                    <p>Por desbloquear</p>
+                </div>
+                <div id="logro-maestro">
+                    <i></i>
+                    <h4>Maestro Factorial</h4>
+                    <p>Meta final</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="metodos">
+            <h2>⚡ Métodos de Factorización</h2>
+            <p>Aprende las técnicas más efectivas para factorizar números y expresiones algebraicas.</p>
+        </div>
+
+        <div>
+            
+            <div>
+                <div>Factor Común</div>
+                <h3>🔍 Buscando lo Común</h3>
+                <p>Identifica y extrae el factor que se repite en todos los términos.</p>
+                
+                <div>
+                    <div>
+                        <span>6x²</span>
+                        <span>+</span>
+                        <span>9x</span>
+                    </div>
+                    <div>→</div>
+                    <div>
+                        <span>3x</span>
+                        
+                        <span>(2x + 3)</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <p><strong>Ejemplo Interactivo:</strong></p>
+                    <div>
+                        <input type="text" id="fc-expresion" value="6x^2+9x">
+                        <button onclick="calcularFactorComun()">Factorizar</button>
+                        <span id="resultado-fc">3x(2x+3)</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div>
+                <div>Diferencia de Cuadrados</div>
+                <h3>⬛² - ⬜²</h3>
+                <p>Cuando tienes la resta de dos términos cuadrados perfectos.</p>
+                
+                <div>
+                    <div>
+                        <span>x²</span>
+                        <span>-</span>
+                        <span>16</span>
+                    </div>
+                    <div>→</div>
+                    <div>
+                        <span>(x + 4)</span>
+                        <span>·</span>
+                        <span>(x - 4)</span>
+                    </div>
+                </div>
+                
+                <p>
+                    <strong>Fórmula:</strong> a² - b² = (a + b)(a - b)
+                </p>
+            </div>
+
+            
+            <div>
+                <div>Trinomio Cuadrado</div>
+                <h3>✨ Trinomio Perfecto</h3>
+                <p>Reconoce patrones de cuadrados perfectos en trinomios.</p>
+                
+                <div>
+                    <div>
+                        <span>x²</span>
+                        <span>+</span>
+                        <span>6x</span>
+                        <span>+</span>
+                        <span>9</span>
+                    </div>
+                    <div>→</div>
+                    <div>
+                        <span>(x + 3)²</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <p><strong>Comprueba si es cuadrado perfecto:</strong></p>
+                    <div>
+                        <input type="text" id="trinomio-input" value="x^2+6x+9">
+                        <button onclick="verificarTrinomio()">Verificar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="juego">
+            <div>
+                <h2>🎮 Desafío de Factorización</h2>
+                <p>Selecciona la factorización correcta para la expresión dada</p>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>Expresión a factorizar:</h3>
+                    <div id="expresion-objetivo">x² + 5x + 6</div>
+                </div>
+                
+                <div>
+                    <div onclick="seleccionarOpcion(0)">(x+1)(x+6)</div>
+                    <div onclick="seleccionarOpcion(1)">(x+2)(x+3)</div>
+                    <div onclick="seleccionarOpcion(2)">(x-2)(x-3)</div>
+                    <div onclick="seleccionarOpcion(3)">(x+5)(x+1)</div>
+                </div>
+                
+                <div>
+                    <div>Aciertos: <span id="aciertos">0</span></div>
+                    <div>Intento: <span id="intento">1</span>/10</div>
+                </div>
+                
+                <button onclick="siguientePregunta()">
+                    <i></i> Siguiente Pregunta
+                </button>
+            </div>
+        </div>
+
+        
+        <section>
+            <div>
+                <h2>🧮 Calculadora de Factorización Avanzada</h2>
+                <select id="tipo-factorizacion">
+                    <option value="primos">Factores Primos</option>
+                    <option value="comun">Factor Común</option>
+                    <option value="cuadrados">Diferencia de Cuadrados</option>
+                    <option value="trinomio">Trinomio Cuadrado</option>
+                </select>
+            </div>
+            
+            <p>
+                Ingresa un número o expresión y selecciona el tipo de factorización
+            </p>
+
+            <div>
+                <div>
+                    <label for="input-calculadora">Expresión/Number:</label>
+                    <input type="text" id="input-calculadora" value="24" placeholder="Ej: 24 o x^2+5x+6">
+                </div>
+            </div>
+
+            <button onclick="calcularFactorizacion()">
+                <i></i> Calcular Factorización
+            </button>
+
+            <div>
+                <div id="resultado-calc">
+                    ? / ?
+                </div>
+                <div id="resultado-detalle"></div>
+                <div id="pasos-calculo"></div>
+            </div>
+        </section>
+
+        
+        
+
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

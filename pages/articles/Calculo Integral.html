@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Integral Interactivo | Matemáticas Avanzadas - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    <a href="https://wa.link/3zyxd2" target="_blank" title="Contactar por WhatsApp">
+        <i></i>
+    </a>
+
+    
+
+    <div>
+        <section>
+            <span>Matemáticas Avanzadas</span>
+            <h1>El Arte de la Integración</h1>
+            <p>Domina el cálculo integral, desde las técnicas básicas hasta aplicaciones avanzadas en física, ingeniería y ciencias. Aprende a calcular áreas, volúmenes y mucho más.</p>
+        </section>
+
+        <section id="temas">
+            <h2><i></i> Temas de Cálculo Integral</h2>
+            <div>
+                <div>
+                    <div onclick="setCategory('todos')">
+                        
+                        <span>Todos los Temas</span>
+                    </div>
+                    <div onclick="setCategory('basicos')">
+                        
+                        <span>Conceptos Básicos</span>
+                    </div>
+                    <div onclick="setCategory('tecnicas')">
+                        
+                        <span>Técnicas de Integración</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <div onclick="setCategory('aplicaciones')">
+                        
+                        <span>Aplicaciones</span>
+                    </div>
+                    <div onclick="setCategory('avanzados')">
+                        
+                        <span>Temas Avanzados</span>
+                    </div>
+                    <div onclick="setCategory('futuro')">
+                        
+                        <span>Próximamente</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div id="topicsGrid">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="informacion">
+            <div>
+                <h3 id="topicTitle">Integral Indefinida</h3>
+                
+                <div id="formulaDisplay">
+                    ∫ f(x) dx = F(x) + C
+                </div>
+                
+                <div>
+                    <canvas id="graphCanvas"></canvas>
+                </div>
+                
+                <div>
+                    <div>
+                        
+                        <span>Función f(x)</span>
+                    </div>
+                    <div>
+                        
+                        <span>Área bajo la curva</span>
+                    </div>
+                    <div>
+                        
+                        <span>Antiderivada F(x)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <h4>Definición</h4>
+                    <p id="definition">Operación inversa de la derivación</p>
+                </div>
+                <div>
+                    <h4>Notación</h4>
+                    <p id="notation">∫ f(x) dx</p>
+                </div>
+                <div>
+                    <h4>Constante de Integración</h4>
+                    <p id="constant">C (siempre presente)</p>
+                </div>
+                <div>
+                    <h4>Propiedad Fundamental</h4>
+                    <p id="property">Linealidad: ∫[af(x)+bg(x)]dx = a∫f(x)dx + b∫g(x)dx</p>
+                </div>
+                <div>
+                    <h4>Dificultad</h4>
+                    <p id="difficulty">Media</p>
+                </div>
+                <div>
+                    <h4>Aplicaciones Comunes</h4>
+                    <p id="commonUses">Cálculo de áreas, volúmenes</p>
+                </div>
+                
+                <div>
+                    <h4>Ejemplos de Integrales</h4>
+                    <ul id="examplesList">
+                        <li>∫ x² dx = x³/3 + C</li>
+                        <li>∫ sin(x) dx = -cos(x) + C</li>
+                        <li>∫ e^x dx = e^x + C</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulador">
+            <h2><i></i> Simulador de Integrales</h2>
+            <p>
+                Practica la resolución de integrales con este simulador interactivo. Escribe una función y observa cómo se calcula su integral.
+            </p>
+            
+            <div>
+                <div>
+                    <div id="functionInput">∫ x² dx</div>
+                    
+                    <div>→</div>
+                    
+                    <div id="integralResult">x³/3 + C</div>
+                </div>
+                
+                <div>
+                    <h4 id="simulationName">Integral Indefinida Simple</h4>
+                    <p id="simulationDescription">
+                        La integral de x elevado a n es x^(n+1)/(n+1), para n ≠ -1. No olvides la constante de integración C.
+                    </p>
+                </div>
+                
+                <div>
+                    <select id="integralType">
+                        <option value="indefinida">Integral Indefinida</option>
+                        <option value="definida">Integral Definida</option>
+                        <option value="sustitucion">Integración por Sustitución</option>
+                        <option value="partes">Integración por Partes</option>
+                    </select>
+                    
+                    <input type="text" id="customFunction" placeholder="Ej: x^2 + 3x">
+                    
+                    <button onclick="calculateIntegral()">Calcular Integral</button>
+                    <button onclick="resetSimulator()">Reiniciar</button>
+                </div>
+                
+                <div>
+                    <h4>Paso a paso:</h4>
+                    <ol id="stepByStep">
+                        <li>Identificamos la función: f(x) = x²</li>
+                        <li>Aplicamos la regla de la potencia: ∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</li>
+                        <li>Para n=2: ∫ x² dx = x²⁺¹/(2+1) + C = x³/3 + C</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

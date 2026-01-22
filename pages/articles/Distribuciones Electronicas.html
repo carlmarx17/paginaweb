@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Química | Prof. Carlos Alberto Martinez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Química Inorgánica</span>
+                <h1>
+                    Domina la <span>Configuración Electrónica</span>
+                </h1>
+                <p>
+                    Aprende cómo se organizan los electrones en la corteza del átomo con el <strong>Prof. Carlos Martinez</strong>. Visualiza niveles y subniveles de energía de forma interactiva.
+                </p>
+                <div>
+                    <a href="#visualizador">Empezar a Configurar</a>
+                    <a href="#teoria">Ver Conceptos</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div>Z</div>
+                        <h3>Orden de Energía</h3>
+                        <p>1s² 2s² 2p⁶...</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="visualizador">
+            <div>
+                <div>
+                    <h2>Generador de Átomos</h2>
+                    <p>Ingresa el número atómico (Z) para calcular su distribución electrónica automáticamente.</p>
+                    
+                    <div>
+                        <div>
+                            <label>Número Atómico (Z):</label>
+                            <input type="number" id="input-z" min="1" max="118" value="11">
+                            <p>* Válido desde Hidrógeno (1) hasta Oganesón (118)</p>
+                        </div>
+
+                        <div>
+                            <h4>Configuración Completa</h4>
+                            <div id="output-config">
+                                1s² 2s² 2p⁶ 3s¹
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    
+                    <div>
+                        +Z
+                    </div>
+                    
+                    
+                    <div id="atom-visualizer">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="moller">
+            <div>
+                <h2>Diagrama de Möller</h2>
+                <p>La regla de las diagonales para el llenado de orbitales.</p>
+            </div>
+
+            <div>
+                <div>
+                    
+                    <div>
+                        <h4>Subnivel s (2e⁻)</h4>
+                        <div id="m-s"></div>
+                    </div>
+                    <div>
+                        <h4>Subnivel p (6e⁻)</h4>
+                        <div id="m-p"></div>
+                    </div>
+                    <div>
+                        <h4>Subnivel d (10e⁻)</h4>
+                        <div id="m-d"></div>
+                    </div>
+                    <div>
+                        <h4>Subnivel f (14e⁻)</h4>
+                        <div id="m-f"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="practica">
+            <div>
+                <h2>Zona de Entrenamiento</h2>
+                
+                <div>
+                    <div>
+                        <h4>Ejercicio 1</h4>
+                        <p>Escribe la configuración del <strong>Oxígeno (Z=8)</strong>:</p>
+                        <button onclick="checkAnswer(this, '1s² 2s² 2p⁴')">Ver respuesta</button>
+                    </div>
+                    <div>
+                        <h4>Ejercicio 2</h4>
+                        <p>¿Cuál es el último orbital del <strong>Sodio (Z=11)</strong>?</p>
+                        <button onclick="checkAnswer(this, '3s¹')">Ver respuesta</button>
+                    </div>
+                    <div>
+                        <h4>Ejercicio 3</h4>
+                        <p>Configuración del <strong>Calcio (Z=20)</strong>:</p>
+                        <button onclick="checkAnswer(this, '1s² 2s² 2p⁶ 3s² 3p⁶ 4s²')">Ver respuesta</button>
+                    </div>
+                    <div>
+                        <h4>Ejercicio 4</h4>
+                        <p>¿Cuántos electrones tiene el subnivel <strong>3d</strong> del Hierro (Z=26)?</p>
+                        <button onclick="checkAnswer(this, '6 electrones')">Ver respuesta</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <div>👨‍🔬</div>
+            <div>
+                <h2>Prof. Carlos Alberto Martinez Sibaja</h2>
+                <p>Especialista en educación científica. Facilitando la comprensión de la materia desde lo invisible hasta lo tangible.</p>
+                <div>
+                    <span>📩 carlossibaja644@gmail.com</span>
+                    <span>📞 3103106954</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

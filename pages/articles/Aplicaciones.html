@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicaciones de Integrales | Economía y Ciencias Sociales - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    <section id="inicio">
+        <div>
+            <h1>
+                <span>∫</span>
+                <span>Aplicaciones de la Integral</span>
+                <span>∑</span>
+            </h1>
+            <div id="integral-animada">
+                $\int_{a}^{b} f(x)\,dx = F(b) - F(a)$
+            </div>
+            <p>Masterclass completa con ejercicios interactivos, ejemplos reales en economía y ciencias sociales, y herramientas avanzadas para el aprendizaje del cálculo integral.</p>
+            <div>
+                <a href="#teoria">
+                    <i></i>
+                    Comenzar a Aprender
+                </a>
+                <a href="#aplicaciones">
+                    <i></i>
+                    Ver Aplicaciones
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="teoria">
+        <div>
+            <h2>Teoría de Integrales</h2>
+            <div>
+                <div>
+                    <p>La <strong>integral</strong> es uno de los conceptos fundamentales del cálculo, que representa la acumulación de cantidades y el área bajo una curva. En aplicaciones prácticas, nos permite calcular totales a partir de tasas de cambio.</p>
+                    
+                    <div>
+                        <h4><i></i> Teorema Fundamental del Cálculo</h4>
+                        <p>Conecta los conceptos de derivación e integración:</p>
+                        <div>
+                            $\int_{a}^{b} f(x)\,dx = F(b) - F(a)$
+                        </div>
+                        <p>Donde \(F(x)\) es una antiderivada de \(f(x)\), es decir, \(F'(x) = f(x)\).</p>
+                    </div>
+
+                    <h3>¿Por qué son importantes las integrales?</h3>
+                    <p>Las integrales nos permiten resolver problemas del mundo real como:</p>
+                    <ul>
+                        <li><strong>En economía:</strong> Calcular excedentes del consumidor y productor</li>
+                        <li><strong>En ciencias sociales:</strong> Medir desigualdad con el coeficiente de Gini</li>
+                        <li><strong>En física:</strong> Determinar trabajo, energía y cantidades acumuladas</li>
+                        <li><strong>En ingeniería:</strong> Calcular áreas, volúmenes y centros de masa</li>
+                    </ul>
+
+                    <div>
+                        <h4><i></i> Propiedades Fundamentales</h4>
+                        <div>
+                            $\int_{a}^{b} [f(x) + g(x)]\,dx = \int_{a}^{b} f(x)\,dx + \int_{a}^{b} g(x)\,dx$
+                        </div>
+                        <div>
+                            $\int_{a}^{b} k \cdot f(x)\,dx = k \int_{a}^{b} f(x)\,dx$
+                        </div>
+                        <div>
+                            $\int_{a}^{b} f(x)\,dx = \int_{a}^{c} f(x)\,dx + \int_{c}^{b} f(x)\,dx$
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="aplicaciones">
+        <div>
+            <h2>Aplicaciones en Economía y Ciencias Sociales</h2>
+            <div>
+                
+                <div>
+                    <h4><span><i></i></span>Excedente del Consumidor</h4>
+                    <div>
+                        $EC = \int_{0}^{Q^*} [D(q) - P^*]\,dq$
+                    </div>
+                    <p>El excedente del consumidor representa el beneficio neto que obtienen los consumidores al poder comprar un producto a un precio menor al que estaban dispuestos a pagar.</p>
+                    
+                    <div>
+                        <h6>Ejemplo:</h6>
+                        <p>Si la función de demanda es \(D(q) = 100 - 2q\) y el precio de mercado es \(P^* = 40\):</p>
+                        <p>1. Encontrar \(Q^*\): \(40 = 100 - 2Q^* \Rightarrow Q^* = 30\)</p>
+                        <p>2. Calcular: \(EC = \int_{0}^{30} [(100 - 2q) - 40]\,dq = \int_{0}^{30} (60 - 2q)\,dq\)</p>
+                        <p>3. Resultado: \(EC = [60q - q^2]_{0}^{30} = 1800 - 900 = 900\)</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4><span><i></i></span>Coeficiente de Gini</h4>
+                    <div>
+                        $G = \frac{\frac{1}{2} - \int_{0}^{1} L(x)\,dx}{\frac{1}{2}}$
+                    </div>
+                    <p>Mide la desigualdad en la distribución del ingreso en una sociedad. Un valor de 0 representa igualdad perfecta, mientras que 1 representa desigualdad máxima.</p>
+                    
+                    <div>
+                        <h6>Interpretación:</h6>
+                        <p>\(L(x)\) es la curva de Lorenz que representa el porcentaje acumulado de ingreso recibido por el porcentaje acumulado de la población.</p>
+                        <p>Para \(L(x) = x^2\) (desigualdad moderada):</p>
+                        <p>\(\int_{0}^{1} x^2\,dx = \frac{1}{3}\), entonces \(G = \frac{\frac{1}{2} - \frac{1}{3}}{\frac{1}{2}} = \frac{1}{3} \approx 0.333\)</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4><span><i></i></span>Valor Presente Neto Continuo</h4>
+                    <div>
+                        $VPN = \int_{0}^{T} R(t)e^{-rt}\,dt - C_0$
+                    </div>
+                    <p>Calcula el valor presente de flujos de caja continuos descontados a una tasa \(r\). Fundamental para evaluación de inversiones a largo plazo.</p>
+                    
+                    <div>
+                        <h6>Aplicación:</h6>
+                        <p>Si una empresa espera recibir \(R(t) = 50000e^{0.02t}\) anual durante 10 años con tasa \(r = 0.06\):</p>
+                        <p>\(VPN = \int_{0}^{10} 50000e^{0.02t}e^{-0.06t}\,dt = 50000\int_{0}^{10} e^{-0.04t}\,dt\)</p>
+                        <p>Resultado: \(VPN \approx \$412,180\)</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4><span><i></i></span>Costo Total a partir del Marginal</h4>
+                    <div>
+                        $CT(Q) = C_0 + \int_{0}^{Q} CMg(q)\,dq$
+                    </div>
+                    <p>El costo total de producción se obtiene integrando el costo marginal (costo de producir una unidad adicional) sobre todas las unidades producidas.</p>
+                    
+                    <div>
+                        <h6>Ejemplo:</h6>
+                        <p>Si \(CMg(q) = 3q^2 - 4q + 8\) y \(C_0 = 100\):</p>
+                        <p>\(CT(Q) = 100 + \int_{0}^{Q} (3q^2 - 4q + 8)\,dq\)</p>
+                        <p>\(CT(Q) = 100 + [q^3 - 2q^2 + 8q]_{0}^{Q} = Q^3 - 2Q^2 + 8Q + 100\)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <div>
+            <div>
+                <h3>Simulador de Integrales</h3>
+                <p>Calcula integrales definidas y visualiza el área bajo la curva</p>
+                
+                <div>
+                    <div>
+                        <label for="funcion-integral">Función f(x):</label>
+                        <select id="funcion-integral">
+                            <option value="x^2">x²</option>
+                            <option value="2x+3">2x + 3</option>
+                            <option value="sin(x)">sen(x)</option>
+                            <option value="e^(-x)">e⁻ˣ</option>
+                            <option value="sqrt(x)">√x</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="limite-a">Límite inferior (a):</label>
+                        <input type="range" id="limite-a" min="0" max="5" step="0.5" value="0">
+                        <span id="valor-a">0</span>
+                    </div>
+                    
+                    <div>
+                        <label for="limite-b">Límite superior (b):</label>
+                        <input type="range" id="limite-b" min="1" max="10" step="0.5" value="2">
+                        <span id="valor-b">2</span>
+                    </div>
+                    
+                    <button onclick="calcularIntegral()">
+                        <i></i> Calcular Integral
+                    </button>
+                </div>
+                
+                <div id="resultado-simulador">
+                    <h4>Resultado:</h4>
+                    <p id="integral-texto">$\int_{0}^{2} x^2\,dx = \left[\frac{x^3}{3}\right]_{0}^{2} = \frac{8}{3} \approx 2.667$</p>
+                    <p id="interpretacion">Interpretación: El área bajo la curva \(f(x) = x^2\) entre 0 y 2 es aproximadamente 2.667 unidades cuadradas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="ejercicios">
+        <div>
+            <h2>Ejercicios Interactivos</h2>
+            
+            
+            <div>
+                <div>
+                    <div>1</div>
+                    <div>
+                        <h3>Excedente del Consumidor</h3>
+                        <p>Calcula el excedente del consumidor para una función de demanda lineal</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Dada la función de demanda \(D(q) = 80 - 4q\) y un precio de mercado \(P^* = 40\):</p>
+                    <p>
+                        $EC = \int_{0}^{Q^*} [D(q) - P^*]\,dq$
+                    </p>
+                </div>
+                
+                <div>
+                    <button onclick="mostrarSolucion('solucion1')">
+                        <span>🧮</span>
+                        <span>Mostrar Solución</span>
+                    </button>
+                    <button onclick="ocultarSolucion('solucion1')">
+                        <span>🔄</span>
+                        <span>Ocultar Solución</span>
+                    </button>
+                </div>
+                
+                <div id="solucion1">
+                    <div>
+                        <strong>Paso 1: Encontrar la cantidad de equilibrio</strong><br>
+                        \(40 = 80 - 4q \Rightarrow 4q = 40 \Rightarrow q^* = 10\)
+                    </div>
+                    
+                    <div>
+                        <strong>Paso 2: Plantear la integral</strong><br>
+                        $EC = \int_{0}^{10} [(80 - 4q) - 40]\,dq = \int_{0}^{10} (40 - 4q)\,dq$
+                    </div>
+                    
+                    <div>
+                        <strong>Paso 3: Resolver la integral</strong><br>
+                        $\int (40 - 4q)\,dq = 40q - 2q^2 + C$
+                    </div>
+                    
+                    <div>
+                        <strong>Paso 4: Evaluar entre 0 y 10</strong><br>
+                        $EC = [40q - 2q^2]_{0}^{10} = (400 - 200) - 0 = 200$
+                    </div>
+                    
+                    <div>
+                        <strong>Respuesta:</strong> El excedente del consumidor es 200 unidades monetarias
+                    </div>
+                </div>
+            </div>
+
+            
+            <div>
+                <div>
+                    <div>2</div>
+                    <div>
+                        <h3>Área entre Curvas</h3>
+                        <p>Calcula el área entre dos funciones</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <p>Calcula el área entre las curvas \(y = x^2\) e \(y = 4x - x^2\):</p>
+                    <p>
+                        $A = \int_{a}^{b} [f(x) - g(x)]\,dx$
+                    </p>
+                </div>
+                
+                <div>
+                    <button onclick="mostrarSolucion('solucion2')">
+                        <span>🧮</span>
+                        <span>Mostrar Solución</span>
+                    </button>
+                    <button onclick="ocultarSolucion('solucion2')">
+                        <span>🔄</span>
+                        <span>Ocultar Solución</span>
+                    </button>
+                </div>
+                
+                <div id="solucion2">
+                    <div>
+                        <strong>Paso 1: Encontrar puntos de intersección</strong><br>
+                        \(x^2 = 4x - x^2 \Rightarrow 2x^2 - 4x = 0 \Rightarrow 2x(x - 2) = 0\)
+                        <br>Por tanto, \(x = 0\) y \(x = 2\)
+                    </div>
+                    
+                    <div>
+                        <strong>Paso 2: Determinar qué función está arriba</strong><br>
+                        En el intervalo [0,2], \(4x - x^2 \geq x^2\), por lo que:
+                        <br>\(f(x) - g(x) = (4x - x^2) - x^2 = 4x - 2x^2\)
+                    </div>
+                    
+                    <div>
+                        <strong>Paso 3: Plantear y resolver la integral</strong><br>
+                        $A = \int_{0}^{2} (4x - 2x^2)\,dx = \left[2x^2 - \frac{2x^3}{3}\right]_{0}^{2}$
+                    </div>
+                    
+                    <div>
+                        <strong>Paso 4: Evaluar</strong><br>
+                        $A = \left(8 - \frac{16}{3}\right) - 0 = \frac{24 - 16}{3} = \frac{8}{3}$
+                    </div>
+                    
+                    <div>
+                        <strong>Respuesta:</strong> El área entre las curvas es \(\frac{8}{3}\) unidades cuadradas
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <section id="pedagogia">
+        <div>
+            <h2>¿Cómo Aprender Integrales Efectivamente?</h2>
+            <div>
+                <div>
+                    <h3>Pedagogía Basada en la Evidencia</h3>
+                    <p>El aprendizaje de las integrales requiere una comprensión profunda de los conceptos y mucha práctica. Estas estrategias han demostrado ser efectivas:</p>
+                    
+                    <div>
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Visualización</h5>
+                            <p>Representa gráficamente las integrales como áreas bajo curvas</p>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Aplicaciones Reales</h5>
+                            <p>Relaciona cada concepto con problemas del mundo real</p>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Paso a Paso</h5>
+                            <p>Divide problemas complejos en pasos manejables</p>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Práctica Espaciada</h5>
+                            <p>Practica regularmente en lugar de sesiones maratónicas</p>
+                        </div>
+                    </div>
+
+                    <h4>Consejos Prácticos:</h4>
+                    <ul>
+                        <li><strong>Comprende primero la derivada:</strong> La integral es el proceso inverso</li>
+                        <li><strong>Practica con diferentes tipos de funciones:</strong> Polinómicas, trigonométricas, exponenciales</li>
+                        <li><strong>Verifica tus resultados:</strong> Deriva tu respuesta para comprobar</li>
+                        <li><strong>Usa tecnología sabiamente:</strong> Calculadoras gráficas para visualizar</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div>
+                        
+                        <div>
+                            <i></i>
+                            <h3>Aprende Integrando</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contacto">
+        <div>
+            <h2>¿Necesitas Ayuda Personalizada?</h2>
+            <div>
+                <div>
+                    <h3>Contacto Directo</h3>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Email</h5>
+                            <p>carlossibaja644@gmail.com</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Teléfono / WhatsApp</h5>
+                            <p>+57 310 310 6954</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Ubicación</h5>
+                            <p>Clases online y presenciales en Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Especialidad</h5>
+                            <p>Integrales, Cálculo, Matemáticas Aplicadas</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="https://wa.me/573103106954" title="WhatsApp">
+                            <i></i>
+                        </a>
+                        <a href="mailto:carlossibaja644@gmail.com" title="Email">
+                            <i></i>
+                        </a>
+                        <a href="#" title="YouTube">
+                            <i></i>
+                        </a>
+                        <a href="#" title="LinkedIn">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form id="contactForm">
+                    <div>
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="nivel">Nivel de Estudio *</label>
+                        <select id="nivel" name="nivel" required>
+                            <option value="">Selecciona tu nivel</option>
+                            <option value="bachillerato">Bachillerato/Preparatoria</option>
+                            <option value="universidad">Universidad</option>
+                            <option value="posgrado">Posgrado</option>
+                            <option value="autodidacta">Autodidacta</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tema">Tema de Interés *</label>
+                        <select id="tema" name="tema" required>
+                            <option value="">Selecciona un tema</option>
+                            <option value="integrales-basicas">Integrales Básicas</option>
+                            <option value="aplicaciones-economia">Aplicaciones en Economía</option>
+                            <option value="aplicaciones-sociales">Aplicaciones en Ciencias Sociales</option>
+                            <option value="integrales-multiples">Integrales Múltiples</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Describe tu nivel actual, dificultades específicas y objetivos de aprendizaje..." required></textarea>
+                    </div>
+                    <button type="submit">
+                        <i></i>
+                        Solicitar Tutoría Personalizada
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <div id="confirmationModal">
+        <div>
+            <div>
+                <i></i>
+            </div>
+            <h3>¡Solicitud Enviada!</h3>
+            <p>He recibido tu solicitud de tutoría. Te contactaré en menos de 24 horas para coordinar una clase de diagnóstico gratuita.</p>
+            <button onclick="closeModal()">
+                <i></i>
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    
+    <div id="errorModal">
+        <div>
+            <div>
+                <i></i>
+            </div>
+            <h3>Error al Enviar</h3>
+            <p id="errorMessage">Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente o contáctame directamente por WhatsApp.</p>
+            <button onclick="closeErrorModal()">
+                <i></i>
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley de Ohm: Aprende Electricidad | Carlos Sibaja - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    <div>
+        
+
+        
+
+        
+        <section>
+            <h3>📐 El Truco del Triángulo</h3>
+            <p>¿No sabes qué fórmula usar? ¡Tapa con tu dedo la letra que buscas!</p>
+            <div>
+                <div>V</div>
+                <div>
+                    <div>I</div>
+                    <div>R</div>
+                </div>
+            </div>
+            <div>
+                <span>V = Voltaje (Pila)</span>
+                <span>I = Intensidad (Flujo)</span>
+                <span>R = Resistencia (Freno)</span>
+            </div>
+        </section>
+
+        
+        <div>
+            <div>
+                <h3>Voltaje (V)</h3>
+                <p>Es la "presión" eléctrica que empuja a los electrones.</p>
+                <center><img src="https://latex.codecogs.com/svg.latex?V%20=%20I%20\cdot%20R" alt="V=I*R"></center>
+                <p><b>Unidad:</b> Voltios (V)</p>
+            </div>
+            <div>
+                <h3>Intensidad (I)</h3>
+                <p>Es el "caudal" o cantidad de electrones que pasan.</p>
+                <center><img src="https://latex.codecogs.com/svg.latex?I%20=%20\frac{V}{R}" alt="I=V/R"></center>
+                <p><b>Unidad:</b> Amperios (A)</p>
+            </div>
+            <div>
+                <h3>Resistencia (R)</h3>
+                <p>Es el obstáculo que frena la electricidad.</p>
+                <center><img src="https://latex.codecogs.com/svg.latex?R%20=%20\frac{V}{I}" alt="R=V/I"></center>
+                <p><b>Unidad:</b> Ohmios (Ω)</p>
+            </div>
+        </div>
+
+        
+        <section>
+            <div>
+                <h3>🔥 Potencia Eléctrica (Ley de Watt)</h3>
+                <p>Es la rapidez con la que un aparato consume energía. Se mide en <b>Watios (W)</b>.</p>
+                <center><img src="https://latex.codecogs.com/svg.latex?P%20=%20V%20\cdot%20I" alt="P=V*I"></center>
+                <p>Si un aparato tiene muchos Watios, ¡consume más energía y calienta más!</p>
+            </div>
+            <div>
+                <h3>🧬 Resistividad Material</h3>
+                <p>No todos los cables son iguales. La resistencia depende de:</p>
+                <center><img src="https://latex.codecogs.com/svg.latex?R%20=%20\rho%20\cdot%20\frac{L}{A}" alt="R=rho*L/A"></center>
+                <ul>
+                    <li><b>Largo (L):</b> Más largo = Más resistencia.</li>
+                    <li><b>Grosor (A):</b> Más grueso = Menos resistencia.</li>
+                    <li><b>Tipo ($\rho$):</b> El cobre es mejor que el hierro.</li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>🎮 Laboratorio Interactivo de Electrones</h2>
+            <div>
+                <div>
+                    <canvas id="circuitCanvas"></canvas>
+                </div>
+                <div>
+                    <div>
+                        <label>Pila (Voltaje): <b id="valV">12</b>V</label>
+                        <input type="range" id="rV" min="1" max="100" value="12" oninput="update()">
+                    </div>
+                    <div>
+                        <label>Freno (Resistencia): <b id="valR">100</b>Ω</label>
+                        <input type="range" id="rR" min="10" max="1000" value="100" oninput="update()">
+                    </div>
+                    <div>
+                        <div>
+                            <small>Corriente (I)</small>
+                            <div id="mI">0.120 A</div>
+                        </div>
+                        <div>
+                            <small>Potencia (P)</small>
+                            <div id="mP">1.44 W</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>✍️ Desafíos de Entrenamiento</h2>
+            
+            <div>
+                <p><b>1. Cálculo de Corriente:</b> Si conectas una resistencia de 50Ω a una batería de 10V, ¿cuánta corriente fluye?</p>
+                <button onclick="toggle('e1')">Ver Solución</button>
+                <div id="e1">
+                    Fórmula: I = V / R <br>
+                    Cálculo: 10V / 50Ω = <b>0.2 Amperios</b>.
+                </div>
+            </div>
+
+            <div>
+                <p><b>2. Cálculo de Voltaje:</b> Una lámpara tiene una resistencia de 20Ω y por ella pasan 3A. ¿De cuántos voltios es la fuente?</p>
+                <button onclick="toggle('e2')">Ver Solución</button>
+                <div id="e2">
+                    Fórmula: V = I * R <br>
+                    Cálculo: 3A * 20Ω = <b>60 Voltios</b>.
+                </div>
+            </div>
+
+            <div>
+                <p><b>3. Cálculo de Resistencia:</b> Una plancha consume 5A cuando se conecta a 110V. ¿Cuál es su resistencia interna?</p>
+                <button onclick="toggle('e3')">Ver Solución</button>
+                <div id="e3">
+                    Fórmula: R = V / I <br>
+                    Cálculo: 110V / 5A = <b>22 Ohmios</b>.
+                </div>
+            </div>
+
+            <div>
+                <p><b>4. Cálculo de Potencia:</b> Si un motor usa 12V y consume 2A, ¿cuánta potencia (Watios) está usando?</p>
+                <button onclick="toggle('e4')">Ver Solución</button>
+                <div id="e4">
+                    Fórmula: P = V * I <br>
+                    Cálculo: 12V * 2A = <b>24 Watios</b>.
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>¿Quieres ser un experto en circuitos?</h2>
+            <p>Soy Carlos Sibaja y te ayudo a dominar la física y la tecnología paso a paso.</p>
+            <div>
+                <a href="https://wa.me/573103106954" target="_blank">📱 WhatsApp: 3103106954</a>
+                <a href="mailto:carlossibaja644@gmail.com">✉️ Correo Directo</a>
+            </div>
+            <p>Carlos Sibaja - Developer & Science Tutor</p>
+        </section>
+
+        
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

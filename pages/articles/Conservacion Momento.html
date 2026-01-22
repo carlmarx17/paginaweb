@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conservación de la Cantidad de Movimiento | Física Interactiva - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Mecánica Clásica</span>
+                <h1>
+                    Conservación del <span>Momento Lineal</span>
+                </h1>
+                <p>
+                    Descubre por qué "toda acción tiene una reacción" y cómo se conserva el movimiento en el universo, desde patinetas hasta cohetes.
+                </p>
+                <div>
+                    <a href="#simulador">Ir al Simulador</a>
+                    <a href="#teoria">Leer Teoría</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    
+                    <div>
+                        <span>Principio Físico</span>
+                        <div>p</div>
+                    </div>
+                    <div>
+                        <span>p = m · v</span>
+                        <p>El momento depende de masa y velocidad</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulador">
+            
+            
+            <div>
+                <div>
+                    <h2>
+                        <span>🚀</span> Simulador de Retroceso
+                    </h2>
+                    <p>Configura las masas y observa la ley de acción y reacción.</p>
+                </div>
+            </div>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        
+                        
+                        <div>
+                            
+                            <div>
+                                <span>-5m</span><span>-2.5m</span><span>0m</span><span>+2.5m</span><span>+5m</span>
+                            </div>
+                            
+                            
+                        </div>
+
+                        
+                        <div>
+                            
+                            
+                            <div id="skate-group">
+                                
+                                <div id="vector-person">
+                                    <span id="v-person-label"></span>
+                                </div>
+                                
+                                <div title="Objeto que retrocede">
+                                    <div>
+                                        
+                                        
+                                        <span>m₁</span>
+                                    </div>
+                                    
+                                    <div>
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div id="ball-group">
+                                
+                                <div id="vector-ball">
+                                    <span id="v-ball-label"></span>
+                                </div>
+
+                                <div>
+                                    <span>m₂</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+                    <div>
+                        <div>
+                            <div>
+                                <div>Velocidad Retroceso (v₁)</div>
+                                <div id="res-v-person">0.00 m/s</div>
+                            </div>
+                            <div>⬅️</div>
+                        </div>
+                        <div>
+                            <div>
+                                <div>Velocidad Lanzamiento (v₂)</div>
+                                <div id="res-v-ball">5.00 m/s</div>
+                            </div>
+                            <div>➡️</div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        
+                        <div>
+                            <div>
+                                <label>Masa Persona (m₁)</label>
+                                <span id="val-m-person">70 kg</span>
+                            </div>
+                            <input type="range" id="input-m-person" min="40" max="120" value="70" step="5">
+                        </div>
+
+                        
+                        <div>
+                            <div>
+                                <label>Masa Pelota (m₂)</label>
+                                <span id="val-m-ball">2.0 kg</span>
+                            </div>
+                            <input type="range" id="input-m-ball" min="0.5" max="10" value="2" step="0.5">
+                        </div>
+
+                        
+                        <div>
+                            <div>
+                                <label>Fuerza Lanzamiento (v₂)</label>
+                                <span id="val-v-ball">5 m/s</span>
+                            </div>
+                            <input type="range" id="input-v-ball" min="1" max="20" value="5" step="1">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button id="reset-simulation">
+                            
+                            Reiniciar
+                        </button>
+                        <button id="start-btn">
+                            <span>Lanzar</span>
+                            
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="teoria">
+            <div>
+                <span>Fundamentos Físicos</span>
+                <h2>Profundizando en el Concepto</h2>
+            </div>
+            
+            
+            <div>
+                
+                <div>
+                    
+                    <h3>Cantidad de Movimiento (p)</h3>
+                    <p>Es un vector que tiene la misma dirección que la velocidad. Cuanto mayor es la masa o la velocidad, mayor es el momento.</p>
+                    <div>
+                        $ \vec{p} = m \cdot \vec{v} $
+                    </div>
+                </div>
+
+                
+                <div>
+                    
+                    <h3>Impulso Mecánico (I)</h3>
+                    <p>Es el cambio en la cantidad de movimiento producido por una fuerza aplicada durante un tiempo.</p>
+                    <div>
+                        $ \vec{I} = \Delta \vec{p} = \vec{F} \cdot \Delta t $
+                    </div>
+                </div>
+            </div>
+
+            
+            <div>
+                <h3>Tipos de Interacciones</h3>
+                <div>
+                    <div>
+                        <h4>1. Explosión / Retroceso</h4>
+                        <p>Es lo que vemos en el simulador. Un sistema inicialmente unido y en reposo se separa en partes que se mueven en direcciones opuestas.</p>
+                        <p>Ejemplo: Disparar un cañón, saltar de una barca.</p>
+                    </div>
+                    <div>
+                        <h4>2. Colisiones (Choques)</h4>
+                        <ul>
+                            <li><strong>Elásticas:</strong> Se conserva la energía cinética (ej. bolas de billar). Rebotan perfectamente.</li>
+                            <li><strong>Inelásticas:</strong> Se pierde energía en forma de calor o deformación. A veces los cuerpos quedan unidos (ej. choque de trenes).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="video-seccion">
+            <div>
+                
+                
+                
+                <div>
+                    <div>
+                        <span>Experimento Real</span>
+                        <h2>Verificación Experimental</h2>
+                        <p>En este video se observa claramente cómo un patinador retrocede al lanzar un balón medicinal pesado, validando nuestras ecuaciones.</p>
+                        <div>
+                            
+                            Video listo para reproducir
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <iframe src="https://www.youtube.com/embed/Kf0bBxmNeec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ejercicios">
+            <h2>Ejercicios Resueltos (Paso a Paso)</h2>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <h3>Problema 1: El Astronauta</h3>
+                        <span>Retroceso</span>
+                    </div>
+                    <div>
+                        <p>Un astronauta de <strong>80 kg</strong> lanza una herramienta de <strong>2 kg</strong> a <strong>5 m/s</strong>. ¿Velocidad del astronauta?</p>
+                        <details>
+                            <summary>
+                                <span>▶ Ver Solución</span>
+                            </summary>
+                            <div>
+                                <p><strong>1. Fórmula:</strong> \( v_1 = -\frac{m_2 v_2}{m_1} \)</p>
+                                <p><strong>2. Cálculo:</strong> \( -\frac{2 \cdot 5}{80} = -\frac{10}{80} \)</p>
+                                <p>R: -0.125 m/s</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <h3>Problema 2: El Cañón</h3>
+                        <span>Retroceso</span>
+                    </div>
+                    <div>
+                        <p>Cañón de <strong>1000 kg</strong> retrocede a <strong>2 m/s</strong>. La bala es de <strong>10 kg</strong>. ¿Velocidad de la bala?</p>
+                        <details>
+                            <summary>
+                                <span>▶ Ver Solución</span>
+                            </summary>
+                            <div>
+                                <p><strong>1. Despeje:</strong> \( v_{bala} = -\frac{m_{cañon} v_{cañon}}{m_{bala}} \)</p>
+                                <p><strong>2. Signos:</strong> \( v_{cañon} \) es negativo (-2).</p>
+                                <p><strong>3. Cálculo:</strong> \( -\frac{1000 \cdot (-2)}{10} = \frac{2000}{10} \)</p>
+                                <p>R: 200 m/s</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <h3>Problema 3: Trenes</h3>
+                        <span>Colisión</span>
+                    </div>
+                    <div>
+                        <p>Un vagón de <strong>1000kg</strong> a <strong>5m/s</strong> choca y se engancha a otro igual en reposo. ¿Velocidad final?</p>
+                        <details>
+                            <summary>
+                                <span>▶ Ver Solución</span>
+                            </summary>
+                            <div>
+                                <p><strong>1. Concepto:</strong> Choque inelástico (masas se suman).</p>
+                                <p><strong>2. Fórmula:</strong> \( m_1 v_1 = (m_1 + m_2)v_f \)</p>
+                                <p><strong>3. Cálculo:</strong> \( 1000 \cdot 5 = (1000+1000)v_f \)</p>
+                                <p><strong>4. Despeje:</strong> \( 5000 = 2000 v_f \)</p>
+                                <p>R: 2.5 m/s</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="quiz">
+            <div>
+                
+                
+                <div>
+                    <span>Evaluación Final</span>
+                    <h2>Ponte a prueba</h2>
+                    <p>Selecciona la respuesta correcta para verificar tu aprendizaje.</p>
+                </div>
+
+                <div>
+                    
+                    <div>
+                        <p>1. ¿En qué condición se conserva siempre la cantidad de movimiento?</p>
+                        <div>
+                            <button onclick="checkQuiz(this, false)">Si no hay gravedad.</button>
+                            <button onclick="checkQuiz(this, true)">En sistemas aislados (sin fuerzas externas).</button>
+                            <button onclick="checkQuiz(this, false)">Solo si las masas son iguales.</button>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <p>2. Si lanzas un objeto pesado hacia adelante, tú retrocedes...</p>
+                        <div>
+                            <button onclick="checkQuiz(this, false)">En la misma dirección.</button>
+                            <button onclick="checkQuiz(this, true)">En dirección opuesta.</button>
+                            <button onclick="checkQuiz(this, false)">No te mueves.</button>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <p>3. ¿Qué unidad se usa para medir la cantidad de movimiento?</p>
+                        <div>
+                            <button onclick="checkQuiz(this, true)">kg · m/s</button>
+                            <button onclick="checkQuiz(this, false)">Joules (J)</button>
+                            <button onclick="checkQuiz(this, false)">Newtons (N)</button>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <p>4. En un choque inelástico (ej. plastilina que se pega)...</p>
+                        <div>
+                            <button onclick="checkQuiz(this, false)">No se conserva el movimiento.</button>
+                            <button onclick="checkQuiz(this, false)">Se conserva la energía cinética.</button>
+                            <button onclick="checkQuiz(this, true)">Se conserva el movimiento, pero no la energía cinética.</button>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <p>5. Si duplicas la masa del objeto lanzado (misma velocidad)...</p>
+                        <div>
+                            <button onclick="checkQuiz(this, true)">Tu velocidad de retroceso aumenta al doble.</button>
+                            <button onclick="checkQuiz(this, false)">Tu velocidad se reduce a la mitad.</button>
+                            <button onclick="checkQuiz(this, false)">No cambia nada.</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

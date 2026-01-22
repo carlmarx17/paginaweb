@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Fracción | Aprende Matemáticas Jugando - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <div>
+        
+        
+        
+
+        
+        <div>
+            <div onclick="explicarConcepto('numerador')">
+                <span>😋</span>
+                <h3>El Numerador</h3>
+                <p>El número de arriba que indica <strong>cuántas partes tomas</strong>. ¡Como las porciones que comes!</p>
+                <div>Parte 1 de 2</div>
+            </div>
+            <div onclick="explicarConcepto('denominador')">
+                <span>🔪</span>
+                <h3>El Denominador</h3>
+                <p>El número de abajo que muestra en <strong>cuántas partes iguales</strong> dividimos el todo.</p>
+                <div>Parte 2 de 2</div>
+            </div>
+            <div onclick="mostrarEquivalentes()">
+                <span>🎭</span>
+                <h3>Fracciones Equivalentes</h3>
+                <p>Diferente apariencia, mismo valor. ¡Como disfraces matemáticos!</p>
+                <div>Magia</div>
+            </div>
+        </div>
+
+        
+        <div>
+            <div>🎨 Laboratorio Visual</div>
+            <h2>¡Visualiza cualquier fracción!</h2>
+            <p>Experimenta con diferentes valores y observa cómo cambia la representación.</p>
+
+            <div>
+                <div>
+                    <button onclick="cambiarFigura('pizza')">🍕 Pizza</button>
+                    <button onclick="cambiarFigura('pastel')">🎂 Pastel</button>
+                    <button onclick="cambiarFigura('chocolate')">🍫 Chocolate</button>
+                    <button onclick="cambiarFigura('rectangulo')">📏 Rectángulo</button>
+                </div>
+
+                <div>
+                    <canvas id="canvasFigura"></canvas>
+                </div>
+
+                <div>
+                    <button onclick="modificarFraccion('num', -1)">-</button>
+                    <div>
+                        <label>Numerador</label>
+                        <input type="number" id="num-visual" value="3" min="0" max="20" onchange="dibujarFigura()">
+                        <div>Partes tomadas</div>
+                    </div>
+                    <button onclick="modificarFraccion('num', 1)">+</button>
+                    
+                    <div>/</div>
+                    
+                    <button onclick="modificarFraccion('den', -1)">-</button>
+                    <div>
+                        <label>Denominador</label>
+                        <input type="number" id="den-visual" value="4" min="1" max="20" onchange="dibujarFigura()">
+                        <div>Partes totales</div>
+                    </div>
+                    <button onclick="modificarFraccion('den', 1)">+</button>
+                </div>
+                
+                <div>
+                    <button onclick="simplificarFraccion()">
+                        <i></i> Simplificar
+                    </button>
+                    <button onclick="convertirAMixto()">
+                        <i></i> Convertir a Mixto
+                    </button>
+                </div>
+                
+                <div id="info-visual"></div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h2>📈 Tu Progreso en Fracciones</h2>
+            <div>
+                <span>Nivel: <strong id="nivel-actual">Principiante</strong></span>
+                <span>Progreso:</span>
+            </div>
+            <div>
+                <div id="barra-progreso"></div>
+            </div>
+            
+            <div>
+                <div>
+                    <i></i>
+                    <h4>Conceptos Básicos</h4>
+                    <p>¡Completado!</p>
+                </div>
+                <div id="logro-operaciones">
+                    <i></i>
+                    <h4>Operaciones</h4>
+                    <p>En progreso</p>
+                </div>
+                <div id="logro-equivalentes">
+                    <i></i>
+                    <h4>Equivalentes</h4>
+                    <p>Por desbloquear</p>
+                </div>
+                <div id="logro-maestro">
+                    <i></i>
+                    <h4>Maestro Fraccionario</h4>
+                    <p>Meta final</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="operaciones">
+            <h2>⚡ Operaciones con Fracciones</h2>
+            <p>Aprende los métodos más efectivos para sumar, restar, multiplicar y dividir fracciones.</p>
+        </div>
+
+        <div>
+            
+            <div>
+                <div>Suma (+)</div>
+                <h3>🦋 Método Mariposa</h3>
+                <p>Usa las alas para volar alto en las sumas de fracciones.</p>
+                
+                <div>
+                    <div>
+                        <span>3</span><br>
+                        <span>4</span>
+                    </div>
+                    <div>+</div>
+                    <div>
+                        <span>1</span><br>
+                        <span>2</span>
+                    </div>
+                    <div>=</div>
+                    <div>
+                        <span>(3×2)+(1×4)</span>
+                        <span>10</span><br>
+                        
+                        <span>4×2</span>
+                        <span>8</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <p><strong>Ejemplo Interactivo:</strong></p>
+                    <div>
+                        <input type="number" id="suma-num1" value="1">
+                        <span>/</span>
+                        <input type="number" id="suma-den1" value="3">
+                        <span>+</span>
+                        <input type="number" id="suma-num2" value="1">
+                        <span>/</span>
+                        <input type="number" id="suma-den2" value="4">
+                        <button onclick="calcularSuma()">=</button>
+                        <span id="resultado-suma">7/12</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div>
+                <div>Multiplicación (×)</div>
+                <h3>🚂 Tren Directo</h3>
+                <p>Multiplica en línea recta: arriba con arriba, abajo con abajo.</p>
+                
+                <div>
+                    <div>
+                        <span>2</span><br>
+                        <span>3</span>
+                    </div>
+                    <div>×</div>
+                    <div>
+                        <span>3</span><br>
+                        <span>5</span>
+                    </div>
+                    <div>=</div>
+                    <div>
+                        <span>2×3</span><br>
+                        
+                        <span>3×5</span>
+                    </div>
+                    <div>=</div>
+                    <div>
+                        <span>6</span><br>
+                        
+                        <span>15</span>
+                    </div>
+                </div>
+                
+                <p>
+                    <strong>¡Recuerda!</strong> Siempre simplifica el resultado si es posible.
+                </p>
+            </div>
+        </div>
+
+        
+        <div id="juego">
+            <div>
+                <h2>🎮 Desafío de Fracciones</h2>
+                <p>Selecciona la fracción equivalente al modelo visual</p>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>Fracción Objetivo:</h3>
+                    <div id="fraccion-objetivo">2/3</div>
+                </div>
+                
+                <div id="canvas-juego"></div>
+                
+                <div>
+                    <div onclick="seleccionarOpcion(0)">1/2</div>
+                    <div onclick="seleccionarOpcion(1)">2/3</div>
+                    <div onclick="seleccionarOpcion(2)">3/4</div>
+                    <div onclick="seleccionarOpcion(3)">4/6</div>
+                </div>
+                
+                <div>
+                    <div>Aciertos: <span id="aciertos">0</span></div>
+                    <div>Intento: <span id="intento">1</span>/10</div>
+                </div>
+                
+                <button onclick="siguientePregunta()">
+                    <i></i> Siguiente Pregunta
+                </button>
+            </div>
+        </div>
+
+        
+        <section>
+            <div>
+                <h2>🧮 Calculadora de Fracciones Avanzada</h2>
+                <select id="operador">
+                    <option value="+">Suma (+)</option>
+                    <option value="-">Resta (-)</option>
+                    <option value="*">Multiplicación (×)</option>
+                    <option value="/">División (÷)</option>
+                </select>
+            </div>
+            
+            <p>
+                Ingresa dos fracciones y selecciona la operación que deseas realizar
+            </p>
+
+            <div>
+                <div>
+                    <input type="number" id="calc-num1" placeholder="Num" value="1">
+                    
+                    <input type="number" id="calc-den1" placeholder="Den" value="2">
+                </div>
+
+                <div id="simbolo-operacion">+</div>
+
+                <div>
+                    <input type="number" id="calc-num2" placeholder="Num" value="1">
+                    
+                    <input type="number" id="calc-den2" placeholder="Den" value="4">
+                </div>
+            </div>
+
+            <button onclick="calcularFraccion()">
+                <i></i> Calcular Resultado
+            </button>
+
+            <div>
+                <div id="resultado-calc">
+                    ? / ?
+                </div>
+                <div id="resultado-simplificado"></div>
+                <div id="pasos-calculo"></div>
+            </div>
+        </section>
+
+        
+        
+
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

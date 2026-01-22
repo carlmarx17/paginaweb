@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemática Vectorial: El Movimiento en 3D - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+
+        
+        <section id="section1">
+            <h2><i></i> 1. El Vector Posición \( \vec{r}(t) \)</h2>
+            <p>En cinemática vectorial, describimos la posición de una partícula mediante un vector que va desde el origen del sistema de coordenadas hasta la posición actual de la partícula. A medida que el tiempo avanza, este vector cambia, definiendo así la <strong>trayectoria</strong> de la partícula.</p>
+            
+            <div>
+                <div>
+                    <div><i></i> Vector Posición en 3D</div>
+                    <div>
+                        \[ \vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k} \]
+                    </div>
+                    <p>Donde \( \hat{i}, \hat{j}, \hat{k} \) son los vectores unitarios que forman la base cartesiana, y \( x(t), y(t), z(t) \) son las funciones que describen la posición en cada eje.</p>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Representación Gráfica</div>
+                    <div>📍 → 🚀</div>
+                    <p>El vector posición va desde el origen (0,0,0) hasta la posición actual de la partícula.</p>
+                </div>
+                <div>
+                    <div>Componentes Cartesianas</div>
+                    <div>
+                        x(t) = posición en eje X<br>
+                        y(t) = posición en eje Y<br>
+                        z(t) = posición en eje Z
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="section2">
+            <h2><i></i> 2. Velocidad: Derivada Temporal del Vector Posición</h2>
+            <p>La velocidad es la tasa de cambio del vector posición con respecto al tiempo. Es un vector tangente a la trayectoria en cada punto, que indica tanto la rapidez como la dirección del movimiento.</p>
+            
+            <div>
+                <div>
+                    <div><i></i> Definición Vectorial de Velocidad</div>
+                    <div>
+                        \[ \vec{v}(t) = \frac{d\vec{r}}{dt} = \lim_{\Delta t \to 0} \frac{\vec{r}(t+\Delta t) - \vec{r}(t)}{\Delta t} \]
+                    </div>
+                </div>
+                
+                <div>
+                    <div><i></i> Componentes de la Velocidad</div>
+                    <div>
+                        \[ \vec{v}(t) = v_x(t)\hat{i} + v_y(t)\hat{j} + v_z(t)\hat{k} = \frac{dx}{dt}\hat{i} + \frac{dy}{dt}\hat{j} + \frac{dz}{dt}\hat{k} \]
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    \[ \vec{v}(t) = \dot{x}(t)\hat{i} + \dot{y}(t)\hat{j} + \dot{z}(t)\hat{k} \]
+                </div>
+                <p>La notación con punto indica derivada respecto al tiempo</p>
+            </div>
+
+            <p><strong>Nota importante:</strong> Si el módulo de \( \vec{v} \) es constante pero su dirección cambia (como en movimiento circular uniforme), ¡existe aceleración! La velocidad es un vector, por lo que cambios en su dirección implican aceleración aunque la rapidez sea constante.</p>
+        </section>
+
+        
+        <section id="section3">
+            <h2><i></i> 3. Aceleración: Descomposición Intrínseca</h2>
+            <p>La aceleración vectorial se puede descomponer en dos componentes perpendiculares que tienen significados físicos diferentes: la aceleración tangencial (cambia la rapidez) y la aceleración normal o centrípeta (cambia la dirección).</p>
+            
+            <div>
+                <div>
+                    <div><i></i> Definición de Aceleración</div>
+                    <div>
+                        \[ \vec{a}(t) = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} = \ddot{x}(t)\hat{i} + \ddot{y}(t)\hat{j} + \ddot{z}(t)\hat{k} \]
+                    </div>
+                </div>
+                
+                <div>
+                    <div><i></i> Componentes Intrínsecas</div>
+                    <div>
+                        \[ \vec{a} = a_t \hat{u}_t + a_n \hat{u}_n = \frac{dv}{dt} \hat{u}_t + \frac{v^2}{\rho} \hat{u}_n \]
+                    </div>
+                    <p>Donde \( \hat{u}_t \) es el vector unitario tangente, \( \hat{u}_n \) es el vector unitario normal, y \( \rho \) es el radio de curvatura de la trayectoria.</p>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div>Aceleración Tangencial</div>
+                    <div>↗️</div>
+                    <p>Cambia el módulo de la velocidad (rapidez). Es la derivada de la rapidez respecto al tiempo.</p>
+                    <div>
+                        \( a_t = \frac{d|\vec{v}|}{dt} \)
+                    </div>
+                </div>
+                <div>
+                    <div>Aceleración Normal</div>
+                    <div>⤵️</div>
+                    <p>Cambia la dirección de la velocidad. Es perpendicular a la trayectoria y apunta hacia el centro de curvatura.</p>
+                    <div>
+                        \( a_n = \frac{v^2}{\rho} \)
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <strong>💡 Casos especiales:</strong> Si \( \rho \to \infty \) (línea recta), \( a_n = 0 \). En movimiento circular uniforme, \( a_t = 0 \) y \( a_n = \frac{v^2}{R} \).
+            </p>
+        </section>
+
+        
+        <section id="section4">
+            <h2><i></i> 4. Cinemática de Proyectiles</h2>
+            <p>El movimiento de proyectiles es un caso particular donde la aceleración es constante (gravedad) y actúa solo en el eje vertical. Es la combinación de un MRU en el eje horizontal y un MRUA en el eje vertical.</p>
+            
+            <div>
+                <div>
+                    <div><i></i> Ecuaciones Paramétricas</div>
+                    <div>
+                        \[ \begin{cases}
+                        x(t) = x_0 + v_{0x}t \\
+                        y(t) = y_0 + v_{0y}t - \frac{1}{2}gt^2 \\
+                        z(t) = z_0 + v_{0z}t
+                        \end{cases} \]
+                    </div>
+                    <p>Donde \( \vec{v}_0 = v_{0x}\hat{i} + v_{0y}\hat{j} + v_{0z}\hat{k} \) es la velocidad inicial y \( g \approx 9.8 \, \text{m/s}^2 \) es la aceleración gravitatoria.</p>
+                </div>
+            </div>
+
+            <div>
+                <span>PROBLEMA RESUELTO</span>
+                <p>Se lanza un proyectil desde el origen con velocidad inicial \( \vec{v}_0 = 30\hat{i} + 40\hat{j} \, \text{m/s} \). Considerando \( g = 9.8 \, \text{m/s}^2 \) y despreciando la resistencia del aire, determine:</p>
+                <ol>
+                    <li>El vector posición a los \( t = 2 \, \text{s} \).</li>
+                    <li>El vector velocidad a los \( t = 2 \, \text{s} \).</li>
+                    <li>La altura máxima alcanzada.</li>
+                </ol>
+                
+                <button onclick="showProjectileSolution()">Mostrar Solución Paso a Paso</button>
+                
+                <div id="projectile-solution">
+                    <h4>Resolución:</h4>
+                    
+                    <p><strong>1. Vector posición en \( t = 2 \, \text{s} \):</strong></p>
+                    <div>
+                        \[ \vec{r}(2) = (30 \cdot 2)\hat{i} + \left(40 \cdot 2 - \frac{1}{2} \cdot 9.8 \cdot 2^2\right)\hat{j} \]
+                    </div>
+                    <div>
+                        \[ \vec{r}(2) = 60\hat{i} + (80 - 19.6)\hat{j} = 60\hat{i} + 60.4\hat{j} \, \text{m} \]
+                    </div>
+                    
+                    <p><strong>2. Vector velocidad en \( t = 2 \, \text{s} \):</strong></p>
+                    <div>
+                        \[ \vec{v}(2) = 30\hat{i} + (40 - 9.8 \cdot 2)\hat{j} = 30\hat{i} + 20.4\hat{j} \, \text{m/s} \]
+                    </div>
+                    
+                    <p><strong>3. Altura máxima:</strong></p>
+                    <div>
+                        \[ y_{\text{max}} = \frac{v_{0y}^2}{2g} = \frac{40^2}{2 \cdot 9.8} = \frac{1600}{19.6} \approx 81.63 \, \text{m} \]
+                    </div>
+                    
+                    <p>
+                        ✅ El proyectil alcanza una altura máxima de aproximadamente 81.63 metros.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="section5">
+            <h2><i></i> 5. Cinemática Angular Vectorial</h2>
+            <p>Para el movimiento circular, es conveniente usar magnitudes angulares. La posición se describe mediante un ángulo, y definimos la velocidad angular y aceleración angular como vectores perpendiculares al plano de rotación.</p>
+            
+            <div>
+                <div>
+                    <div><i></i> Relaciones entre magnitudes lineales y angulares</div>
+                    <div>
+                        \[ \vec{v} = \vec{\omega} \times \vec{r} \quad \text{y} \quad \vec{a} = \vec{\alpha} \times \vec{r} + \vec{\omega} \times (\vec{\omega} \times \vec{r}) \]
+                    </div>
+                    <p>Donde \( \vec{\omega} \) es la velocidad angular y \( \vec{\alpha} \) es la aceleración angular.</p>
+                </div>
+                
+                <div>
+                    <div><i></i> Movimiento Circular Uniforme (MCU)</div>
+                    <div>
+                        \[ \begin{cases}
+                        \theta(t) = \theta_0 + \omega t \\
+                        v = \omega R \\
+                        a_n = \omega^2 R = \frac{v^2}{R} \\
+                        a_t = 0
+                        \end{cases} \]
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    \[ \vec{\omega} = \frac{d\theta}{dt} \hat{k} \quad \text{(para rotación en el plano XY)} \]
+                </div>
+                <p>El vector velocidad angular es perpendicular al plano de rotación</p>
+            </div>
+        </section>
+
+        
+        <section id="section6">
+            <h2><i></i> 6. Reto de Examen Universitario</h2>
+            <p>Una partícula se mueve en el plano XY según la ecuación \( \vec{r}(t) = (t^3)\hat{i} + (2t)\hat{j} \), donde \( t \) está en segundos y \( \vec{r} \) en metros. Determine:</p>
+            <ol>
+                <li>Los vectores velocidad y aceleración en función del tiempo.</li>
+                <li>El radio de curvatura de la trayectoria en \( t = 1 \, \text{s} \).</li>
+                <li>La aceleración tangencial y normal en \( t = 1 \, \text{s} \).</li>
+            </ol>
+            
+            <button onclick="showExamSolution()">Revelar Solución</button>
+            
+            <div id="exam-solution">
+                <h4>Solución del reto:</h4>
+                
+                <p><strong>1. Vectores velocidad y aceleración:</strong></p>
+                <div>
+                    \[ \vec{v}(t) = \frac{d\vec{r}}{dt} = 3t^2\hat{i} + 2\hat{j} \]
+                </div>
+                <div>
+                    \[ \vec{a}(t) = \frac{d\vec{v}}{dt} = 6t\hat{i} \]
+                </div>
+                
+                <p><strong>2. Radio de curvatura en \( t = 1 \, \text{s} \):</strong></p>
+                <div>
+                    \[ \rho = \frac{v^3}{|\vec{v} \times \vec{a}|} = \frac{(3\cdot1^2 + 2)^{3/2}}{|(3\hat{i} + 2\hat{j}) \times (6\hat{i})|} \]
+                </div>
+                <div>
+                    \[ \rho = \frac{(3+2)^{3/2}}{|12\hat{k}|} = \frac{5^{3/2}}{12} \approx \frac{11.18}{12} \approx 0.93 \, \text{m} \]
+                </div>
+                
+                <p><strong>3. Componentes intrínsecas en \( t = 1 \, \text{s} \):</strong></p>
+                <div>
+                    \[ a_t = \frac{\vec{v} \cdot \vec{a}}{v} = \frac{(3\hat{i} + 2\hat{j}) \cdot (6\hat{i})}{\sqrt{13}} = \frac{18}{\sqrt{13}} \approx 5.0 \, \text{m/s}^2 \]
+                </div>
+                <div>
+                    \[ a_n = \frac{|\vec{v} \times \vec{a}|}{v} = \frac{12}{\sqrt{13}} \approx 3.33 \, \text{m/s}^2 \]
+                </div>
+                
+                <p>
+                    🎯 El radio de curvatura es aproximadamente 0.93 m, con \( a_t \approx 5.0 \, \text{m/s}^2 \) y \( a_n \approx 3.33 \, \text{m/s}^2 \).
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    
+    <div>
+        <div onclick="scrollToSection('section1')"></div>
+        <div onclick="scrollToSection('section2')"></div>
+        <div onclick="scrollToSection('section3')"></div>
+        <div onclick="scrollToSection('section4')"></div>
+        <div onclick="scrollToSection('section5')"></div>
+        <div onclick="scrollToSection('section6')"></div>
+    </div>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

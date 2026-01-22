@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferencia Estadística: El Método Sherlock Holmes Pro | Carlos Sibaja - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    <div>
+        
+
+        
+
+        <main>
+            
+            
+            <section>
+                <h2>Cap. I: Estimación Puntual e Intervalos</h2>
+                <p>La inferencia comienza con la <b>estimación</b>. Buscamos valores numéricos que representen parámetros poblacionales desconocidos $\theta$.</p>
+                
+                <h3>Propiedades de los Estimadores</h3>
+                <div>
+                    <div>
+                        <h4>Insesgadez</h4>
+                        <p>Un estimador es insesgado si su valor esperado es igual al parámetro: $E[\hat{\theta}] = \theta$.</p>
+                    </div>
+                    <div>
+                        <h4>Eficiencia</h4>
+                        <p>Entre varios estimadores insesgados, el más eficiente es aquel con la <b>varianza mínima</b> (Cota de Cramér-Rao).</p>
+                    </div>
+                </div>
+
+                <div>
+                    "La inferencia estadística consiste en aquellos métodos mediante los cuales se hacen inferencias o generalizaciones acerca de una población." <br>
+                    — <b>Walpole, Myers & Myers</b>, <i>Probabilidad y Estadística para Ingeniería y Ciencias</i>.
+                </div>
+
+                <h3>Intervalos de Confianza</h3>
+                <p>No basta con un punto; necesitamos un rango. Para una media poblacional con varianza conocida:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;IC&space;=&space;\bar{x}&space;\pm&space;Z_{\alpha/2}&space;\left(&space;\frac{\sigma}{\sqrt{n}}&space;\right)" alt="Intervalo Z">
+                </div>
+            </section>
+
+            
+            <section>
+                <h2>Cap. II: Teoría de Pruebas de Hipótesis</h2>
+                <p>Sherlock no juzga sin pruebas. Una prueba de hipótesis es un procedimiento para tomar decisiones basado en datos muestrales.</p>
+                
+                <div>
+                    <div>
+                        <h4>Error Tipo I ($\alpha$)</h4>
+                        <p>Rechazar $H_0$ siendo verdadera. Es el "Falso Positivo" o condenar a un inocente.</p>
+                    </div>
+                    <div>
+                        <h4>Potencia de la Prueba ($1-\beta$)</h4>
+                        <p>Probabilidad de rechazar correctamente $H_0$ cuando es falsa. Es la capacidad deductiva real del test.</p>
+                    </div>
+                </div>
+
+                <h3>Distribución t de Student</h3>
+                <p>Cuando el tamaño de muestra es pequeño ($n < 30$) y la varianza poblacional es desconocida, recurrimos a Gosset:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;t&space;=&space;\frac{\bar{x}&space;-&space;\mu}{s&space;/&space;\sqrt{n}}" alt="t-Student">
+                </div>
+
+                <div>
+                    "El valor p es el nivel de significancia más pequeño que conduce al rechazo de la hipótesis nula con los datos dados." <br>
+                    — <b>Douglas Montgomery</b>, <i>Probabilidad y Estadística Aplicada a la Ingeniería</i>.
+                </div>
+            </section>
+
+            
+            <section>
+                <h2>🔍 Laboratorio Forense: Análisis de Curva Normal</h2>
+                <div>
+                    <div>
+                        <canvas id="statCanvas"></canvas>
+                    </div>
+                    <div>
+                        <div>
+                            <label>Significancia Académica ($\alpha$): <b id="valAlpha">0.05</b></label>
+                            <input type="range" id="alphaRange" min="0.001" max="0.15" step="0.001" value="0.05" oninput="updateLab()">
+                        </div>
+                        <div>
+                            <label>Z-Score Observado (La Pista): <b id="valZ">1.50</b></label>
+                            <input type="range" id="zRange" min="-4" max="4" step="0.05" value="1.5" oninput="updateLab()">
+                        </div>
+                        
+                        <div id="panelResultado">
+                            <h4>Veredicto de Holmes:</h4>
+                            <p id="txtVeredicto">Analizando evidencia...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section>
+                <div>
+                    <h2>📜 Examen de Egreso: Scotland Yard</h2>
+                    <div id="quizContainer">
+                        
+                    </div>
+                    <div id="resultadoExamen">
+                        <h2 id="msgPuntaje"></h2>
+                        <button onclick="resetQuiz()">Reiniciar Investigación</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        
+        <section>
+            <h2>¿Desea profundizar en el Método?</h2>
+            <p>Carlos Sibaja — Consultor en Estadística Aplicada, Tutoría Académica y Análisis de Datos.</p>
+            <div>
+                <a href="https://wa.me/573103106954" target="_blank">📱 WhatsApp Pro</a>
+                <a href="mailto:carlossibaja644@gmail.com">✉️ Baker Street Mail</a>
+            </div>
+            <p>Carlos Sibaja - Developer & Analyst</p>
+        </section>
+
+        
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Química | Solubilidad y Soluciones - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+<div>
+    <div>
+        <div>
+            <div>
+                <div>Q</div>
+                <span>Mundo Química</span>
+            </div>
+            <button id="themeToggle">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+        
+        <div>
+            <a href="#analogia">Analogía</a>
+            <a href="#simulacion">Lab Virtual</a>
+            <a href="#factores">Factores</a>
+            <a href="#graficos">Curvas</a>
+            <a href="#quiz">Quiz ICFES</a>
+        </div>
+        
+        <div>
+            <div>Disoluciones Químicas</div>
+            <h1>Solubilidad y Factores</h1>
+            <p>¿Por qué el azúcar se disuelve mejor en café caliente que en helado? Descubre la ciencia detrás de las mezclas perfectas.</p>
+            
+            <div>
+                <div>
+                    <span>⏱️</span>
+                    <div>
+                        <div>Duración Estimada</div>
+                        <div>90 Minutos</div>
+                    </div>
+                </div>
+                <div>
+                    <span>📚</span>
+                    <div>
+                        <div>Formato</div>
+                        <div>Teórico-Práctico (Web)</div>
+                    </div>
+                </div>
+                <div>
+                    <span>🎯</span>
+                    <div>
+                        <div>Nivel</div>
+                        <div>Bachillerato / Media</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    
+    <section id="analogia">
+        <div>
+            <span>01</span>
+            <span>La Analogía del "Té Dulce"</span>
+        </div>
+        
+        <p>Imagina que el <strong>Solvente</strong> (agua) es una fiesta y el <strong>Soluto</strong> (azúcar) son los invitados. La <strong>Temperatura</strong> es el ambiente de la fiesta. </p>
+        
+        <div>
+            <div>
+                <div>🧊</div>
+                <h3>Solución Insaturada</h3>
+                <p>La fiesta está vacía. Puedes invitar a más gente (azúcar) y todos entran cómodamente. El té aún no está muy dulce.</p>
+            </div>
+            
+            <div>
+                <div>⚖️</div>
+                <h3>Solución Saturada</h3>
+                <p>La fiesta está llena. Si intentas meter a una persona más, no cabe. Es el <strong>límite de solubilidad</strong> a esa temperatura.</p>
+            </div>
+            
+            <div>
+                <div>💥</div>
+                <h3>Precipitado</h3>
+                <p>Si fuerzas a entrar más invitados de los que caben, se quedarán sentados en el suelo (fondo del vaso). Eso es el azúcar que no se disuelve.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="simulacion">
+        <div>
+            <span>02</span>
+            <span>Simulador de Solubilidad</span>
+        </div>
+        
+        <p>Añade soluto y cambia la temperatura. Observa cómo el calor permite disolver más partículas. Si bajas la temperatura con mucho soluto, ¡verás precipitación!</p>
+        
+        <div>
+            <div>
+                <div>
+                    <h3>🌡️ Temperatura del Agua</h3>
+                    <div>
+                        <div>
+                            <span>Energía (Calor)</span>
+                            <span id="tempValue">50 °C</span>
+                        </div>
+                        <input type="range" id="tempSlider" min="10" max="90" value="50">
+                    </div>
+                    <p>Mayor temperatura = Mayor capacidad de disolver (Saturación más alta)</p>
+                </div>
+                
+                <div>
+                    <h3>🍬 Cantidad de Soluto</h3>
+                    <div>
+                        <div>
+                            <span>Gramos agregados</span>
+                            <span id="soluteValue">20 g</span>
+                        </div>
+                        <input type="range" id="soluteSlider" min="5" max="100" value="20">
+                    </div>
+                    <p>Añade partículas al vaso.</p>
+                </div>
+            </div>
+            
+            <div>
+                <div id="satStatus">Estado: Insaturado</div>
+                <div id="beaker">
+                    </div>
+            </div>
+            
+            <div>
+                <button onclick="resetSimulation()">Reiniciar Experimento</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="graficos">
+        <div>
+            <span>03</span>
+            <span>Curvas de Solubilidad</span>
+        </div>
+        
+        <p>El comportamiento cambia drásticamente dependiendo si el soluto es un sólido (como sal) o un gas (como el gas de una gaseosa).</p>
+        
+        <div>
+            <div>
+                <div>📈 Sólidos en Líquidos</div>
+                <p>Generalmente, al <strong>aumentar la temperatura</strong>, aumenta la solubilidad. (Ej: Azúcar en agua).</p>
+                <canvas id="solidChart"></canvas>
+            </div>
+            
+            <div>
+                <div>📉 Gases en Líquidos</div>
+                <p>Al <strong>aumentar la temperatura</strong>, el gas se escapa (disminuye solubilidad). (Ej: Gaseosa caliente pierde gas).</p>
+                <canvas id="gasChart"></canvas>
+            </div>
+            
+            <div>
+                <div>🍾 Ley de Henry (Presión)</div>
+                <p>Para gases: A <strong>mayor presión</strong>, mayor solubilidad. (Por eso las gaseosas se envasan a presión).</p>
+                <canvas id="henryChart"></canvas>
+            </div>
+        </div>
+    </section>
+    
+    <section id="factores">
+        <div>
+            <span>04</span>
+            <span>Factores Determinantes</span>
+        </div>
+        
+        <div>
+            <div>
+                <div>T</div>
+                <h3>Temperatura</h3>
+                <p><strong>Sólidos:</strong> El calor ayuda a romper la red cristalina. (+T = +Solubilidad).</p>
+                <p><strong>Gases:</strong> El calor da energía cinética al gas para que escape del líquido. (+T = -Solubilidad).</p>
+            </div>
+            
+            <div>
+                <div>N</div>
+                <h3>Naturaleza Química</h3>
+                <p><strong>"Lo semejante disuelve a lo semejante".</strong></p>
+                <p>Sustancias polares (agua) disuelven polares (sal, alcohol). No disuelven apolares (aceite).</p>
+                <div>Polar ≠ Apolar</div>
+            </div>
+            
+            <div>
+                <div>P</div>
+                <h3>Presión</h3>
+                <p>Solo afecta significativamente a los <strong>Gases</strong>.</p>
+                <p>Ley de Henry: La solubilidad de un gas es proporcional a la presión parcial sobre el líquido.</p>
+                <div>\[ S_g = k \cdot P_g \]</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="quiz">
+        <div>
+            <span>05</span>
+            <span>Desafío de Conceptos</span>
+        </div>
+        
+        <div>
+            <h2>📝 Preguntas Tipo Examen</h2>
+            
+            <div>
+                <p><strong>PREGUNTA 1.</strong> Un estudiante abre una botella de gaseosa fría y observa pocas burbujas. Luego, abre una botella de gaseosa caliente y el líquido se derrama con mucha espuma. Esto sucede porque:</p>
+                
+                <div onclick="checkAnswer(this, false)">
+                    <div>A</div>
+                    <div>El calor aumenta la presión interna del vidrio.</div>
+                </div>
+                
+                <div onclick="checkAnswer(this, true)">
+                    <div>B</div>
+                    <div>Al aumentar la temperatura, disminuye la solubilidad del gas (CO₂), haciendo que escape rápidamente.</div>
+                </div>
+                
+                <div onclick="checkAnswer(this, false)">
+                    <div>C</div>
+                    <div>El gas se vuelve líquido con el calor.</div>
+                </div>
+                
+                <div id="feedback1"></div>
+            </div>
+            
+            <div>
+                <p><strong>PREGUNTA 2.</strong> Tienes un vaso con agua y aceite que no se mezclan. ¿Qué factor explica este fenómeno?</p>
+                
+                <div onclick="checkAnswer2(this, true)">
+                    <div>A</div>
+                    <div>Naturaleza química: El agua es polar y el aceite es apolar.</div>
+                </div>
+                
+                <div onclick="checkAnswer2(this, false)">
+                    <div>B</div>
+                    <div>Diferencia de temperatura entre ambos líquidos.</div>
+                </div>
+                
+                <div onclick="checkAnswer2(this, false)">
+                    <div>C</div>
+                    <div>La presión atmosférica impide la mezcla.</div>
+                </div>
+                
+                <div id="feedback2"></div>
+            </div>
+            
+            <div>
+                <button onclick="resetQuiz()">Reiniciar Quiz</button>
+            </div>
+        </div>
+    </section>
+    
+    
+</div>
+
+
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Nomenclatura IUPAC | Prof. Carlos Alberto Martinez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Sistemas de Formulación</span>
+                <h1>
+                    El Lenguaje Universal de la <span>Química</span>
+                </h1>
+                <p>
+                    Aprende las reglas de la IUPAC para nombrar cualquier molécula orgánica sin ambigüedades. De lo simple a lo complejo.
+                </p>
+                <div>
+                    <a href="#reglas">Aprender Reglas</a>
+                    <a href="#practica">Test de Nomenclatura</a>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <canvas id="moleculeCanvas" width="400" height="250"></canvas>
+                    <p>Cadena carbonada: Octano</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="reglas">
+            <div>
+                <h2>Las 4 Reglas de Oro</h2>
+                <p>Sigue este algoritmo para nombrar cualquier compuesto.</p>
+            </div>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <div>
+                            <span>1</span>
+                        </div>
+                        <div>
+                            <h3>Cadena Principal</h3>
+                            <p>Es la cadena continua de carbonos más larga que contenga al <strong>Grupo Funcional Principal</strong>.</p>
+                            <div>
+                                💡 Si hay empate en longitud, elige la que tenga más ramificaciones o dobles/triples enlaces.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>
+                            <span>2</span>
+                        </div>
+                        <div>
+                            <h3>Numeración</h3>
+                            <p>Numera los carbonos comenzando por el extremo que otorgue los números más bajos (localizadores) en este orden de prioridad:</p>
+                            <ul>
+                                <li><strong>Grupo Funcional</strong> (alcohol, cetona, etc.)</li>
+                                <li>Insaturaciones (Dobles > Triples enlaces)</li>
+                                <li>Radicales o sustituyentes (Metil, Etil, Cloro...)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>
+                            <span>3</span>
+                        </div>
+                        <div>
+                            <h3>Radicales</h3>
+                            <p>Identifica y nombra los sustituyentes. Si se repiten, usa prefijos (di-, tri-, tetra-). Ordénalos <strong>alfabéticamente</strong> (sin contar los prefijos de cantidad).</p>
+                            <div>
+                                📝 Ejemplo: 4-<strong>e</strong>til-2,2-di<strong>m</strong>etil... (La 'e' va antes que la 'm', ignoramos el 'di').
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>
+                            <span>4</span>
+                        </div>
+                        <div>
+                            <h3>Construcción del Nombre</h3>
+                            <p>Une todo en una sola palabra siguiendo la estructura:</p>
+                            <div>
+                                <span>Radicales</span> + 
+                                <span>Prefijo (# Carbonos)</span> + 
+                                <span>Infixo (Enlace)</span> + 
+                                <span>Sufijo (Grupo)</span>
+                            </div>
+                            <p>Ejemplo: 3-metil <strong>but</strong> <strong>an</strong> <strong>ol</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="prioridad">
+            <div>
+                
+                
+                <h2>Jerarquía de Grupos Funcionales</h2>
+                <p>El grupo que esté más arriba en esta lista será el "papá" de la molécula (sufijo), los demás serán solo "invitados" (prefijos).</p>
+
+                <div>
+                    
+                    <div>
+                        <div>
+                            <span>1. Ácidos Carboxílicos</span>
+                            <span> ácido ...-oico</span>
+                        </div>
+                        <div>
+                            <span>2. Ésteres</span>
+                            <span> ...-oato de ...-ilo</span>
+                        </div>
+                        <div>
+                            <span>3. Amidas</span>
+                            <span> ...-amida</span>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <div>
+                            <span>4. Aldehídos</span>
+                            <span> ...-al</span>
+                        </div>
+                        <div>
+                            <span>5. Cetonas</span>
+                            <span> ...-ona</span>
+                        </div>
+                        <div>
+                            <span>6. Alcoholes</span>
+                            <span> ...-ol</span>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <div>
+                            <span>7. Aminas</span>
+                            <span> ...-amina</span>
+                        </div>
+                        <div>
+                            <span>8. Éteres</span>
+                            <span> ...-eter</span>
+                        </div>
+                        <div>
+                            <span>9. Insaturaciones</span>
+                            <span> -eno / -ino</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="videos">
+            <h2>Clases Virtuales</h2>
+            <div>
+                
+                <div>
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/jxdNnKn2yuA" title="Nomenclatura Alcanos - Profe Alex" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>Nomenclatura Básica: Alcanos</h3>
+                    <p>Explicación clara para principiantes sobre cómo numerar y nombrar cadenas simples.</p>
+                </div>
+
+                
+                <div>
+                    <div>
+                        
+                        <iframe src="https://www.youtube.com/embed/HqDyk47k73Q" title="Formulación Orgánica IUPAC - Amigos de la Química" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h3>Curso Completo IUPAC</h3>
+                    <p>Guía definitiva de <strong>Amigos de la Química</strong>. Cubre alcanos, alquenos y grupos funcionales.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="practica">
+            <h2>Pon a prueba tu conocimiento</h2>
+            <div>
+                
+                
+                <div>
+                    <p>1. En la molécula $CH_3-CH(OH)-CH_2-COOH$, ¿cuál es el grupo principal?</p>
+                    <div>
+                        <button onclick="revealAns(this, false, 'Incorrecto. El alcohol tiene menor prioridad que el ácido.')">A. Alcohol (-OH)</button>
+                        <button onclick="revealAns(this, true, '¡Correcto! El ácido carboxílico es el rey de la prioridad.')">B. Ácido Carboxílico (-COOH)</button>
+                    </div>
+                    
+                </div>
+
+                
+                <div>
+                    <p>2. Para numerar un alqueno con un alcohol ($CH_2=CH-CH_2-OH$), ¿por dónde empiezas?</p>
+                    <div>
+                        <button onclick="revealAns(this, false, 'Incorrecto. El doble enlace tiene prioridad sobre alcanos, pero NO sobre el alcohol.')">A. Por el doble enlace (Izquierda)</button>
+                        <button onclick="revealAns(this, true, '¡Correcto! El grupo funcional (Alcohol) tiene prioridad sobre la insaturación para recibir el número más bajo.')">B. Por el alcohol (Derecha)</button>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </section>
+
+        
+        <section>
+            
+            <div>
+                <div>
+                    <h2>Prof. Carlos Alberto Martinez Sibaja</h2>
+                    <p>Domina la química orgánica con tutorías personalizadas. ¡Pregunta sin compromiso!</p>
+                </div>
+                <div>
+                    <div>
+                        
+                        <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

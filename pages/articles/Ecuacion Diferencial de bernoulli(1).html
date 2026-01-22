@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuación de Bernoulli | Mate Interactiva - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <main>
+        
+        <section>
+            <div>
+                <span>Ecuaciones Diferenciales</span>
+                <h1>
+                    Ecuación de <span>Bernoulli</span>
+                </h1>
+                <p>
+                    Aprende a transformar ecuaciones no lineales en lineales mediante el método de sustitución. Una herramienta clave para resolver modelos complejos.
+                </p>
+                <div>
+                    <a href="#simulador">Usar Transformador</a>
+                    <a href="#ejemplo">Ver Ejercicio</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <span>Forma Estándar</span>
+                        <div>n</div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>
+                                \[ \frac{dy}{dx} + P(x)y = Q(x)y^n \]
+                            </p>
+                        </div>
+                        <div>
+                            <p>Si \( n \neq 0 \) y \( n \neq 1 \), es no lineal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepto">
+            <div>
+                <h2>¿Qué es la Ecuación de Bernoulli?</h2>
+                <p>Es una ecuación diferencial ordinaria de primer orden no lineal que puede linealizarse.</p>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>Identificación</h3>
+                    <p>Se reconoce por tener la estructura lineal estándar pero multiplicada por una potencia \( y^n \) en el lado derecho.</p>
+                    <ul>
+                        <li> \( P(x) \): Coeficiente de \( y \)</li>
+                        <li> \( Q(x) \): Coeficiente de \( y^n \)</li>
+                        <li> \( n \): Exponente real (cualquier número)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>La Estrategia</h3>
+                    <p>El objetivo es eliminar el término \( y^n \) mediante un cambio de variable inteligente:</p>
+                    <div>
+                        <p>\( u = y^{1-n} \)</p>
+                        <p>Esta sustitución transforma la ecuación en una lineal para \( u \).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulador">
+            <h2>Transformador de Ecuaciones</h2>
+            <p>Ajusta el exponente \( n \) para ver cómo cambia la sustitución y la ecuación lineal resultante.</p>
+            
+            <div>
+                <div>
+                    <h3>Parámetro de Entrada</h3>
+                    <div>
+                        <label>Valor de n (Exponente de y):</label>
+                        <input type="range" id="n-slider" min="-3" max="5" step="1" value="2">
+                        <div>
+                            <span>-3</span>
+                            <span id="n-value">2</span>
+                            <span>5</span>
+                        </div>
+                        <p>Nota: Si n=0 o n=1, la ecuación ya es lineal o separable.</p>
+                    </div>
+                    
+                    <div>
+                         <div>
+                            <h4>Factor de Cambio</h4>
+                            <p>Toda la ecuación lineal se multiplicará por:</p>
+                            <p id="factor-display">1 - n</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        
+                        <div id="step1">
+                            <p>1. Ecuación Original (Bernoulli)</p>
+                            <div>
+                                \( y' + P(x)y = Q(x)y^{\mathbf{<span id="math-n-orig">2</span>}} \)
+                            </div>
+                        </div>
+
+                        
+
+                        <div>
+                            <div>
+                                <p>Sustitución (u)</p>
+                                <div id="sub-u">u = y^{-1}</div>
+                            </div>
+                            <div>
+                                <p>Nuevo Coeficiente</p>
+                                <div id="sub-factor">-1</div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <p>3. Ecuación Lineal Resultante</p>
+                            <div>
+                                \( \frac{du}{dx} + \)<span id="linear-p">(-1)</span>\(P(x)u = \)<span id="linear-q">(-1)</span>\(Q(x) \)
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodo">
+            <div>
+                <h2>Algoritmo de Solución</h2>
+                <p>Los 3 pasos fundamentales para resolver cualquier ecuación de Bernoulli.</p>
+            </div>
+            
+            <div>
+                <div>
+                    <div>1</div>
+                    <h3>Sustitución</h3>
+                    <p>Define \( u = y^{1-n} \). Esto implica que \( y = u^{\frac{1}{1-n}} \). Calcula la derivada \( y' \) usando la regla de la cadena.</p>
+                </div>
+                <div>
+                    <div>2</div>
+                    <h3>Linealización</h3>
+                    <p>Sustituye \( y \) y \( y' \) en la original. Simplifica hasta obtener la forma: <br>\( u' + (1-n)P(x)u = (1-n)Q(x) \).</p>
+                </div>
+                <div>
+                    <div>3</div>
+                    <h3>Factor Integrante</h3>
+                    <p>Resuelve la lineal para \( u \) usando \( \mu(x) = e^{\int (1-n)P(x)dx} \). Al final, no olvides regresar a \( y \).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplo">
+            <div>
+                <h2>Ejercicio Resuelto Paso a Paso</h2>
+                
+                <div>
+                    <div>
+                        <div>
+                            <div>YouTube</div>
+                            <h3>Resolución de \( y' - y = 2e^x y^2 \)</h3>
+                            <p>
+                                En este video de <strong>MateFacil</strong>, se explica detalladamente cómo identificar que esta ecuación es de Bernoulli (con \( n=2 \)) y cómo realizar el cambio de variable para resolverla.
+                            </p>
+                            <ul>
+                                <li>✅ Identificación de n=2</li>
+                                <li>✅ Cambio \( u = y^{-1} \)</li>
+                                <li>✅ Solución de la lineal resultante</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div>
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/JhKDjN3Qqos" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h4>Problema</h4>
+                        <p>\( \frac{dy}{dx} - y = 2e^x y^2 \)</p>
+                    </div>
+                    <div>
+                        <h4>Solución General</h4>
+                        <p>\( y = \frac{1}{-e^x + Ce^{-x}} \)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Ponte a Prueba</h2>
+            <div>
+                <div>
+                    <div>
+                        <span>1.</span> 
+                        Identifica \( n \) en la ecuación: \( y' + xy = x y^3 \)
+                    </div>
+                    <button onclick="showAnswer(1, 'n = 3, sustitución u = y⁻²')">Ver respuesta</button>
+                </div>
+                <div>
+                    <div>
+                        <span>2.</span> 
+                        ¿Cuál es la sustitución correcta para \( y' + y = y^{1/2} \)?
+                    </div>
+                    <button onclick="showAnswer(2, 'u = y^(1 - 0.5) = y^(1/2)')">Ver respuesta</button>
+                </div>
+                <div>
+                    <div>
+                        <span>3.</span> 
+                        ¿Qué pasa si \( n = 1 \) en la ecuación de Bernoulli?
+                    </div>
+                    <button onclick="showAnswer(3, 'Se convierte en una de Variables Separables')">Ver respuesta</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            
+            
+            <div>
+                <div>
+                    <h2>Recursos Sugeridos</h2>
+                    <ul>
+                        <li>• Ecuaciones Exactas</li>
+                        <li>• Factores Integrantes</li>
+                        <li>• Aplicaciones en Dinámica de Poblaciones</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Sobre Bernoulli</h3>
+                    <p>Jacob Bernoulli estudió esta ecuación en 1695. Es uno de los primeros ejemplos de resolución sistemática de ecuaciones no lineales.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

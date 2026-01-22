@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Límites y Continuidad | Guía Interactiva - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        <h2>1. Concepto de Límite</h2>
+        
+        <div>
+            <div>
+                <span>Definición Intuitiva</span>
+                <h3>¿Qué es un Límite?</h3>
+                <p>El límite de una función f(x) cuando x tiende a un valor "a" es el valor al que se aproxima f(x) a medida que x se acerca arbitrariamente a "a", sin necesariamente alcanzarlo.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\lim_{x&space;\to&space;a}&space;f(x)&space;=&space;L" 
+                         alt="Limite f(x) = L">
+                </div>
+                <p>"Cuando x se aproxima a a, f(x) se aproxima a L"</p>
+            </div>
+
+            <div>
+                <span>Límites Laterales</span>
+                <h3>Aproximación por la Izquierda y Derecha</h3>
+                
+                <div>
+                    <p><strong>Límite por la izquierda:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lim_{x\to&space;a^{-}}&space;f(x)" 
+                        >
+                    
+                    <hr>
+                    
+                    <p><strong>Límite por la derecha:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lim_{x\to&space;a^{+}}&space;f(x)" 
+                        >
+                </div>
+                <p>El límite existe si y solo si ambos límites laterales existen y son iguales.</p>
+            </div>
+        </div>
+
+        
+        <div>
+            <h3>🧮 Simulador de Límites</h3>
+            <p>Explora diferentes tipos de límites y sus resultados</p>
+            
+            <div>
+                <div>
+                    <label for="tipoLimite">
+                        <span>🔢</span>
+                        <span>Tipo de Límite:</span>
+                    </label>
+                    <select id="tipoLimite">
+                        <option value="finito">Límite Finito</option>
+                        <option value="infinito">Límite Infinito</option>
+                        <option value="indeterminado">Indeterminación 0/0</option>
+                        <option value="laterales">Límites Laterales</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="funcionLimite">
+                        <span>𝑓(𝑥)</span>
+                        <span>Función:</span>
+                    </label>
+                    <select id="funcionLimite">
+                        <option value="x^2">x²</option>
+                        <option value="1/x">1/x</option>
+                        <option value="(x^2-4)/(x-2)">(x²-4)/(x-2)</option>
+                        <option value="|x|/x">|x|/x</option>
+                        <option value="sin(x)/x">sen(x)/x</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="valorLimite">
+                        <span>→</span>
+                        <span>Valor de x:</span>
+                    </label>
+                    <select id="valorLimite">
+                        <option value="2">2</option>
+                        <option value="0">0</option>
+                        <option value="infinito">∞</option>
+                        <option value="2_izq">2⁻ (izquierda)</option>
+                        <option value="2_der">2⁺ (derecha)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="calcularLimite()">
+                    <span>🧮</span>
+                    <span>Calcular Límite</span>
+                </button>
+            </div>
+            
+            <div id="resultadoLimite"></div>
+        </div>
+
+        <h2>2. Continuidad de Funciones</h2>
+
+        <div>
+            <div>
+                <span>Definición Formal</span>
+                <h3>¿Cuándo es continua una función?</h3>
+                <p>Una función f(x) es continua en un punto x = a si se cumplen tres condiciones:</p>
+                
+                <ol>
+                    <li>f(a) está definida</li>
+                    <li>lim f(x) cuando x→a existe</li>
+                    <li>lim f(x) cuando x→a = f(a)</li>
+                </ol>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\lim_{x&space;\to&space;a}&space;f(x)&space;=&space;f(a)" 
+                         alt="Definición de Continuidad">
+                </div>
+                <p>"El límite coincide con el valor de la función"</p>
+            </div>
+
+            <div>
+                <span>Tipos de Discontinuidad</span>
+                <h3>Clasificación según el comportamiento</h3>
+                
+                <div>
+                    <div>
+                        <strong>Discontinuidad evitable o removible:</strong>
+                        <p>El límite existe pero no coincide con f(a) o f(a) no está definida.</p>
+                    </div>
+                    
+                    <div>
+                        <strong>Discontinuidad de salto:</strong>
+                        <p>Los límites laterales existen pero son diferentes.</p>
+                    </div>
+                    
+                    <div>
+                        <strong>Discontinuidad infinita o esencial:</strong>
+                        <p>Al menos uno de los límites laterales es infinito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h3>📈 Visualizador de Continuidad</h3>
+            <p>Selecciona una función para visualizar su continuidad</p>
+            
+            <div>
+                <div>
+                    <label for="funcionGrafico">
+                        <span>𝑓(𝑥)</span>
+                        <span>Función:</span>
+                    </label>
+                    <select id="funcionGrafico">
+                        <option value="continua">Función Continua (x²)</option>
+                        <option value="discontinua_evitable">Discontinuidad Evitable</option>
+                        <option value="discontinua_salto">Discontinuidad de Salto</option>
+                        <option value="discontinua_infinita">Discontinuidad Infinita</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="puntoAnalisis">
+                        <span>📍</span>
+                        <span>Punto de análisis:</span>
+                    </label>
+                    <input type="range" id="puntoAnalisis" min="-3" max="3" step="0.1" value="0">
+                    <div>
+                        x = <span id="valorPunto">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <canvas id="graficoContinuidad"></canvas>
+            </div>
+            
+            <div>
+                <div>
+                    
+                    <span>Límite</span>
+                </div>
+                <div>
+                    
+                    <span>Función continua</span>
+                </div>
+                <div>
+                    
+                    <span>Punto de discontinuidad</span>
+                </div>
+            </div>
+            
+            <div id="resultadoContinuidad"></div>
+        </div>
+
+        <h2>3. Propiedades de Límites</h2>
+        
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Fórmula (LaTeX)</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Suma</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}[f(x)&plus;g(x)]&space;=&space;\lim_{x\to&space;a}f(x)&space;&plus;&space;\lim_{x\to&space;a}g(x)"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to2}(x^2&plus;x)&space;=&space;4&plus;2&space;=&space;6"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Producto</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}[f(x)\cdot&space;g(x)]&space;=&space;\lim_{x\to&space;a}f(x)\cdot\lim_{x\to&space;a}g(x)"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to2}(x^2\cdot&space;x)&space;=&space;4\cdot&space;2&space;=&space;8"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cociente</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}\frac{f(x)}{g(x)}&space;=&space;\frac{\lim_{x\to&space;a}f(x)}{\lim_{x\to&space;a}g(x)}"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to2}\frac{x^2}{x}&space;=&space;\frac{4}{2}&space;=&space;2"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Potencia</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}[f(x)]^n&space;=&space;[\lim_{x\to&space;a}f(x)]^n"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to2}(x^2)^2&space;=&space;(4)^2&space;=&space;16"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Raíz</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}\sqrt[n]{f(x)}&space;=&space;\sqrt[n]{\lim_{x\to&space;a}f(x)}"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to2}\sqrt{x^2}&space;=&space;\sqrt{4}&space;=&space;2"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Composición</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}g(f(x))&space;=&space;g(\lim_{x\to&space;a}f(x))"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to2}\sin(x^2)&space;=&space;\sin(4)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div>
+            <div>
+                <div>🔍</div>
+                <div>
+                    <h3>Ejercicio Interactivo: Cálculo de Límite</h3>
+                    <p>Calcula el límite usando propiedades y simplificación</p>
+                </div>
+            </div>
+            
+            <div>
+                <p>Calcula el siguiente límite (indeterminación 0/0):</p>
+                <p>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;2}&space;\frac{x^2&space;-&space;4}{x&space;-&space;2}" 
+                         alt="Límite (x^2-4)/(x-2)">
+                </p>
+            </div>
+            
+            <div>
+                <button onclick="mostrarSolucion('solucion1')">
+                    <span>🧮</span>
+                    <span>Mostrar Solución</span>
+                </button>
+                <button onclick="ocultarSolucion('solucion1')">
+                    <span>🔄</span>
+                    <span>Ocultar Solución</span>
+                </button>
+            </div>
+            
+            <div id="solucion1">
+                <div>
+                    <strong>Paso 1: Identificar la indeterminación</strong><br>
+                    Al sustituir x = 2 obtenemos: (2² - 4)/(2 - 2) = (4-4)/0 = 0/0
+                </div>
+                
+                <div>
+                    <strong>Paso 2: Factorizar el numerador</strong><br>
+                    x² - 4 es una diferencia de cuadrados: (x - 2)(x + 2)
+                </div>
+                
+                <div>
+                    <strong>Paso 3: Simplificar la expresión</strong><br>
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\frac{x^2&space;-&space;4}{x&space;-&space;2}&space;=&space;\frac{(x-2)(x&plus;2)}{x-2}&space;=&space;x&plus;2" 
+                         alt="Simplificación">
+                </div>
+                
+                <div>
+                    <strong>Paso 4: Calcular el límite de la expresión simplificada</strong><br>
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to&space;2}&space;(x&plus;2)&space;=&space;2&plus;2&space;=&space;4" 
+                         alt="Resultado">
+                </div>
+                
+                <div>
+                    <strong>Respuesta:</strong> El límite es 4
+                </div>
+            </div>
+        </div>
+
+        <h2>4. Teoremas Fundamentales</h2>
+        
+        <div>
+            <div>
+                <span>Teorema del Sandwich</span>
+                <h3>Teorema de Compresión</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;g(x)&space;\leq&space;f(x)&space;\leq&space;h(x)" 
+                         alt="Desigualdad">
+                </div>
+                
+                <p>Si g(x) ≤ f(x) ≤ h(x) para todo x cerca de a (excepto quizás en a) y</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}&space;g(x)&space;=&space;\lim_{x\to&space;a}&space;h(x)&space;=&space;L" 
+                        >
+                </div>
+                <p>entonces lim f(x) cuando x→a también es igual a L.</p>
+            </div>
+
+            <div>
+                <span>Teorema del Valor Intermedio</span>
+                <h3>Aplicación a funciones continuas</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(a)&space;<&space;k&space;<&space;f(b)" 
+                         alt="Valor intermedio">
+                </div>
+                
+                <p>Si f es continua en [a, b] y k es cualquier valor entre f(a) y f(b), entonces existe al menos un c ∈ (a, b) tal que f(c) = k.</p>
+                
+                <div>
+                    <p><strong>Aplicación:</strong> Demostrar que una ecuación tiene solución en un intervalo.</p>
+                </div>
+            </div>
+
+            <div>
+                <span>Teorema de Bolzano</span>
+                <h3>Caso particular del TVI</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;f(a)\cdot&space;f(b)&space;<&space;0" 
+                         alt="Bolzano">
+                </div>
+                
+                <p>Si f es continua en [a, b] y f(a) y f(b) tienen signos opuestos, entonces existe al menos un c ∈ (a, b) tal que f(c) = 0.</p>
+                
+                <div>
+                    <p><strong>Aplicación:</strong> Localizar raíces de ecuaciones.</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <div>
+                <div>📊</div>
+                <div>
+                    <h3>Análisis de Continuidad</h3>
+                    <p>Determina si una función es continua en un punto</p>
+                </div>
+            </div>
+            
+            <div>
+                <p>Analiza la continuidad de la siguiente función en x = 1:</p>
+                <p>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;f(x)&space;=&space;\begin{cases}&space;x^2&space;&plus;&space;1&space;&&space;\text{si}&space;x&space;<&space;1\\&space;3&space;&&space;\text{si}&space;x&space;=&space;1\\&space;2x&space;&&space;\text{si}&space;x&space;>&space;1&space;\end{cases}" 
+                         alt="Función por partes">
+                </p>
+            </div>
+            
+            <div>
+                <button onclick="mostrarSolucion('solucion2')">
+                    <span>🧮</span>
+                    <span>Mostrar Solución</span>
+                </button>
+                <button onclick="ocultarSolucion('solucion2')">
+                    <span>🔄</span>
+                    <span>Ocultar Solución</span>
+                </button>
+            </div>
+            
+            <div id="solucion2">
+                <div>
+                    <strong>Paso 1: Verificar si f(1) está definida</strong><br>
+                    Por definición: f(1) = 3 ✓
+                </div>
+                
+                <div>
+                    <strong>Paso 2: Calcular límite por la izquierda</strong><br>
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to&space;1^{-}}&space;f(x)&space;=&space;\lim_{x\to&space;1^{-}}&space;(x^2&plus;1)&space;=&space;1^2&plus;1&space;=&space;2" 
+                         alt="Límite por izquierda">
+                </div>
+                
+                <div>
+                    <strong>Paso 3: Calcular límite por la derecha</strong><br>
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to&space;1^{+}}&space;f(x)&space;=&space;\lim_{x\to&space;1^{+}}&space;2x&space;=&space;2\cdot1&space;=&space;2" 
+                         alt="Límite por derecha">
+                </div>
+                
+                <div>
+                    <strong>Paso 4: Verificar si existe el límite</strong><br>
+                    Como lim f(x) por la izquierda = 2 y por la derecha = 2, entonces:<br>
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to&space;1}&space;f(x)&space;=&space;2" 
+                         alt="Límite">
+                </div>
+                
+                <div>
+                    <strong>Paso 5: Comparar límite con f(1)</strong><br>
+                    lim f(x) cuando x→1 = 2, pero f(1) = 3<br>
+                    2 ≠ 3, por lo que NO se cumple la tercera condición
+                </div>
+                
+                <div>
+                    <strong>Respuesta:</strong> La función NO es continua en x = 1 (discontinuidad evitable)
+                </div>
+            </div>
+        </div>
+
+        <h2>5. Límites Infinitos y al Infinito</h2>
+        
+        <div>
+            <div>
+                <h3>Límites Infinitos</h3>
+                <p>Cuando los valores de f(x) crecen o decrecen sin límite a medida que x se acerca a a.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}&space;f(x)&space;=&space;\infty">
+                </div>
+                
+                <div>
+                    <p><strong>Ejemplos comunes:</strong></p>
+                    <ul>
+                        <li><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to0}&space;\frac{1}{x^2}&space;=&space;\infty"></li>
+                        <li><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to0^{+}}&space;\frac{1}{x}&space;=&space;\infty"></li>
+                        <li><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to0^{-}}&space;\frac{1}{x}&space;=&space;-\infty"></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <h3>Límites al Infinito</h3>
+                <p>Comportamiento de f(x) cuando x crece o decrece sin límite.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;\infty}&space;f(x)&space;=&space;L">
+                </div>
+                
+                <div>
+                    <p><strong>Ejemplos comunes:</strong></p>
+                    <ul>
+                        <li><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to\infty}&space;\frac{1}{x}&space;=&space;0"></li>
+                        <li><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to\infty}&space;\frac{2x^2&plus;1}{3x^2-2}&space;=&space;\frac{2}{3}"></li>
+                        <li><img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to\infty}&space;e^{-x}&space;=&space;0"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <div>
+                <div>∞</div>
+                <div>
+                    <h3>Límites al Infinito</h3>
+                    <p>Calcula límites cuando x tiende a infinito</p>
+                </div>
+            </div>
+            
+            <div>
+                <p>Calcula el siguiente límite:</p>
+                <p>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to\infty}&space;\frac{3x^2&space;-&space;2x&space;&plus;&space;5}{2x^2&space;&plus;&space;x&space;-&space;1}" 
+                         alt="Límite al infinito">
+                </p>
+            </div>
+            
+            <div>
+                <button onclick="mostrarSolucion('solucion3')">
+                    <span>🧮</span>
+                    <span>Mostrar Solución</span>
+                </button>
+                <button onclick="ocultarSolucion('solucion3')">
+                    <span>🔄</span>
+                    <span>Ocultar Solución</span>
+                </button>
+            </div>
+            
+            <div id="solucion3">
+                <div>
+                    <strong>Paso 1: Identificar la forma</strong><br>
+                    Cuando x→∞, tanto numerador como denominador tienden a ∞ (forma ∞/∞)
+                </div>
+                
+                <div>
+                    <strong>Paso 2: Dividir por la mayor potencia de x</strong><br>
+                    La mayor potencia es x². Dividimos numerador y denominador por x²:
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\frac{3x^2/x^2&space;-&space;2x/x^2&space;&plus;&space;5/x^2}{2x^2/x^2&space;&plus;&space;x/x^2&space;-&space;1/x^2}&space;=&space;\frac{3&space;-&space;\frac{2}{x}&space;&plus;&space;\frac{5}{x^2}}{2&space;&plus;&space;\frac{1}{x}&space;-&space;\frac{1}{x^2}}" 
+                         alt="Dividir por x^2">
+                </div>
+                
+                <div>
+                    <strong>Paso 3: Aplicar límites a cada término</strong><br>
+                    Cuando x→∞: 2/x → 0, 5/x² → 0, 1/x → 0, 1/x² → 0
+                </div>
+                
+                <div>
+                    <strong>Paso 4: Sustituir</strong><br>
+                    <img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to\infty}&space;\frac{3&space;-&space;\frac{2}{x}&space;&plus;&space;\frac{5}{x^2}}{2&space;&plus;&space;\frac{1}{x}&space;-&space;\frac{1}{x^2}}&space;=&space;\frac{3&space;-&space;0&space;&plus;&space;0}{2&space;&plus;&space;0&space;-&space;0}&space;=&space;\frac{3}{2}" 
+                         alt="Resultado">
+                </div>
+                
+                <div>
+                    <strong>Respuesta:</strong> El límite es 3/2
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <button id="botonScroll" onclick="irArriba()" aria-label="Volver arriba">
+        ↑
+    </button>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

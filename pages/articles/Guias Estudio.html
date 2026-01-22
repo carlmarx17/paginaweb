@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo de Saberes - Biblioteca Digital Interdisciplinaria - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <div>
+            
+            
+            <div>
+                <div>
+                    
+                    <div>
+                        <h3>
+                            <i></i> Explorar Materias
+                        </h3>
+                        <div id="typeFilters">
+                            <button onclick="filterType('all')">
+                                Todo
+                            </button>
+                            <button onclick="filterType('literatura')">
+                                <i></i>Mundos Literarios
+                            </button>
+                            <button onclick="filterType('matematicas')">
+                                <i></i>Matemáticas
+                            </button>
+                            <button onclick="filterType('fisica')">
+                                <i></i>Física
+                            </button>
+                            <button onclick="filterType('quimica')">
+                                <i></i>Química
+                            </button>
+                            <button onclick="filterType('biologia')">
+                                <i></i>Biología
+                            </button>
+                        </div>
+                    </div>
+
+                    
+                    <div id="levelFilterContainer">
+                        <h3>
+                            <i></i> Nivel Educativo
+                        </h3>
+                        <div id="levelFilters">
+                            <button onclick="filterLevel('all')">
+                                Todos
+                            </button>
+                            <button onclick="filterLevel('secundaria')">
+                                Secundaria
+                            </button>
+                            <button onclick="filterLevel('universitario')">
+                                Universitario
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <span id="resultCount">Cargando biblioteca...</span>
+        </div>
+
+        
+        <div id="guidesGrid"></div>
+
+        
+        <div id="emptyState">
+            <div>
+                <i></i>
+            </div>
+            <h3>No encontramos resultados</h3>
+            <p>Intenta con otros términos o filtros.</p>
+            <button onclick="resetFilters()">
+                Ver todo el catálogo
+            </button>
+        </div>
+    </main>
+
+    
+    <div id="contentModal" role="dialog" aria-modal="true">
+        <div id="modalBackdrop"></div>
+        <div>
+            <div id="modalPanel">
+                
+                <div id="modalHeader">
+                    
+                    
+                    <div>
+                        <div>
+                            <span id="modalBadge"></span>
+                            <span id="modalLevelBadge"></span>
+                        </div>
+                        <h2 id="modalTitle"></h2>
+                        <div>
+                            <span id="modalTopicCount"><i></i> </span>
+                        </div>
+                    </div>
+                    <button onclick="closeModal()">
+                        <i></i>
+                    </button>
+                </div>
+
+                
+                <div>
+                    
+                    <div>
+                        <div>
+                            <h3>Detalles del Tema</h3>
+                            <p id="modalBody"></p>
+                        </div>
+                        <a id="mainGuideBtn" href="#" target="_blank" rel="noopener noreferrer">
+                            <div><i></i></div>
+                            <div><span>Recurso Principal</span><span>Abrir Guía Completa</span></div>
+                            <i></i>
+                        </a>
+                        <div>
+                            <i></i>
+                            <div>
+                                <h4>Instrucciones</h4>
+                                <p>Los temas marcados con candado 🔒 están en desarrollo. Haz clic en los disponibles para acceder.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>
+                                <h3>Contenido</h3>
+                                <p>Índice de subtemas</p>
+                            </div>
+                        </div>
+                        <div id="topicsList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

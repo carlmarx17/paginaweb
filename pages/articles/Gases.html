@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Química | Las Leyes de los Gases - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+<div>
+    <div>
+        <div>
+            <div>
+                <div>M</div>
+                <span>Mundo Química</span>
+            </div>
+            <button id="themeToggle">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+        
+        <div>
+            <a href="#analogia">Analogía</a>
+            <a href="#simulacion">Simulación</a>
+            <a href="#leyes">Leyes</a>
+            <a href="#graficos">Gráficos</a>
+            <a href="#ejercicios">Ejercicios</a>
+            <a href="#quiz">Quiz ICFES</a>
+        </div>
+        
+        <div>
+            <div>Pedagogía de las Partículas</div>
+            <h1>Las Leyes de los Gases</h1>
+            <p>Aprende la química de los gases con analogías que nunca olvidarás. ¡Descubre cómo se comportan las partículas cuando les das "chocolate" (energía)!</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    
+    
+    <section id="analogia">
+        <div>
+            <span>01</span>
+            <span>El Salón de Clases de Partículas</span>
+        </div>
+        
+        <p>¿Qué pasa cuando a un salón lleno de niños les das chocolate, Vive 100 o Speed? ¡Se vuelven locos! En química, esto es exactamente lo que ocurre con los gases cuando aumentamos su energía.</p>
+        
+        <div>
+            <iframe src="https://drive.google.com/file/d/1jgiQZK8KwChHnWim4enJp5MVtV-TvDJ-/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div>
+            <div>
+                <div>🔥</div>
+                <h3>Energía Térmica (Chocolate)</h3>
+                <p>El chocolate es la <strong>Temperatura</strong>. A mayor chocolate, los niños corren a "Speed 100". En un gas, esto aumenta la velocidad de las moléculas.</p>
+                <div>
+                    \[ \text{Temperatura} \uparrow = \text{Energía} \uparrow \]
+                </div>
+            </div>
+            
+            <div>
+                <div>💥</div>
+                <h3>Presión (Los Choques)</h3>
+                <p>Como corren tan rápido, chocan más veces contra las paredes del salón. ¡Eso es la <strong>Presión</strong>! Más choques = mayor presión.</p>
+                <div>
+                    \[ \text{Choques} \uparrow = \text{Presión} \uparrow \]
+                </div>
+            </div>
+            
+            <div>
+                <div>📈</div>
+                <h3>Volumen (Espacio)</h3>
+                <p>Si los niños tienen mucha energía, no van a estar quietos en un rincón. ¡Querrán todo el salón para ellos! Más energía = más espacio necesario.</p>
+                <div>
+                    \[ \text{Energía} \uparrow = \text{Volumen} \uparrow \]
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="simulacion">
+        <div>
+            <span>02</span>
+            <span>Simulación Interactiva MEJORADA</span>
+        </div>
+        
+        <p>Ajusta las variables y arrastra las paredes para ver cómo se comportan las partículas de gas. ¡Observa los cambios en tiempo real!</p>
+        
+        <div>
+            <div>
+                <div>
+                    <h3>Temperatura (Chocolate)</h3>
+                    <div>
+                        <div>
+                            <span>Energía de las partículas</span>
+                            <span id="tempValue">300 K</span>
+                        </div>
+                        <input type="range" id="tempSlider" min="200" max="500" value="300">
+                    </div>
+                    <p>Más temperatura = más velocidad de partículas</p>
+                </div>
+                
+                <div>
+                    <h3>Cantidad de Partículas (Niños)</h3>
+                    <div>
+                        <div>
+                            <span>Número de partículas</span>
+                            <span id="particlesValue">15</span>
+                        </div>
+                        <input type="range" id="particlesSlider" min="5" max="30" value="15">
+                    </div>
+                    <p>Más partículas = más choques</p>
+                </div>
+                
+                <div>
+                    <h3>Velocidad Inicial</h3>
+                    <div>
+                        <div>
+                            <span>Velocidad base</span>
+                            <span id="speedValue">2.0</span>
+                        </div>
+                        <input type="range" id="speedSlider" min="0.5" max="5.0" step="0.1" value="2.0">
+                    </div>
+                    <p>Controla qué tan rápido se mueven</p>
+                </div>
+            </div>
+            
+            <div>
+                <div id="particleCounter">
+                    Partículas: <span>15</span>
+                </div>
+                <div id="pressureIndicator">
+                    Presión estimada: <span>1.0</span>
+                </div>
+                
+                <div id="simulationContainer">
+                    
+                    <div id="leftWall">
+                        <div>←→</div>
+                    </div>
+                    <div id="rightWall">
+                        <div>←→</div>
+                    </div>
+                    <div id="topWall">
+                        <div>↑↓</div>
+                    </div>
+                    <div id="bottomWall">
+                        <div>↑↓</div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="resetSimulation()">Reiniciar Simulación</button>
+                <button onclick="togglePause()" id="pauseBtn">Pausar</button>
+            </div>
+            
+            <div>
+                <h4>📖 Cómo usar la simulación:</h4>
+                <ul>
+                    <li>Arrastra las paredes laterales (←→) para cambiar el volumen</li>
+                    <li>Ajusta la temperatura para ver partículas más rápidas</li>
+                    <li>Aumenta la cantidad de partículas para más choques</li>
+                    <li>Observa cómo cambia la presión estimada</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="graficos">
+        <div>
+            <span>03</span>
+            <span>Relaciones entre Variables</span>
+        </div>
+        
+        <p>Cada ley de los gases describe una relación específica entre las variables. Observa cómo se comportan gráficamente:</p>
+        
+        <div>
+            <div>
+                <div>📉 Ley de Boyle: P vs V (CORREGIDO)</div>
+                <p>Presión y Volumen son <strong>inversamente proporcionales</strong> (a T constante). Cuando V aumenta, P disminuye.</p>
+                <canvas id="boyleChart"></canvas>
+                <p>P ∝ 1/V (Relación inversa - hipérbola)</p>
+            </div>
+            
+            <div>
+                <div>📈 Ley de Charles: V vs T</div>
+                <p>Volumen y Temperatura son <strong>directamente proporcionales</strong> (a P constante)</p>
+                <canvas id="charlesChart"></canvas>
+                <p>V ∝ T (Línea recta que pasa por el origen)</p>
+            </div>
+            
+            <div>
+                <div>🔥 Ley de Gay-Lussac: P vs T</div>
+                <p>Presión y Temperatura son <strong>directamente proporcionales</strong> (a V constante)</p>
+                <canvas id="gayLussacChart"></canvas>
+                <p>P ∝ T (Línea recta que pasa por el origen)</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="leyes">
+        <div>
+            <span>04</span>
+            <span>Las 6 Leyes Fundamentales</span>
+        </div>
+        
+        <div>
+            
+            <div>
+                <div>B</div>
+                <h3>Ley de Boyle</h3>
+                <p><strong>Relación:</strong> Presión vs Volumen</p>
+                <p>A temperatura constante, el volumen de un gas es <strong>inversamente proporcional</strong> a su presión.</p>
+                <div>\[ P_1V_1 = P_2V_2 \]</div>
+                <p><strong>Analogía:</strong> Apretar un salón de niños (↓V) hace que choquen más (↑P).</p>
+            </div>
+            
+            
+            <div>
+                <div>C</div>
+                <h3>Ley de Charles</h3>
+                <p><strong>Relación:</strong> Volumen vs Temperatura</p>
+                <p>A presión constante, el volumen de un gas es <strong>directamente proporcional</strong> a su temperatura.</p>
+                <div>\[ \frac{V_1}{T_1} = \frac{V_2}{T_2} \]</div>
+                <p><strong>Analogía:</strong> Más chocolate (↑T) hace que los niños necesiten más espacio (↑V).</p>
+            </div>
+            
+            
+            <div>
+                <div>G</div>
+                <h3>Ley de Gay-Lussac</h3>
+                <p><strong>Relación:</strong> Presión vs Temperatura</p>
+                <p>A volumen constante, la presión de un gas es <strong>directamente proporcional</strong> a su temperatura.</p>
+                <div>\[ \frac{P_1}{T_1} = \frac{P_2}{T_2} \]</div>
+                <p><strong>Analogía:</strong> En un salón fijo, más chocolate (↑T) causa más choques (↑P).</p>
+            </div>
+            
+            
+            <div>
+                <div>A</div>
+                <h3>Ley de Avogadro</h3>
+                <p><strong>Relación:</strong> Volumen vs Cantidad</p>
+                <p>A presión y temperatura constantes, el volumen es <strong>directamente proporcional</strong> a los moles.</p>
+                <div>\[ \frac{V_1}{n_1} = \frac{V_2}{n_2} \]</div>
+                <p><strong>Analogía:</strong> Más niños en el salón (↑n) necesitan más espacio (↑V).</p>
+            </div>
+            
+            
+            <div>
+                <div>C</div>
+                <h3>Ley Combinada</h3>
+                <p><strong>Relación:</strong> P, V y T</p>
+                <p>Combina las leyes de Boyle, Charles y Gay-Lussac cuando cambian múltiples variables.</p>
+                <div>\[ \frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2} \]</div>
+                <p><strong>Analogía:</strong> Cambios simultáneos en el salón, chocolate y apretón.</p>
+            </div>
+            
+            
+            <div>
+                <div>I</div>
+                <h3>Ley Ideal</h3>
+                <p><strong>Relación:</strong> P, V, n, T</p>
+                <p>Ecuación de estado que relaciona todas las variables de un gas ideal.</p>
+                <div>\[ PV = nRT \]</div>
+                <p><strong>Donde R = 0.0821 atm·L/mol·K</strong></p>
+                <p><strong>Analogía:</strong> La ecuación maestra del comportamiento del salón completo.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="ejercicios">
+        <div>
+            <span>05</span>
+            <span>Zona de Práctica</span>
+        </div>
+        
+        <div>
+            <h3>Ejercicios con Analogías</h3>
+            
+            
+            <div>
+                <h4>Ejercicio 1: Ley de Boyle (El Aprietón)</h4>
+                <p>Si tienes un salón con 20 niños a una presión de 1 atm, y reduces el salón a la mitad (misma cantidad de niños, misma temperatura):</p>
+                <p><strong>Pregunta:</strong> ¿Qué pasa con la presión en el salón?</p>
+                <button onclick="toggleSolution('sol1')">Ver Solución</button>
+                <div id="sol1">
+                    <p><strong>Solución:</strong> Según Boyle: P₁V₁ = P₂V₂</p>
+                    <p>Si V₂ = ½V₁, entonces P₂ = 2P₁</p>
+                    <p>¡La presión se duplica! Los niños chocarán el doble contra las paredes.</p>
+                </div>
+            </div>
+            
+            
+            <div>
+                <h4>Ejercicio 2: Ley de Charles (El Chocolate)</h4>
+                <p>Un salón con niños a 25°C (298 K) ocupa 10 m³. Si les das tanto chocolate que su temperatura sube a 50°C (323 K):</p>
+                <p><strong>Pregunta:</strong> ¿Qué volumen necesitarán si la presión se mantiene?</p>
+                <button onclick="toggleSolution('sol2')">Ver Solución</button>
+                <div id="sol2">
+                    <p><strong>Solución:</strong> Según Charles: V₁/T₁ = V₂/T₂</p>
+                    <p>V₂ = V₁ × (T₂/T₁) = 10 m³ × (323 K / 298 K) ≈ 10.84 m³</p>
+                    <p>¡Necesitarán un salón 0.84 m³ más grande!</p>
+                </div>
+            </div>
+            
+            
+            <div>
+                <h4>Ejercicio 3: Ley Combinada (Cambio Total)</h4>
+                <p>Un gas está en un recipiente de 5 L a 1 atm y 300 K. Si lo calientas a 400 K y reduces el volumen a 4 L:</p>
+                <p><strong>Pregunta:</strong> ¿Cuál será la nueva presión?</p>
+                <button onclick="toggleSolution('sol3')">Ver Solución</button>
+                <div id="sol3">
+                    <p><strong>Solución:</strong> Según la ley combinada: P₁V₁/T₁ = P₂V₂/T₂</p>
+                    <p>P₂ = P₁ × (V₁/V₂) × (T₂/T₁) = 1 atm × (5/4) × (400/300) ≈ 1.67 atm</p>
+                    <p>La presión aumenta a aproximadamente 1.67 atm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="quiz">
+        <div>
+            <span>06</span>
+            <span>Desafío ICFES</span>
+        </div>
+        
+        <div>
+            <h2>📝 Entrenamiento ICFES: Gases Ideales</h2>
+            
+            <div>
+                <p><strong>PREGUNTA 1.</strong> En un experimento, se observa que al duplicar la cantidad de chocolate (Temperatura) suministrada a un gas en un recipiente de volumen fijo, la presión se duplica. Esto se explica porque:</p>
+                
+                <div onclick="checkAnswer(this, true)">
+                    <div>A</div>
+                    <div>Las partículas se mueven más rápido y chocan con mayor frecuencia contra las paredes.</div>
+                </div>
+                
+                <div onclick="checkAnswer(this, false)">
+                    <div>B</div>
+                    <div>La masa de cada partícula aumenta, generando impactos más pesados.</div>
+                </div>
+                
+                <div onclick="checkAnswer(this, false)">
+                    <div>C</div>
+                    <div>Las partículas se expanden y ocupan más espacio dentro del recipiente.</div>
+                </div>
+                
+                <div id="feedback1"></div>
+            </div>
+            
+            <div>
+                <p><strong>PREGUNTA 2.</strong> Si en el salón de clases duplicamos el número de niños (n) pero mantenemos la temperatura constante en un salón elástico, ¿qué ocurrirá con el volumen del salón según la Ley de Avogadro?</p>
+                
+                <div onclick="checkAnswer2(this, false)">
+                    <div>A</div>
+                    <div>El volumen disminuirá porque los niños estarán más apretados.</div>
+                </div>
+                
+                <div onclick="checkAnswer2(this, true)">
+                    <div>B</div>
+                    <div>El volumen aumentará proporcionalmente a la cantidad de niños nuevos.</div>
+                </div>
+                
+                <div onclick="checkAnswer2(this, false)">
+                    <div>C</div>
+                    <div>El volumen se mantendrá constantemente porque los niños no han comido chocolate.</div>
+                </div>
+                
+                <div id="feedback2"></div>
+            </div>
+            
+            <div>
+                <button onclick="resetQuiz()">Reiniciar Quiz</button>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+</div>
+
+
+
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

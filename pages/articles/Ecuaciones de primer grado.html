@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones de 1er Grado | Aprende Fácil - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        
+        <div>
+            <div>
+                <span>⚖️</span>
+                <h3>La Analogía de la Balanza</h3>
+                <p>Imagina que una ecuación es una balanza perfectamente equilibrada. Todo lo que hagas en un lado, debes hacerlo en el otro para mantener el equilibrio.</p>
+                <div>
+                    <p>Regla de Oro:</p>
+                    <p>"Misma operación en ambos lados"</p>
+                </div>
+            </div>
+            
+            <div>
+                <span>🎯</span>
+                <h3>El Objetivo Final</h3>
+                <p>Queremos aislar la variable (x) para descubrir su valor. Esto se logra eliminando los números que la acompañan en orden inverso a las operaciones.</p>
+                <div>
+                    <p><strong>Orden de despeje:</strong></p>
+                    <ol>
+                        <li>Eliminar lo que suma/resta</li>
+                        <li>Eliminar lo que multiplica/divide</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h2>Operaciones Inversas</h2>
+            <p>
+                Para despejar x, usamos la operación contraria a la que está afectándola.
+            </p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operación Original</th>
+                        <th>Operación Inversa</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Suma (+) →</td>
+                        <td>← Resta (-)</td>
+                        <td>x + 5 = 8 → x = 8 - 5</td>
+                    </tr>
+                    <tr>
+                        <td>Resta (-) →</td>
+                        <td>← Suma (+)</td>
+                        <td>x - 3 = 7 → x = 7 + 3</td>
+                    </tr>
+                    <tr>
+                        <td>Multiplicación (×) →</td>
+                        <td>← División (÷)</td>
+                        <td>3x = 15 → x = 15 ÷ 3</td>
+                    </tr>
+                    <tr>
+                        <td>División (÷) →</td>
+                        <td>← Multiplicación (×)</td>
+                        <td>x ÷ 4 = 2 → x = 2 × 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div>
+            <h3>Laboratorio de Ecuaciones</h3>
+            <p>
+                Resuelve: <strong id="ecuacion-texto">2x + 4 = 10</strong>. Haz clic en los botones para equilibrar la balanza.
+            </p>
+            
+            <div id="display-ecuacion">
+                2<span>x</span> + 4 = 10
+            </div>
+
+            <div>
+                <canvas id="canvasBalanza"></canvas>
+            </div>
+
+            <div id="controles">
+                <button onclick="operar('restar', 4)">Restar 4 (-4)</button>
+                <button onclick="operar('dividir', 2)">Dividir entre 2 (÷2)</button>
+                <button onclick="reiniciar()">Reiniciar ↺</button>
+            </div>
+            
+            <p id="mensaje-feedback"></p>
+        </div>
+
+        
+        <section>
+            <h2>Pasos para Resolver Ecuaciones</h2>
+            
+            <div>
+                <div>
+                    <div>1</div>
+                    <h4>Identificar la Incógnita</h4>
+                    <p>Localiza la letra (generalmente x) que representa el valor desconocido.</p>
+                </div>
+                
+                <div>
+                    <div>2</div>
+                    <h4>Simplificar Ambos Lados</h4>
+                    <p>Realiza operaciones en cada lado por separado (sumar términos semejantes).</p>
+                </div>
+                
+                <div>
+                    <div>3</div>
+                    <h4>Mover Términos</h4>
+                    <p>Lleva los términos con x a un lado y los números al otro, cambiando su signo.</p>
+                </div>
+                
+                <div>
+                    <div>4</div>
+                    <h4>Despejar la Incógnita</h4>
+                    <p>Aplica la operación inversa para dejar sola a la x.</p>
+                </div>
+                
+                <div>
+                    <div>5</div>
+                    <h4>Comprobar la Solución</h4>
+                    <p>Sustituye el valor obtenido en la ecuación original para verificar.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>Ejemplos Resueltos Paso a Paso</h2>
+            
+            <div>
+                <div>
+                    <div>📝</div>
+                    <div>
+                        <h3>Ejemplo 1: Ecuación Simple</h3>
+                        <p>x + 7 = 12</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <strong>Paso 1:</strong> Identificamos la operación que afecta a x (suma de 7)
+                </div>
+                
+                <div>
+                    <strong>Paso 2:</strong> Aplicamos la operación inversa (restar 7 en ambos lados)
+                </div>
+                
+                <div>
+                    x + 7 - 7 = 12 - 7
+                </div>
+                
+                <div>
+                    <strong>Paso 3:</strong> Simplificamos
+                </div>
+                
+                <div>
+                    x = 5
+                </div>
+                
+                <div>
+                    <p>Comprobación:</p>
+                    <p>5 + 7 = 12 ✓</p>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <div>📝</div>
+                    <div>
+                        <h3>Ejemplo 2: Ecuación con Coeficiente</h3>
+                        <p>3x - 5 = 13</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <strong>Paso 1:</strong> Movemos el -5 al otro lado cambiando su signo
+                </div>
+                
+                <div>
+                    3x = 13 + 5
+                </div>
+                
+                <div>
+                    <strong>Paso 2:</strong> Simplificamos
+                </div>
+                
+                <div>
+                    3x = 18
+                </div>
+                
+                <div>
+                    <strong>Paso 3:</strong> Dividimos ambos lados entre 3
+                </div>
+                
+                <div>
+                    x = 18 ÷ 3
+                </div>
+                
+                <div>
+                    x = 6
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>Calculadora de Ecuaciones</h2>
+            <p>Introduce los coeficientes de tu ecuación y obtén la solución paso a paso.</p>
+            
+            <div>
+                <div>
+                    <div>
+                        <input type="number" id="coefA" placeholder="a" value="2">
+                        <span>x</span>
+                        <span>+</span>
+                        <input type="number" id="coefB" placeholder="b" value="4">
+                        <span>=</span>
+                        <input type="number" id="coefC" placeholder="c" value="10">
+                    </div>
+                    <p>
+                        Formato: ax + b = c
+                    </p>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="calcularEcuacion()">
+                    <span>🧮</span> Calcular Solución
+                </button>
+            </div>
+            
+            <div id="resultadoCalculadora">
+                
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>Errores Comunes a Evitar</h2>
+            
+            <div>
+                <div>
+                    <div>❌</div>
+                    <h3>No Aplicar a Ambos Lados</h3>
+                </div>
+                <p>Si restas un número del lado izquierdo, <strong>debes restarlo también del derecho</strong>. Olvidar esto rompe el equilibrio.</p>
+                <p>
+                    <strong>Ejemplo incorrecto:</strong> 2x + 4 = 10 → 2x = 10
+                </p>
+            </div>
+            
+            <div>
+                <div>
+                    <div>❌</div>
+                    <h3>Confundir Signos al Mover Términos</h3>
+                </div>
+                <p>Al pasar un término al otro lado, <strong>su signo cambia</strong> (+ se convierte en -, y viceversa).</p>
+                <p>
+                    <strong>Ejemplo incorrecto:</strong> x - 5 = 3 → x = 3 - 5
+                </p>
+            </div>
+            
+            <div>
+                <div>
+                    <div>❌</div>
+                    <h3>No Comprobar la Solución</h3>
+                </div>
+                <p>Siempre verifica sustituyendo el valor obtenido en la ecuación original. Esto detecta errores de cálculo.</p>
+                <p>
+                    Si obtienes x = 3, comprueba: ¿2(3) + 4 = 10?
+                </p>
+            </div>
+        </section>
+
+        
+        <div>
+            <h2>¿Te trabaste en un ejercicio difícil?</h2>
+            <p>
+                A veces un video o una explicación personalizada vale más que mil intentos. 
+                Con clases individuales aprendes a tu ritmo y resuelves tus dudas específicas.
+            </p>
+            
+            <div>
+                <div>
+                    <div>✅</div>
+                    <p>Clases Personalizadas</p>
+                    <p>A tu ritmo y horario</p>
+                </div>
+                
+                <div>
+                    <div>✅</div>
+                    <p>Material Exclusivo</p>
+                    <p>Ejercicios y explicaciones</p>
+                </div>
+                
+                <div>
+                    <div>✅</div>
+                    <p>Soporte 24/7</p>
+                    <p>Dudas por WhatsApp</p>
+                </div>
+            </div>
+            
+            <div>
+                <a href="https://wa.link/3zyxd2" target="_blank">
+                    💬 Agendar clase con el Profe Carlos
+                </a>
+                <p>
+                    Primera clase de diagnóstico gratuita
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

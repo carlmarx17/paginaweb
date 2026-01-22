@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álgebra Lineal | Sistemas de Ecuaciones Lineales - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        <div>
+            <div id="etapa1">
+                <div>1</div>
+                <span>Conceptos</span>
+            </div>
+            <div id="etapa2">
+                <div>2</div>
+                <span>Métodos</span>
+            </div>
+            <div id="etapa3">
+                <div>3</div>
+                <span>Ejemplos</span>
+            </div>
+            <div id="etapa4">
+                <div>4</div>
+                <span>Aplicaciones</span>
+            </div>
+        </div>
+
+        <h2>1. ¿Qué es un Sistema de Ecuaciones Lineales?</h2>
+        
+        <div>
+            <div>
+                <span>Definición</span>
+                <h3>Conjunto de ecuaciones lineales</h3>
+                <p>Un sistema de ecuaciones lineales es un conjunto de dos o más ecuaciones con las mismas variables que deben satisfacerse simultáneamente.</p>
+                
+                <div>
+                    <div>
+                        <span>2</span><span>x</span> 
+                        <span>+</span> 
+                        <span>3</span><span>y</span> 
+                        <span>=</span> 
+                        <span>8</span>
+                    </div>
+                    <div>
+                        <span>1</span><span>x</span> 
+                        <span>-</span> 
+                        <span>2</span><span>y</span> 
+                        <span>=</span> 
+                        <span>-1</span>
+                    </div>
+                </div>
+                
+                <p><strong>Solución:</strong> Los valores de las variables que hacen verdaderas todas las ecuaciones simultáneamente.</p>
+            </div>
+
+            <div>
+                <span>Representación</span>
+                <h3>Forma matricial</h3>
+                <p>Todo sistema de ecuaciones lineales puede expresarse en forma matricial compacta:</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;A\vec{x}&space;=&space;\vec{b}" 
+                         alt="Ax = b">
+                </div>
+                
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>A</strong> es la matriz de coeficientes</li>
+                    <li><strong>x</strong> es el vector de incógnitas</li>
+                    <li><strong>b</strong> es el vector de términos independientes</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>2. Clasificación de Sistemas</h2>
+        
+        <div>
+            <div>
+                <span>Compatible</span>
+                <h3>Sistema Compatible Determinado</h3>
+                <p>Tiene una <strong>única solución</strong>. Las ecuaciones representan rectas/planos que se intersecan en un solo punto.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;2x&plus;3y&space;=&space;8&space;\\&space;x-2y&space;=&space;-1&space;\end{cases}&space;\Rightarrow&space;(x,y)=(1,2)" 
+                        >
+                </div>
+                
+                <div>
+                    <strong>Solución única: (1, 2)</strong>
+                </div>
+            </div>
+
+            <div>
+                <span>Compatible</span>
+                <h3>Sistema Compatible Indeterminado</h3>
+                <p>Tiene <strong>infinitas soluciones</strong>. Las ecuaciones representan la misma recta/plano (son linealmente dependientes).</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;2x&plus;4y&space;=&space;6&space;\\&space;x&plus;2y&space;=&space;3&space;\end{cases}&space;\Rightarrow&space;\text{Infinitas&space;soluciones}" 
+                        >
+                </div>
+                
+                <div>
+                    <strong>Solución: Familia de soluciones</strong>
+                </div>
+            </div>
+
+            <div>
+                <span>Incompatible</span>
+                <h3>Sistema Incompatible</h3>
+                <p><strong>No tiene solución</strong>. Las ecuaciones representan rectas/planos paralelos que nunca se intersecan.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;2x&plus;3y&space;=&space;8&space;\\&space;2x&plus;3y&space;=&space;10&space;\end{cases}&space;\Rightarrow&space;\text{Sin&space;solución}" 
+                        >
+                </div>
+                
+                <div>
+                    <strong>No existe solución</strong>
+                </div>
+            </div>
+        </div>
+
+        <h2>3. Métodos de Resolución</h2>
+        
+        <div>
+            <h3>🔧 Simulador Interactivo: Resuelve tu propio sistema 2×2</h3>
+            <p>Introduce los coeficientes de un sistema de dos ecuaciones con dos incógnitas y visualiza la solución paso a paso.</p>
+            
+            <div>
+                <div>
+                    <label>Ecuación 1: a₁x + b₁y = c₁</label>
+                    <div>
+                        <input type="number" id="a1" value="2" placeholder="a₁">
+                        <input type="number" id="b1" value="3" placeholder="b₁">
+                        <input type="number" id="c1" value="8" placeholder="c₁">
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Ecuación 2: a₂x + b₂y = c₂</label>
+                    <div>
+                        <input type="number" id="a2" value="1" placeholder="a₂">
+                        <input type="number" id="b2" value="-2" placeholder="b₂">
+                        <input type="number" id="c2" value="-1" placeholder="c₂">
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Método de solución</label>
+                    <select id="metodoSolucion">
+                        <option value="sustitucion">Sustitución</option>
+                        <option value="eliminacion">Eliminación</option>
+                        <option value="igualacion">Igualación</option>
+                        <option value="cramer">Regla de Cramer</option>
+                        <option value="matricial">Matricial (A⁻¹b)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button id="resolverSistema">Resolver Sistema</button>
+            
+            <div id="visualizacionSolucion">
+                
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <h4>Método de Sustitución</h4>
+                <p>1. Despeja una variable en una ecuación.</p>
+                <p>2. Sustituye esa expresión en la otra ecuación.</p>
+                <p>3. Resuelve la ecuación resultante para la otra variable.</p>
+                <p>4. Sustituye el valor encontrado para hallar la primera variable.</p>
+            </div>
+            
+            <div>
+                <h4>Método de Eliminación (Reducción)</h4>
+                <p>1. Multiplica las ecuaciones por constantes para igualar coeficientes.</p>
+                <p>2. Suma o resta las ecuaciones para eliminar una variable.</p>
+                <p>3. Resuelve la ecuación resultante.</p>
+                <p>4. Sustituye el valor encontrado en una ecuación original.</p>
+            </div>
+            
+            <div>
+                <h4>Regla de Cramer (para 2×2)</h4>
+                <p>Para el sistema:</p>
+                <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;a_1x&plus;b_1y&space;=&space;c_1&space;\\&space;a_2x&plus;b_2y&space;=&space;c_2&space;\end{cases}">
+                <p>La solución es:</p>
+                <img src="https://latex.codecogs.com/svg.latex?\large&space;x&space;=&space;\frac{\begin{vmatrix}&space;c_1&space;&&space;b_1&space;\\&space;c_2&space;&&space;b_2&space;\end{vmatrix}}{\begin{vmatrix}&space;a_1&space;&&space;b_1&space;\\&space;a_2&space;&&space;b_2&space;\end{vmatrix}},\quad&space;y&space;=&space;\frac{\begin{vmatrix}&space;a_1&space;&&space;c_1&space;\\&space;a_2&space;&&space;c_2&space;\end{vmatrix}}{\begin{vmatrix}&space;a_1&space;&&space;b_1&space;\\&space;a_2&space;&&space;b_2&space;\end{vmatrix}}">
+            </div>
+        </div>
+
+        <h2>4. Aplicaciones del Mundo Real</h2>
+        
+        <div>
+            <div>
+                <span>Ingeniería</span>
+                <h3>⚙️ Análisis de Circuitos Eléctricos</h3>
+                
+                <div>
+                    <div>🔋</div>
+                    <div>
+                        <p>En análisis de circuitos, las leyes de Kirchhoff generan sistemas de ecuaciones lineales:</p>
+                        <ul>
+                            <li>Ley de corrientes: Suma de corrientes en un nodo = 0</li>
+                            <li>Ley de voltajes: Suma de voltajes en una malla = 0</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;I_1&space;-&space;I_2&space;-&space;I_3&space;=&space;0&space;\\&space;R_1I_1&space;&plus;&space;R_2I_2&space;=&space;V&space;\\&space;R_2I_2&space;-&space;R_3I_3&space;=&space;0&space;\end{cases}" 
+                        >
+                </div>
+            </div>
+
+            <div>
+                <span>Economía</span>
+                <h3>📈 Modelos de Oferta y Demanda</h3>
+                
+                <div>
+                    <div>💰</div>
+                    <div>
+                        <p>El equilibrio de mercado ocurre cuando la oferta iguala a la demanda:</p>
+                        <ul>
+                            <li>Función de demanda: P = a - bQ</li>
+                            <li>Función de oferta: P = c + dQ</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;P&space;=&space;a&space;-&space;bQ&space;\\&space;P&space;=&space;c&space;&plus;&space;dQ&space;\end{cases}&space;\Rightarrow&space;(P^*,&space;Q^*)" 
+                        >
+                </div>
+                
+                <p>
+                    Donde P* es el precio de equilibrio y Q* la cantidad de equilibrio.
+                </p>
+            </div>
+        </div>
+        
+        <div>
+            <div>
+                <span>Química</span>
+                <h3>🧪 Balanceo de Ecuaciones Químicas</h3>
+                
+                <div>
+                    <div>⚗️</div>
+                    <div>
+                        <p>Para balancear una ecuación química, se igualan átomos de cada elemento en reactivos y productos:</p>
+                        <p><strong>Ejemplo:</strong> Combustión del metano</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;a\,CH_4&space;&plus;&space;b\,O_2&space;\rightarrow&space;c\,CO_2&space;&plus;&space;d\,H_2O" 
+                        >
+                </div>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{cases}&space;C:&space;a&space;=&space;c&space;\\&space;H:&space;4a&space;=&space;2d&space;\\&space;O:&space;2b&space;=&space;2c&space;&plus;&space;d&space;\end{cases}&space;\Rightarrow&space;(a,b,c,d)=(1,2,1,2)" 
+                        >
+                </div>
+            </div>
+
+            <div>
+                <span>Informática</span>
+                <h3>🤖 Sistemas de Recomendación</h3>
+                
+                <div>
+                    <div>📱</div>
+                    <div>
+                        <p>Plataformas como Netflix y Amazon usan sistemas de ecuaciones para recomendaciones:</p>
+                        <ul>
+                            <li>Filtrado colaborativo</li>
+                            <li>Descomposición de matrices</li>
+                            <li>Mínimos cuadrados</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;R&space;\approx&space;P&space;\times&space;Q^T" 
+                        >
+                </div>
+                
+                <p>
+                    Donde R es la matriz de calificaciones, P representa usuarios y Q representa ítems.
+                </p>
+            </div>
+        </div>
+
+        <h2>5. Ejemplo Completo: Problema de Mezclas</h2>
+        
+        <div>
+            <h3>🧪 Problema: Mezclas en una fábrica de productos químicos</h3>
+            <p><strong>Enunciado:</strong> Una fábrica produce dos tipos de solución química. La solución A contiene 40% de ácido nítrico y 60% de agua. La solución B contiene 20% de ácido nítrico y 80% de agua. Se necesitan 100 litros de una solución que contenga exactamente 30% de ácido nítrico. ¿Cuántos litros de cada solución se deben mezclar?</p>
+            
+            <div>
+                <div>
+                    <h4>Paso 1: Definir variables</h4>
+                    <p>Sea <strong>x</strong> = litros de solución A</p>
+                    <p>Sea <strong>y</strong> = litros de solución B</p>
+                </div>
+                
+                <div>
+                    <h4>Paso 2: Plantear ecuaciones</h4>
+                    <p><strong>Ecuación 1 (volumen total):</strong> x + y = 100</p>
+                    <p><strong>Ecuación 2 (ácido nítrico):</strong> 0.40x + 0.20y = 0.30 × 100 = 30</p>
+                </div>
+                
+                <div>
+                    <h4>Paso 3: Resolver el sistema</h4>
+                    <p>De la primera ecuación: y = 100 - x</p>
+                    <p>Sustituyendo en la segunda: 0.40x + 0.20(100 - x) = 30</p>
+                    <p>0.40x + 20 - 0.20x = 30</p>
+                    <p>0.20x = 10</p>
+                    <p>x = 50</p>
+                    <p>Entonces: y = 100 - 50 = 50</p>
+                </div>
+                
+                <div>
+                    <h4>Paso 4: Verificar solución</h4>
+                    <p>Volumen total: 50 + 50 = 100 ✓</p>
+                    <p>Ácido nítrico: 0.40×50 + 0.20×50 = 20 + 10 = 30 ✓</p>
+                </div>
+            </div>
+            
+            <div>
+                <h4>✅ Solución:</h4>
+                <p>Se deben mezclar <strong>50 litros de solución A</strong> y <strong>50 litros de solución B</strong>.</p>
+            </div>
+        </div>
+
+        <div>
+            <h3>📚 Resumen Pedagógico</h3>
+            
+            <div>
+                <div>
+                    <div>📐</div>
+                    <h4>Interpretación Geométrica</h4>
+                    <p>En 2D: Cada ecuación representa una recta. La solución es el punto de intersección.</p>
+                </div>
+                
+                <div>
+                    <div>🔍</div>
+                    <h4>Determinante Clave</h4>
+                    <p>Para sistema 2×2: Si det(A) ≠ 0 → Solución única. Si det(A) = 0 → Infinitas o ninguna.</p>
+                </div>
+                
+                <div>
+                    <div>⚡</div>
+                    <h4>Método Recomendado</h4>
+                    <p>Para sistemas pequeños: Sustitución o eliminación. Para sistemas grandes: Métodos matriciales.</p>
+                </div>
+            </div>
+            
+            <div>
+                <button id="practicarMas">🧠 Practicar con más ejercicios</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

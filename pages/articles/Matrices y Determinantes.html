@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álgebra Lineal | Matrices y Determinantes - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        <div>
+            <h3>Tu progreso en este tema</h3>
+            <div>
+                <div id="progresoFill"></div>
+            </div>
+            <div>
+                <span>0% Completado</span>
+                <span id="progresoPorcentaje">0%</span>
+            </div>
+        </div>
+
+        <h2>1. Tipos de Matrices</h2>
+        
+        <div>
+            <div>
+                <span>Cuadrada</span>
+                <h3>Matriz Cuadrada</h3>
+                <p>Matriz con el mismo número de filas que de columnas (n×n).</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;A_{n\times&space;n}&space;=&space;\begin{pmatrix}&space;a_{11}&space;&&space;\cdots&space;&&space;a_{1n}&space;\\&space;\vdots&space;&&space;\ddots&space;&&space;\vdots&space;\\&space;a_{n1}&space;&&space;\cdots&space;&&space;a_{nn}&space;\end{pmatrix}" 
+                         alt="Matriz cuadrada">
+                </div>
+            </div>
+
+            <div>
+                <span>Identidad</span>
+                <h3>Matriz Identidad</h3>
+                <p>Matriz cuadrada con 1's en la diagonal y 0's en las demás posiciones.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;I_3&space;=&space;\begin{pmatrix}&space;1&space;&&space;0&space;&&space;0&space;\\&space;0&space;&&space;1&space;&&space;0&space;\\&space;0&space;&&space;0&space;&&space;1&space;\end{pmatrix}" 
+                         alt="Matriz identidad">
+                </div>
+            </div>
+
+            <div>
+                <span>Triangular</span>
+                <h3>Matriz Triangular</h3>
+                <p>Matriz cuadrada donde todos los elementos por encima o por debajo de la diagonal son cero.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;T&space;=&space;\begin{pmatrix}&space;a_{11}&space;&&space;0&space;&&space;0&space;\\&space;a_{21}&space;&&space;a_{22}&space;&&space;0&space;\\&space;a_{31}&space;&&space;a_{32}&space;&&space;a_{33}&space;\end{pmatrix}" 
+                         alt="Matriz triangular">
+                </div>
+            </div>
+        </div>
+
+        <h2>2. Determinantes</h2>
+
+        <div>
+            <div>
+                <span>Definición</span>
+                <h3>¿Qué es un Determinante?</h3>
+                <p>El determinante es un valor escalar que se calcula a partir de los elementos de una matriz cuadrada. Proporciona información importante sobre la matriz.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\det(A)&space;=&space;|A|&space;\in&space;\mathbb{R}" 
+                         alt="Determinante de A">
+                </div>
+                
+                <p><strong>Interpretación geométrica:</strong> El valor absoluto del determinante de una matriz 2×2 representa el área del paralelogramo formado por sus vectores columna.</p>
+            </div>
+
+            <div>
+                <span>Cálculo</span>
+                <h3>Determinantes 2×2 y 3×3</h3>
+                
+                <div>
+                    <p><strong>Para matriz 2×2:</strong></p>
+                    <div>
+                        <img src="https://latex.codecogs.com/svg.latex?\Large&space;\det\begin{pmatrix}&space;a&space;&&space;b&space;\\&space;c&space;&&space;d&space;\end{pmatrix}&space;=&space;ad&space;-&space;bc" 
+                             alt="Determinante 2x2">
+                    </div>
+                </div>
+                
+                <div>
+                    <p><strong>Para matriz 3×3 (Regla de Sarrus):</strong></p>
+                    <div>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{vmatrix}&space;a&space;&&space;b&space;&&space;c&space;\\&space;d&space;&&space;e&space;&&space;f&space;\\&space;g&space;&&space;h&space;&&space;i&space;\end{vmatrix}&space;=&space;a(ei-fh)-b(di-fg)+c(dh-eg)" 
+                             alt="Determinante 3x3">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>3. Propiedades de los Determinantes</h2>
+        
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Descripción</th>
+                        <th>Fórmula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Linealidad</strong></td>
+                        <td>El determinante es lineal en cada fila y columna</td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\det(\dots,\lambda\vec{v}_i+\vec{w}_i,\dots)=\lambda\det(\dots,\vec{v}_i,\dots)+\det(\dots,\vec{w}_i,\dots)"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intercambio</strong></td>
+                        <td>Al intercambiar dos filas, el determinante cambia de signo</td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\det(\dots,\vec{v}_i,\dots,\vec{v}_j,\dots)=-\det(\dots,\vec{v}_j,\dots,\vec{v}_i,\dots)"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matriz singular</strong></td>
+                        <td>Si una fila/columna es combinación lineal de otras, el determinante es cero</td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\text{Si}&space;\vec{v}_i=\sum_{j\neq&space;i}\alpha_j\vec{v}_j&space;\Rightarrow&space;\det(A)=0"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Producto</strong></td>
+                        <td>El determinante del producto es el producto de los determinantes</td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\det(AB)=\det(A)\det(B)"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transpuesta</strong></td>
+                        <td>El determinante de una matriz es igual al de su transpuesta</td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\det(A)=\det(A^T)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h3>✏️ Calculadora de Determinantes 2×2</h3>
+            <p><strong>Ingresa los valores de una matriz 2×2 y calcula su determinante:</strong></p>
+            
+            <div>
+                <div>
+                    <span>|</span>
+                    <input type="number" id="a11" value="3" step="any">
+                    <input type="number" id="a12" value="1" step="any">
+                    <span>|</span>
+                    <br>
+                    <span>|</span>
+                    <input type="number" id="a21" value="2" step="any">
+                    <input type="number" id="a22" value="4" step="any">
+                    <span>|</span>
+                </div>
+                
+                <div>
+                    <button id="calcularDeterminante">Calcular Determinante</button>
+                </div>
+                
+                <div id="resultadoDeterminante">
+                    
+                </div>
+            </div>
+            
+            <div id="solucionDeterminante">
+                <p><strong>Paso 1:</strong> Fórmula para determinante 2×2:</p>
+                <img src="https://latex.codecogs.com/svg.latex?\large&space;\det\begin{pmatrix}&space;a&space;&&space;b&space;\\&space;c&space;&&space;d&space;\end{pmatrix}&space;=&space;ad&space;-&space;bc">
+                
+                <p><strong>Paso 2:</strong> Sustituir valores:</p>
+                <p id="sustitucionValores"></p>
+                
+                <p><strong>Paso 3:</strong> Calcular resultado:</p>
+                <p id="calculoResultado"></p>
+            </div>
+        </div>
+
+        <h2>4. Matriz Inversa</h2>
+        
+        <div>
+            <div>
+                <span>Definición</span>
+                <h3>Matriz Inversa</h3>
+                <p>Dada una matriz cuadrada A, su inversa A⁻¹ es la matriz que cumple:</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;A&space;A^{-1}&space;=&space;A^{-1}&space;A&space;=&space;I" 
+                         alt="Matriz inversa">
+                </div>
+                
+                <p><strong>Condición de existencia:</strong> Una matriz tiene inversa si y solo si su determinante es diferente de cero (matriz no singular).</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\det(A)&space;\neq&space;0&space;\Leftrightarrow&space;A^{-1}&space;\text{existe}" 
+                        >
+                </div>
+            </div>
+
+            <div>
+                <span>Cálculo</span>
+                <h3>Inversa de Matriz 2×2</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;A^{-1}&space;=&space;\frac{1}{\det(A)}&space;\begin{pmatrix}&space;d&space;&&space;-b&space;\\&space;-c&space;&&space;a&space;\end{pmatrix}" 
+                         alt="Inversa 2x2">
+                </div>
+                
+                <p><strong>Ejemplo:</strong></p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\begin{pmatrix}&space;3&space;&&space;1&space;\\&space;2&space;&&space;4&space;\end{pmatrix}^{-1}&space;=&space;\frac{1}{10}&space;\begin{pmatrix}&space;4&space;&&space;-1&space;\\&space;-2&space;&&space;3&space;\end{pmatrix}&space;=&space;\begin{pmatrix}&space;0.4&space;&&space;-0.1&space;\\&space;-0.2&space;&&space;0.3&space;\end{pmatrix}" 
+                        >
+                </div>
+            </div>
+        </div>
+
+        <h2>5. Ejercicios Resueltos</h2>
+        
+        <div>
+            <div>
+                <h3>Ejercicio 1: Determinante de matriz 3×3</h3>
+                <p><strong>Problema:</strong> Calcular el determinante de <img src="https://latex.codecogs.com/svg.latex?\large&space;A&space;=&space;\begin{pmatrix}&space;2&space;&&space;1&space;&&space;3&space;\\&space;0&space;&&space;4&space;&&space;-1&space;\\&space;5&space;&&space;-2&space;&&space;2&space;\end{pmatrix}">.</p>
+                
+                <button onclick="mostrarSolucion(1)">Ver Solución</button>
+                
+                <div id="solucionEjercicio1">
+                    <div>
+                        <p><strong>Paso 1:</strong> Aplicar la regla de Sarrus:</p>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\det(A)&space;=&space;2\cdot4\cdot2&space;&plus;&space;1\cdot(-1)\cdot5&space;&plus;&space;3\cdot0\cdot(-2)&space;-&space;3\cdot4\cdot5&space;-&space;2\cdot(-1)\cdot(-2)&space;-&space;1\cdot0\cdot2" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <p><strong>Paso 2:</strong> Calcular cada término:</p>
+                        <p>16 + (-5) + 0 - 60 - 4 - 0</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>Paso 3:</strong> Sumar y restar:</p>
+                        <p>16 - 5 = 11<br>11 - 60 = -49<br>-49 - 4 = -53</p>
+                    </div>
+                    
+                    <div>
+                        <p><strong>Solución:</strong> det(A) = -53</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>Ejercicio 2: Matriz Inversa</h3>
+                <p><strong>Problema:</strong> Encontrar la inversa de <img src="https://latex.codecogs.com/svg.latex?\large&space;B&space;=&space;\begin{pmatrix}&space;1&space;&&space;2&space;\\&space;3&space;&&space;4&space;\end{pmatrix}">.</p>
+                
+                <button onclick="mostrarSolucion(2)">Ver Solución</button>
+                
+                <div id="solucionEjercicio2">
+                    <div>
+                        <p><strong>Paso 1:</strong> Calcular el determinante:</p>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\det(B)&space;=&space;(1\cdot4)&space;-&space;(2\cdot3)&space;=&space;4&space;-&space;6&space;=&space;-2" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <p><strong>Paso 2:</strong> Aplicar fórmula para inversa 2×2:</p>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;B^{-1}&space;=&space;\frac{1}{-2}&space;\begin{pmatrix}&space;4&space;&&space;-2&space;\\&space;-3&space;&&space;1&space;\end{pmatrix}" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <p><strong>Paso 3:</strong> Multiplicar por el escalar:</p>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;B^{-1}&space;=&space;\begin{pmatrix}&space;-2&space;&&space;1&space;\\&space;1.5&space;&&space;-0.5&space;\end{pmatrix}" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <p><strong>Solución:</strong> <img src="https://latex.codecogs.com/svg.latex?\large&space;B^{-1}&space;=&space;\begin{pmatrix}&space;-2&space;&&space;1&space;\\&space;3/2&space;&&space;-1/2&space;\end{pmatrix}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>6. Aplicaciones de Matrices y Determinantes</h2>
+        
+        <div>
+            <div>
+                <h3>🔢 Sistemas de Ecuaciones</h3>
+                <p>Los determinantes permiten resolver sistemas de ecuaciones lineales mediante la regla de Cramer.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;x_i&space;=&space;\frac{\det(A_i)}{\det(A)}">
+                </div>
+            </div>
+            
+            <div>
+                <h3>📈 Transformaciones Lineales</h3>
+                <p>El determinante de una matriz de transformación representa el factor de escala del área/volumen.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\text{Área}(\text{imagen})&space;=&space;|\det(T)|\cdot\text{Área}(\text{original})">
+                </div>
+            </div>
+            
+            <div>
+                <h3>🎯 Independencia Lineal</h3>
+                <p>El determinante permite determinar si un conjunto de vectores es linealmente independiente.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\det(\vec{v}_1,\dots,\vec{v}_n)&space;\neq&space;0&space;\Leftrightarrow&space;\text{LI}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

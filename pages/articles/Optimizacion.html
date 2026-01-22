@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Optimus | Prof. Carlos Alberto Martínez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    
+    <section>
+        <div>
+            <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1920&q=80" alt="Mar">
+        </div>
+        <div>
+            <h1>El Arte de la Optimización</h1>
+            <p>"Hallar lo máximo entre lo finito, la gesta del cálculo diferencial."</p>
+        </div>
+    </section>
+
+    <main>
+        
+        
+        <section id="teoria">
+            <div>
+                <h2>Fundamentos del Cálculo</h2>
+                
+            </div>
+
+            <div>
+                <div>
+                    <h3>1. La Razón de Cambio</h3>
+                    <p>La derivada nos indica cómo cambia una función en cada instante. Visualmente, es la pendiente de la recta tangente.</p>
+                </div>
+                <div>
+                    <h3>2. El Punto Crítico</h3>
+                    <p>Ocurre donde \(f'(x) = 0\). En la cima de una montaña o el fondo de un valle, el mundo parece "plano" por un instante.</p>
+                </div>
+                <div>
+                    <h3>3. La Optimización</h3>
+                    <p>Consiste en hallar los valores de \(x\) que nos dan el mayor beneficio o el menor costo/tiempo posible.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="problema">
+            <div>
+                <h2>
+                    <i></i> El Manuscrito de Circe
+                </h2>
+                <div>
+                    <div>
+                        <p>Odiseo está a <strong>3 km</strong> de la costa en su balsa. El palacio aguarda a <strong>8 km</strong> por tierra. Si rema a <strong>4 km/h</strong> y camina a <strong>6 km/h</strong>:</p>
+                        <div>
+                            T(x) = \(\frac{\sqrt{3^2 + x^2}}{4} + \frac{8 - x}{6}\)
+                        </div>
+                        <p>Derivando e igualando a cero, encontramos el punto donde el tiempo se detiene ante la eficiencia.</p>
+                    </div>
+                    <div>
+                        <h4>Simulación en Tiempo Real</h4>
+                        <canvas id="mapCanvas"></canvas>
+                        <div>
+                            <span>Punto Crítico: 2.68 km</span>
+                            <span id="tTotalBadge">0.00 h</span>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <div>
+                            <label>Punto de Desembarco: <span id="xDisplay">2.68 km</span></label>
+                            <input type="range" id="xSlider" min="0" max="8" step="0.01" value="2.68">
+                        </div>
+                        <div>
+                            <label>Velocidad Remo (\(v_1\)): <span id="v1Display">4 km/h</span></label>
+                            <input type="range" id="v1Slider" min="1" max="10" step="0.1" value="4">
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="irAlOptimo()">CALCULAR ÓPTIMO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ejercicios">
+            <h2>Códice de Sabiduría: Ejercicios Resueltos</h2>
+            
+            <div>
+                
+                <div>
+                    
+                    <h3>I. El Cercado del Pastor</h3>
+                    <p>Un pastor desea cercar un terreno rectangular de <strong>200 m²</strong> junto a un río recto. Si no necesita valla del lado del río, ¿cuáles son las dimensiones que minimizan el costo de la cerca?</p>
+                    
+                    <div>
+                        <div>
+                            <p>Planteamiento:</p>
+                            <ul>
+                                <li>Área: \(x \cdot y = 200 \implies y = 200/x\)</li>
+                                <li>Perímetro (Valla): \(P = x + 2y\)</li>
+                                <li>Función a minimizar: \(P(x) = x + \frac{400}{x}\)</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>Resolución:</p>
+                            <p>\(P'(x) = 1 - \frac{400}{x^2} = 0 \implies x^2 = 400 \)</p>
+                            <p>Solución: x = 20m, y = 10m</p>
+                            <p>El perímetro mínimo es de 40 metros.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h3>II. La Caja del Tesoro</h3>
+                    <p>De una hoja cuadrada de cartón de <strong>12 cm</strong> por lado, se cortan cuadrados iguales en las esquinas para formar una caja abierta. ¿Cuál debe ser la medida del corte para que el volumen sea máximo?</p>
+                    
+                    <div>
+                        <p>V(x) = x(12 - 2x)²</p>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <p>DERIVADA</p>
+                            <p>V'(x) = 12x² - 96x + 144</p>
+                        </div>
+                        <div>
+                            <p>PUNTO CRÍTICO</p>
+                            <p>x = 2 cm</p>
+                        </div>
+                        <div>
+                            <p>VOLUMEN MÁX</p>
+                            <p>128 cm³</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="quiz">
+            <h3>El Juicio del Navegante</h3>
+            <div id="quiz-q">Si la velocidad por tierra (caminar) fuera igual a la de remo, ¿qué trayectoria elegirías?</div>
+            <div id="quiz-options">
+                <button onclick="checkQuiz(0)">Ir directamente al punto más cercano de la playa (x=0).</button>
+                <button onclick="checkQuiz(1)">Navegar en línea recta hacia el palacio de Circe.</button>
+                <button onclick="checkQuiz(2)">Mantener el desembarco en x = 2.68 km.</button>
+            </div>
+            <div id="quiz-feedback"></div>
+        </section>
+
+        
+        <section id="contacto">
+            
+            
+            <div>
+                <h2>Hágase la luz en el conocimiento</h2>
+                <p>"Tutorías de Excelencia en las Artes del Cálculo y la Física"</p>
+                
+                <div>
+                    <div>
+                        <i></i>
+                        <h3>Pergamino Electrónico</h3>
+                        <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                    </div>
+                    
+                    <div>
+                        <i></i>
+                        <h3>Mensajería de Cristal</h3>
+                        <p>310 310 6954</p>
+                        <p>Sede del Maestro: Carlos Alberto Martínez S.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <a href="https://wa.me/573103106954" target="_blank">
+                        <i></i> 
+                        SOLICITAR AUDIENCIA
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

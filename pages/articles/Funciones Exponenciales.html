@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Exponencial | Ejercicios y Soluciones - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Ejercicios Prácticos</span>
+                <h1>
+                    Ejercicios de Funciones <span>Exponenciales</span>
+                </h1>
+                <p>
+                    Resuelve paso a paso los ejercicios del PDF con el <strong>Prof. Carlos Martinez</strong>. Aprende a graficar, analizar y aplicar funciones exponenciales en contextos reales.
+                </p>
+                <div>
+                    <a href="#ejercicios">Ver Ejercicios</a>
+                    <a href="#soluciones">Ver Soluciones</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <span>Gráfica Exponencial</span>
+                        <div>f</div>
+                    </div>
+                    <div>
+                        <canvas id="heroChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="teoria">
+            <div>
+                <h2>Teoría: Funciones Exponenciales</h2>
+                <p>Repaso de conceptos clave para resolver los ejercicios</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>
+                        <span>1</span>
+                        Forma General
+                    </h3>
+                    <div>
+                        <div>f(x) = a·b<sup>x</sup> + c</div>
+                        <div>
+                            <div>
+                                <div>a</div>
+                                <div>Coeficiente</div>
+                            </div>
+                            <div>
+                                <div>b</div>
+                                <div>Base</div>
+                            </div>
+                            <div>
+                                <div>c</div>
+                                <div>Desplazamiento</div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <span>✓</span>
+                            <span>Si <strong>b > 1</strong>: La función es <strong>creciente</strong></span>
+                        </li>
+                        <li>
+                            <span>✓</span>
+                            <span>Si <strong>0 < b < 1</strong>: La función es <strong>decreciente</strong></span>
+                        </li>
+                        <li>
+                            <span>✓</span>
+                            <span>El punto <strong>(0, a + c)</strong> siempre pertenece a la gráfica</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>
+                        <span>2</span>
+                        Propiedades Clave
+                    </h3>
+                    <div>
+                        <div>
+                            <div>Dominio y Rango</div>
+                            <div>
+                                <span>Dominio:</span> Todos los números reales (ℝ)<br>
+                                <span>Rango:</span> Depende de a, b y c
+                            </div>
+                        </div>
+                        <div>
+                            <div>Asíntota Horizontal</div>
+                            <div>
+                                La recta <span>y = c</span> es una asíntota horizontal. La gráfica se acerca pero nunca toca esta línea.
+                            </div>
+                        </div>
+                        <div>
+                            <div>Intersección con ejes</div>
+                            <div>
+                                <span>Eje Y:</span> (0, a + c)<br>
+                                <span>Eje X:</span> Resolver <span>a·b<sup>x</sup> + c = 0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ejercicios">
+            <div>
+                <h2>Ejercicios del PDF</h2>
+                <p>Resuelve los ejercicios paso a paso con ayuda visual</p>
+            </div>
+
+            
+            <div>
+                <div>
+                    <button>
+                        Ejercicio 1
+                    </button>
+                    <button>
+                        Ejercicio 2
+                    </button>
+                    <button>
+                        Más Ayuda
+                    </button>
+                </div>
+                
+                
+                <div id="ej1">
+                    <div>
+                        <h3>Ejercicio 1: Análisis de Funciones</h3>
+                        <p>Para cada función:</p>
+                        <ol>
+                            <li><strong>Esboza la gráfica</strong> de la función f</li>
+                            <li><strong>Asigna un concepto</strong> (ver Fig. 3) a cada función</li>
+                            <li>Plantea un posible <strong>contexto real</strong> (aplicación práctica)</li>
+                            <li>Indica un <strong>dominio</strong> (rango de valores de x) que tenga sentido</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        
+                        <div>
+                            <div>
+                                <div>A</div>
+                                <div>
+                                    <h4>Función A</h4>
+                                    <div>f(x) = 2<sup>x</sup></div>
+                                </div>
+                            </div>
+                            <div>
+                                <canvas id="chartFuncA"></canvas>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Concepto:</span>
+                                    <input type="text" placeholder="Escribe un concepto (ej: Crecimiento poblacional)">
+                                </div>
+                                <div>
+                                    <span>Contexto real:</span>
+                                    <textarea rows="2" placeholder="Describe una aplicación práctica"></textarea>
+                                </div>
+                                <div>
+                                    <span>Dominio razonable:</span>
+                                    <input type="text" placeholder="Ej: [0, 10] para años">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <div>
+                                <div>B</div>
+                                <div>
+                                    <h4>Función B</h4>
+                                    <div>f(x) = (1/2)<sup>x</sup></div>
+                                </div>
+                            </div>
+                            <div>
+                                <canvas id="chartFuncB"></canvas>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Concepto:</span>
+                                    <input type="text" placeholder="Escribe un concepto (ej: Desintegración radiactiva)">
+                                </div>
+                                <div>
+                                    <span>Contexto real:</span>
+                                    <textarea rows="2" placeholder="Describe una aplicación práctica"></textarea>
+                                </div>
+                                <div>
+                                    <span>Dominio razonable:</span>
+                                    <input type="text" placeholder="Ej: [0, ∞) para tiempo">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <div>
+                                <div>C</div>
+                                <div>
+                                    <h4>Función C</h4>
+                                    <div>f(x) = 3·2<sup>x</sup></div>
+                                </div>
+                            </div>
+                            <div>
+                                <canvas id="chartFuncC"></canvas>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Concepto:</span>
+                                    <input type="text" placeholder="Escribe un concepto (ej: Inversión con interés compuesto)">
+                                </div>
+                                <div>
+                                    <span>Contexto real:</span>
+                                    <textarea rows="2" placeholder="Describe una aplicación práctica"></textarea>
+                                </div>
+                                <div>
+                                    <span>Dominio razonable:</span>
+                                    <input type="text" placeholder="Ej: [0, 20] para años">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <div>
+                                <div>D</div>
+                                <div>
+                                    <h4>Función D</h4>
+                                    <div>f(x) = 2·(1/2)<sup>x</sup></div>
+                                </div>
+                            </div>
+                            <div>
+                                <canvas id="chartFuncD"></canvas>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Concepto:</span>
+                                    <input type="text" placeholder="Escribe un concepto (ej: Depreciación de un activo)">
+                                </div>
+                                <div>
+                                    <span>Contexto real:</span>
+                                    <textarea rows="2" placeholder="Describe una aplicación práctica"></textarea>
+                                </div>
+                                <div>
+                                    <span>Dominio razonable:</span>
+                                    <input type="text" placeholder="Ej: [0, 10] para años">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Consejo para resolver:</h4>
+                        <p>Recuerda que para esbozar la gráfica, calcula algunos puntos clave como f(0), f(1), f(-1). Observa si la función es creciente (b>1) o decreciente (0<b<1).</p>
+                    </div>
+                </div>
+
+                
+                <div id="ej2">
+                    <div>
+                        <h3>Ejercicio 2: Hallar la función exponencial</h3>
+                        <p>La gráfica de una función exponencial de la forma <span>f(x) = a·b<sup>x</sup></span> pasa por el punto <strong>P</strong>. Determina la expresión de la función (valor de <strong>a</strong> y <strong>b</strong>) e indica si es creciente o decreciente.</p>
+                    </div>
+
+                    <div>
+                        
+                        <div>
+                            <div>
+                                <label>Selecciona un inciso para resolver:</label>
+                                <div>
+                                    <button>a) P(2, 4)</button>
+                                    <button>b) P(2, 1/4)</button>
+                                    <button>c) P(-1, 4)</button>
+                                    <button>d) P(-1, 1/4)</button>
+                                    <button>e) P(1, 6)</button>
+                                    <button>f) P(2, 18)</button>
+                                    <button>g) P(1, 0.6)</button>
+                                    <button>h) P(-1, 1.6)</button>
+                                </div>
+                            </div>
+
+                            
+                            <div id="solucion-container">
+                                <div>
+                                    <div>SOLUCIÓN</div>
+                                    <p>Selecciona un inciso para ver su solución paso a paso</p>
+                                </div>
+                            </div>
+
+                            
+                            <div>
+                                <h4>i) ¿Por qué ningún punto P puede tener y = 0?</h4>
+                                <div>
+                                    <p>Explica por qué no se puede indicar ningún punto P cuyo valor de y sea 0.</p>
+                                    <textarea id="respuesta-i" rows="4" placeholder="Escribe tu explicación aquí..."></textarea>
+                                    <button onclick="mostrarSolucionI()">Ver solución</button>
+                                    <div id="solucion-i">
+                                        <p><strong>Solución:</strong> En una función exponencial de la forma f(x) = a·b<sup>x</sup> (con a ≠ 0 y b > 0, b ≠ 1), el valor de f(x) nunca puede ser 0 porque b<sup>x</sup> > 0 para todo x real. Por lo tanto, a·b<sup>x</sup> ≠ 0. La gráfica se acerca al eje X (asíntota horizontal) pero nunca lo cruza.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div>
+                            <div>
+                                <h4>Gráfica Interactiva</h4>
+                                <div>
+                                    <canvas id="chartEj2"></canvas>
+                                </div>
+                                <div>
+                                    <div>
+                                        <label>Valor de a:</label>
+                                        <input type="number" id="valor-a" value="1" step="0.1">
+                                    </div>
+                                    <div>
+                                        <label>Valor de b:</label>
+                                        <input type="number" id="valor-b" value="2" step="0.1">
+                                    </div>
+                                </div>
+                                <div>
+                                    <button onclick="actualizarGraficaEj2()">Actualizar Gráfica</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="ej3">
+                    <div>
+                        <h3>Más Ayuda para Resolver</h3>
+                        <p>Consejos y estrategias para resolver los ejercicios de funciones exponenciales</p>
+                    </div>
+
+                    <div>
+                        <div>
+                            <div>
+                                <h4>
+                                    <span>📈</span> Cómo determinar si es creciente o decreciente
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <span>✓</span>
+                                        <span><strong>Si b > 1</strong>: La función es <strong>creciente</strong> (sube)</span>
+                                    </li>
+                                    <li>
+                                        <span>✓</span>
+                                        <span><strong>Si 0 < b < 1</strong>: La función es <strong>decreciente</strong> (baja)</span>
+                                    </li>
+                                    <li>
+                                        <span>✓</span>
+                                        <span>Ejemplo: <span>f(x) = 2<sup>x</sup></span> → b=2>1 → Creciente</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4>
+                                    <span>🔢</span> Cómo encontrar a y b dado un punto P(x, y)
+                                </h4>
+                                <ol>
+                                    <li>Sustituye x e y en <span>y = a·b<sup>x</sup></span></li>
+                                    <li>Si tienes un segundo punto, plantea otro ecuación</li>
+                                    <li>Resuelve el sistema de ecuaciones</li>
+                                    <li>Verifica si b > 1 (creciente) o 0 < b < 1 (decreciente)</li>
+                                </ol>
+                                <div>
+                                    <p>Ejemplo: P(2, 9) con a=1</p>
+                                    <p>9 = 1·b<sup>2</sup> → b<sup>2</sup> = 9 → b = 3 (b>1 → creciente)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <h4>
+                                    <span>🎯</span> Contextos Reales para Funciones Exponenciales
+                                </h4>
+                                <div>
+                                    <div>
+                                        <div>Crecimiento Poblacional</div>
+                                        <p>P(t) = P₀·e<sup>rt</sup> donde r es la tasa de crecimiento</p>
+                                    </div>
+                                    <div>
+                                        <div>Interés Compuesto</div>
+                                        <p>A(t) = P·(1 + r/n)<sup>nt</sup> donde P es el capital inicial</p>
+                                    </div>
+                                    <div>
+                                        <div>Desintegración Radiactiva</div>
+                                        <p>N(t) = N₀·(1/2)<sup>t/T</sup> donde T es la vida media</p>
+                                    </div>
+                                    <div>
+                                        <div>Propagación de Virus</div>
+                                        <p>I(t) = I₀·R₀<sup>t</sup> donde R₀ es el número reproductivo básico</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4>
+                                    <span>📊</span> Cómo esbozar la gráfica
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <span>1.</span>
+                                        <span>Calcula f(0) = a + c (intersección con eje Y)</span>
+                                    </li>
+                                    <li>
+                                        <span>2.</span>
+                                        <span>Encuentra 2-3 puntos más (ej: f(1), f(-1), f(2))</span>
+                                    </li>
+                                    <li>
+                                        <span>3.</span>
+                                        <span>Determina la asíntota horizontal y = c</span>
+                                    </li>
+                                    <li>
+                                        <span>4.</span>
+                                        <span>Une los puntos con una curva suave</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="soluciones">
+            <div>
+                <h2>Soluciones Resueltas</h2>
+                
+                <div>
+                    
+                    <div>
+                        <div>
+                            <div>1</div>
+                            <div>
+                                <h3>Solución Ejercicio 1 (Ejemplos)</h3>
+                                <p>Respuestas tipo para guiarte</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <div>Función A: f(x) = 2<sup>x</sup></div>
+                                <ul>
+                                    <li><strong>Concepto:</strong> Crecimiento exponencial</li>
+                                    <li><strong>Contexto real:</strong> Crecimiento de bacterias en condiciones ideales</li>
+                                    <li><strong>Dominio razonable:</strong> [0, 24] horas</li>
+                                    <li><strong>Gráfica:</strong> Creciente, pasa por (0,1), (1,2), (2,4)</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <div>Función B: f(x) = (1/2)<sup>x</sup></div>
+                                <ul>
+                                    <li><strong>Concepto:</strong> Decrecimiento exponencial</li>
+                                    <li><strong>Contexto real:</strong> Desintegración radiactiva de un material</li>
+                                    <li><strong>Dominio razonable:</strong> [0, ∞) años</li>
+                                    <li><strong>Gráfica:</strong> Decreciente, pasa por (0,1), (1,0.5), (2,0.25)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <div>
+                            <div>2</div>
+                            <div>
+                                <h3>Solución Ejercicio 2 (Ejemplos)</h3>
+                                <p>Algunos incisos resueltos</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <div>a) P(2, 4) con a=1</div>
+                                <div>
+                                    <p><strong>Resolución:</strong></p>
+                                    <p>4 = 1·b<sup>2</sup> → b<sup>2</sup> = 4 → b = 2 (tomamos b>0)</p>
+                                    <p><strong>Función:</strong> f(x) = 2<sup>x</sup></p>
+                                    <p><strong>Comportamiento:</strong> Creciente (b=2>1)</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div>b) P(2, 1/4) con a=1</div>
+                                <div>
+                                    <p><strong>Resolución:</strong></p>
+                                    <p>1/4 = 1·b<sup>2</sup> → b<sup>2</sup> = 1/4 → b = 1/2</p>
+                                    <p><strong>Función:</strong> f(x) = (1/2)<sup>x</sup></p>
+                                    <p><strong>Comportamiento:</strong> Decreciente (b=0.5<1)</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div>i) ¿Por qué y nunca es 0?</div>
+                                <div>
+                                    <p><strong>Explicación:</strong> En f(x) = a·b<sup>x</sup> (con a≠0, b>0, b≠1), b<sup>x</sup> siempre es positivo. Por lo tanto, a·b<sup>x</sup> nunca puede ser 0. La gráfica tiene al eje X como asíntota horizontal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="calculadora">
+            <div>
+                <h3>
+                    <span>CALC</span>
+                    Evaluador Exponencial
+                </h3>
+                <div>
+                    <div>
+                        <div>
+                            <label>Base (b)</label>
+                            <input type="number" id="calc-b" value="2">
+                        </div>
+                        <div>
+                            <label>Exponente (x)</label>
+                            <input type="number" id="calc-x" value="3">
+                        </div>
+                    </div>
+                    <button onclick="calculate()">Calcular b<sup>x</sup></button>
+                    <div id="calc-res">
+                        <div>Resultado Final</div>
+                        <div>8</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            
+            <div>
+                <div>
+                    <h2>Prof. Carlos Alberto Martinez Sibaja</h2>
+                    <p>Matemáticas claras, visuales y accesibles para todos.</p>
+                </div>
+                <div>
+                    <div>
+                        <span>Email: carlossibaja644@gmail.com</span>
+                    </div>
+                    <div>
+                        <span>WhatsApp: 3103106954</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

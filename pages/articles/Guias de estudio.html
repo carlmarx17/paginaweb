@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo de Saberes - Biblioteca y Temas - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    <button id="themeToggle" aria-label="Cambiar tema">🌙</button>
+
+    
+    <div>
+        <div>
+            <div>
+                <h1>🌌 Universo de Saberes</h1>
+                <p>Explora el conocimiento a través de mundos literarios o accede directamente a los temas científicos</p>
+                
+                <div>
+                    <button onclick="switchView('worlds')">
+                        <span>📚</span> Mundos Literarios
+                    </button>
+                    <button onclick="switchView('subjects')">
+                        <span>📖</span> Temas por Materia
+                    </button>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>⚡ Acceso Rápido por Materia</h3>
+                    <div>
+                        <a href="#matematicas" onclick="quickJump('matematicas')">
+                            <span>📐</span>
+                            <div>
+                                <div>Matemáticas</div>
+                                <div>58 temas disponibles</div>
+                            </div>
+                        </a>
+                        <a href="#fisica" onclick="quickJump('fisica')">
+                            <span>⚛️</span>
+                            <div>
+                                <div>Física</div>
+                                <div>42 temas disponibles</div>
+                            </div>
+                        </a>
+                        <a href="#quimica" onclick="quickJump('quimica')">
+                            <span>🧪</span>
+                            <div>
+                                <div>Química</div>
+                                <div>51 temas disponibles</div>
+                            </div>
+                        </a>
+                        <a href="#biologia" onclick="quickJump('biologia')">
+                            <span>🧬</span>
+                            <div>
+                                <div>Biología</div>
+                                <div>39 temas disponibles</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div>
+        <div>
+            <input type="text" id="globalSearch" 
+                   placeholder="Buscar temas, conceptos, mundos o autores..." 
+                   onkeyup="globalSearch()">
+            <span>🔍</span>
+        </div>
+    </div>
+
+    
+    <div>
+        
+        
+        <div id="worldsView">
+            <h2>🌍 Mundos Literarios para Explorar</h2>
+            
+            <div>
+                
+                <div onclick="openWorldModal('macondo')">
+                    <div>
+                        <div>🌿</div>
+                        <div>
+                            <div>Macondo</div>
+                            <div>Gabriel García Márquez</div>
+                        </div>
+                        <div>
+                            <span>Ecología</span>
+                            <span>Genética</span>
+                            <span>Climatología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora la ciencia detrás del realismo mágico. Estudia ecología tropical, patrones genéticos y fenómenos climáticos a través de la historia de los Buendía.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('utopia')">
+                    <div>
+                        <div>🧬</div>
+                        <div>
+                            <div>Utopía Biológica</div>
+                            <div>Aldous Huxley</div>
+                        </div>
+                        <div>
+                            <span>Bioquímica</span>
+                            <span>Genética</span>
+                            <span>Neurociencia</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>La ciencia detrás de "Un Mundo Feliz". Estudia ingeniería genética, farmacología y control social desde la perspectiva científica.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('odisea')">
+                    <div>
+                        <div>🧭</div>
+                        <div>
+                            <div>Odisea Matemática</div>
+                            <div>Homero</div>
+                        </div>
+                        <div>
+                            <span>Cálculo</span>
+                            <span>Geometría</span>
+                            <span>Astronomía</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Acompaña a Odiseo en su viaje matemático. Resuelve problemas de cálculo, trigonometría y navegación en cada aventura.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('dante')">
+                    <div>
+                        <div>🔥</div>
+                        <div>
+                            <div>Viaje Cosmológico</div>
+                            <div>Dante Alighieri</div>
+                        </div>
+                        <div>
+                            <span>Física</span>
+                            <span>Astronomía</span>
+                            <span>Termodinámica</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Viaja por Infierno, Purgatorio y Paraíso estudiando física, química y astronomía. Cada círculo es un nuevo concepto científico.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('orwell')">
+                    <div>
+                        <div>👁️</div>
+                        <div>
+                            <div>Mundo Orweliano</div>
+                            <div>George Orwell</div>
+                        </div>
+                        <div>
+                            <span>Física</span>
+                            <span>Química</span>
+                            <span>Tecnología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora la ciencia detrás de la vigilancia y el control en "1984". Estudia ondas electromagnéticas, materiales de construcción y la química de la manipulación.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('fahrenheit')">
+                    <div>
+                        <div>🔥</div>
+                        <div>
+                            <div>Fahrenheit 451</div>
+                            <div>Ray Bradbury</div>
+                        </div>
+                        <div>
+                            <span>Química</span>
+                            <span>Biología</span>
+                            <span>Ecología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Estudia la ciencia de la combustión, efectos del fuego en los ecosistemas y la psicología del conocimiento en un mundo sin libros.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('viaje-tierra')">
+                    <div>
+                        <div>⛰️</div>
+                        <div>
+                            <div>Viaje al Centro</div>
+                            <div>Julio Verne</div>
+                        </div>
+                        <div>
+                            <span>Geología</span>
+                            <span>Física</span>
+                            <span>Biología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Acompaña a Verne en este viaje subterráneo explorando geología, paleontología, física de materiales y ecosistemas extremos.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('guerra-mundos')">
+                    <div>
+                        <div>👽</div>
+                        <div>
+                            <div>Guerra de los Mundos</div>
+                            <div>H.G. Wells</div>
+                        </div>
+                        <div>
+                            <span>Astronomía</span>
+                            <span>Biología</span>
+                            <span>Física</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora astronomía, exobiología y física a través de esta invasión extraterrestre. Estudia sistemas planetarios y vida extraterrestre.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('robotica')">
+                    <div>
+                        <div>🤖</div>
+                        <div>
+                            <div>Mundo Robótico</div>
+                            <div>Isaac Asimov</div>
+                        </div>
+                        <div>
+                            <span>Robótica</span>
+                            <span>IA</span>
+                            <span>Programación</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora las leyes de la robótica, inteligencia artificial y programación a través de los cuentos de Asimov. Matemáticas aplicadas a la robótica.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('fantasia')">
+                    <div>
+                        <div>🧙</div>
+                        <div>
+                            <div>Tierra Media</div>
+                            <div>J.R.R. Tolkien</div>
+                        </div>
+                        <div>
+                            <span>Ecología</span>
+                            <span>Geología</span>
+                            <span>Climatología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Estudia los ecosistemas de la Tierra Media, geología de las montañas y física detrás de los fenómenos climáticos en este mundo fantástico.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('frankenstein')">
+                    <div>
+                        <div>⚡</div>
+                        <div>
+                            <div>Frankestein</div>
+                            <div>Mary Shelley</div>
+                        </div>
+                        <div>
+                            <span>Biología</span>
+                            <span>Electricidad</span>
+                            <span>Bioética</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora la ciencia detrás de la creación de vida, la electricidad y la ética en la investigación científica a través de esta obra clásica.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('principito')">
+                    <div>
+                        <div>🌹</div>
+                        <div>
+                            <div>El Principito</div>
+                            <div>Antoine de Saint-Exupéry</div>
+                        </div>
+                        <div>
+                            <span>Astronomía</span>
+                            <span>Ecología</span>
+                            <span>Geología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Viaja por diferentes planetas estudiando astronomía, ecología planetaria y geología en este viaje filosófico-científico.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('sherlock')">
+                    <div>
+                        <div>🔍</div>
+                        <div>
+                            <div>Sherlock Holmes</div>
+                            <div>Arthur Conan Doyle</div>
+                        </div>
+                        <div>
+                            <span>Química</span>
+                            <span>Biología</span>
+                            <span>Lógica</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Aprende química forense, biología criminalística y lógica deductiva siguiendo los casos del detective más famoso.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('dracula')">
+                    <div>
+                        <div>🧛</div>
+                        <div>
+                            <div>Drácula</div>
+                            <div>Bram Stoker</div>
+                        </div>
+                        <div>
+                            <span>Biología</span>
+                            <span>Química</span>
+                            <span>Medicina</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Estudia hematología, enfermedades infecciosas y la química de la sangre a través de este clásico del terror gótico.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('metamorfosis')">
+                    <div>
+                        <div>🐛</div>
+                        <div>
+                            <div>La Metamorfosis</div>
+                            <div>Franz Kafka</div>
+                        </div>
+                        <div>
+                            <span>Biología</span>
+                            <span>Zoología</span>
+                            <span>Psicología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora la entomología, los procesos biológicos de transformación y la psicología a través de esta obra existencialista.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('jekyll')">
+                    <div>
+                        <div>🧪</div>
+                        <div>
+                            <div>Dr. Jekyll y Mr. Hyde</div>
+                            <div>Robert Louis Stevenson</div>
+                        </div>
+                        <div>
+                            <span>Química</span>
+                            <span>Farmacología</span>
+                            <span>Neurociencia</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Estudia la química de las sustancias psicoactivas, farmacología y neurociencia detrás de la dualidad humana.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('divina-comedia-integral')">
+                    <div>
+                        <div>📐</div>
+                        <div>
+                            <div>La Divina Comedia: Cálculo Integral</div>
+                            <div>Dante Alighieri</div>
+                        </div>
+                        <div>
+                            <span>Cálculo</span>
+                            <span>Geometría</span>
+                            <span>Física</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Aprende cálculo integral a través de los círculos del infierno de Dante. Cada círculo representa un concepto matemático diferente.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('iliada-geometria')">
+                    <div>
+                        <div>🏛️</div>
+                        <div>
+                            <div>La Ilíada: Geometría Analítica</div>
+                            <div>Homero</div>
+                        </div>
+                        <div>
+                            <span>Geometría</span>
+                            <span>Álgebra</span>
+                            <span>Física</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Analiza trayectorias de proyectiles, ángulos de ataque y geometría de batalla en la guerra de Troya. Dominio público.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('mil-noches')">
+                    <div>
+                        <div>🧞</div>
+                        <div>
+                            <div>Las Mil y Una Noches: Probabilidad</div>
+                            <div>Antología Árabe</div>
+                        </div>
+                        <div>
+                            <span>Estadística</span>
+                            <span>Probabilidad</span>
+                            <span>Lógica</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Calcula probabilidades de supervivencia, estadística de decisiones y lógica en los cuentos de Sherezade. Dominio público.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('quijote-fisica')">
+                    <div>
+                        <div>🛡️</div>
+                        <div>
+                            <div>Don Quijote: Física Mecánica</div>
+                            <div>Miguel de Cervantes</div>
+                        </div>
+                        <div>
+                            <span>Mecánica</span>
+                            <span>Energía</span>
+                            <span>Óptica</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Estudia fuerzas, palancas, energía cinética y óptica en las aventuras del ingenioso hidalgo. Dominio público.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('fausto-quimica')">
+                    <div>
+                        <div>⚗️</div>
+                        <div>
+                            <div>Fausto: Química y Alquimia</div>
+                            <div>Johann Wolfgang von Goethe</div>
+                        </div>
+                        <div>
+                            <span>Química</span>
+                            <span>Alquimia</span>
+                            <span>Bioquímica</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora reacciones químicas, transformación de elementos y principios de la alquimia moderna. Dominio público.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('gulliver-biologia')">
+                    <div>
+                        <div>🧝</div>
+                        <div>
+                            <div>Viajes de Gulliver: Biología Evolutiva</div>
+                            <div>Jonathan Swift</div>
+                        </div>
+                        <div>
+                            <span>Biología</span>
+                            <span>Genética</span>
+                            <span>Ecología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Estudia proporciones corporales, adaptación al medio y genética de poblaciones en Liliput y Brobdingnag. Dominio público.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+
+                
+                <div onclick="openWorldModal('ovidio-biologia')">
+                    <div>
+                        <div>🦋</div>
+                        <div>
+                            <div>Metamorfosis: Biología Celular</div>
+                            <div>Ovidio</div>
+                        </div>
+                        <div>
+                            <span>Biología Celular</span>
+                            <span>Genética</span>
+                            <span>Zoología</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Explora procesos de transformación biológica, mitosis, meiosis y desarrollo embrionario. Dominio público.</p>
+                        <button>Explorar este Mundo</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div>
+                <div>
+                    <h3>📊 Tu Progreso en los Mundos</h3>
+                    <span>Actualizado hoy</span>
+                </div>
+                <div>
+                    <div>
+                        <div>23</div>
+                        <div>Mundos Disponibles</div>
+                    </div>
+                    <div>
+                        <div>69</div>
+                        <div>Capítulos Completados</div>
+                    </div>
+                    <div>
+                        <div>210</div>
+                        <div>Temas Relacionados</div>
+                    </div>
+                    <div>
+                        <div>94%</div>
+                        <div>Progreso Total</div>
+                    </div>
+                </div>
+                <div>
+                    <button>
+                        Ver Todos los Mundos (23 disponibles)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="subjectsView">
+            
+            <div>
+                <div>
+                    <button onclick="filterSubjects('todas')">
+                        <span>🎓</span> Todas las Materias
+                    </button>
+                    <button onclick="filterSubjects('matematicas')">
+                        <span>📐</span> Matemáticas
+                    </button>
+                    <button onclick="filterSubjects('fisica')">
+                        <span>⚛️</span> Física
+                    </button>
+                    <button onclick="filterSubjects('quimica')">
+                        <span>🧪</span> Química
+                    </button>
+                    <button onclick="filterSubjects('biologia')">
+                        <span>🧬</span> Biología
+                    </button>
+                </div>
+            </div>
+
+            
+            <div id="subjectsGrid">
+                
+                <div id="matematicas">
+                    <div>
+                        <div>📐</div>
+                        <div>
+                            <h3>Matemáticas</h3>
+                            <div>Nivel Secundaria</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/aritmetica" 
+                                       target="_blank">
+                                        <span>Aritmética</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/numeros-enteros-y-racionales" 
+                                           target="_blank">Números enteros y racionales</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/operaciones" 
+                                           target="_blank">Operaciones básicas</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/algebra-basica" 
+                                           target="_blank">Álgebra básica</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/aritmetica/fracciones-y-decimales" 
+                                           target="_blank">Fracciones y decimales</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/aritmetica/porcentajes" 
+                                           target="_blank">Porcentajes</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/aritmetica/proporciones-y-razones" 
+                                           target="_blank">Proporciones y razones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Potenciación y radicación</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Logaritmos básicos</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/algebra-basica" 
+                                       target="_blank">
+                                        <span>Álgebra Básica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Expresiones algebraicas</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/algebra-basica/ecuaciones-de-primer-grado" 
+                                           target="_blank">Ecuaciones de primer grado</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/algebra-basica/sistemas-de-ecuaciones" 
+                                           target="_blank">Sistemas de ecuaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/algebra-basica/factorizacion" 
+                                           target="_blank">Factorización</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/algebra-basica/productos-notables" 
+                                           target="_blank">Productos notables</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ecuaciones de segundo grado</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Inecuaciones</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/geometria" 
+                                       target="_blank">
+                                        <span>Geometría</span>
+                                        <div>
+                                            <span>Actualizado</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Ángulos y triángulos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Polígonos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Circunferencia y círculo</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Perímetros y áreas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Geometría del espacio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Volúmenes</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/trigonometria" 
+                                       target="_blank">
+                                        <span>Trigonometría</span>
+                                        <div>
+                                            <span>Actualizado</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Razones trigonométricas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Triángulos rectángulos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ley de senos y cosenos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Identidades trigonométricas</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-segundaria/estadistica-probabilidad" 
+                                       target="_blank">
+                                        <span>Estadística y Probabilidad</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Estadística descriptiva</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Probabilidad básica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Distribuciones</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>📐</div>
+                        <div>
+                            <h3>Matemáticas</h3>
+                            <div>Nivel Universitario</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-diferencial" 
+                                       target="_blank">
+                                        <span>Cálculo Diferencial</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-diferencial/limites-y-continuidad" 
+                                           target="_blank">Límites y continuidad</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-diferencial/derivadas" 
+                                           target="_blank">Derivadas</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-diferencial/regla-de-la-cadena" 
+                                           target="_blank">Regla de la cadena</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-diferencial/maximos-y-minimos" 
+                                           target="_blank">Máximos y mínimos</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-diferencial/teorema-del-valor-medio" 
+                                           target="_blank">Teorema del valor medio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Derivadas parciales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gradiente y derivada direccional</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-integral" 
+                                       target="_blank">
+                                        <span>Cálculo Integral</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-integral/integrales-definidas" 
+                                           target="_blank">Integrales definidas e indefinidas</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-integral/tecnicas-de-integracion" 
+                                           target="_blank">Técnicas de integración</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/calculo-integral/aplicaciones" 
+                                           target="_blank">Aplicaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Integrales múltiples</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Integrales de línea</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Integrales de superficie</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/algebra-lineal" 
+                                       target="_blank">
+                                        <span>Álgebra Lineal</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/algebra-lineal/matrices-y-determinantes" 
+                                           target="_blank">Matrices y determinantes</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/algebra-lineal/sistemas-de-ecuaciones-lineales" 
+                                           target="_blank">Sistemas de ecuaciones lineales</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/algebra-lineal/espacios-vectoriales" 
+                                           target="_blank">Espacios vectoriales</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/algebra-lineal/transformaciones-lineales" 
+                                           target="_blank">Transformaciones lineales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Valores y vectores propios</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Diagonalización</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/ecuaciones-diferenciales" 
+                                       target="_blank">
+                                        <span>Ecuaciones Diferenciales</span>
+                                        <div>
+                                            <span>Actualizado</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/ecuaciones-diferenciales/edo-primer-orden" 
+                                           target="_blank">EDO de primer orden</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">EDO lineales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sistemas de EDO</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">EDP básicas</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/probabilidad-y-estadistica" 
+                                       target="_blank">
+                                        <span>Probabilidad y Estadística</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/probabilidad-y-estadistica/distribuciones" 
+                                           target="_blank">Distribuciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/probabilidad-y-estadistica/inferencia-estadistica" 
+                                           target="_blank">Inferencia estadística</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Regresión y correlación</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Análisis multivariado</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/matematicas-universitarias/analisis-numerico" 
+                                       target="_blank">
+                                        <span>Análisis Numérico</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Métodos numéricos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Interpolación</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Diferencias finitas</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div id="fisica">
+                    <div>
+                        <div>⚛️</div>
+                        <div>
+                            <h3>Física</h3>
+                            <div>Nivel Secundaria</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/mecanica" 
+                                       target="_blank">
+                                        <span>Mecánica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/cinematica" 
+                                           target="_blank">Cinemática: MRU y MRUV</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/mecanica/leyes-de-newton" 
+                                           target="_blank">Leyes de Newton</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/mecanica/trabajo-y-energia" 
+                                           target="_blank">Trabajo y energía</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/mecanica/potencia" 
+                                           target="_blank">Potencia</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/mecanica/maquinas-simples" 
+                                           target="_blank">Máquinas simples</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Movimiento circular</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Gravedad</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/calor-y-temperatura" 
+                                       target="_blank">
+                                        <span>Calor y Temperatura</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/calor-y-temperatura/escalas" 
+                                           target="_blank">Escalas de temperatura</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Dilatación térmica</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/calor-y-temperatura/cambios-de-estado" 
+                                           target="_blank">Cambios de estado</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Transmisión de calor</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Calorimetría</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/optica" 
+                                       target="_blank">
+                                        <span>Óptica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Reflexión y refracción</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/optica/espejos-y-lentes" 
+                                           target="_blank">Espejos y lentes</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/optica/ojo-humano" 
+                                           target="_blank">Ojo humano</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Instrumentos ópticos</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/electricidad" 
+                                       target="_blank">
+                                        <span>Electricidad</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Carga eléctrica</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/electricidad/ley-de-ohm" 
+                                           target="_blank">Ley de Ohm</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/electricidad/circuitos" 
+                                           target="_blank">Circuitos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Magnetismo básico</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Electromagnetismo</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-segundaria/ondas-sonido" 
+                                       target="_blank">
+                                        <span>Ondas y Sonido</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Características de las ondas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sonido y acústica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Efecto Doppler</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>⚛️</div>
+                        <div>
+                            <h3>Física</h3>
+                            <div>Nivel Universitario</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/mecanica-clasica" 
+                                       target="_blank">
+                                        <span>Mecánica Clásica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Dinámica de partículas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sistemas de referencia</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Energía y momento</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mecánica de fluidos</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/electromagnetismo" 
+                                       target="_blank">
+                                        <span>Electromagnetismo</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/electromagnetismo/campo-electrico" 
+                                           target="_blank">Campo eléctrico</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/electromagnetismo/ecuaciones-de-maxwell" 
+                                           target="_blank">Ecuaciones de Maxwell</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ondas electromagnéticas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Óptica física</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/termodinamica" 
+                                       target="_blank">
+                                        <span>Termodinámica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/termodinamica/leyes" 
+                                           target="_blank">Leyes de la termodinámica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ciclos termodinámicos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Entropía</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Potenciales termodinámicos</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/fisica-moderna" 
+                                       target="_blank">
+                                        <span>Física Moderna</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/fisica-moderna/mecanica-cuantica" 
+                                           target="_blank">Mecánica cuántica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Relatividad</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Física nuclear</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Física de partículas</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/fisica-universitaria/fisica-estadistica" 
+                                       target="_blank">
+                                        <span>Física Estadística</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Teoría cinética</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Distribuciones estadísticas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Fenómenos de transporte</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div id="quimica">
+                    <div>
+                        <div>🧪</div>
+                        <div>
+                            <h3>Química</h3>
+                            <div>Nivel Secundaria</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/estructura-atomica" 
+                                       target="_blank">
+                                        <span>Estructura Atómica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/modelos-atomicos" 
+                                           target="_blank">Modelos atómicos</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/estructura-atomica/configuracion-electronica" 
+                                           target="_blank">Configuración electrónica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Números cuánticos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tabla periódica</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/tabla-periodica" 
+                                       target="_blank">
+                                        <span>Tabla Periódica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Grupos y períodos</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/tabla-periodica/propiedades-periodicas" 
+                                           target="_blank">Propiedades periódicas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Metales y no metales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Elementos de transición</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/enlaces-quimicos" 
+                                       target="_blank">
+                                        <span>Enlaces Químicos</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/enlaces-quimicos/ionico-y-covalente" 
+                                           target="_blank">Iónico y covalente</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Enlace metálico</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Fuerzas intermoleculares</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Geometría molecular</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/reacciones-quimicas" 
+                                       target="_blank">
+                                        <span>Reacciones Químicas</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/estecquiometria" 
+                                           target="_blank">Estequiometría básica</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/reacciones-quimicas/balanceo" 
+                                           target="_blank">Balanceo de ecuaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tipos de reacciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Velocidad de reacción</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/soluciones" 
+                                       target="_blank">
+                                        <span>Soluciones</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/soluciones/concentracion" 
+                                           target="_blank">Concentración</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/soluciones/acidos-y-bases" 
+                                           target="_blank">Ácidos y bases</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">pH y pOH</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Titulaciones</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-segundaria/quimica-organica" 
+                                       target="_blank">
+                                        <span>Química Orgánica Básica</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Hidrocarburos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Grupos funcionales</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Isomería</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>🧪</div>
+                        <div>
+                            <h3>Química</h3>
+                            <div>Nivel Universitario</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/quimica-organica" 
+                                       target="_blank">
+                                        <span>Química Orgánica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/quimica-organica/mecanismos-de-reaccion" 
+                                           target="_blank">Mecanismos de reacción</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Síntesis orgánica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Espectroscopía</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Química de polímeros</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/fisicoquimica" 
+                                       target="_blank">
+                                        <span>Fisicoquímica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/fisicoquimica/equilibrio-quimico" 
+                                           target="_blank">Equilibrio químico</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Termodinámica química</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cinética química</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Electroquímica</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/bioquimica" 
+                                       target="_blank">
+                                        <span>Bioquímica</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/bioquimica/metabolismo" 
+                                           target="_blank">Metabolismo</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Enzimología</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bioenergética</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Química de biomoléculas</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/quimica-inorganica" 
+                                       target="_blank">
+                                        <span>Química Inorgánica</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Química de coordinación</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Química de estado sólido</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Química de materiales</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/quimica-universitaria/quimica-analitica" 
+                                       target="_blank">
+                                        <span>Química Analítica</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Métodos analíticos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cromatografía</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Espectrometría</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div id="biologia">
+                    <div>
+                        <div>🧬</div>
+                        <div>
+                            <h3>Biología</h3>
+                            <div>Nivel Secundaria</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/celula" 
+                                       target="_blank">
+                                        <span>Célula</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/teoria-celular" 
+                                           target="_blank">Teoría celular</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/celula/organelos" 
+                                           target="_blank">Organelos celulares</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/celula/mitosis-y-meiosis" 
+                                           target="_blank">Mitosis y meiosis</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Transporte celular</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Metabolismo celular</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/genetica" 
+                                       target="_blank">
+                                        <span>Genética</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/leyes-de-mendel" 
+                                           target="_blank">Leyes de Mendel</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/genetica/adn-y-arn" 
+                                           target="_blank">ADN y ARN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Código genético</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mutaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Biotecnología</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/cuerpo-humano" 
+                                       target="_blank">
+                                        <span>Cuerpo Humano</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/cuerpo-humano/sistemas" 
+                                           target="_blank">Sistemas del cuerpo humano</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Aparato digestivo</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Aparato circulatorio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Aparato respiratorio</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sistema nervioso</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Sistema endocrino</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/ecologia" 
+                                       target="_blank">
+                                        <span>Ecología</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Ecosistemas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cadenas alimentarias</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ciclos biogeoquímicos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Biodiversidad</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-segundaria/evolucion" 
+                                       target="_blank">
+                                        <span>Evolución</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Teorías evolutivas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Selección natural</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Especiación</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Evidencias de la evolución</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>🧬</div>
+                        <div>
+                            <h3>Biología</h3>
+                            <div>Nivel Universitario</div>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/biologia-molecular" 
+                                       target="_blank">
+                                        <span>Biología Molecular</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/biologia-molecular/replicacion" 
+                                           target="_blank">Replicación del ADN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Transcripción y traducción</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Regulación génica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tecnología del ADN recombinante</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/fisiologia" 
+                                       target="_blank">
+                                        <span>Fisiología</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/fisiologia/homeostasis" 
+                                           target="_blank">Homeostasis</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Fisiología celular</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Fisiología de sistemas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Neurofisiología</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/microbiologia" 
+                                       target="_blank">
+                                        <span>Microbiología</span>
+                                        <div>
+                                            <span>Completo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/microbiologia/virus-y-bacterias" 
+                                           target="_blank">Virus y bacterias</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Hongos y parásitos</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Microbiología industrial</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Microbiología ambiental</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/genetica-avanzada" 
+                                       target="_blank">
+                                        <span>Genética Avanzada</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Genética de poblaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Genética cuantitativa</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Genómica y proteómica</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Genética del desarrollo</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            
+                            <li>
+                                <div>
+                                    <a href="https://sites.google.com/view/carlosmartinezprofesor/guias-de-estudio/biologia-universitaria/biologia-celular" 
+                                       target="_blank">
+                                        <span>Biología Celular</span>
+                                        <div>
+                                            <span>Nuevo</span>
+                                        </div>
+                                    </a>
+                                    <button onclick="toggleSubtopics(this)" aria-label="Mostrar subtemas">▶</button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="#">Señalización celular</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Citoesqueleto</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Muerte celular programada</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Ciclo celular avanzado</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    
+    <div id="worldModal">
+        <div>
+            <button onclick="closeWorldModal()">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

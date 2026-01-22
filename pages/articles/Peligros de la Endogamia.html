@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macondo: Genética y Herencia | Tutorías Carlos Sibaja - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+<canvas id="butterflyfield"></canvas>
+
+<div>
+    
+
+    
+    <section>
+        <h2><span>01</span> El Miedo Ancestral</h2>
+        <p>En <em>Cien años de soledad</em>, Úrsula Iguarán vive aterrorizada de que sus hijos nazcan con una <strong>cola de cerdo</strong>. Este miedo no es superstición, sino intuición genética: el matrimonio entre primos hermanos aumenta exponencialmente la probabilidad de que se expresen alelos recesivos deletéreos.</p>
+        
+        <div>
+            <iframe src="https://www.youtube.com/embed/u_qsXIfPUuI" allowfullscreen></iframe>
+        </div>
+        <div>Video educativo sobre genética y endogamia</div>
+
+        <div>
+            <div>
+                <i></i>
+                <h3>Endogamia</h3>
+                <p>Reproducción entre individuos estrechamente relacionados. En poblaciones pequeñas como Macondo, lleva a la acumulación de alelos recesivos perjudiciales en homocigosis.</p>
+            </div>
+            <div>
+                <i></i>
+                <h3>Homocigosis</h3>
+                <p>Condición en la que un individuo tiene dos alelos idénticos para un gen. La endogamia aumenta drásticamente la frecuencia de homocigosis para genes recesivos.</p>
+            </div>
+            <div>
+                <i></i>
+                <h3>Probabilidad Aumentada</h3>
+                <p>Mientras en una población grande la probabilidad de portar el mismo alelo recesivo es baja, en familias consanguíneas esta probabilidad puede superar el 50%.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <h2><span>02</span> Matemáticas de la Herencia</h2>
+        <p>Supongamos que el gen de la "cola de cerdo" es recesivo ($a$) y el alelo normal es dominante ($A$). Los portadores ($Aa$) no muestran el fenotipo, pero pueden transmitirlo a su descendencia.</p>
+        
+        <div>
+            \[ P(\text{hijo con cola}) = P(\text{padre } Aa) \times P(\text{madre } Aa) \times \frac{1}{4} \]
+            <p>Para primos hermanos que comparten abuelos, la probabilidad de ambos ser portadores aumenta drásticamente.</p>
+        </div>
+        
+        <div>
+            <h3>Cuadro de Punnett: Cruce entre portadores (Aa × Aa)</h3>
+            <div>
+                
+                <div>A (50%)</div>
+                <div>a (50%)</div>
+                <div>A (50%)</div>
+                <div>AA (25%)</div>
+                <div>Aa (25%)</div>
+                <div>a (50%)</div>
+                <div>Aa (25%)</div>
+                <div>aa (25%)</div>
+            </div>
+            <p>Solo el genotipo <strong>aa</strong> (25%) expresa la cola de cerdo</p>
+        </div>
+
+        <div>
+            <i></i>
+            <h3>Coeficiente de Consanguinidad (F)</h3>
+            <p>Mide la probabilidad de que dos alelos en un locus sean idénticos por descendencia. Para hijos de primos hermanos, $F = 1/16 ≈ 6.25\%$, significativamente mayor que en parejas no relacionadas.</p>
+        </div>
+    </section>
+
+    
+    <section>
+        <div>
+            <i></i>
+            <h2>Entrenamiento ICFES: Genética</h2>
+        </div>
+        
+        <div>
+            <div id="quiz-progress"></div>
+        </div>
+        
+        <div>
+            <p><strong>PREGUNTA 1:</strong> En la familia Buendía, se observa que la "cola de cerdo" solo aparece cuando ambos padres pertenecen a la misma línea familiar. Si este rasgo es recesivo, ¿por qué no aparece en todas las generaciones?</p>
+            
+            <div onclick="responder(this, 1, false, 'Si fuera dominante, aparecería en cada generación si un padre lo tiene.')">
+                <div>A</div>
+                <div>Porque es un rasgo dominante que requiere que ambos padres lo tengan.</div>
+            </div>
+            <div onclick="responder(this, 1, true, '¡Correcto! Los heterocigotos (Aa) portan el gen recesivo pero no expresan el fenotipo, solo lo transmiten.')">
+                <div>B</div>
+                <div>Porque los padres pueden ser portadores heterocigotos y no expresar el fenotipo.</div>
+            </div>
+            <div onclick="responder(this, 1, false, 'La selección natural actúa sobre el fenotipo, pero no explica por qué se oculta el gen.')">
+                <div>C</div>
+                <div>Debido a que el ambiente de Macondo inhibe la expresión de genes extraños.</div>
+            </div>
+            <div onclick="responder(this, 1, false, 'Si fuera ligado al sexo, veríamos un patrón de herencia diferente entre hombres y mujeres.')">
+                <div>D</div>
+                <div>Porque es un gen ligado al cromosoma Y y solo lo heredan los varones.</div>
+            </div>
+            <div id="feedback1"></div>
+        </div>
+
+        <div>
+            <p><strong>PREGUNTA 2:</strong> La endogamia prolongada en una población pequeña como la de Macondo produce un fenómeno conocido como "Deriva Genética". Una consecuencia negativa de esto es:</p>
+            
+            <div onclick="responder(this, 2, false, 'Al contrario, la deriva y la endogamia reducen la variabilidad genética.')">
+                <div>A</div>
+                <div>El aumento de la variabilidad genética para adaptarse a nuevas enfermedades.</div>
+            </div>
+            <div onclick="responder(this, 2, true, '¡Exacto! La deriva genética en poblaciones pequeñas lleva a la pérdida de alelos y fijación de mutaciones deletéreas.')">
+                <div>B</div>
+                <div>La pérdida de alelos útiles y la fijación de mutaciones deletéreas.</div>
+            </div>
+            <div onclick="responder(this, 2, false, 'La especiación requiere mucho más tiempo y aislamiento reproductivo total.')">
+                <div>C</div>
+                <div>La creación instantánea de una nueva especie de seres humanos con cola.</div>
+            </div>
+            <div id="feedback2"></div>
+        </div>
+        
+        <div>
+            <p><strong>PREGUNTA 3:</strong> Si José Arcadio Buendía y Úrsula Iguarán fueran ambos portadores heterocigotos (Aa) del gen de la cola de cerdo, ¿cuál es la probabilidad de que su primer hijo nazca con el fenotipo afectado?</p>
+            
+            <div onclick="responder(this, 3, false, 'Para un cruce Aa × Aa, la probabilidad de aa es 1/4 (25%), no 50%.')">
+                <div>A</div>
+                <div>50%</div>
+            </div>
+            <div onclick="responder(this, 3, true, '¡Correcto! En un cruce entre heterocigotos, la probabilidad de homocigoto recesivo (aa) es 1/4 = 25%.')">
+                <div>B</div>
+                <div>25%</div>
+            </div>
+            <div onclick="responder(this, 3, false, '100% solo si ambos padres fueran homocigotos recesivos (aa).')">
+                <div>C</div>
+                <div>100%</div>
+            </div>
+            <div onclick="responder(this, 3, false, '0% solo si al menos uno de los padres fuera homocigoto dominante (AA).')">
+                <div>D</div>
+                <div>0%</div>
+            </div>
+            <div id="feedback3"></div>
+        </div>
+        
+        <div>
+            <button id="reset-quiz">
+                <i></i> Reiniciar Quiz
+            </button>
+        </div>
+    </section>
+
+    
+    
+</div>
+
+
+
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

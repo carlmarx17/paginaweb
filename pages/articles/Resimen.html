@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química Orgánica Interactiva | Grupos Funcionales - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    <a href="https://wa.link/3zyxd2" target="_blank" title="Contactar por WhatsApp">
+        <span>💬</span>
+    </a>
+
+    
+
+    <div>
+        <section>
+            <span>Química del Carbono</span>
+            <h1>El Lenguaje de la Vida</h1>
+            <p>Descubre los grupos funcionales que definen las propiedades de millones de compuestos orgánicos, desde medicamentos hasta plásticos y materiales biológicos.</p>
+        </section>
+
+        <section id="grupos">
+            <h2>🔬 Catálogo de Grupos Funcionales</h2>
+            <div>
+                <div>
+                    <div onclick="setCategory('todos')">
+                        
+                        <span>Todos los Grupos</span>
+                    </div>
+                    <div onclick="setCategory('oxigenados')">
+                        
+                        <span>Compuestos Oxigenados</span>
+                    </div>
+                    <div onclick="setCategory('nitrogenados')">
+                        
+                        <span>Compuestos Nitrogenados</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <div onclick="setCategory('carbonilicos')">
+                        
+                        <span>Grupos Carbonílicos</span>
+                    </div>
+                    <div onclick="setCategory('hidrocarburos')">
+                        
+                        <span>Hidrocarburos</span>
+                    </div>
+                    <div onclick="setCategory('acidicos')">
+                        
+                        <span>Grupos Ácidos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div id="functionalGroupsGrid">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="informacion">
+            <div>
+                <h3 id="groupTitle">Grupo Funcional</h3>
+                <div>
+                    <canvas id="largeMoleculeCanvas"></canvas>
+                </div>
+                
+                <div>
+                    <div>
+                        
+                        <span>Carbono (C)</span>
+                    </div>
+                    <div>
+                        
+                        <span>Hidrógeno (H)</span>
+                    </div>
+                    <div>
+                        
+                        <span>Oxígeno (O)</span>
+                    </div>
+                    <div>
+                        
+                        <span>Nitógeno (N)</span>
+                    </div>
+                    <div>
+                        
+                        <span>Halógeno (X)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <h4>Fórmula General</h4>
+                    <p id="generalFormula">R-OH</p>
+                </div>
+                <div>
+                    <h4>Prefijo/Sufijo</h4>
+                    <p id="nomenclature">-ol (alcoholes)</p>
+                </div>
+                <div>
+                    <h4>Polaridad</h4>
+                    <p id="polarity">Polar</p>
+                </div>
+                <div>
+                    <h4>Punto de Ebullición</h4>
+                    <p id="boilingPoint">Alto (debido a puentes H)</p>
+                </div>
+                <div>
+                    <h4>Solubilidad en Agua</h4>
+                    <p id="solubility">Alta (grupos pequeños)</p>
+                </div>
+                <div>
+                    <h4>Reactividad</h4>
+                    <p id="reactivity">Media-Alta</p>
+                </div>
+                
+                <div>
+                    <h4>Ejemplos Comunes</h4>
+                    <ul id="examplesList">
+                        <li>Metanol (CH₃OH)</li>
+                        <li>Etanol (C₂H₅OH)</li>
+                        <li>Isopropanol ((CH₃)₂CHOH)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="reacciones">
+            <h2>⚡ Simulador de Reacciones Orgánicas</h2>
+            <p>
+                Observa cómo los grupos funcionales participan en reacciones químicas comunes. Selecciona un grupo funcional y una reacción para visualizarla.
+            </p>
+            
+            <div>
+                <div>
+                    <div>
+                        <div id="reactant1Name">Alcano</div>
+                        <canvas id="reactant1Canvas" width="120" height="80"></canvas>
+                    </div>
+                    
+                    <div>+</div>
+                    
+                    <div>
+                        <div id="reactant2Name">Cl₂</div>
+                        <canvas id="reactant2Canvas" width="120" height="80"></canvas>
+                    </div>
+                    
+                    <div>→</div>
+                    
+                    <div>
+                        <div id="productName">Cloruro de alquilo</div>
+                        <canvas id="productCanvas" width="120" height="80"></canvas>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 id="reactionName">Reacción de Halogenación</h4>
+                    <p id="reactionDescription">
+                        Sustitución de un hidrógeno por un halógeno en presencia de luz UV.
+                    </p>
+                </div>
+                
+                <div>
+                    <select id="reactionType">
+                        <option value="halogenacion">Halogenación</option>
+                        <option value="oxidacion">Oxidación de Alcohol</option>
+                        <option value="esterificacion">Esterificación</option>
+                        <option value="saponificacion">Saponificación</option>
+                    </select>
+                    
+                    <button onclick="runReaction()">Ejecutar Reacción</button>
+                    <button onclick="resetReaction()">Reiniciar</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

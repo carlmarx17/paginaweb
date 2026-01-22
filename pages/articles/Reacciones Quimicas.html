@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Virtual de Reacciones Químicas - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    <div id="loading-screen">
+        <div>
+            
+            <h1>Laboratorio Virtual de Química</h1>
+            <p>Cargando simulaciones interactivas...</p>
+            <div>
+                <div id="loading-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                <h1>Reacciones Químicas en Acción</h1>
+                <p>Explora, simula y comprende las reacciones químicas a través de laboratorios virtuales, videos espectaculares y ejercicios interactivos.</p>
+                
+                <div>
+                    <div>
+                        <i></i>
+                        <span>Simulaciones Interactivas</span>
+                    </div>
+                    <div>
+                        <i></i>
+                        <span>Videos en HD</span>
+                    </div>
+                    <div>
+                        <i></i>
+                        <span>Aprendizaje Gamificado</span>
+                    </div>
+                    <div>
+                        <i></i>
+                        <span>Tutorías Personalizadas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        
+        <section>
+            <h3><i></i> Navega por el Laboratorio</h3>
+            <div>
+                <a href="#balanceo"><i></i> Balanceo de Ecuaciones</a>
+                <a href="#limitante"><i></i> Reactivo Limitante</a>
+                <a href="#videos"><i></i> Videos de Reacciones</a>
+                <a href="#quiz"><i></i> Pon a Prueba tu Conocimiento</a>
+                <a href="#contacto"><i></i> Contacto</a>
+            </div>
+        </section>
+
+        
+        <section id="balanceo">
+            <h2>
+                <i></i>
+                1. Simulación: Balanceo de Ecuaciones Químicas
+            </h2>
+            <p>Balancea la ecuación química ajustando los coeficientes estequiométricos. Una ecuación balanceada cumple con la <strong>Ley de Conservación de la Masa</strong>: el número de átomos de cada elemento debe ser igual en reactivos y productos.</p>
+            
+            <div>
+                <div>
+                    <div id="equationDisplay">
+                        <span id="coeffA">1</span>H₂ + <span id="coeffB">1</span>O₂ → <span id="coeffC">1</span>H₂O
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <label for="coeffAInput">Coeficiente H₂</label>
+                            <input type="number" id="coeffAInput" min="1" max="10" value="1" onchange="updateEquation()">
+                        </div>
+                        
+                        <div>
+                            <label for="coeffBInput">Coeficiente O₂</label>
+                            <input type="number" id="coeffBInput" min="1" max="10" value="1" onchange="updateEquation()">
+                        </div>
+                        
+                        <div>
+                            <label for="coeffCInput">Coeficiente H₂O</label>
+                            <input type="number" id="coeffCInput" min="1" max="10" value="1" onchange="updateEquation()">
+                        </div>
+                    </div>
+                    
+                    <div id="balanceFeedback"></div>
+                </div>
+                
+                <div>
+                    <h3><i></i> ¿Cómo balancear ecuaciones?</h3>
+                    <p>Para balancear la ecuación <strong>H₂ + O₂ → H₂O</strong>:</p>
+                    <ol>
+                        <li>Cuenta los átomos de cada elemento en reactivos y productos.</li>
+                        <li>En este caso: Reactivos: 2H, 2O | Productos: 2H, 1O</li>
+                        <li>Los átomos de oxígeno no están balanceados (2 vs 1).</li>
+                        <li>Coloca un coeficiente 2 frente a H₂O: H₂ + O₂ → 2H₂O</li>
+                        <li>Ahora tenemos: Reactivos: 2H, 2O | Productos: 4H, 2O</li>
+                        <li>Los átomos de hidrógeno no están balanceados (2 vs 4).</li>
+                        <li>Coloca un coeficiente 2 frente a H₂: 2H₂ + O₂ → 2H₂O</li>
+                        <li>¡Balanceada! Reactivos: 4H, 2O | Productos: 4H, 2O</li>
+                    </ol>
+                    
+                    <div>
+                        <button onclick="checkBalance()">
+                            <i></i>
+                            Verificar Balanceo
+                        </button>
+                        <button onclick="resetBalance()">
+                            <i></i>
+                            Reiniciar
+                        </button>
+                        <button onclick="showAnswer()">
+                            <i></i>
+                            Ver Solución
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Consejos para balancear ecuaciones</h4>
+                        <ul>
+                            <li>Empieza balanceando los elementos que aparecen en un solo compuesto en cada lado.</li>
+                            <li>Balancea los átomos que no sean hidrógeno ni oxígeno primero.</li>
+                            <li>Deja el hidrógeno y oxígeno para el final.</li>
+                            <li>Usa coeficientes fraccionarios si es necesario, luego multiplica por el denominador.</li>
+                            <li>Verifica que todos los átomos estén balanceados al final.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="limitante">
+            <h2>
+                <i></i>
+                2. Simulación: Reactivo Limitante y en Exceso
+            </h2>
+            <p>En una reacción química, el <strong>reactivo limitante</strong> es el que se consume primero y limita la cantidad de producto que se puede formar. El <strong>reactivo en exceso</strong> es el que sobra después de que la reacción se completa.</p>
+            
+            <div>
+                <div>
+                    <h3>Reacción: N₂ + 3H₂ → 2NH₃</h3>
+                    
+                    <div>
+                        <div id="moleculeN2">
+                            <div>
+                                <div>N₂</div>
+                                <div id="n2Amount">1 mol</div>
+                            </div>
+                        </div>
+                        
+                        <div>+</div>
+                        
+                        <div id="moleculeH2">
+                            <div>
+                                <div>3H₂</div>
+                                <div id="h2Amount">3 mol</div>
+                            </div>
+                        </div>
+                        
+                        <div>→</div>
+                        
+                        <div id="moleculeNH3">
+                            <div>
+                                <div>2NH₃</div>
+                                <div id="nh3Amount">2 mol</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="reactionStatus">
+                        Reacción balanceada
+                    </div>
+                </div>
+                
+                <div>
+                    <h3><i></i> Ajusta las Cantidades</h3>
+                    <p>Modifica las cantidades de reactivos para observar cómo cambia el reactivo limitante y la cantidad de producto formado.</p>
+                    
+                    <div>
+                        <div>
+                            <h4><i></i> Nitrógeno (N₂)</h4>
+                            <input type="range" id="n2Slider" min="0.5" max="5" step="0.1" value="1" oninput="updateLimitingReaction()">
+                            <div>
+                                <span>0.5 mol</span>
+                                <span id="n2Value">1.0 mol</span>
+                                <span>5.0 mol</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4><i></i> Hidrógeno (H₂)</h4>
+                            <input type="range" id="h2Slider" min="0.5" max="10" step="0.1" value="3" oninput="updateLimitingReaction()">
+                            <div>
+                                <span>0.5 mol</span>
+                                <span id="h2Value">3.0 mol</span>
+                                <span>10.0 mol</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Resultados de la Reacción</h4>
+                        <div>
+                            <div>Reactivo limitante:</div>
+                            <div id="limitingReactant">Ninguno</div>
+                        </div>
+                        
+                        <div>
+                            <div>Cantidad de NH₃ producido:</div>
+                            <div id="nh3Produced">2.00 mol</div>
+                        </div>
+                        
+                        <div>
+                            <div>Reactivo en exceso:</div>
+                            <div id="excessReactant">Ninguno</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h4><i></i> ¿Cómo identificar el reactivo limitante?</h4>
+                <p>Para la reacción <strong>N₂ + 3H₂ → 2NH₃</strong>:</p>
+                <ol>
+                    <li>Calcula los moles de cada reactivo.</li>
+                    <li>Determina la relación molar requerida (1 mol N₂ : 3 moles H₂).</li>
+                    <li>Divide los moles de cada reactivo entre su coeficiente estequiométrico.</li>
+                    <li>El reactivo con el valor más pequeño es el limitante.</li>
+                    <li>Ejemplo: Con 2 mol N₂ y 4 mol H₂ → N₂: 2/1 = 2, H₂: 4/3 ≈ 1.33 → H₂ es limitante.</li>
+                </ol>
+            </div>
+        </section>
+
+        
+        <section id="videos">
+            <h2>
+                <i></i>
+                3. Videos de Reacciones Químicas Espectaculares
+            </h2>
+            <p>Observa reacciones químicas reales en el laboratorio. Haz clic en cualquier video para reproducirlo en pantalla completa.</p>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <img src="https://img.youtube.com/vi/HOKV2p6qrzc/maxresdefault.jpg" alt="Reacción de sodio con agua">
+                        <button onclick="playVideo('HOKV2p6qrzc', 'Reacción de sodio con agua')">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Reacción de sodio con agua</h3>
+                        <p>El sodio metálico reacciona violentamente con el agua produciendo hidróxido de sodio e hidrógeno gas.</p>
+                        <div>2:15 min</div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <img src="https://img.youtube.com/vi/5vK8V9_3-OE/maxresdefault.jpg" alt="Reacción termita">
+                        <button onclick="playVideo('5vK8V9_3-OE', 'Reacción termita (óxido de hierro con aluminio)')">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Reacción termita</h3>
+                        <p>El aluminio reduce al óxido de hierro en una reacción altamente exotérmica que produce hierro fundido.</p>
+                        <div>3:42 min</div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <img src="https://img.youtube.com/vi/5n7kBkBcXgo/maxresdefault.jpg" alt="Reacción del yodato de potasio">
+                        <button onclick="playVideo('5n7kBkBcXgo', 'Reacción del yodato de potasio (reloj de yodo)')">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Reloj de yodo</h3>
+                        <p>Reacción redox que cambia de incolora a azul oscuro después de un tiempo determinado.</p>
+                        <div>4:20 min</div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <img src="https://img.youtube.com/vi/66Y0W2Pvl8E/maxresdefault.jpg" alt="Reacción de descomposición del peróxido de hidrógeno">
+                        <button onclick="playVideo('66Y0W2Pvl8E', 'Reacción de descomposición del peróxido de hidrógeno')">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Descomposición de H₂O₂</h3>
+                        <p>El peróxido de hidrógeno se descompone en agua y oxígeno gas con ayuda de un catalizador.</p>
+                        <div>2:58 min</div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <img src="https://img.youtube.com/vi/X2T7IpuYm-o/maxresdefault.jpg" alt="Reacción ácido-base">
+                        <button onclick="playVideo('X2T7IpuYm-o', 'Reacción ácido-base con indicador')">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Reacción ácido-base</h3>
+                        <p>Titulación ácido-base con fenolftaleína como indicador, cambiando de incoloro a rosa.</p>
+                        <div>3:15 min</div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <img src="https://img.youtube.com/vi/8yp7cBxrC_4/maxresdefault.jpg" alt="Pila electroquímica">
+                        <button onclick="playVideo('8yp7cBxrC_4', 'Pila electroquímica de Zn y Cu')">
+                            <i></i>
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Pila electroquímica</h3>
+                        <p>Pila voltaica de zinc y cobre que genera corriente eléctrica a partir de una reacción redox.</p>
+                        <div>4:50 min</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <p><em>Nota: Estos videos están alojados en YouTube y muestran experimentos realizados por profesionales en condiciones controladas. No intentes reproducirlos sin supervisión.</em></p>
+            </div>
+        </section>
+
+        
+        <section id="quiz">
+            <h2>
+                <i></i>
+                4. Pon a Prueba tu Conocimiento
+            </h2>
+            <p>Responde las siguientes preguntas sobre reacciones químicas. ¡Cada respuesta correcta suma puntos!</p>
+            
+            <div>
+                
+                <div>
+                    <div>1. ¿Cuál es el reactivo limitante en la reacción 2H₂ + O₂ → 2H₂O si tenemos 4 moles de H₂ y 1 mol de O₂?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz1')">A) H₂</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz1')">B) O₂</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz1')">C) Ambos son limitantes</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz1')">D) Ninguno es limitante</button>
+                    </div>
+                    <div id="quiz1-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>2. En una ecuación química balanceada, ¿qué ley se cumple?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz2')">A) Ley de Boyle</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz2')">B) Ley de Conservación de la Masa</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz2')">C) Ley de Charles</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz2')">D) Ley de Gravitación Universal</button>
+                    </div>
+                    <div id="quiz2-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>3. ¿Qué tipo de reacción es: 2Na + Cl₂ → 2NaCl?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz3')">A) Síntesis o combinación</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz3')">B) Descomposición</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz3')">C) Sustitución simple</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz3')">D) Doble desplazamiento</button>
+                    </div>
+                    <div id="quiz3-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>4. En la reacción de combustión: CH₄ + 2O₂ → CO₂ + 2H₂O, ¿cuántas moléculas de oxígeno se necesitan para quemar 2 moléculas de metano?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz4')">A) 2</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz4')">B) 4</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz4')">C) 6</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz4')">D) 8</button>
+                    </div>
+                    <div id="quiz4-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>5. ¿Cuál es el coeficiente para balancear el oxígeno en: Fe + O₂ → Fe₂O₃?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz5')">A) 1</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz5')">B) 2</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz5')">C) 3</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz5')">D) 4</button>
+                    </div>
+                    <div id="quiz5-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>6. ¿Qué indica un cambio de color en una reacción química?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz6')">A) Siempre formación de un gas</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz6')">B) Posible formación de una nueva sustancia</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz6')">C) Que la reacción es endotérmica</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz6')">D) Que la reacción es reversible</button>
+                    </div>
+                    <div id="quiz6-feedback"></div>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="showQuizResults()">
+                    <i></i>
+                    Ver Resultados del Quiz
+                </button>
+                <button onclick="resetQuiz()">
+                    <i></i>
+                    Reiniciar Quiz
+                </button>
+            </div>
+            
+            <div id="quizResults">
+                <div id="quizScore">0/6</div>
+                <div id="quizMessage">¡Completa el quiz para ver tus resultados!</div>
+                <button onclick="resetQuiz()">
+                    <i></i>
+                    Intentar de nuevo
+                </button>
+            </div>
+        </section>
+    </div>
+
+    
+    
+
+    
+    <div id="videoModal">
+        <div>
+            <div>
+                <div id="videoModalTitle">Video de Reacción Química</div>
+                <button onclick="closeVideo()">
+                    <i></i>
+                </button>
+            </div>
+            <div>
+                <iframe id="videoIframe" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    
+    <a href="https://wa.me/573103106954?text=Hola%20Profe%20Carlos,%20estoy%20interesado%20en%20una%20tutoría%20de%20química" target="_blank" aria-label="Chat en WhatsApp">
+        <i></i>
+    </a>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

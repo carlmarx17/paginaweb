@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecánica del Cuerpo Rígido - Nivel Avanzado - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    <div id="loading-screen">
+        <div>
+            
+            <h1>Mecánica del Cuerpo Rígido</h1>
+            <p>Cargando simulaciones interactivas...</p>
+        </div>
+    </div>
+
+    
+    
+
+    
+    
+
+    <div>
+        
+        <section>
+            <h3><i></i> Navega por el Contenido</h3>
+            <div>
+                <a href="#concepto"><i></i> Concepto de Rigidez</a>
+                <a href="#cinematica"><i></i> Cinemática</a>
+                <a href="#inercias"><i></i> Momentos de Inercia</a>
+                <a href="#dinamica"><i></i> Dinámica Rotacional</a>
+                <a href="#rodadura"><i></i> Rodadura</a>
+                <a href="#conservacion"><i></i> Conservación</a>
+                <a href="#ejercicios"><i></i> Ejercicios</a>
+                <a href="#contacto"><i></i> Contacto</a>
+            </div>
+        </section>
+
+        
+        <section id="concepto">
+            <h2><i></i> 1. El Concepto de Rigidez</h2>
+            <p>Un cuerpo rígido es una idealización matemática donde la distancia entre cualquier par de puntos $P_i$ y $P_j$ permanece constante en el tiempo, sin importar las fuerzas aplicadas. <strong>No hay deformación.</strong></p>
+            
+            <div>
+                <div>
+                    <i></i>
+                    Enfoque Pedagógico: ¿Por qué usar cuerpos rígidos?
+                </div>
+                <p>En la enseñanza de la mecánica, comenzamos con partículas puntuales, luego cuerpos rígidos, y finalmente medios continuos deformables. Los cuerpos rígidos nos permiten:</p>
+                <ul>
+                    <li>Simplificar problemas manteniendo la esencia física</li>
+                    <li>Introducir conceptos de rotación sin complicaciones de deformación</li>
+                    <li>Entender la transición entre traslación pura y rotación pura</li>
+                    <li>Preparar el terreno para mecánica más avanzada</li>
+                </ul>
+            </div>
+
+            <div>
+                $\text{Condición de rigidez: } \|\vec{r}_{ij}\| = \text{constante} \quad \forall i,j$
+                <div>La distancia entre cualquier par de puntos es constante</div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Punto de Atención para Estudiantes
+                </div>
+                <p>Recuerda: <strong>ningún objeto real es perfectamente rígido</strong>. Todos los materiales se deforman bajo fuerzas. Pero para muchas aplicaciones (ruedas, engranajes, estructuras), la aproximación es excelente y simplifica enormemente los cálculos.</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>Visualización: Traslación vs Rotación</h3>
+                    <canvas id="rigidBodyCanvas" width="500" height="250"></canvas>
+                    <div>
+                        <button onclick="startTranslation()">
+                            <i></i>
+                            Traslación
+                        </button>
+                        <button onclick="startRotation()">
+                            <i></i>
+                            Rotación
+                        </button>
+                        <button onclick="resetSimulation()">
+                            <i></i>
+                            Reiniciar
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Parámetros del Cuerpo Rígido</h3>
+                    <div>
+                        <label>
+                            <span>Forma del cuerpo:</span>
+                        </label>
+                        <select id="shapeSelect">
+                            <option value="rectangle">Rectángulo</option>
+                            <option value="triangle">Triángulo</option>
+                            <option value="circle">Círculo</option>
+                            <option value="complex">Forma Compleja</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>
+                            <span>Velocidad de traslación:</span>
+                            <span id="transSpeedValue">5</span>
+                        </label>
+                        <input type="range" id="transSpeed" min="1" max="10" value="5" oninput="updateSimulation()">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Velocidad angular:</span>
+                            <span id="rotSpeedValue">2</span>
+                        </label>
+                        <input type="range" id="rotSpeed" min="1" max="10" value="2" oninput="updateSimulation()">
+                    </div>
+                    <div>
+                        <label>
+                            <span>Mostrar trayectoria de CM:</span>
+                            <input type="checkbox" id="showPath" checked onchange="updateSimulation()">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="cinematica">
+            <h2><i></i> 2. Cinemática del Cuerpo Rígido</h2>
+            <p>El movimiento de un cuerpo rígido se puede descomponer en dos partes independientes pero simultáneas:</p>
+            
+            <div>
+                $\vec{v}_P = \vec{V}_{CM} + \vec{\omega} \times \vec{r}'$
+                <div>Fórmula de Euler para velocidades</div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Metodología de Enseñanza: Descomposición del Movimiento
+                </div>
+                <p>Para ayudar a los estudiantes a visualizar esta descomposición, usamos la analogía del "combo de movimientos":</p>
+                <ol>
+                    <li><strong>Traslación del Centro de Masa (CM):</strong> Imagina que todo el cuerpo se mueve como un punto (su CM) con velocidad $\vec{V}_{cm}$.</li>
+                    <li><strong>Rotación alrededor del CM:</strong> Ahora haz que el cuerpo gire alrededor de este punto con velocidad angular $\vec{\omega}$.</li>
+                    <li><strong>Combinación:</strong> Haz ambos movimientos a la vez. ¡Eso es el movimiento de un cuerpo rígido!</li>
+                </ol>
+                <p><strong>Consejo didáctico:</strong> Usa un libro o un celular para demostrarlo físicamente.</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>Descomposición del Movimiento</h3>
+                    <canvas id="kinematicsCanvas" width="500" height="250"></canvas>
+                    <div>
+                        <div><span>●</span> CM | <span>→</span> Velocidad CM | <span>↻</span> Rotación</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Simulación de Fórmula de Euler</h3>
+                    <p>Observa cómo la velocidad de un punto P (en rojo) se compone de la traslación del CM más la rotación alrededor de él.</p>
+                    
+                    <div>
+                        <label>
+                            <span>Posición del punto P:</span>
+                            <span id="pointPosValue">(2, 1)</span>
+                        </label>
+                        <input type="range" id="pointX" min="-3" max="3" step="0.5" value="2" oninput="updateKinematics()">
+                        <input type="range" id="pointY" min="-3" max="3" step="0.5" value="1" oninput="updateKinematics()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Velocidad CM: V<sub>x</sub> = <span id="vxValue">2</span>, V<sub>y</sub> = <span id="vyValue">0</span></span>
+                        </label>
+                        <input type="range" id="vx" min="-5" max="5" step="0.5" value="2" oninput="updateKinematics()">
+                        <input type="range" id="vy" min="-5" max="5" step="0.5" value="0" oninput="updateKinematics()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Velocidad angular ω:</span>
+                            <span id="omegaValue">1.5</span> rad/s
+                        </label>
+                        <input type="range" id="omega" min="-3" max="3" step="0.1" value="1.5" oninput="updateKinematics()">
+                    </div>
+                    
+                    <button onclick="animateKinematics()">
+                        <i></i>
+                        Animar Movimiento
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="inercias">
+            <h2><i></i> 3. El Momento de Inercia</h2>
+            <p>Si la masa ($m$) mide la resistencia al movimiento lineal, el Momento de Inercia ($I$) mide la resistencia a la rotación. Es una cantidad que depende no solo de la masa total, sino de cómo está distribuida respecto al eje de rotación.</p>
+            
+            <div>
+                $I = \sum_i m_i r_i^2 \quad \rightarrow \quad I = \int r^2 dm$
+                <div>Definición para sistemas discretos y continuos</div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Estrategia Pedagógica: El "Factor Perezoso"
+                </div>
+                <p>Para que los estudiantes entiendan intuitivamente el momento de inercia, uso la analogía del <strong>"factor perezoso"</strong>:</p>
+                <ul>
+                    <li><strong>Masa cerca del eje:</strong> El cuerpo es "ágil", fácil de hacer girar (bajo I)</li>
+                    <li><strong>Masa lejos del eje:</strong> El cuerpo es "perezoso", resistente a girar (alto I)</li>
+                </ul>
+                <p><strong>Ejemplo concreto:</strong> Compara girar una varilla sosteniéndola por el centro (fácil) vs por un extremo (difícil).</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>Comparación de Momentos de Inercia</h3>
+                    <canvas id="inertiaCanvas" width="500" height="250"></canvas>
+                    <div>
+                        <div id="inertiaResult">I = 0.5 MR² (disco)</div>
+                        <div>Tiempo para completar 1 revolución</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Simulación: ¿Quién gira más rápido?</h3>
+                    <p>Misma masa, misma fuerza aplicada, diferente distribución de masa.</p>
+                    
+                    <div>
+                        <label>
+                            <span>Selecciona forma:</span>
+                        </label>
+                        <select id="inertiaShape" onchange="updateInertiaSim()">
+                            <option value="disk">Disco sólido (I = ½ MR²)</option>
+                            <option value="ring">Aro (I = MR²)</option>
+                            <option value="sphere">Esfera sólida (I = ⅖ MR²)</option>
+                            <option value="rod">Varilla delgada (I = ¹⁄₁₂ ML²)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Masa (M):</span>
+                            <span id="massValue">5</span> kg
+                        </label>
+                        <input type="range" id="mass" min="1" max="10" value="5" oninput="updateInertiaSim()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Radio/Longitud:</span>
+                            <span id="radiusValue">2</span> m
+                        </label>
+                        <input type="range" id="radius" min="1" max="5" step="0.1" value="2" oninput="updateInertiaSim()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Torque aplicado (τ):</span>
+                            <span id="torqueValue">10</span> N·m
+                        </label>
+                        <input type="range" id="torque" min="1" max="20" value="10" oninput="updateInertiaSim()">
+                    </div>
+                    
+                    <button onclick="startInertiaRace()">
+                        <i></i>
+                        ¡Carrera de Rotación!
+                    </button>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Tabla de Momentos de Inercia Comunes
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cuerpo</th>
+                                <th>Eje</th>
+                                <th>Momento de Inercia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Varilla delgada</td>
+                                <td>Por centro</td>
+                                <td>$\frac{1}{12}ML^2$</td>
+                            </tr>
+                            <tr>
+                                <td>Disco/Placa</td>
+                                <td>Perpendicular al plano</td>
+                                <td>$\frac{1}{2}MR^2$</td>
+                            </tr>
+                            <tr>
+                                <td>Esfera sólida</td>
+                                <td>Por centro</td>
+                                <td>$\frac{2}{5}MR^2$</td>
+                            </tr>
+                            <tr>
+                                <td>Aro/cilindro hueco</td>
+                                <td>Por centro</td>
+                                <td>$MR^2$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="dinamica">
+            <h2><i></i> 4. Dinámica Rotacional</h2>
+            <p>El análogo rotacional de $\vec{F} = m\vec{a}$ es la relación entre el Torque ($\vec{\tau}$) y la variación del Momento Angular ($\vec{L}$).</p>
+            
+            <div>
+                $\vec{\tau} = \vec{r} \times \vec{F} = \frac{d\vec{L}}{dt}$
+                $\vec{L} = \mathbf{I} \cdot \vec{\omega} \quad \text{(en general tensor)}$
+                $\tau = I\alpha \quad \text{(para eje fijo y simetría axial)}$
+                <div>Ecuaciones fundamentales de la dinámica rotacional</div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Construcción Conceptual: Analogías Traslación-Rotación
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Traslación</th>
+                                <th>Rotación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fuerza $\vec{F}$</td>
+                                <td>Torque $\vec{\tau} = \vec{r} \times \vec{F}$</td>
+                            </tr>
+                            <tr>
+                                <td>Masa $m$</td>
+                                <td>Momento de Inercia $I$</td>
+                            </tr>
+                            <tr>
+                                <td>Aceleración $\vec{a}$</td>
+                                <td>Aceleración angular $\vec{\alpha}$</td>
+                            </tr>
+                            <tr>
+                                <td>Cantidad de movimiento $\vec{p} = m\vec{v}$</td>
+                                <td>Momento angular $\vec{L} = I\vec{\omega}$</td>
+                            </tr>
+                            <tr>
+                                <td>$\vec{F} = \frac{d\vec{p}}{dt}$</td>
+                                <td>$\vec{\tau} = \frac{d\vec{L}}{dt}$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Mnemotécnico:</strong> "Todo lo que aprendiste de traslación tiene un equivalente en rotación, solo cambia el nombre."</p>
+            </div>
+        </section>
+
+        
+        <section id="rodadura">
+            <h2><i></i> 5. Rodadura sin Deslizamiento</h2>
+            <p>Es el caso donde un cuerpo rueda perfectamente sin resbalar. El punto de contacto con la superficie tiene velocidad instantánea cero relativa a la superficie.</p>
+            
+            <div>
+                $\text{Condición: } v_{CM} = \omega R$
+                $K_{total} = \frac{1}{2} M v_{CM}^2 + \frac{1}{2} I_{CM} \omega^2$
+                <div>Condición cinemática y energía cinética total</div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Pregunta Didáctica: ¿Por qué un cuerpo rueda más rápido cuesta abajo?
+                </div>
+                <p>Al rodar por un plano inclinado, la energía potencial gravitacional se convierte en:</p>
+                <ol>
+                    <li>Energía cinética de traslación ($\frac{1}{2}Mv^2$)</li>
+                    <li>Energía cinética de rotación ($\frac{1}{2}I\omega^2$)</li>
+                </ol>
+                <p><strong>Conclusión pedagógica:</strong> A menor momento de inercia $I$, menos energía se "gasta" en rotación y más queda para traslación, por lo tanto, el cuerpo acelera más.</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>Carrera en Plano Inclinado</h3>
+                    <canvas id="rollingCanvas" width="500" height="250"></canvas>
+                    <div>
+                        <div><span>●</span> Esfera: I = ⅖ MR²</div>
+                        <div><span>■</span> Disco: I = ½ MR²</div>
+                        <div><span>◯</span> Aro: I = MR²</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Simulación: ¿Quién gana la carrera?</h3>
+                    <p>Misma masa, mismo radio, diferente distribución de masa (diferente I).</p>
+                    
+                    <div>
+                        <label>
+                            <span>Ángulo del plano:</span>
+                            <span id="angleValue">30</span>°
+                        </label>
+                        <input type="range" id="angle" min="10" max="60" value="30" oninput="updateRollingSim()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Altura inicial:</span>
+                            <span id="heightValue">5</span> m
+                        </label>
+                        <input type="range" id="height" min="2" max="10" step="0.5" value="5" oninput="updateRollingSim()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Coeficiente de fricción:</span>
+                            <span id="frictionValue">0.5</span>
+                        </label>
+                        <input type="range" id="friction" min="0.1" max="1" step="0.1" value="0.5" oninput="updateRollingSim()">
+                    </div>
+                    
+                    <button onclick="startRollingRace()">
+                        <i></i>
+                        Iniciar Carrera
+                    </button>
+                    
+                    <div>
+                        <div id="raceResult"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="conservacion">
+            <h2><i></i> 6. Conservación del Momento Angular</h2>
+            <p>Si el torque externo neto es cero, el momento angular total del sistema se conserva. Este principio explica fenómenos desde patinadores girando hasta la formación de estrellas de neutrones.</p>
+            
+            <div>
+                $\text{Si } \sum \vec{\tau}_{ext} = 0 \Rightarrow \vec{L} = \text{constante}$
+                $I_1\omega_1 = I_2\omega_2$
+                <div>Conservación del momento angular para sistema aislado</div>
+            </div>
+
+            <div>
+                <div>
+                    <i></i>
+                    Demostración en el Aula: El Patinador
+                </div>
+                <p><strong>Actividad práctica para el aula:</strong></p>
+                <ol>
+                    <li>Pide a un estudiante que gire en una silla giratoria con los brazos extendidos.</li>
+                    <li>Luego que los acerque al cuerpo.</li>
+                    <li><strong>Observación:</strong> ¡Gira más rápido!</li>
+                </ol>
+                <p><strong>Explicación:</strong> Al acercar los brazos, disminuye $I$ (masa más cerca del eje). Como $L$ se conserva, $\omega$ debe aumentar.</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>Conservación: Patinador Girando</h3>
+                    <canvas id="conservationCanvas" width="500" height="250"></canvas>
+                    <div>
+                        <div>Momento angular: <span id="angularMomentum">200</span> kg·m²/s</div>
+                        <div>Velocidad angular: <span id="angularSpeed">2</span> rad/s</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Simulación Interactiva</h3>
+                    <p>Cambia la distribución de masa y observa cómo varía la velocidad de rotación para conservar $L$.</p>
+                    
+                    <div>
+                        <label>
+                            <span>Posición de las masas:</span>
+                            <span id="massPositionValue">Extendidas</span>
+                        </label>
+                        <input type="range" id="massPosition" min="0" max="100" value="100" oninput="updateConservation()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Masa en cada mano:</span>
+                            <span id="handMassValue">5</span> kg
+                        </label>
+                        <input type="range" id="handMass" min="1" max="10" value="5" oninput="updateConservation()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Momento de inercia del cuerpo:</span>
+                            <span id="bodyInertiaValue">10</span> kg·m²
+                        </label>
+                        <input type="range" id="bodyInertia" min="5" max="20" value="10" oninput="updateConservation()">
+                    </div>
+                    
+                    <button onclick="animateConservation()">
+                        <i></i>
+                        Animar Transición
+                    </button>
+                    
+                    <div>
+                        <div>
+                            <i></i>
+                            Cálculo: $\omega_2 = \frac{I_1}{I_2} \omega_1$
+                        </div>
+                        <p id="conservationCalc"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ejercicios">
+            <h2><i></i> 7. Ejercicios Interactivos</h2>
+            <p>Practica con estos ejercicios diseñados pedagógicamente para consolidar tu comprensión.</p>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                        Ejercicio 1: Carrera en el Plano
+                    </div>
+                    <p>Una esfera sólida ($I = \frac{2}{5}MR^2$) y un aro ($I = MR^2$) se sueltan desde la cima de un plano inclinado de altura $h$. ¿Cuál llega primero abajo?</p>
+                    <button onclick="toggleSolution('sol1')">
+                        <i></i>
+                        Ver Solución
+                    </button>
+                    <div id="sol1">
+                        <div>
+                            <p><strong>Resolución:</strong></p>
+                            <p>Por conservación de energía: $Mgh = \frac{1}{2}MV^2 + \frac{1}{2}I\omega^2$</p>
+                            <p>Condición rodadura: $\omega = V/R$</p>
+                            <p>Sustituyendo:</p>
+                            <p>$Mgh = \frac{1}{2}MV^2 + \frac{1}{2}I\frac{V^2}{R^2}$</p>
+                            <p>$V^2 = \frac{2gh}{1 + \frac{I}{MR^2}}$</p>
+                            <p>Para esfera: $I/(MR^2) = 2/5 \Rightarrow V = \sqrt{\frac{10}{7}gh} \approx 1.19\sqrt{gh}$</p>
+                            <p>Para aro: $I/(MR^2) = 1 \Rightarrow V = \sqrt{gh} = 1.0\sqrt{gh}$</p>
+                            <p><strong>Conclusión:</strong> La esfera llega primero porque tiene menor momento de inercia relativo.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <i></i>
+                        Ejercicio 2: Disco que Rueda
+                    </div>
+                    <p>Un disco de masa $M$ y radio $R$ rueda sin deslizar. Si su CM tiene velocidad $v$, ¿cuál es su energía cinética total?</p>
+                    <button onclick="toggleSolution('sol2')">
+                        <i></i>
+                        Ver Solución
+                    </button>
+                    <div id="sol2">
+                        <div>
+                            <p><strong>Resolución:</strong></p>
+                            <p>Energía cinética total = traslación + rotación</p>
+                            <p>$K = \frac{1}{2}Mv^2 + \frac{1}{2}I\omega^2$</p>
+                            <p>Para disco: $I = \frac{1}{2}MR^2$</p>
+                            <p>Rodadura: $\omega = v/R$</p>
+                            <p>Sustituyendo: $K = \frac{1}{2}Mv^2 + \frac{1}{2}(\frac{1}{2}MR^2)(\frac{v}{R})^2$</p>
+                            <p>$K = \frac{1}{2}Mv^2 + \frac{1}{4}Mv^2 = \frac{3}{4}Mv^2$</p>
+                            <p><strong>Respuesta:</strong> $\frac{3}{4}Mv^2$</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <i></i>
+                        Ejercicio 3: Patinador
+                    </div>
+                    <p>Un patinador gira con velocidad angular $\omega_0$ y momento de inercia $I_0$. Si reduce su $I$ a $I_0/3$, ¿cuál es su nueva $\omega$?</p>
+                    <button onclick="toggleSolution('sol3')">
+                        <i></i>
+                        Ver Solución
+                    </button>
+                    <div id="sol3">
+                        <div>
+                            <p><strong>Resolución:</strong></p>
+                            <p>Conservación momento angular: $L = \text{constante}$</p>
+                            <p>$I_0\omega_0 = I_f\omega_f$</p>
+                            <p>$\omega_f = \frac{I_0}{I_f}\omega_0 = \frac{I_0}{I_0/3}\omega_0 = 3\omega_0$</p>
+                            <p><strong>Respuesta:</strong> $\omega_f = 3\omega_0$ (gira 3 veces más rápido)</p>
+                            <p><strong>Nota pedagógica:</strong> Esto explica por qué los patinadores giran más rápido al cerrar los brazos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="contacto">
+            <h2>
+                <i></i>
+                Información de Contacto
+            </h2>
+            <p>
+                ¿Necesitas ayuda con mecánica del cuerpo rígido o cualquier otro tema de física/matemáticas? 
+                Contáctame para tutorías personalizadas, clases particulares o resolución de problemas específicos.
+            </p>
+            
+            <div>
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h3>Prof. Carlos Martínez</h3>
+                    <p>Docente especializado en física y matemáticas con más de 10 años de experiencia en enseñanza a nivel universitario y preparación para exámenes.</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h3>Áreas de Especialización</h3>
+                    <ul>
+                        <li>Mecánica Clásica</li>
+                        <li>Ecuaciones Diferenciales</li>
+                        <li>Física Universitaria</li>
+                        <li>Matemáticas Avanzadas</li>
+                        <li>Preparación para exámenes</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h3>Información de Contacto</h3>
+                    <div>
+                        <p><i></i> <strong>Teléfono:</strong> +57 310 310 6954</p>
+                        <p><i></i> <strong>Email:</strong> carlossibaja644@gmail.com</p>
+                        <p><i></i> <strong>WhatsApp:</strong> +57 310 310 6954</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3>
+                    <i></i>
+                    Modalidades de Tutoría
+                </h3>
+                <div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>Clases Individuales</h4>
+                        <p>Atención personalizada según tus necesidades específicas</p>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>Grupos de Estudio</h4>
+                        <p>Clases para pequeños grupos a costo reducido</p>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>Virtual o Presencial</h4>
+                        <p>Flexibilidad en modalidad de enseñanza</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+
+    
+    <a href="https://wa.me/573103106954?text=Hola%20Profe%20Carlos,%20estoy%20interesado%20en%20una%20tutoría%20de%20mecánica%20del%20cuerpo%20rígido" target="_blank" aria-label="Chat en WhatsApp">
+        <i></i>
+    </a>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

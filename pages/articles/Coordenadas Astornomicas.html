@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Astronomía Interactiva | Prof. Carlos Alberto Martinez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <div>
+                    
+                    Mecánica Celeste Interactiva
+                </div>
+                <h1>
+                    Explora la <span>Esfera Celeste</span> en 3D
+                </h1>
+                <p>
+                    Plataforma educativa interactiva para aprender astronomía. Sistema completo de coordenadas, simulador 3D, catálogo de objetos y realidad aumentada. 
+                    <strong>Prof. Carlos Martinez</strong>
+                </p>
+                <div>
+                    <a href="#simulador">
+                        🚀 Iniciar Simulador 3D
+                    </a>
+                    <a href="#realidad-aumentada">
+                        📱 Activar Realidad Aumentada
+                    </a>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+        </section>
+
+        
+        <section id="teoria">
+            <div>
+                <h2>Puntos Fundamentales del Cielo</h2>
+                <p>Conceptos esenciales para entender la navegación celeste y los sistemas de coordenadas astronómicas.</p>
+            </div>
+
+            <div>
+                <div>
+                    <div>
+                        <span>⬆️</span>
+                    </div>
+                    <h3>Cénit</h3>
+                    <p>Punto de la esfera celeste situado exactamente sobre la cabeza del observador (90° de altura).</p>
+                </div>
+                <div>
+                    <div>
+                        <span>⬇️</span>
+                    </div>
+                    <h3>Nadir</h3>
+                    <p>Punto opuesto al Cénit, situado bajo los pies del observador (-90° de altura).</p>
+                </div>
+                <div>
+                    <div>
+                        <span>🌅</span>
+                    </div>
+                    <h3>Horizonte Astronómico</h3>
+                    <p>Círculo máximo perpendicular a la vertical del observador. Altura = 0°.</p>
+                </div>
+                <div>
+                    <div>
+                        <span>☀️</span>
+                    </div>
+                    <h3>Eclíptica</h3>
+                    <p>Trayectoria aparente del Sol en la esfera celeste, inclinada 23.5° respecto al ecuador.</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="sistemas">
+            
+            
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <span>Sistema Local</span>
+                            <span>Depende del observador</span>
+                        </div>
+                        <h3>Coordenadas Horizontales (Alt-Az)</h3>
+                        <p>Sistema de coordenadas que utiliza el horizonte local como plano de referencia. Cambia con el tiempo y la ubicación del observador.</p>
+                        
+                        <div>
+                            <div>
+                                <div>
+                                    <div>A</div>
+                                    <div>
+                                        <span>Acimut (Az):</span>
+                                        <span>0° a 360°</span>
+                                    </div>
+                                </div>
+                                <p>Ángulo medido sobre el horizonte desde el Norte hacia el Este. N=0°, E=90°, S=180°, W=270°.</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <div>h</div>
+                                    <div>
+                                        <span>Altura (h):</span>
+                                        <span>-90° a +90°</span>
+                                    </div>
+                                </div>
+                                <p>Ángulo vertical desde el horizonte hasta el astro. Positiva sobre el horizonte, negativa bajo él.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>Sistema universal</div>
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>Sistema Universal</span>
+                            <span>Independiente del observador</span>
+                        </div>
+                        <h3>Coordenadas Ecuatoriales (RA/Dec)</h3>
+                        <p>Sistema de coordenadas absoluto que utiliza el ecuador celeste como plano de referencia. Similar a latitud/longitud terrestre.</p>
+                        
+                        <div>
+                            <div>
+                                <div>
+                                    <div>α</div>
+                                    <div>
+                                        <span>Ascensión Recta (RA):</span>
+                                        <span>0h a 24h</span>
+                                    </div>
+                                </div>
+                                <p>Equivalente a la longitud terrestre. Se mide desde el punto vernal (♈) hacia el Este en horas (1h = 15°).</p>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <div>δ</div>
+                                    <div>
+                                        <span>Declinación (Dec):</span>
+                                        <span>-90° a +90°</span>
+                                    </div>
+                                </div>
+                                <p>Equivalente a la latitud terrestre. Ángulo desde el ecuador celeste (+ hacia el polo norte, - hacia el sur).</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <p>
+                                <span>Conversión clave:</span> 1 hora de ascensión recta = 15 grados de arco.
+                                <br><span>Ejemplo: 6h RA = 90°; 12h RA = 180°; 18h RA = 270°</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulador">
+            <div>
+                <h2>Simulador de Esfera Celeste 3D</h2>
+                <p>Interactúa con la esfera celeste en tiempo real. Ajusta parámetros y observa cómo cambian las coordenadas.</p>
+            </div>
+
+            <div>
+                <div>
+                    
+                    <div>
+                        <div>
+                            <h3>
+                                <span>🎮</span> Controles del Observador
+                            </h3>
+                            
+                            <div>
+                                <div>
+                                    <div>
+                                        <label>Latitud del Observador</label>
+                                        <span id="latitud-valor">40° N</span>
+                                    </div>
+                                    <input type="range" id="latitud-slider" min="-90" max="90" value="40" 
+                                          >
+                                    <div>
+                                        <span>90°S</span>
+                                        <span>0°</span>
+                                        <span>90°N</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div>
+                                        <label>Hora Local (Huso Horario)</label>
+                                        <span id="hora-valor">12:00 UTC</span>
+                                    </div>
+                                    <input type="range" id="hora-slider" min="0" max="23.5" step="0.5" value="12" 
+                                          >
+                                    <div>
+                                        <span>00:00</span>
+                                        <span>12:00</span>
+                                        <span>23:30</span>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div>
+                                        <label>Rotación Esfera Celeste</label>
+                                        <span id="rotacion-valor">0°</span>
+                                    </div>
+                                    <input type="range" id="rotacion-slider" min="0" max="360" value="0" 
+                                          >
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <button onclick="iniciarSimulador3D()">
+                                    Iniciar 3D
+                                </button>
+                                <button onclick="resetearSimulador()">
+                                    Reiniciar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        
+                        <div>
+                            <h3>
+                                <span>📡</span> Coordenadas en Tiempo Real
+                            </h3>
+                            <div>
+                                <div>
+                                    <div>
+                                        <div>Azimut (Az)</div>
+                                        <div id="azimut-sim">--</div>
+                                    </div>
+                                    <div>↻</div>
+                                </div>
+                                
+                                <div>
+                                    <div>
+                                        <div>Altura (h)</div>
+                                        <div id="altura-sim">--</div>
+                                    </div>
+                                    <div>↕</div>
+                                </div>
+                                
+                                <div>
+                                    <div>
+                                        <div>Ascensión Recta (RA)</div>
+                                        <div id="ra-sim">--</div>
+                                    </div>
+                                    <div>α</div>
+                                </div>
+                                
+                                <div>
+                                    <div>
+                                        <div>Declinación (Dec)</div>
+                                        <div id="dec-sim">--</div>
+                                    </div>
+                                    <div>δ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div>
+                        <div id="esfera-container">
+                            <div>
+                                
+                                
+                            </div>
+                            
+                            <div>
+                                <div>🌌</div>
+                                <div>Simulador 3D de Esfera Celeste</div>
+                                <p>Visualización interactiva en 3D de coordenadas astronómicas usando WebGL</p>
+                                <button onclick="iniciarSimulador3DCompleto()">
+                                    Activar Simulador WebGL
+                                </button>
+                                <p>Requiere navegador compatible con WebGL</p>
+                            </div>
+                            
+                            
+                            <div>
+                                <div>
+                                    
+                                    <span>Coordenadas Horizontales</span>
+                                </div>
+                                <div>
+                                    
+                                    <span>Coordenadas Ecuatoriales</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="objetos-celestes">
+            <div>
+                <h2>Catálogo Interactivo de Objetos Celestes</h2>
+                <p>Explora los objetos más importantes del cielo. Haz clic para ver detalles y coordenadas.</p>
+            </div>
+            
+            
+            <div>
+                <button>
+                    🌟 Todos los Objetos
+                </button>
+                <button>
+                    ⭐ Estrellas Principales
+                </button>
+                <button>
+                    🪐 Planetas del Sistema Solar
+                </button>
+                <button>
+                    🔭 Objetos Profundos
+                </button>
+            </div>
+            
+            
+            <div id="catalogo-container">
+                
+            </div>
+        </section>
+
+        
+        <section id="ejercicios">
+            <div>
+                <h2>Práctica y Problemas Resueltos</h2>
+                <p>Resuelve ejercicios prácticos de astronomía. Verifica tus respuestas y aprende paso a paso.</p>
+            </div>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <span>Nivel Básico</span>
+                        <span>Puntos: 10</span>
+                    </div>
+                    <h4>La Estrella Polar y la Latitud</h4>
+                    <p>Si un observador se encuentra en una latitud de 40° N, ¿a qué altura (h) verá la Estrella Polar sobre su horizonte?</p>
+                    <div>
+                        <button onclick="mostrarOpciones(this)">
+                            A) 40°
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            B) 90°
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            C) 0°
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            D) 50°
+                        </button>
+                    </div>
+                    <button onclick="reveal(this, 'La altura de la Polar es igual a la latitud del observador. Por lo tanto: h = 40°', 'A')">
+                        Ver solución paso a paso
+                    </button>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <span>Nivel Intermedio</span>
+                        <span>Puntos: 15</span>
+                    </div>
+                    <h4>Conversión de Ascensión Recta</h4>
+                    <p>Una estrella tiene una Ascensión Recta de 6h 30m. ¿A cuántos grados corresponde este valor en el círculo ecuatorial?</p>
+                    <div>
+                        <button onclick="mostrarOpciones(this)">
+                            A) 90°
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            B) 97.5°
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            C) 100.5°
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            D) 105°
+                        </button>
+                    </div>
+                    <button onclick="reveal(this, 'Sabiendo que 24h = 360°, entonces 1h = 15° y 1m = 0.25°. 6h × 15 = 90°, 30m × 0.25 = 7.5°. Total: 90° + 7.5° = 97.5°', 'B')">
+                        Ver solución paso a paso
+                    </button>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <span>Nivel Avanzado</span>
+                        <span>Puntos: 20</span>
+                    </div>
+                    <h4>Coordenadas Horizontales a Ecuatoriales</h4>
+                    <p>Un observador en latitud 30°N ve una estrella con Az=90° (Este) y h=45°. ¿Cuál es su declinación aproximada?</p>
+                    <div>
+                        <button onclick="mostrarOpciones(this)">
+                            A) δ ≈ 15°N
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            B) δ ≈ 30°N
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            C) δ ≈ 45°N
+                        </button>
+                        <button onclick="mostrarOpciones(this)">
+                            D) δ ≈ 60°N
+                        </button>
+                    </div>
+                    <button onclick="reveal(this, 'Usando fórmulas de conversión: sinδ = sinφ⋅sinh + cosφ⋅cosh⋅cosA. Para φ=30°, h=45°, A=90°: sinδ ≈ 0.3536 → δ ≈ 20.7°. Aproximadamente 21°N.', 'A')">
+                        Ver solución paso a paso
+                    </button>
+                </div>
+            </div>
+            
+            
+            <div>
+                <div>
+                    <div>
+                        <h3>Tu Progreso de Aprendizaje</h3>
+                        <p>Completa ejercicios para desbloquear logros y avanzar en tu comprensión astronómica.</p>
+                    </div>
+                    <div>
+                        <div>
+                            <span>Progreso General</span>
+                            <span id="progreso-porcentaje">0%</span>
+                        </div>
+                        <div>
+                            <div id="progreso-general"></div>
+                        </div>
+                        <div>
+                            <div>
+                                <div id="ejercicios-resueltos">0</div>
+                                <div>Ejercicios</div>
+                            </div>
+                            <div>
+                                <div id="puntos-totales">0</div>
+                                <div>Puntos</div>
+                            </div>
+                            <div>
+                                <div id="logros-desbloqueados">0</div>
+                                <div>Logros</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="efemerides">
+            <div>
+                <div>
+                    <span>
+                        📅
+                    </span>
+                    <h3>Calculadora de Efemérides Astronómicas</h3>
+                </div>
+                
+                <div>
+                    <div>
+                        <label>Fecha y Hora Local</label>
+                        <input type="datetime-local" id="fecha-observacion">
+                    </div>
+                    <div>
+                        <label>Ubicación del Observador</label>
+                        <div>
+                            <div>
+                                <input type="number" placeholder="Latitud" id="latitud-input" value="40.4168" step="0.0001">
+                                <div>Ej: 40.4168° (Madrid)</div>
+                            </div>
+                            <div>
+                                <input type="number" placeholder="Longitud" id="longitud-input" value="-3.7038" step="0.0001">
+                                <div>Ej: -3.7038° (Madrid)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Objetos a Calcular</label>
+                    <div>
+                        <label>
+                            <input type="checkbox" checked>
+                            <span>Sol</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" checked>
+                            <span>Luna</span>
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span>Planetas</span>
+                        </label>
+                        <label>
+                            <input type="checkbox">
+                            <span>Estrellas brillantes</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button onclick="calcularEfemérides()">
+                    Calcular Posiciones Celestes
+                </button>
+                
+                <div id="resultados-efemerides">
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="calculadora">
+            <div>
+                <h3>
+                    <span>
+                        ⏱️
+                    </span>
+                    Conversor Universal de Coordenadas
+                </h3>
+                
+                <div>
+                    <div>
+                        <label>Horas (RA)</label>
+                        <div>
+                            <input type="number" id="input-h" value="6" step="0.5">
+                            <div>h</div>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Minutos</label>
+                        <div>
+                            <input type="number" id="input-m" value="30" step="1" min="0" max="59">
+                            <div>m</div>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Segundos</label>
+                        <div>
+                            <input type="number" id="input-s" value="0" step="1" min="0" max="59">
+                            <div>s</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div>→</div>
+                    <div>
+                        <div>Equivale a</div>
+                        <div id="output-deg">97.5°</div>
+                        <div>grados de arco</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <p>
+                        <span>Fórmula:</span> Grados = (Horas × 15) + (Minutos × 0.25) + (Segundos × 0.0041667)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="realidad-aumentada">
+            <div>
+                <div>
+                    <h2>🌌 Observación con Realidad Aumentada</h2>
+                    <p>Usa la cámara de tu dispositivo para identificar constelaciones y objetos celestes en tiempo real.</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <div>
+                            
+                            <video id="video-ar" autoplay playsinline></video>
+                            <canvas id="canvas-ar"></canvas>
+                            
+                            <div id="ar-placeholder">
+                                <div>📱</div>
+                                <h3>Activa tu cámara para usar AR</h3>
+                                <p>Apunta al cielo nocturno para identificar constelaciones y estrellas en tiempo real.</p>
+                                <button onclick="iniciarAR()">
+                                    Activar Cámara AR
+                                </button>
+                                <p>Permite el acceso a la cámara cuando se te solicite</p>
+                            </div>
+                            
+                            
+                            <div>
+                                <button onclick="capturarAR()">
+                                    📸
+                                </button>
+                                <button onclick="alternarModoAR()">
+                                    🔄
+                                </button>
+                                <button onclick="detenerAR()">
+                                    ⏹️
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <h3>
+                                <span>📋</span> Instrucciones de Uso:
+                            </h3>
+                            <ul>
+                                <li>
+                                    <span>1</span>
+                                    <div>
+                                        <span>Permite acceso a la cámara</span>
+                                        <p>Haz clic en "Activar Cámara AR" y permite el acceso cuando tu navegador lo solicite.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>2</span>
+                                    <div>
+                                        <span>Apunta al cielo nocturno</span>
+                                        <p>Sostén tu dispositivo establemente y apunta la cámara hacia el cielo.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>3</span>
+                                    <div>
+                                        <span>Identifica constelaciones</span>
+                                        <p>El sistema reconocerá patrones estelares y mostrará información sobre ellos.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>4</span>
+                                    <div>
+                                        <span>Interactúa con los objetos</span>
+                                        <p>Toca cualquier estrella o constelación para obtener información detallada.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div id="ar-info">
+                            <div>
+                                <h3>Información del Objeto</h3>
+                                <span>AR Listo</span>
+                            </div>
+                            <div>
+                                <div>🌠</div>
+                                <p>Activa la cámara AR y apunta al cielo para comenzar la identificación de objetos celestes.</p>
+                            </div>
+                            <div id="ar-detalles">
+                                <div>
+                                    <div>Constelación</div>
+                                    <div id="ar-constelacion">--</div>
+                                </div>
+                                <div>
+                                    <div>Magnitud</div>
+                                    <div id="ar-magnitud">--</div>
+                                </div>
+                                <div>
+                                    <div>Ascensión Recta</div>
+                                    <div id="ar-ra">--</div>
+                                </div>
+                                <div>
+                                    <div>Declinación</div>
+                                    <div id="ar-dec">--</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <div>
+                <div>
+                    🔭
+                </div>
+                <div>
+                    👨‍🏫
+                </div>
+            </div>
+            <div>
+                <h2>Prof. Carlos Alberto Martinez Sibaja</h2>
+                <p>Docente de Ciencias Naturales y Astronomía - Especialista en Educación STEM</p>
+                <p>Más de 15 años de experiencia enseñando astronomía y ciencias naturales. Creador de metodologías innovadoras para la enseñanza de la mecánica celeste y la astrofísica básica.</p>
+                <div>
+                    <div>
+                        <span>📩</span>
+                        <div>
+                            <div>Correo Electrónico</div>
+                            <div>carlossibaja644@gmail.com</div>
+                        </div>
+                    </div>
+                    <div>
+                        <span>📞</span>
+                        <div>
+                            <div>Teléfono</div>
+                            <div>310 310 6954</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span>Astronomía Observacional</span>
+                    <span>Mecánica Celeste</span>
+                    <span>Educación STEM</span>
+                    <span>Astrofotografía</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

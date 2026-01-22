@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Holmes | La Enciclopedia de la Lógica - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+
+        
+        
+
+        
+        <section id="proposiciones">
+            <div>
+                <h2>I. Lógica Proposicional</h2>
+                <span>El átomo de la verdad</span>
+            </div>
+
+            <div>
+                
+                <div>
+                    <div>
+                        <h4>Conectores Lógicos</h4>
+                        <div>
+                            <div>
+                                <strong>Negación ($\neg P$)</strong>
+                                <p>Invierte el valor de verdad. Si es verdad que llueve, es falso que no llueve.</p>
+                            </div>
+                            <div>
+                                <strong>Conjunción ($P \wedge Q$)</strong>
+                                <p>Verdadera solo si AMBAS son verdaderas. "El asesino es alto Y zurdo".</p>
+                            </div>
+                            <div>
+                                <strong>Disyunción ($P \vee Q$)</strong>
+                                <p>Verdadera si AL MENOS UNA es verdadera. "Fue el mayordomo O el cocinero".</p>
+                            </div>
+                            <div>
+                                <strong>Implicación ($P \to Q$)</strong>
+                                <p>Falsa solo si el antecedente es verdadero y el consecuente falso. "Si hay humo, hay fuego".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <div>T/F</div>
+                        <h3>Laboratorio de Verdad</h3>
+                        
+                        <div>
+                            <div>
+                                <p>Premisa P (El perro ladró)</p>
+                                <button onclick="toggleLab('P')" id="btn-P">VERDADERO</button>
+                            </div>
+                            <div>
+                                <p>Premisa Q (El intruso era extraño)</p>
+                                <button onclick="toggleLab('Q')" id="btn-Q">FALSO</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <div>$P \wedge Q$</div>
+                                <div id="lab-and">FALSO</div>
+                            </div>
+                            <div>
+                                <div>$P \vee Q$</div>
+                                <div id="lab-or">VERDADERO</div>
+                            </div>
+                            <div>
+                                <div>$P \to Q$</div>
+                                <div id="lab-imp">FALSO</div>
+                            </div>
+                            <div>
+                                <div>$P \leftrightarrow Q$</div>
+                                <div id="lab-iff">FALSO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="inferencia">
+            <div>
+                <h2>II. Reglas de Inferencia</h2>
+                <p>El motor matemático de la deducción. Memorízalas.</p>
+                
+            </div>
+
+            <div>
+                
+                <div>
+                    <h5>Modus Ponendo Ponens</h5>
+                    <div>$ P \to Q, P \vdash Q $</div>
+                    <p>"Afirmando el antecedente, afirmo el consecuente".</p>
+                    <div>
+                        <strong>Ejemplo:</strong> Si hay arsénico (P), huele a almendras (Q). Hay arsénico. Ergo, huele a almendras.
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h5>Modus Tollendo Tollens</h5>
+                    <div>$ P \to Q, \neg Q \vdash \neg P $</div>
+                    <p>"Negando el consecuente, niego el antecedente".</p>
+                    <div>
+                        <strong>Ejemplo:</strong> Si fuera el ladrón (P), tendría la llave (Q). No tiene la llave. Ergo, no es el ladrón.
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h5>Silogismo Hipotético</h5>
+                    <div>$ P \to Q, Q \to R \vdash P \to R $</div>
+                    <p>"Ley de la Transitividad".</p>
+                    <div>
+                        <strong>Ejemplo:</strong> Si llueve, el suelo se moja. Si se moja, hay huellas. Si llueve, habrá huellas.
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h5>Silogismo Disyuntivo</h5>
+                    <div>$ P \vee Q, \neg P \vdash Q $</div>
+                    <p>"Descarte de posibilidades".</p>
+                    <div>
+                        <strong>Ejemplo:</strong> Fue Moriarty o Moran. No fue Moriarty. Entonces fue Moran.
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h5>Dilema Constructivo</h5>
+                    <div>$ (P \to Q) \wedge (R \to S), P \vee R \vdash Q \vee S $</div>
+                    <p>"El ataque en dos frentes".</p>
+                    <div>
+                        <strong>Ejemplo:</strong> Si ataco por mar gano (Q), si ataco por tierra gano (S). Ataco por mar o tierra. Ganaré de todos modos.
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h5>Reductio ad Absurdum</h5>
+                    <div>$ P \to (Q \wedge \neg Q) \vdash \neg P $</div>
+                    <p>"Prueba por contradicción".</p>
+                    <div>
+                        <strong>Ejemplo:</strong> Asumo que es inocente (P). Eso implica que estaba en dos lugares a la vez (Contradicción). Ergo, no es inocente.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="razonamiento">
+            <div>
+                <div>
+                    <h2>III. La Tríada del Pensamiento</h2>
+                    <p>No todo es deducción. Holmes usaba una mezcla magistral de tres métodos.</p>
+                    
+                    <div>
+                        <details>
+                            <summary>
+                                DEDUCCIÓN (Certeza)
+                                <span>$\downarrow$</span>
+                            </summary>
+                            <div>
+                                <p>De lo <strong>General</strong> a lo <strong>Particular</strong>.</p>
+                                <p>Si las premisas son verdaderas, la conclusión es <em>necesariamente</em> verdadera.</p>
+                                <div>Todos los hombres son mortales.<br>Sócrates es hombre.<br>Therefore, Sócrates es mortal.</div>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>
+                                INDUCCIÓN (Probabilidad)
+                                <span>$\downarrow$</span>
+                            </summary>
+                            <div>
+                                <p>De lo <strong>Particular</strong> a lo <strong>General</strong>.</p>
+                                <p>Establece patrones probables, pero no garantías absolutas.</p>
+                                <div>El cisne 1 es blanco.<br>El cisne 2 es blanco...<br>Probablemente todos los cisnes son blancos.</div>
+                            </div>
+                        </details>
+
+                        <details>
+                            <summary>
+                                ABDUCCIÓN (Hipótesis)
+                                <span>$\downarrow$</span>
+                            </summary>
+                            <div>
+                                <p>Inferencia a la <strong>Mejor Explicación</strong>.</p>
+                                <p>Es el método principal de diagnóstico y detectivesco. Dada una observación sorprendente, ¿cuál es la causa más plausible?</p>
+                                <div>El césped está mojado.<br>Pudo llover (A) o regaron (B).<br>El cielo está gris.<br>Es más probable A.</div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                
+                <div>
+                    <div>
+                        <h4>Lógica de Predicados</h4>
+                        <p>Cuantificadores para generalizaciones</p>
+                        <div>
+                            <div>
+                                <div>$\forall x (P(x) \to Q(x))$</div>
+                                <div>Cuantificador Universal (Para todo)</div>
+                            </div>
+                            <div>
+                                <div>$\exists x (P(x) \wedge Q(x))$</div>
+                                <div>Cuantificador Existencial (Existe al menos uno)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="falacias">
+            <div>
+                <h2>IV. El Museo de las Falacias</h2>
+                <p>Errores de razonamiento que contaminan la deducción pura.</p>
+                
+                <div>
+                    <div>
+                        <h5>Ad Hominem</h5>
+                        <p>Atacar a la persona, no al argumento.</p>
+                        <p>"Moriarty miente porque es feo." (Inválido)</p>
+                    </div>
+                    <div>
+                        <h5>Hombre de Paja</h5>
+                        <p>Distorsionar el argumento del oponente.</p>
+                        <p>"Holmes odia a la policía porque los critica." (Falso)</p>
+                    </div>
+                    <div>
+                        <h5>Falso Dilema</h5>
+                        <p>Presentar solo dos opciones cuando hay más.</p>
+                        <p>"O eres culpable o eres mi amigo." (Inválido)</p>
+                    </div>
+                    <div>
+                        <h5>Post Hoc Ergo Propter Hoc</h5>
+                        <p>Confundir correlación con causalidad.</p>
+                        <p>"El gallo canta y sale el sol. El gallo saca el sol." (Absurdo)</p>
+                    </div>
+                    <div>
+                        <h5>Afirmación del Consecuente</h5>
+                        <p>Error formal en el Modus Ponens.</p>
+                        <p>"Si llueve hay nubes. Hay nubes, entonces llueve." (No necesariamente)</p>
+                    </div>
+                    <div>
+                        <h5>Ad Ignorantiam</h5>
+                        <p>Apelar a la ignorancia como prueba.</p>
+                        <p>"No puedes probar que no fui yo, así que fui yo." (Error)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulador">
+            <div>
+                <h2>V. Práctica Deductiva</h2>
+                <p>Aplica las reglas aprendidas (Modus Ponens, Silogismos) para resolver este caso.</p>
+            </div>
+            
+            <div>
+                <div>
+                    <div>
+                        <div id="clues-container">
+                            Inicia la investigación para recolectar premisas.
+                        </div>
+                        <div>
+                            <button id="investigate-btn">BUSCAR PREMISAS</button>
+                            <button id="reset-case-btn">Reiniciar</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h4>Sospechosos</h4>
+                            <span id="clues-count">Datos: 0/5</span>
+                        </div>
+                        <div id="suspects-container">
+                            
+                        </div>
+                        <button id="accuse-btn" disabled>FORMULAR ACUSACIÓN</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="contacto">
+            <div>
+                
+                <h2>Detective Consultor Privado</h2>
+                <p>Para casos complejos que requieren una mente entrenada en lógica simbólica.</p>
+                
+                <div>
+                    <a href="https://wa.me/573103106954" target="_blank">
+                        <span>📱</span>
+                        <div>
+                            <p>WhatsApp Directo</p>
+                            <p>310 310 6954</p>
+                        </div>
+                    </a>
+                    <div>
+                        <span>✉️</span>
+                        <div>
+                            <p>Correo Electrónico</p>
+                            <p>carlossibaja644@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Carlos Sibaja | Investigaciones Lógicas</p>
+            </div>
+        </section>
+
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Química | Tutorías de Ciencias - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <section id="inicio">
+        <div>
+            <h1>Domina la Química de Secundaria</h1>
+            <p>Desde la estructura del átomo hasta la estequiometría. Explicaciones claras, modelos interactivos y ejercicios para aprobar tus exámenes.</p>
+            <div>
+                <a href="#conceptos">Empezar Repaso</a>
+                <a href="#visualizador">Ver Átomos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="conceptos">
+        <div>
+            <div>
+                <div>
+                    <span>⚛️</span>
+                    <h3>Estructura Atómica</h3>
+                    <p>Protones, neutrones y electrones. Configuración electrónica y modelos atómicos.</p>
+                </div>
+                <div>
+                    <span>📊</span>
+                    <h3>Tabla Periódica</h3>
+                    <p>Grupos, periodos, metales y no metales. Tendencias periódicas y propiedades.</p>
+                </div>
+                <div>
+                    <span>🔗</span>
+                    <h3>Enlaces Químicos</h3>
+                    <p>Diferencias entre enlace Iónico, Covalente y Metálico. Regla del octeto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <h2>Fundamentos Básicos</h2>
+            <div>
+                <div>
+                    <h3>El Átomo: La unidad básica</h3>
+                    <p>Todo lo que nos rodea está formado por átomos. Para entender química, primero debemos entender las tres partículas subatómicas:</p>
+                    <ul>
+                        <li><strong>Protones (p⁺):</strong> Tienen carga positiva y están en el núcleo. Definen qué elemento es (Número Atómico Z).</li>
+                        <li><strong>Neutrones (n⁰):</strong> No tienen carga, están en el núcleo y aportan masa.</li>
+                        <li><strong>Electrones (e⁻):</strong> Tienen carga negativa y orbitan alrededor del núcleo en niveles de energía. Son los responsables de las reacciones químicas.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Tabla de Partículas</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Partícula</th>
+                                <th>Carga</th>
+                                <th>Ubicación</th>
+                                <th>Masa (uma)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Protón</td>
+                                <td>+1</td>
+                                <td>Núcleo</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Neutrón</td>
+                                <td>0</td>
+                                <td>Núcleo</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Electrón</td>
+                                <td>-1</td>
+                                <td>Corteza</td>
+                                <td>~0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visualizador">
+        <div>
+            <h2>Constructor de Átomos (Modelo de Bohr)</h2>
+            <p>Desliza para agregar protones y electrones. Observa cómo se llenan los niveles de energía (2, 8, 18...).</p>
+            
+            <div>
+                <div>
+                    <label for="numeroAtomico">Número Atómico (Z): <span id="valorZ">1</span></label>
+                    <input type="range" id="numeroAtomico" min="1" max="18" value="1" step="1">
+                </div>
+                
+                <div>
+                    <div>
+                        <div>Elemento</div>
+                        <div id="nombreElemento">Hidrógeno</div>
+                    </div>
+                    <div>
+                        <div>Símbolo</div>
+                        <div id="simboloElemento">H</div>
+                    </div>
+                    <div>
+                        <div>Configuración</div>
+                        <div id="configElemento">1s¹</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <canvas id="atomoCanvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="enlaces">
+        <div>
+            <h2>Enlaces Químicos</h2>
+            <div>
+                <div>
+                    <h4>Enlace Iónico</h4>
+                    <p>Transferencia de electrones. Ocurre entre un metal y un no metal. Ejemplo: NaCl (Sal).</p>
+                    <div>⚡</div>
+                </div>
+                <div>
+                    <h4>Enlace Covalente</h4>
+                    <p>Compartición de electrones. Ocurre entre no metales. Ejemplo: H₂O (Agua).</p>
+                    <div>🤝</div>
+                </div>
+                <div>
+                    <h4>Enlace Metálico</h4>
+                    <p>"Mar de electrones" libres. Ocurre entre átomos metálicos. Ejemplo: Fe (Hierro).</p>
+                    <div>🔩</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ejercicio">
+        <div>
+            <h2>Practica el Balanceo</h2>
+            <p>Selecciona los coeficientes correctos para cumplir la Ley de Lavoisier (conservación de la masa).</p>
+            
+            <div>
+                <p>Balancea la siguiente ecuación de combustión:</p>
+                <div>
+                    CH₄ + <strong>?</strong> O₂ → <strong>?</strong> H₂O + CO₂
+                </div>
+                
+                <div>
+                    <button onclick="verificarEjercicio(this, false)">1 O₂ y 1 H₂O</button>
+                    <button onclick="verificarEjercicio(this, true)">2 O₂ y 2 H₂O</button>
+                    <button onclick="verificarEjercicio(this, false)">3 O₂ y 2 H₂O</button>
+                    <button onclick="verificarEjercicio(this, false)">2 O₂ y 1 H₂O</button>
+                </div>
+                <div id="feedback-ejercicio"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div>
+            <h2>¿La Estequiometría es tu pesadilla?</h2>
+            <p>No dejes que la química baje tu promedio. Ofrezco clases personalizadas para secundaria y bachillerato.</p>
+            
+            <div>
+                <span>✅ Balanceo de Ecuaciones</span>
+                <span>✅ Nomenclatura</span>
+                <span>✅ Molaridad y Soluciones</span>
+            </div>
+
+            <form onsubmit="enviarContacto(event)">
+                <div>
+                    <label>Tu Email</label>
+                    <input type="email" required>
+                </div>
+                <div>
+                    <label>¿Qué tema necesitas reforzar?</label>
+                    <input type="text" placeholder="Ej: Ácidos y Bases">
+                </div>
+                <button type="submit">Solicitar Clase Gratis</button>
+            </form>
+        </div>
+    </section>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

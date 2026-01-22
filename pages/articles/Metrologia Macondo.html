@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climatología Mágica | Estudio Avanzado de Macondo - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <section>
+        <div>
+            <h1>Climatología del Olvido</h1>
+            <p>"Lo que antes era un paraíso de espejismos se convirtió en un pantano de nostalgias bajo el agua."</p>
+        </div>
+    </section>
+
+    <section id="teoria">
+        <h2>La Física detrás de la Leyenda</h2>
+        <div>
+            
+            <div>
+                <h3>Saturación y Latencia</h3>
+                <p>El diluvio de Macondo representa un estado de **saturación higroscópica** extrema. La humedad relativa (\(HR\)) se mantuvo en un 100% teórico, eliminando la capacidad de evaporación del sudor y la ropa.</p>
+                <div>
+                    $HR = \frac{e}{e_s} \times 100\%$
+                </div>
+                <p>Donde \(e\) es la presión de vapor real y \(e_s\) la de saturación. En Macondo, \(e \approx e_s\) durante 4 años.</p>
+            </div>
+
+            <div>
+                <h3>Convección Tropical</h3>
+                <p>Antes de la lluvia, Macondo sufría de "calor de horno". Esto se debe a la **convección adiabática**: el aire caliente asciende, se expande y se enfría, pero al estar atrapado por la Sierra Nevada, crea una burbuja de calor estático.</p>
+                <div>
+                    $\frac{dT}{dz} = -\Gamma$
+                </div>
+                <p>El gradiente térmico (\(\Gamma\)) define la inestabilidad de las mariposas amarillas al volar.</p>
+            </div>
+
+            <div>
+                <h3>Dinámica de Vórtices</h3>
+                <p>El viento final que destruye la estirpe de los Buendía no es un aire común; es un **vórtice ciclónico de escala mesosférica**. La energía cinética del viento (\(E_k\)) se concentró para cumplir la profecía de Melquíades.</p>
+                <div>
+                    $E_k = \frac{1}{2} \rho v^2$
+                </div>
+                <p>A mayor densidad del aire saturado (\(\rho\)), mayor poder destructivo del viento.</p>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+    <section id="patrones">
+        <h2>Patrones Atmosféricos</h2>
+        <div>
+            <div>
+                <h3>Zona de Convergencia Intertropical (ZCIT)</h3>
+                <p>Macondo se encuentra en el cinturón de bajas presiones donde convergen los vientos alisios del NE y SE. Este patrón causa:</p>
+                <ul>
+                    <li><strong>Ascenso Masivo de Aire:</strong> Formación de nubes Cumulonimbus gigantes.</li>
+                    <li><strong>Calmas Ecuatoriales:</strong> Periodos de ausencia de viento que preceden a las tragedias.</li>
+                    <li><strong>Precipitación Convectiva:</strong> Lluvias intensas de gota gruesa y cálida.</li>
+                </ul>
+                <p>En la novela, la ZCIT parece haberse "estancado" sobre la casa de Úrsula Iguarán por voluntad de los manuscritos.</p>
+            </div>
+            <div>
+                
+                <p>Mecanismo de formación de las lluvias torrenciales en el trópico.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="simulador">
+        <h2>Estación Meteorológica de Macondo</h2>
+        <div>
+            <div id="macondoScreen">
+                <div id="sunEfect"></div>
+                
+                
+                
+                <div id="mist"></div>
+                
+                <div id="rainContainer"></div>
+            </div>
+
+            <div>
+                <div>
+                    <label>Presión Atmosférica (Baja = Lluvia)</label>
+                    <input type="range" id="pressRange" min="950" max="1020" value="1013">
+                    <span id="pressVal">1013 hPa</span>
+                </div>
+                
+                <div>
+                    <label>Humedad Relativa (%)</label>
+                    <input type="range" id="humRange" min="40" max="100" value="60">
+                    <span id="humVal">60%</span>
+                </div>
+
+                <div>
+                    <label>Velocidad del Viento (Destino)</label>
+                    <input type="range" id="windRange" min="0" max="150" value="10">
+                    <span id="windVal">10 km/h</span>
+                </div>
+
+                <div>
+                    <strong>Diagnóstico Melquíades:</strong><br>
+                    <span id="diagnosis">Cielo despejado. Se ven gitanos a lo lejos.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos">
+        <h2>Recursos Pedagógicos</h2>
+        <div>
+            <div>
+                <i></i>
+                <h3>Guía de Fenómenos</h3>
+                <p>Aprende a diferenciar un frente frío de una lluvia convectiva utilizando pasajes de la novela como casos de estudio.</p>
+                <a href="#">Descargar Guía PDF</a>
+            </div>
+            <div>
+                <i></i>
+                <h3>Laboratorio de Datos</h3>
+                <p>Gráficos de pluviosidad comparativos entre la costa caribe real y los "cuatro años de lluvia" ficticios.</p>
+                <a href="#">Explorar Datos</a>
+            </div>
+            <div>
+                <i></i>
+                <h3>Cuestionarios</h3>
+                <p>Evalúa tus conocimientos: ¿Qué ley física explica por qué el hielo parecía quemar a los niños de Macondo?</p>
+                <a href="#">Ir al Quiz</a>
+            </div>
+            <div>
+                <i></i>
+                <h3>Foro de Discusión</h3>
+                <p>Debate sobre la "Climatología Psicológica": ¿Influye el clima en la soledad de los personajes?</p>
+                <a href="#">Unirse al Debate</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

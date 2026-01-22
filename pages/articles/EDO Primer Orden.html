@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDO de Primer Orden - Ecuaciones Diferenciales - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                <h1>EDO de Primer Orden</h1>
+                <p>Domina los métodos fundamentales para resolver ecuaciones diferenciales ordinarias de primer orden y sus aplicaciones en modelado matemático.</p>
+                
+                <div>
+                    <div>
+                        <i></i>
+                        <span>Variables Separables</span>
+                    </div>
+                    <div>
+                        <i></i>
+                        <span>Ecuaciones Exactas</span>
+                    </div>
+                    <div>
+                        <i></i>
+                        <span>EDO Lineales</span>
+                    </div>
+                    <div>
+                        <i></i>
+                        <span>Factor Integrante</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        
+        <section>
+            <h3><i></i> Navega por el Contenido</h3>
+            <div>
+                <a href="#definicion"><i></i> Definición</a>
+                <a href="#metodos"><i></i> Métodos de Solución</a>
+                <a href="#campos"><i></i> Campos de Dirección</a>
+                <a href="#euler"><i></i> Método de Euler</a>
+                <a href="#ejemplos"><i></i> Ejemplos Resueltos</a>
+                <a href="#quiz"><i></i> Pon a Prueba tu Conocimiento</a>
+            </div>
+        </section>
+
+        
+        <section id="definicion">
+            <h2>
+                <i></i>
+                1. Definición y Conceptos Básicos
+            </h2>
+            <p>Una <strong>ecuación diferencial ordinaria (EDO) de primer orden</strong> es una ecuación que involucra una función desconocida \(y(x)\) y su primera derivada \(y'(x)\). Tiene la forma general:</p>
+            
+            <div>
+                \(F(x, y, y') = 0\)  o equivalentemente  \(y' = f(x, y)\)
+            </div>
+            
+            <p>Donde:</p>
+            <ul>
+                <li>\(x\) es la variable independiente</li>
+                <li>\(y = y(x)\) es la función desconocida (variable dependiente)</li>
+                <li>\(y' = \frac{dy}{dx}\) es la derivada de \(y\) con respecto a \(x\)</li>
+                <li>\(f(x, y)\) es una función dada de dos variables</li>
+            </ul>
+            
+            <h3><i></i> Objetivo Principal</h3>
+            <p>Encontrar todas las funciones \(y(x)\) que satisfacen la ecuación diferencial. La solución general suele contener una constante arbitraria \(C\), ya que al integrar una vez obtenemos una familia de soluciones.</p>
+            
+            <div>
+                <button onclick="toggleExamples('basicExamples')">
+                    <i></i>
+                    Ver Ejemplos Básicos
+                </button>
+            </div>
+            
+            <div id="basicExamples">
+                <h4><i></i> Ejemplos de EDO de Primer Orden</h4>
+                <div>
+                    <div>
+                        <div>EDO más simple</div>
+                        <div>\(y' = 2x\)</div>
+                        <p>Solución: Integrando ambos lados, \(y = x^2 + C\)</p>
+                    </div>
+                    <div>
+                        <div>Con función de y</div>
+                        <div>\(y' = y\)</div>
+                        <p>Solución: \(y = Ce^x\) (crecimiento exponencial)</p>
+                    </div>
+                    <div>
+                        <div>Con ambas variables</div>
+                        <div>\(y' = x + y\)</div>
+                        <p>Solución: \(y = Ce^x - x - 1\)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="metodos">
+            <h2>
+                <i></i>
+                2. Métodos de Solución para EDO de Primer Orden
+            </h2>
+            <p>Existen varios métodos para resolver EDO de primer orden, dependiendo de la forma que tenga la ecuación. Los principales son:</p>
+            
+            <h3><i></i> 2.1 Variables Separables</h3>
+            <p>Una EDO es <strong>separable</strong> si puede escribirse en la forma:</p>
+            <div>
+                \(\frac{dy}{dx} = g(x)h(y)\) o \(\frac{dy}{dx} = \frac{g(x)}{h(y)}\)
+            </div>
+            <p><strong>Procedimiento:</strong></p>
+            <ol>
+                <li>Separar variables: \(\frac{dy}{h(y)} = g(x)dx\)</li>
+                <li>Integrar ambos lados: \(\int \frac{dy}{h(y)} = \int g(x)dx\)</li>
+                <li>Resolver las integrales</li>
+                <li>Despejar \(y\) si es posible (solución explícita) o dejar en forma implícita</li>
+            </ol>
+            
+            <div>
+                <div>Ejemplo: Variables Separables</div>
+                <p>Resolver: \(\frac{dy}{dx} = x y^2\)</p>
+                <ol>
+                    <li>Separar: \(\frac{dy}{y^2} = x dx\)</li>
+                    <li>Integrar: \(\int y^{-2} dy = \int x dx\)</li>
+                    <li>Resultado: \(-y^{-1} = \frac{x^2}{2} + C\)</li>
+                    <li>Solución: \(y = -\frac{1}{\frac{x^2}{2} + C} = -\frac{2}{x^2 + 2C}\)</li>
+                </ol>
+            </div>
+            
+            <h3><i></i> 2.2 Ecuaciones Exactas</h3>
+            <p>Una EDO de la forma \(M(x,y)dx + N(x,y)dy = 0\) es <strong>exacta</strong> si existe una función \(F(x,y)\) tal que:</p>
+            <div>
+                \(\frac{\partial F}{\partial x} = M(x,y)\) y \(\frac{\partial F}{\partial y} = N(x,y)\)
+            </div>
+            <p><strong>Condición de exactitud:</strong> \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\)</p>
+            
+            <h3><i></i> 2.3 Factor Integrante</h3>
+            <p>Si una ecuación no es exacta, a veces podemos multiplicarla por un <strong>factor integrante</strong> \(\mu(x)\) o \(\mu(y)\) para convertirla en exacta.</p>
+            <div>
+                Para ecuaciones lineales: \(\mu(x) = e^{\int P(x)dx}\) donde \(y' + P(x)y = Q(x)\)
+            </div>
+            
+            <h3><i></i> 2.4 Ecuaciones Lineales</h3>
+            <p>Una EDO de primer orden es <strong>lineal</strong> si puede escribirse en la forma:</p>
+            <div>
+                \(y' + P(x)y = Q(x)\)
+            </div>
+            <p><strong>Solución:</strong> \(y = e^{-\int P(x)dx} \left[ \int e^{\int P(x)dx} Q(x) dx + C \right]\)</p>
+            
+            <div>
+                <button onclick="toggleMethodsTable()">
+                    <i></i>
+                    Ver Tabla de Métodos
+                </button>
+            </div>
+            
+            <div id="methodsTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de EDO</th>
+                            <th>Forma</th>
+                            <th>Método de Solución</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Variables separables</td>
+                            <td>\(y' = g(x)h(y)\)</td>
+                            <td>Separar variables e integrar</td>
+                        </tr>
+                        <tr>
+                            <td>Exactas</td>
+                            <td>\(Mdx + Ndy = 0\) con \(M_y = N_x\)</td>
+                            <td>Encontrar \(F\) tal que \(F_x = M\), \(F_y = N\)</td>
+                        </tr>
+                        <tr>
+                            <td>Lineales</td>
+                            <td>\(y' + P(x)y = Q(x)\)</td>
+                            <td>Factor integrante \(\mu = e^{\int P dx}\)</td>
+                        </tr>
+                        <tr>
+                            <td>Bernoulli</td>
+                            <td>\(y' + P(x)y = Q(x)y^n\)</td>
+                            <td>Sustitución \(v = y^{1-n}\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        
+        <section id="campos">
+            <h2>
+                <i></i>
+                3. Campos de Dirección (Método Gráfico)
+            </h2>
+            <p>Un <strong>campo de dirección</strong> es una representación gráfica de una ecuación diferencial de primer orden. En cada punto \((x, y)\) del plano, se dibuja un pequeño segmento de recta con pendiente \(f(x, y)\).</p>
+            
+            <div>
+                <div>
+                    <h3>Campo de Dirección para \(y' = f(x, y)\)</h3>
+                    <div id="directionField"></div>
+                    <div>
+                        Las líneas indican la pendiente de la solución en cada punto
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Configuración</h3>
+                    
+                    <div>
+                        <label>
+                            <span>Función \(f(x, y) =\)</span>
+                        </label>
+                        <select id="functionSelect" onchange="updateDirectionField()">
+                            <option value="x">\(x\) (y' = x)</option>
+                            <option value="y" selected>\(y\) (y' = y)</option>
+                            <option value="x+y">\(x + y\) (y' = x + y)</option>
+                            <option value="x-y">\(x - y\) (y' = x - y)</option>
+                            <option value="x*y">\(xy\) (y' = xy)</option>
+                            <option value="y/x">\(y/x\) (y' = y/x, x≠0)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Densidad del campo:</span>
+                            <span id="densityValue">15</span>
+                        </label>
+                        <input type="range" id="densityRange" min="5" max="30" step="1" value="15" oninput="updateDirectionField()">
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Longitud de segmentos:</span>
+                            <span id="lengthValue">0.5</span>
+                        </label>
+                        <input type="range" id="lengthRange" min="0.2" max="1.5" step="0.1" value="0.5" oninput="updateDirectionField()">
+                    </div>
+                    
+                    <div>
+                        Ecuación: \(y' = \) <span id="currentFunction">y</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h4><i></i> ¿Cómo interpretar un campo de dirección?</h4>
+                <ul>
+                    <li>Cada segmento muestra la dirección que tomaría una solución que pase por ese punto.</li>
+                    <li>Las soluciones de la EDO son curvas que siguen la dirección indicada por los segmentos.</li>
+                    <li>Los campos de dirección son útiles cuando no podemos resolver la EDO analíticamente.</li>
+                    <li>Nos permiten visualizar el comportamiento de las soluciones sin calcularlas explícitamente.</li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <section id="euler">
+            <h2>
+                <i></i>
+                4. Método de Euler (Solución Numérica)
+            </h2>
+            <p>El <strong>método de Euler</strong> es un procedimiento numérico para aproximar soluciones de ecuaciones diferenciales. Es especialmente útil cuando no podemos encontrar una solución analítica.</p>
+            
+            <div>
+                Fórmula de Euler: \(y_{n+1} = y_n + h \cdot f(x_n, y_n)\)
+            </div>
+            
+            <p>Donde:</p>
+            <ul>
+                <li>\(h\) es el tamaño del paso (step size)</li>
+                <li>\(x_{n+1} = x_n + h\)</li>
+                <li>\(f(x_n, y_n)\) es la pendiente en el punto \((x_n, y_n)\)</li>
+            </ul>
+            
+            <div>
+                <div>
+                    <canvas id="eulerCanvas" width="600" height="350"></canvas>
+                    <div>
+                        Aproximación de Euler vs Solución Exacta
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Parámetros de la Simulación</h3>
+                    
+                    <div>
+                        <div>
+                            <label>EDO: \(y' =\)</label>
+                            <select id="eulerEquation" onchange="runEuler()">
+                                <option value="y" selected>\(y\) (y' = y)</option>
+                                <option value="x+y">\(x + y\) (y' = x + y)</option>
+                                <option value="x-y">\(x - y\) (y' = x - y)</option>
+                                <option value="x*y">\(xy\) (y' = xy)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label>Condición inicial \(y(0) =\)</label>
+                            <input type="number" id="initialY" value="1" step="0.1" onchange="runEuler()">
+                        </div>
+                        
+                        <div>
+                            <label>Tamaño del paso \(h =\)</label>
+                            <input type="number" id="stepSize" value="0.5" step="0.1" min="0.1" max="1" onchange="runEuler()">
+                        </div>
+                        
+                        <div>
+                            <label>Número de pasos:</label>
+                            <input type="number" id="numSteps" value="10" step="1" min="5" max="20" onchange="runEuler()">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <button onclick="runEuler()">
+                            <i></i>
+                            Ejecutar Método de Euler
+                        </button>
+                        <button onclick="resetEuler()">
+                            <i></i>
+                            Reiniciar
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <div id="eulerResult">Configura los parámetros y ejecuta la simulación</div>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Resultados</h4>
+                        <div id="eulerTable"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ejemplos">
+            <h2>
+                <i></i>
+                5. Ejemplos Resueltos Paso a Paso
+            </h2>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                        Ejemplo 1: Variables Separables
+                    </div>
+                    <p><strong>Problema:</strong> Resolver \(\frac{dy}{dx} = \frac{x}{y}\), con \(y(0) = 2\)</p>
+                    
+                    <button onclick="toggleSolution('sol1')">
+                        <i></i>
+                        Ver Solución Paso a Paso
+                    </button>
+                    
+                    <div id="sol1">
+                        <ol>
+                            <li><strong>Separar variables:</strong> \(y \, dy = x \, dx\)</li>
+                            <li><strong>Integrar ambos lados:</strong> \(\int y \, dy = \int x \, dx\)</li>
+                            <li><strong>Resultado:</strong> \(\frac{y^2}{2} = \frac{x^2}{2} + C\)</li>
+                            <li><strong>Simplificar:</strong> \(y^2 = x^2 + 2C\)</li>
+                            <li><strong>Usar condición inicial \(y(0)=2\):</strong> \(4 = 0 + 2C \Rightarrow C = 2\)</li>
+                            <li><strong>Solución particular:</strong> \(y^2 = x^2 + 4\)</li>
+                        </ol>
+                        <div>
+                            \(y = \sqrt{x^2 + 4}\) (tomamos la raíz positiva por la condición inicial)
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <i></i>
+                        Ejemplo 2: Ecuación Lineal
+                    </div>
+                    <p><strong>Problema:</strong> Resolver \(y' + 2xy = x\), con \(y(0) = 1\)</p>
+                    
+                    <button onclick="toggleSolution('sol2')">
+                        <i></i>
+                        Ver Solución Paso a Paso
+                    </button>
+                    
+                    <div id="sol2">
+                        <ol>
+                            <li><strong>Identificar \(P(x)\) y \(Q(x)\):</strong> \(P(x) = 2x\), \(Q(x) = x\)</li>
+                            <li><strong>Calcular factor integrante:</strong> \(\mu(x) = e^{\int 2x dx} = e^{x^2}\)</li>
+                            <li><strong>Multiplicar la EDO por \(\mu(x)\):</strong> \(e^{x^2}y' + 2xe^{x^2}y = xe^{x^2}\)</li>
+                            <li><strong>Reconocer derivada:</strong> \(\frac{d}{dx}(e^{x^2}y) = xe^{x^2}\)</li>
+                            <li><strong>Integrar:</strong> \(e^{x^2}y = \int xe^{x^2} dx = \frac{1}{2}e^{x^2} + C\)</li>
+                            <li><strong>Despejar \(y\):</strong> \(y = \frac{1}{2} + Ce^{-x^2}\)</li>
+                            <li><strong>Usar condición inicial \(y(0)=1\):</strong> \(1 = \frac{1}{2} + C \Rightarrow C = \frac{1}{2}\)</li>
+                        </ol>
+                        <div>
+                            Solución: \(y = \frac{1}{2} + \frac{1}{2}e^{-x^2} = \frac{1}{2}(1 + e^{-x^2})\)
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div>
+                    <div>
+                        <i></i>
+                        Ejemplo 3: Ecuación de Bernoulli
+                    </div>
+                    <p><strong>Problema:</strong> Resolver \(y' + y = xy^2\)</p>
+                    
+                    <button onclick="toggleSolution('sol3')">
+                        <i></i>
+                        Ver Solución Paso a Paso
+                    </button>
+                    
+                    <div id="sol3">
+                        <ol>
+                            <li><strong>Identificar como Bernoulli:</strong> \(y' + y = xy^2\), \(n=2\)</li>
+                            <li><strong>Sustitución:</strong> \(v = y^{1-2} = y^{-1}\)</li>
+                            <li><strong>Derivar:</strong> \(v' = -y^{-2}y'\)</li>
+                            <li><strong>Sustituir en la EDO:</strong> \(-y^2 v' + y = xy^2\)</li>
+                            <li><strong>Dividir entre \(-y^2\):</strong> \(v' - y^{-1} = -x\)</li>
+                            <li><strong>Recordar \(v = y^{-1}\):</strong> \(v' - v = -x\)</li>
+                            <li><strong>Resolver EDO lineal en \(v\):</strong> \(v = 1 + x + Ce^x\)</li>
+                            <li><strong>Volver a \(y\):</strong> \(y^{-1} = 1 + x + Ce^x\)</li>
+                        </ol>
+                        <div>
+                            Solución: \(y = \frac{1}{1 + x + Ce^x}\)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="quiz">
+            <h2>
+                <i></i>
+                6. Pon a Prueba tu Conocimiento
+            </h2>
+            <p>Responde las siguientes preguntas sobre EDO de primer orden. ¡Cada respuesta correcta suma puntos!</p>
+            
+            <div>
+                
+                <div>
+                    <div>1. ¿Cuál es la solución general de \(y' = 3x^2\)?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz1')">A) \(y = x^3\)</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz1')">B) \(y = x^3 + C\)</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz1')">C) \(y = 6x + C\)</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz1')">D) \(y = 3x^2 + C\)</button>
+                    </div>
+                    <div id="quiz1-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>2. ¿Qué método usarías para resolver \(y' = \frac{x}{y}\)?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz2')">A) Variables separables</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz2')">B) Factor integrante</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz2')">C) Coeficientes indeterminados</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz2')">D) Variación de parámetros</button>
+                    </div>
+                    <div id="quiz2-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>3. La ecuación \(y' + 2y = 4\) es:</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz3')">A) Lineal de primer orden</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz3')">B) De Bernoulli</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz3')">C) Exacta</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz3')">D) Homogénea</button>
+                    </div>
+                    <div id="quiz3-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>4. Si \(y(0) = 1\) y \(y' = y\), ¿cuál es el valor de \(y(1)\) aproximadamente?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz4')">A) 1</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz4')">B) 1.5</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz4')">C) 2.718</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz4')">D) 3.142</button>
+                    </div>
+                    <div id="quiz4-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>5. El factor integrante para \(y' + 3x^2 y = x^2\) es:</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz5')">A) \(e^{x^2}\)</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz5')">B) \(e^{x^3}\)</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz5')">C) \(e^{x^3}\)</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz5')">D) \(e^{3x}\)</button>
+                    </div>
+                    <div id="quiz5-feedback"></div>
+                </div>
+                
+                
+                <div>
+                    <div>6. ¿Cuál es la solución de \(y' = ky\) con \(y(0)=y_0\)?</div>
+                    <div>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz6')">A) \(y = y_0 + kx\)</button>
+                        <button onclick="checkQuizAnswer(this, true, 'quiz6')">B) \(y = y_0 e^{kx}\)</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz6')">C) \(y = y_0 x^k\)</button>
+                        <button onclick="checkQuizAnswer(this, false, 'quiz6')">D) \(y = y_0 + e^{kx}\)</button>
+                    </div>
+                    <div id="quiz6-feedback"></div>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="showQuizResults()">
+                    <i></i>
+                    Ver Resultados del Quiz
+                </button>
+                <button onclick="resetQuiz()">
+                    <i></i>
+                    Reiniciar Quiz
+                </button>
+            </div>
+            
+            <div id="quizResults">
+                <div id="quizScore">0/6</div>
+                <div id="quizMessage">¡Completa el quiz para ver tus resultados!</div>
+                <button onclick="resetQuiz()">
+                    <i></i>
+                    Intentar de nuevo
+                </button>
+            </div>
+        </section>
+    </div>
+
+    
+    
+
+    
+    <a href="https://wa.me/573103106954?text=Hola%20Profe%20Carlos,%20tengo%20una%20consulta%20sobre%20EDO%20de%20primer%20orden" target="_blank" aria-label="Chat en WhatsApp">
+        <i></i>
+    </a>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

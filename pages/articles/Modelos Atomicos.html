@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Atómicos | Evolución de la Materia - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        <section>
+            <h1>La Evolución del Átomo</h1>
+            <p>Un viaje interactivo desde la esfera sólida de Dalton hasta la nube de probabilidad cuántica.</p>
+        </section>
+
+        <div>
+            
+            <div>
+                <button onclick="cambiarModelo('dalton')">Dalton</button>
+                <button onclick="cambiarModelo('thomson')">Thomson</button>
+                <button onclick="cambiarModelo('rutherford')">Rutherford</button>
+                <button onclick="cambiarModelo('bohr')">Bohr</button>
+                <button onclick="cambiarModelo('schrodinger')">Schrödinger</button>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <canvas id="modeloCanvas"></canvas>
+                <div id="etiquetaCanvas"></div>
+            </div>
+            
+            <div id="infoPanel">
+                <span>1803</span>
+                <h2>Modelo de Dalton</h2>
+                <p>La materia está formada por partículas indivisibles llamadas átomos.</p>
+                <ul>
+                    <li>Esfera sólida y compacta.</li>
+                    <li>Indivisible e indestructible.</li>
+                    <li>Átomos del mismo elemento son idénticos.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div>
+            <h2>Comparación Rápida</h2>
+            <div>
+                <div>
+                    <h4>🍪 Budín de Pasas</h4>
+                    <p><strong>Thomson:</strong> Descubrió el electrón. Imaginó una masa positiva con electrones incrustados para neutralizar la carga.</p>
+                </div>
+                <div>
+                    <h4>🪐 Sistema Planetario</h4>
+                    <p><strong>Rutherford:</strong> Descubrió el núcleo. El átomo es mayormente espacio vacío con electrones orbitando un centro denso.</p>
+                </div>
+                <div>
+                    <h4>🪜 Niveles de Energía</h4>
+                    <p><strong>Bohr:</strong> Los electrones solo pueden girar en órbitas específicas (cuantizadas) sin irradiar energía.</p>
+                </div>
+                <div>
+                    <h4>☁️ Nube de Probabilidad</h4>
+                    <p><strong>Mecánica Cuántica:</strong> No podemos saber dónde está el electrón exactamente (Heisenberg), solo la zona donde es probable hallarlo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        <section>
+            <div>
+                <h3>🧠 Desafío Rápido</h3>
+                <p>¿Qué experimento demostró que el átomo tiene un núcleo pequeño y denso?</p>
+                <div>
+                    <button onclick="verificarQuiz(this, false)">El experimento de los rayos catódicos (Thomson)</button>
+                    <button onclick="verificarQuiz(this, true)">El experimento de la lámina de oro (Rutherford)</button>
+                    <button onclick="verificarQuiz(this, false)">El espectro de emisión del hidrógeno (Bohr)</button>
+                </div>
+                <p id="quiz-feedback"></p>
+            </div>
+        </section>
+        
+        <div id="tutorias">
+            <h2>¿Te confunde la Configuración Electrónica?</h2>
+            <p>Domina los números cuánticos, los orbitales y la química moderna con clases personalizadas.</p>
+            <a href="#">Agendar Clase de Repaso</a>
+        </div>
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

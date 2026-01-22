@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones Básicas - Aprende Matemáticas Divirtiéndote - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    
+
+    
+    <main>
+        <div>
+            
+            <section>
+                <h2>Las Cuatro Operaciones Fundamentales</h2>
+                <div>
+                    <h3><i></i> ¿Qué son las operaciones básicas?</h3>
+                    <p>Las operaciones básicas son los cimientos de las matemáticas. Son herramientas que nos permiten combinar números para obtener resultados nuevos. Dominarlas es esencial para resolver problemas matemáticos más complejos.</p>
+                    
+                    <div>
+                        <div>
+                            <div>➕</div>
+                            <h4>Suma</h4>
+                            <p>Combinar cantidades para obtener un total</p>
+                        </div>
+                        <div>
+                            <div>➖</div>
+                            <h4>Resta</h4>
+                            <p>Encontrar la diferencia entre dos cantidades</p>
+                        </div>
+                        <div>
+                            <div>✖️</div>
+                            <h4>Multiplicación</h4>
+                            <p>Suma repetida de un mismo número</p>
+                        </div>
+                        <div>
+                            <div>➗</div>
+                            <h4>División</h4>
+                            <p>Repartir en partes iguales</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="suma">
+                <h2>Suma de Números Enteros</h2>
+                
+                <div>
+                    <h3><i></i> Reglas de la Suma</h3>
+                    <div>
+                        <ul>
+                            <li><strong>Mismo signo:</strong> Se suman los valores y se conserva el signo</li>
+                            <li><strong>Signos diferentes:</strong> Se restan los valores y se conserva el signo del número con mayor valor absoluto</li>
+                            <li><strong>Elemento neutro:</strong> Cualquier número sumado con cero da el mismo número</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Calculadora de Suma</h3>
+                    <div>
+                        <div>
+                            <div>
+                                <label for="sum-num1">Primer número:</label>
+                                <input type="number" id="sum-num1" value="5">
+                            </div>
+                            <div>
+                                <label for="sum-num2">Segundo número:</label>
+                                <input type="number" id="sum-num2" value="3">
+                            </div>
+                            <button onclick="calculateSum()">
+                                <i></i> Calcular Suma
+                            </button>
+                        </div>
+                        <div>
+                            <h4>Resultado:</h4>
+                            <div id="sum-result">8</div>
+                            <div id="sum-explanation">5 + 3 = 8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3><i></i> Ejemplos Prácticos</h3>
+                    <div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Dinero</h4>
+                            <p>Si tienes $5 y ganas $3 más, ahora tienes $8</p>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Temperatura</h4>
+                            <p>Si la temperatura sube 3°C desde 5°C, ahora es 8°C</p>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Edificios</h4>
+                            <p>Si subes 3 pisos desde el piso 5, llegas al piso 8</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="resta">
+                <h2>Resta de Números Enteros</h2>
+                
+                <div>
+                    <h3><i></i> Reglas de la Resta</h3>
+                    <div>
+                        <ul>
+                            <li>Para restar un número, sumamos su opuesto: a - b = a + (-b)</li>
+                            <li>Restar un número positivo es igual que sumar un negativo</li>
+                            <li>Restar un número negativo es igual que sumar un positivo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Calculadora de Resta</h3>
+                    <div>
+                        <div>
+                            <div>
+                                <label for="sub-num1">Primer número (minuendo):</label>
+                                <input type="number" id="sub-num1" value="8">
+                            </div>
+                            <div>
+                                <label for="sub-num2">Segundo número (sustraendo):</label>
+                                <input type="number" id="sub-num2" value="3">
+                            </div>
+                            <button onclick="calculateSubtraction()">
+                                <i></i> Calcular Resta
+                            </button>
+                        </div>
+                        <div>
+                            <h4>Resultado:</h4>
+                            <div id="sub-result">5</div>
+                            <div id="sub-explanation">8 - 3 = 5</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="multiplicacion">
+                <h2>Multiplicación de Números Enteros</h2>
+                
+                <div>
+                    <h3><i></i> Regla de Signos</h3>
+                    <div>
+                        <ul>
+                            <li>(+) × (+) = +</li>
+                            <li>(+) × (-) = -</li>
+                            <li>(-) × (+) = -</li>
+                            <li>(-) × (-) = +</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Calculadora de Multiplicación</h3>
+                    <div>
+                        <div>
+                            <div>
+                                <label for="mult-num1">Primer factor:</label>
+                                <input type="number" id="mult-num1" value="4">
+                            </div>
+                            <div>
+                                <label for="mult-num2">Segundo factor:</label>
+                                <input type="number" id="mult-num2" value="3">
+                            </div>
+                            <button onclick="calculateMultiplication()">
+                                <i></i> Calcular Multiplicación
+                            </button>
+                        </div>
+                        <div>
+                            <h4>Resultado:</h4>
+                            <div id="mult-result">12</div>
+                            <div id="mult-explanation">4 × 3 = 12</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="division">
+                <h2>División de Números Enteros</h2>
+                
+                <div>
+                    <h3><i></i> Reglas de la División</h3>
+                    <div>
+                        <ul>
+                            <li>Sigue la misma regla de signos que la multiplicación</li>
+                            <li>No se puede dividir entre cero</li>
+                            <li>El resultado de dividir dos números enteros puede no ser un número entero</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Calculadora de División</h3>
+                    <div>
+                        <div>
+                            <div>
+                                <label for="div-num1">Dividendo:</label>
+                                <input type="number" id="div-num1" value="12">
+                            </div>
+                            <div>
+                                <label for="div-num2">Divisor:</label>
+                                <input type="number" id="div-num2" value="3">
+                            </div>
+                            <button onclick="calculateDivision()">
+                                <i></i> Calcular División
+                            </button>
+                        </div>
+                        <div>
+                            <h4>Resultado:</h4>
+                            <div id="div-result">4</div>
+                            <div id="div-explanation">12 ÷ 3 = 4</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="practica">
+                <h2>¡Pon a Prueba tus Conocimientos!</h2>
+                
+                <div>
+                    <div>
+                        <h4><i></i> Problema de Suma</h4>
+                        <p>Un buzo está a 5 metros bajo el mar y sube 3 metros. ¿A qué profundidad queda?</p>
+                        <input type="number" id="practice-sum" placeholder="Tu respuesta">
+                        <button onclick="checkPracticeSum()">
+                            <i></i> Comprobar
+                        </button>
+                        <div id="sum-practice-result"></div>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Problema de Resta</h4>
+                        <p>La temperatura era de 8°C y bajó 12°C. ¿Cuál es la nueva temperatura?</p>
+                        <input type="number" id="practice-sub" placeholder="Tu respuesta">
+                        <button onclick="checkPracticeSub()">
+                            <i></i> Comprobar
+                        </button>
+                        <div id="sub-practice-result"></div>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Problema de Multiplicación</h4>
+                        <p>Si pierdo $5 cada día durante 3 días, ¿cuánto dinero he perdido en total?</p>
+                        <input type="number" id="practice-mult" placeholder="Tu respuesta">
+                        <button onclick="checkPracticeMult()">
+                            <i></i> Comprobar
+                        </button>
+                        <div id="mult-practice-result"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3><i></i> ¿Listo para el siguiente nivel?</h3>
+                    <p>Ahora que dominas las operaciones básicas, puedes explorar otros temas matemáticos:</p>
+                    <div>
+                        <button onclick="window.location.href='numeros-enteros.html'">
+                            <i></i> Números Enteros
+                        </button>
+                        <button onclick="window.location.href='fracciones.html'">
+                            <i></i> Fracciones
+                        </button>
+                        <button onclick="window.location.href='algebra.html'">
+                            <i></i> Álgebra Básica
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

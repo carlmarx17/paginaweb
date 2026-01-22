@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Integral | Integrales Definidas e Indefinidas - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        <div>
+            <div id="etapa1">
+                <div>∫</div>
+                <span>Conceptos</span>
+            </div>
+            <div id="etapa2">
+                <div>f(x)</div>
+                <span>Propiedades</span>
+            </div>
+            <div id="etapa3">
+                <div>F(x)</div>
+                <span>Ejemplos</span>
+            </div>
+            <div id="etapa4">
+                <div>📐</div>
+                <span>Aplicaciones</span>
+            </div>
+        </div>
+
+        <div>
+            ∫
+        </div>
+
+        <h2>1. Integral Indefinida: La Antiderivada</h2>
+        
+        <div>
+            <div>
+                <span>Definición</span>
+                <h3>¿Qué es una integral indefinida?</h3>
+                <p>La integral indefinida de una función f(x) es la familia de todas sus antiderivadas. Es el proceso inverso a la derivación.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\int&space;f(x)\,dx&space;=&space;F(x)&space;&plus;&space;C" 
+                         alt="Integral indefinida">
+                </div>
+                
+                <p>Donde:</p>
+                <ul>
+                    <li><strong>f(x)</strong> es el integrando (función a integrar)</li>
+                    <li><strong>F(x)</strong> es una antiderivada de f(x) (F'(x) = f(x))</li>
+                    <li><strong>C</strong> es la constante de integración</li>
+                    <li><strong>dx</strong> indica la variable de integración</li>
+                </ul>
+            </div>
+
+            <div>
+                <span>Ejemplo Fundamental</span>
+                <h3>Integral de una potencia</h3>
+                <p>La regla básica para integrar funciones potencia:</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int&space;x^n\,dx&space;=&space;\frac{x^{n&plus;1}}{n&plus;1}&space;&plus;&space;C,\quad&space;n&space;\neq&space;-1" 
+                         alt="Integral de x^n">
+                </div>
+                
+                <div>
+                    <p><strong>Ejemplo:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int&space;x^3\,dx&space;=&space;\frac{x^4}{4}&space;&plus;&space;C" 
+                        >
+                </div>
+                
+                <p>
+                    Comprobación: Derivando <img src="https://latex.codecogs.com/svg.latex?\small&space;\frac{d}{dx}\left(\frac{x^4}{4}&space;&plus;&space;C\right)&space;=&space;x^3"> ✓
+                </p>
+            </div>
+        </div>
+
+        <h2>2. Integral Definida: El Área Bajo la Curva</h2>
+        
+        <div>
+            <div>
+                <span>Definición</span>
+                <h3>¿Qué es una integral definida?</h3>
+                <p>La integral definida de f(x) desde x=a hasta x=b representa el área neta entre la curva y=f(x) y el eje X en el intervalo [a, b].</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\int_a^b&space;f(x)\,dx&space;=&space;\lim_{n\to\infty}&space;\sum_{i=1}^n&space;f(x_i^*)\Delta&space;x" 
+                         alt="Integral definida como límite de sumas">
+                </div>
+                
+                <div>
+                    <p><strong>Interpretación geométrica:</strong></p>
+                    <div>
+                        
+                        
+                        <div id="areaEjemplo"></div>
+                        <div>a</div>
+                        <div>b</div>
+                        <div>f(x)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span>Notación y Propiedades</span>
+                <h3>Propiedades de las integrales definidas</h3>
+                
+                <div>
+                    <p><strong>1. Invertir límites:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int_a^b&space;f(x)\,dx&space;=&space;-\int_b^a&space;f(x)\,dx" 
+                        >
+                    
+                    <p><strong>2. Aditividad del intervalo:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int_a^b&space;f(x)\,dx&space;=&space;\int_a^c&space;f(x)\,dx&space;&plus;&space;\int_c^b&space;f(x)\,dx" 
+                        >
+                    
+                    <p><strong>3. Integral de una constante:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int_a^b&space;k\,dx&space;=&space;k(b-a)" 
+                        >
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <div>d/dx</div>
+                <h3>Derivación</h3>
+                <p>Razón de cambio instantáneo</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}&space;[F(x)]&space;=&space;f(x)" 
+                        >
+                </div>
+            </div>
+            
+            <div>⇄</div>
+            
+            <div>
+                <div>∫</div>
+                <h3>Integración</h3>
+                <p>Acumulación o área</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\int&space;f(x)\,dx&space;=&space;F(x)&space;&plus;&space;C" 
+                        >
+                </div>
+            </div>
+        </div>
+
+        <h2>3. Teorema Fundamental del Cálculo</h2>
+        
+        <div>
+            <div>
+                <span>Parte 1</span>
+                <h3>Derivada de la integral</h3>
+                <p>Si f es continua en [a, b], entonces la función</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;F(x)&space;=&space;\int_a^x&space;f(t)\,dt" 
+                         alt="Función área">
+                </div>
+                
+                <p>es derivable en (a, b) y F'(x) = f(x).</p>
+                
+                <div>
+                    <p><strong>Ejemplo:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}&space;\left[\int_0^x&space;t^2\,dt\right]&space;=&space;x^2" 
+                        >
+                </div>
+            </div>
+
+            <div>
+                <span>Parte 2</span>
+                <h3>Cálculo de integrales definidas</h3>
+                <p>Si f es continua en [a, b] y F es cualquier antiderivada de f, entonces:</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\int_a^b&space;f(x)\,dx&space;=&space;F(b)&space;-&space;F(a)" 
+                         alt="Teorema fundamental parte 2">
+                </div>
+                
+                <p>Esta es la conexión crucial entre derivadas e integrales que hace posible calcular áreas exactas.</p>
+                
+                <div>
+                    <p><strong>Notación:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;F(b)&space;-&space;F(a)&space;=&space;\left[F(x)\right]_a^b&space;=&space;F(x)\Big|_a^b" 
+                        >
+                </div>
+            </div>
+        </div>
+
+        <h2>4. Calculadora de Integrales</h2>
+        
+        <div>
+            <h3>🧮 Calculadora Interactiva</h3>
+            <p>Selecciona una función y calcula su integral indefinida o definida. Verifica el paso a paso de la solución.</p>
+            
+            <div>
+                <div>
+                    <label>Función f(x)</label>
+                    <select id="funcionSeleccionada">
+                        <option value="x^2">x² (Potencia)</option>
+                        <option value="x^3">x³ (Potencia cúbica)</option>
+                        <option value="sqrt(x)">√x (Raíz cuadrada)</option>
+                        <option value="1/x">1/x (Inverso)</option>
+                        <option value="sin(x)">sen(x) (Seno)</option>
+                        <option value="cos(x)">cos(x) (Coseno)</option>
+                        <option value="e^x">eˣ (Exponencial)</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label>Tipo de integral</label>
+                    <select id="tipoIntegral">
+                        <option value="indefinida">Integral Indefinida</option>
+                        <option value="definida">Integral Definida</option>
+                    </select>
+                </div>
+                
+                <div id="grupoLimites">
+                    <label>Límites de integración</label>
+                    <div>
+                        <input type="number" id="limiteA" value="0" placeholder="a (límite inferior)">
+                        <input type="number" id="limiteB" value="1" placeholder="b (límite superior)">
+                    </div>
+                </div>
+            </div>
+            
+            <button id="calcularIntegral">Calcular Integral</button>
+            
+            <div id="visualizacionResultado">
+                
+            </div>
+        </div>
+
+        <h2>5. Ejemplos Resueltos Paso a Paso</h2>
+        
+        <div>
+            <div>
+                <h3>Ejemplo 1: Integral Indefinida</h3>
+                <p><strong>Problema:</strong> Calcular <img src="https://latex.codecogs.com/svg.latex?\large&space;\int&space;(3x^2&space;&plus;&space;4x&space;-&space;5)\,dx"></p>
+                
+                <div>
+                    <div>
+                        <h4>Paso 1: Aplicar linealidad de la integral</h4>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\int&space;(3x^2&space;&plus;&space;4x&space;-&space;5)\,dx&space;=&space;3\int&space;x^2\,dx&space;&plus;&space;4\int&space;x\,dx&space;-&space;5\int&space;dx" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <h4>Paso 2: Integrar cada término</h4>
+                        <p>Usando <img src="https://latex.codecogs.com/svg.latex?\small&space;\int&space;x^n\,dx&space;=&space;\frac{x^{n&plus;1}}{n&plus;1}&space;&plus;&space;C">:</p>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;3\cdot\frac{x^3}{3}&space;&plus;&space;4\cdot\frac{x^2}{2}&space;-&space;5x&space;&plus;&space;C" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <h4>Paso 3: Simplificar</h4>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;x^3&space;&plus;&space;2x^2&space;-&space;5x&space;&plus;&space;C" 
+                            >
+                    </div>
+                </div>
+                
+                <div>
+                    <p><strong>Solución:</strong> <img src="https://latex.codecogs.com/svg.latex?\large&space;\int&space;(3x^2&space;&plus;&space;4x&space;-&space;5)\,dx&space;=&space;x^3&space;&plus;&space;2x^2&space;-&space;5x&space;&plus;&space;C"></p>
+                </div>
+            </div>
+
+            <div>
+                <h3>Ejemplo 2: Integral Definida</h3>
+                <p><strong>Problema:</strong> Calcular <img src="https://latex.codecogs.com/svg.latex?\large&space;\int_0^2&space;(x^2&space;&plus;&space;1)\,dx"></p>
+                
+                <div>
+                    <div>
+                        <h4>Paso 1: Encontrar una antiderivada</h4>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\int&space;(x^2&space;&plus;&space;1)\,dx&space;=&space;\frac{x^3}{3}&space;&plus;&space;x&space;&plus;&space;C" 
+                            >
+                        <p>Tomamos F(x) = x³/3 + x</p>
+                    </div>
+                    
+                    <div>
+                        <h4>Paso 2: Aplicar el Teorema Fundamental</h4>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\int_0^2&space;(x^2&plus;1)\,dx&space;=&space;F(2)&space;-&space;F(0)" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <h4>Paso 3: Evaluar F en los límites</h4>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;F(2)&space;=&space;\frac{2^3}{3}&space;&plus;&space;2&space;=&space;\frac{8}{3}&space;&plus;&space;2&space;=&space;\frac{14}{3}" 
+                            >
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;F(0)&space;=&space;\frac{0^3}{3}&space;&plus;&space;0&space;=&space;0" 
+                            >
+                    </div>
+                    
+                    <div>
+                        <h4>Paso 4: Calcular la diferencia</h4>
+                        <img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{14}{3}&space;-&space;0&space;=&space;\frac{14}{3}&space;\approx&space;4.667" 
+                            >
+                    </div>
+                </div>
+                
+                <div>
+                    <p><strong>Solución:</strong> <img src="https://latex.codecogs.com/svg.latex?\large&space;\int_0^2&space;(x^2&plus;1)\,dx&space;=&space;\frac{14}{3}&space;\approx&space;4.667"></p>
+                    <p>Esto representa el área bajo la curva y = x² + 1 desde x=0 hasta x=2.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>6. Aplicaciones de las Integrales</h2>
+        
+        <div>
+            <div>
+                <span>Geometría</span>
+                <h3>📐 Área bajo curvas</h3>
+                <p>La aplicación más directa: calcular el área entre una curva y=f(x) y el eje X.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;A&space;=&space;\int_a^b&space;f(x)\,dx">
+                </div>
+                <p>
+                    Área entre dos curvas: <img src="https://latex.codecogs.com/svg.latex?\small&space;A&space;=&space;\int_a^b&space;[f(x)-g(x)]\,dx">
+                </p>
+            </div>
+            
+            <div>
+                <span>Física</span>
+                <h3>⚡ Trabajo realizado</h3>
+                <p>En física, el trabajo realizado por una fuerza variable F(x) al mover un objeto desde x=a hasta x=b es:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;W&space;=&space;\int_a^b&space;F(x)\,dx">
+                </div>
+                <p>
+                    Similarmente para cálculo de centroides, momentos de inercia, etc.
+                </p>
+            </div>
+            
+            <div>
+                <span>Economía</span>
+                <h3>💰 Excedente del consumidor</h3>
+                <p>En economía, el excedente del consumidor representa el beneficio total de los consumidores y se calcula como:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;EC&space;=&space;\int_0^{Q^*} [D(q)-P^*]\,dq">
+                </div>
+                <p>
+                    Donde D(q) es la función de demanda y P* el precio de equilibrio.
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <h3>Comparación: Integral Definida vs. Indefinida</h3>
+            
+            <div>
+                <div>
+                    <h4>Integral Indefinida</h4>
+                    <div>
+                        <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int&space;f(x)\,dx">
+                    </div>
+                    <ul>
+                        <li>Resultado: Función + constante C</li>
+                        <li>Representa familia de antiderivadas</li>
+                        <li>Proceso inverso de la derivación</li>
+                        <li>Sin límites de integración</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Integral Definida</h4>
+                    <div>
+                        <img src="https://latex.codecogs.com/svg.latex?\Large&space;\int_a^b&space;f(x)\,dx">
+                    </div>
+                    <ul>
+                        <li>Resultado: Número real</li>
+                        <li>Representa área neta bajo la curva</li>
+                        <li>Aplicación del Teorema Fundamental</li>
+                        <li>Con límites de integración</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div>
+                <p><strong>Relación:</strong> La integral definida se calcula usando una antiderivada obtenida de la integral indefinida:</p>
+                <img src="https://latex.codecogs.com/svg.latex?\large&space;\int_a^b&space;f(x)\,dx&space;=&space;\left[\int&space;f(x)\,dx\right]_a^b">
+            </div>
+        </div>
+
+        <div>
+            <h3>📚 Resumen Pedagógico</h3>
+            
+            <div>
+                <div>
+                    <div>∫dx</div>
+                    <h4>Integral Indefinida</h4>
+                    <p>Antiderivada + Constante<br>F'(x) = f(x) ⇒ ∫f(x)dx = F(x) + C</p>
+                </div>
+                
+                <div>
+                    <div>∫<sub>a</sub><sup>b</sup></div>
+                    <h4>Teorema Fundamental</h4>
+                    <p>Conexión clave:<br>∫<sub>a</sub><sup>b</sup> f(x)dx = F(b) - F(a)</p>
+                </div>
+                
+                <div>
+                    <div>📐</div>
+                    <h4>Interpretación</h4>
+                    <p>Área bajo la curva<br>Suma continua de infinitesimales</p>
+                </div>
+            </div>
+            
+            <div>
+                <button id="ejerciciosAleatorios">🎲 Generar ejercicio aleatorio</button>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

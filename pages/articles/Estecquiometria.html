@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estequiometría Master | Química - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    
+
+    <div>
+        
+        <section>
+            <h2>🗺️ El Mapa del Mol</h2>
+            <p>El secreto para resolver cualquier problema es saber dónde estás y a dónde vas. El <strong>MOL</strong> es siempre la estación central.</p>
+            
+            <div>
+                <div>
+                    GRAMOS
+                    <span>(Masa)</span>
+                </div>
+                
+                <div>
+                    MOLES
+                    <span>(Cantidad)</span>
+                </div>
+                
+                <div>
+                    ÁTOMOS
+                    <span>(Partículas)</span>
+                </div>
+            </div>
+            <div>
+                <i></i> <strong>Tip:</strong> Para pasar de Gramos a Moles, siempre <strong>DIVIDE</strong> por la Masa Molar.
+            </div>
+        </section>
+
+        <section id="calculadora">
+            <h2>🧮 Calculadora de Moles</h2>
+            <p>Convierte gramos a moles rápidamente para tus ejercicios.</p>
+            
+            <div>
+                <div>
+                    <div>
+                        <label>Compuesto Químico</label>
+                        <select id="compuestoSelect" onchange="calcularMoles()">
+                            <option value="18.015">Agua (H₂O) - 18.02 g/mol</option>
+                            <option value="44.01">Dióxido de Carbono (CO₂) - 44.01 g/mol</option>
+                            <option value="58.44">Sal de Mesa (NaCl) - 58.44 g/mol</option>
+                            <option value="180.16">Glucosa (C₆H₁₂O₆) - 180.16 g/mol</option>
+                            <option value="98.079">Ácido Sulfúrico (H₂SO₄) - 98.08 g/mol</option>
+                            <option value="16.04">Metano (CH₄) - 16.04 g/mol</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Masa (en gramos)</label>
+                        <input type="number" id="masaInput" placeholder="Ej: 50" oninput="calcularMoles()">
+                    </div>
+                </div>
+                
+                <div>
+                    <span>Resultado:</span>
+                    <span id="resultadoMoles">0.00</span>
+                    <span>moles</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📝 Ejercicios Resueltos Paso a Paso</h2>
+            
+            <details>
+                <summary>Ejemplo 1: De Gramos a Moles</summary>
+                <div>
+                    <p><strong>Pregunta:</strong> ¿Cuántos moles hay en 90 gramos de Agua (H₂O)?</p>
+                    <hr>
+                    <p><strong>Paso 1:</strong> Calcular la Masa Molar del H₂O.</p>
+                    <ul>
+                        <li>H: 1.01 g × 2 = 2.02 g</li>
+                        <li>O: 16.00 g × 1 = 16.00 g</li>
+                        <li><strong>Total: 18.02 g/mol</strong></li>
+                    </ul>
+                    <br>
+                    <p><strong>Paso 2:</strong> Usar factor de conversión.</p>
+                    <div>
+                        90 g H₂O × 
+                        <div>
+                            <span>1 mol H₂O</span>
+                            <span>18.02 g H₂O</span>
+                        </div>
+                        = <strong>4.99 moles H₂O</strong>
+                    </div>
+                </div>
+            </details>
+
+            <details>
+                <summary>Ejemplo 2: Relación Mol-Mol (Reacción Química)</summary>
+                <div>
+                    <p><strong>Reacción:</strong> N₂ + 3H₂ → 2NH₃</p>
+                    <p><strong>Pregunta:</strong> Si tengo 5 moles de N₂, ¿cuántos moles de NH₃ produzco?</p>
+                    <hr>
+                    <p><strong>Paso 1:</strong> Mirar los coeficientes estequiométricos (los números grandes).</p>
+                    <p>La ecuación dice: <strong>1</strong> mol de N₂ produce <strong>2</strong> moles de NH₃.</p>
+                    <br>
+                    <p><strong>Paso 2:</strong> Calcular.</p>
+                    <div>
+                        5 mol N₂ × 
+                        <div>
+                            <span>2 mol NH₃</span>
+                            <span>1 mol N₂</span>
+                        </div>
+                        = <strong>10 moles NH₃</strong>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section id="practica">
+            <h2><i></i> Laboratorio de Reactivo Limitante</h2>
+            <p>Vamos a hacer agua. La reacción es: <strong>2H₂ + O₂ → 2H₂O</strong>. <br>Ingresa las cantidades y descubre cuál se acaba primero.</p>
+
+            <div>
+                2 H₂ + 1 O₂ → 2 H₂O
+            </div>
+
+            <div>
+                <div>
+                    <div>H₂</div>
+                    <label>Moles disponibles</label>
+                    <input type="number" id="molesH2" value="4" min="0">
+                </div>
+                <div>+</div>
+                <div>
+                    <div>O₂</div>
+                    <label>Moles disponibles</label>
+                    <input type="number" id="molesO2" value="4" min="0">
+                </div>
+            </div>
+
+            <button onclick="simularReaccion()">¡Reaccionar!</button>
+
+            <div id="simulationResult">
+                <h3>Resultados:</h3>
+                
+                <div>
+                    <div>
+                        <span>Hidrógeno (H₂) necesario: <span id="reqH2"></span></span>
+                        <span id="statusH2"></span>
+                    </div>
+                    <div>
+                        <div id="barH2"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <span>Oxígeno (O₂) necesario: <span id="reqO2"></span></span>
+                        <span id="statusO2"></span>
+                    </div>
+                    <div>
+                        <div id="barO2"></div>
+                    </div>
+                </div>
+
+                <div>
+                    Reactivo Limitante: <span id="limitanteText">---</span>
+                    <br>
+                    Agua producida: <span id="prodH2O">0</span> moles
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

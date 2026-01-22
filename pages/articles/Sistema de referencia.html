@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Referencia | Masterclass Física - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    <button id="themeToggle" aria-label="Cambiar tema">
+        <i></i>
+    </button>
+
+    
+    <div>
+        <button onclick="openARViewer()">
+            <i></i>
+            Vista AR
+        </button>
+    </div>
+
+    
+
+    <section>
+        <div>
+            <div>
+                <h1>SISTEMAS DE REFERENCIA</h1>
+                <p>La base fundamental de toda la física mecánica. Sin un punto de observación, no existe movimiento medible. 
+                Explora cómo el mismo fenómeno físico puede describirse de maneras diferentes dependiendo de quién lo observa 
+                y desde dónde lo hace.</p>
+                <div>
+                    <a href="#video">
+                        <i></i> VER VIDEO 3D
+                    </a>
+                    <a href="#laboratorio">
+                        <i></i> INICIAR SIMULACIÓN
+                    </a>
+                </div>
+                <div>
+                    <div>
+                        <div>3</div>
+                        <div>Leyes Fundamentales</div>
+                    </div>
+                    <div>
+                        <div>5</div>
+                        <div>Simulaciones</div>
+                    </div>
+                    <div>
+                        <div>12</div>
+                        <div>Recursos</div>
+                    </div>
+                    <div>
+                        <div>10</div>
+                        <div>Ejercicios</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="teoria">
+        <h2>MARCO TEÓRICO FUNDAMENTAL</h2>
+        
+        <div>
+            <div>
+                <h3><i></i> 1. El Observador Inercial</h3>
+                <p>Es aquel sistema de referencia que cumple la <strong>Primera Ley de Newton</strong>: los cuerpos sobre los que no actúa ninguna fuerza neta permanecen en reposo o en Movimiento Rectilíneo Uniforme (MRU).</p>
+                <div>
+                    <span>Primera Ley de Newton (Ley de Inercia)</span>
+                    $\sum \vec{F} = 0 \implies \vec{a} = 0$
+                </div>
+                <p>En la práctica, no existe un sistema inercial absoluto en el universo, pero para la mayoría de aplicaciones terrestres, podemos considerar sistemas fijos respecto a:</p>
+                <ul>
+                    <li>La superficie de la Tierra (aproximación para distancias cortas)</li>
+                    <li>Las estrellas fijas (sistema más preciso)</li>
+                    <li>Laboratorios en caída libre (experimentos de precisión)</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3><i></i> 2. Transformaciones de Galileo</h3>
+                <p>Permiten relacionar las coordenadas de un suceso físico medido desde dos sistemas inerciales diferentes que se mueven con velocidad relativa constante.</p>
+                <div>
+                    <span>Transformaciones Galileanas (Clásicas)</span>
+                    $\begin{cases} 
+                    x' = x - v_x t \\ 
+                    y' = y - v_y t \\ 
+                    z' = z - v_z t \\ 
+                    t' = t 
+                    \end{cases}$
+                </div>
+                <p>Estas transformaciones asumen que el tiempo es absoluto (mismo para todos los observadores) y son válidas únicamente para velocidades mucho menores que la velocidad de la luz.</p>
+                <p>
+                    <i></i> Para velocidades cercanas a la luz, se requieren las Transformaciones de Lorentz.
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <h3><i></i> 3. Sistemas No Inerciales</h3>
+                <p>Cuando un sistema de referencia está acelerado respecto a uno inercial, aparecen fuerzas ficticias que no provienen de interacciones físicas reales.</p>
+                <div>
+                    <span>Fuerzas Ficticias en Sistemas Acelerados</span>
+                    $\vec{F}_{ficticia} = -m\vec{a}_{sistema}$
+                </div>
+                <p><strong>Ejemplos comunes:</strong></p>
+                <ul>
+                    <li><strong>Fuerza Centrífuga:</strong> Aparece en sistemas en rotación, "empuja" hacia afuera</li>
+                    <li><strong>Fuerza de Coriolis:</strong> Desvía objetos en movimiento sobre sistemas rotantes</li>
+                    <li><strong>Fuerza Inercial en ascensores:</strong> Sensación de mayor/menor peso durante aceleración</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3><i></i> 4. Aplicaciones Modernas</h3>
+                <p>Los sistemas de referencia son cruciales en tecnologías actuales:</p>
+                <div>
+                    <div>
+                        <div>GPS</div>
+                        <div>Corrección por relatividad</div>
+                    </div>
+                    <div>
+                        <div>Navegación</div>
+                        <div>Sistemas inerciales</div>
+                    </div>
+                    <div>
+                        <div>Astronomía</div>
+                        <div>Marco cósmico</div>
+                    </div>
+                </div>
+                <p>El estudio de sistemas de referencia conecta la física clásica con la relatividad especial y general, mostrando cómo nuestra percepción del espacio y tiempo depende del observador.</p>
+            </div>
+        </div>
+        
+        
+        <div>
+            <h3>
+                <i></i> Esquema de Sistemas de Referencia
+            </h3>
+            <div>
+                <div>
+                    <div>
+                        <div>A</div>
+                        <div>Sistema Inercial</div>
+                    </div>
+                    <div><i></i></div>
+                    <div>
+                        <div>B</div>
+                        <div>Sistema Móvil</div>
+                    </div>
+                    <div><i></i></div>
+                    <div>
+                        <div>C</div>
+                        <div>Transformación</div>
+                    </div>
+                </div>
+                <div>
+                    $x' = x - vt \quad y' = y \quad z' = z \quad t' = t$
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="video">
+        <div>
+            <div>
+                <h2><i></i> SISTEMAS DE REFERENCIA EN 3D</h2>
+                <span>
+                    <i></i> NUEVO
+                </span>
+            </div>
+            
+            <div>
+                <iframe src="https://www.youtube.com/embed/18F3bqyWBqk" 
+                        title="Sistema de Referencia en Física explicado con Animación 3D" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div>
+                <h3>¿Qué aprenderás en este video?</h3>
+                <p>Este video de <strong>Cinematik3D</strong> explica de forma visual y en menos de 3 minutos los conceptos clave que necesitas entender:</p>
+                <ul>
+                    <li><strong>Definición clara</strong> de qué es un sistema o marco de referencia</li>
+                    <li>Cómo se establece la <strong>posición de un móvil</strong> en diferentes sistemas</li>
+                    <li>Los <strong>elementos necesarios</strong> para que exista movimiento medible</li>
+                    <li>Ejemplos prácticos con <strong>animaciones 3D</strong> que facilitan la comprensión</li>
+                    <li>Aplicación a problemas de <strong>ESO, EBAU, PSU, Saber 11 y ENEM</strong></li>
+                </ul>
+                <p>
+                    <i></i> <strong>Consejo didáctico:</strong> Mira el video antes y después de leer la teoría. La primera vez para tener una idea general, la segunda para conectar con los conceptos matemáticos.
+                </p>
+            </div>
+            
+            <div>
+                <a href="https://cinematik3d.net/sistema-referencia" target="_blank">
+                    <i></i> Web del Episodio
+                </a>
+                <button onclick="downloadVideoNotes()">
+                    <i></i> Descargar Apuntes
+                </button>
+                <button onclick="showRelatedVideos()">
+                    <i></i> Más Videos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="laboratorio">
+        <h2>LABORATORIO VIRTUAL INTERACTIVO</h2>
+        
+        <div>
+            <i></i>
+            <div>
+                <h3>Simulación de Velocidad Relativa</h3>
+                <p>Observa cómo cambia la percepción del movimiento desde diferentes sistemas de referencia</p>
+            </div>
+        </div>
+        
+        <div id="lab-container">
+            <div>
+                <div>
+                    <div>
+                        
+                        <span>Bola (objeto en movimiento)</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        
+                        <span>Plataforma (sistema móvil)</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        
+                        <span>Observador en Tierra (sistema fijo)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <canvas id="simCanvas"></canvas>
+            
+            <div>
+                <div>
+                    <label>Velocidad de la Plataforma: <span id="vSueloTxt">2.0</span> m/s</label>
+                    <input type="range" id="vSuelo" min="-10" max="10" step="0.5" value="2">
+                    <div>
+                        <span>-10 m/s (Izquierda)</span>
+                        <span>0 m/s (Reposo)</span>
+                        <span>+10 m/s (Derecha)</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Velocidad de la Bola (relativa a plataforma): <span id="vBolaTxt">5.0</span> m/s</label>
+                    <input type="range" id="vBola" min="-10" max="10" step="0.5" value="5">
+                    <div>
+                        <span>-10 m/s (Contra movimiento)</span>
+                        <span>0 m/s (Quieta en plataforma)</span>
+                        <span>+10 m/s (A favor)</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>Escala de Tiempo: <span id="timeScaleTxt">1.0</span>x</label>
+                    <input type="range" id="timeScale" min="0.1" max="3" step="0.1" value="1">
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="resetSim()">
+                    <i></i> RESETEAR
+                </button>
+                <button onclick="pauseSim()" id="pauseBtn">
+                    <i></i> PAUSAR
+                </button>
+                <button onclick="saveSimulation()">
+                    <i></i> GUARDAR
+                </button>
+                <button onclick="toggleGrid()">
+                    <i></i> CUADRÍCULA
+                </button>
+            </div>
+            
+            <div>
+                <h4><i></i> CÁLCULOS EN TIEMPO REAL</h4>
+                <div>
+                    <div>
+                        <div>Velocidad para Observador en Tierra:</div>
+                        <div id="vTotal">7.0 m/s</div>
+                    </div>
+                    <div>
+                        <div>Posición Relativa Bola-Plataforma:</div>
+                        <div id="relPos">50 m</div>
+                    </div>
+                    <div>
+                        <div>Tiempo Transcurrido:</div>
+                        <div id="simTime">0.0 s</div>
+                    </div>
+                </div>
+                <div>
+                    <div>Fórmula aplicada:</div>
+                    <div>
+                        $V_{total} = V_{plataforma} + V_{bola\_relativa}$
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h4><i></i> EXPERIMENTA CON ESTOS ESCENARIOS:</h4>
+                <div>
+                    <button onclick="setScenario(1)">
+                        1. Plataforma quieta, bola en movimiento
+                    </button>
+                    <button onclick="setScenario(2)">
+                        2. Bola quieta en plataforma móvil
+                    </button>
+                    <button onclick="setScenario(3)">
+                        3. Movimientos opuestos (choque aparente)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos">
+        <h2>RECURSOS PEDAGÓGICOS COMPLETOS</h2>
+        
+        <div>
+            <div>
+                <div>PDF</div>
+                <i></i>
+                <h3>Guía de Estudio Completa</h3>
+                <p>Resúmenes matemáticos detallados de cinemática vectorial, rotación y transformaciones de coordenadas. Incluye ejercicios resueltos paso a paso.</p>
+                <a href="#" onclick="downloadResource('guia_completa.pdf')">
+                    <i></i> Descargar (4.2 MB)
+                </a>
+            </div>
+            
+            <div>
+                <div>VIDEO</div>
+                <i></i>
+                <h3>Colección de Videos</h3>
+                <p>Explicación visual del Péndulo de Foucault, sistemas de referencia en rotación y experimentos reales en laboratorio.</p>
+                <a href="#" onclick="openVideoCollection()">
+                    <i></i> Ver Colección
+                </a>
+            </div>
+            
+            <div>
+                <div>SIMULACIÓN</div>
+                <i></i>
+                <h3>Simulaciones Avanzadas</h3>
+                <p>Modelos interactivos de sistemas no inerciales, fuerzas de Coriolis y aplicaciones en navegación GPS.</p>
+                <a href="#" onclick="openAdvancedSims()">
+                    <i></i> Explorar
+                </a>
+            </div>
+            
+            <div>
+                <div>INVESTIGACIÓN</div>
+                <i></i>
+                <h3>Casos de Estudio</h3>
+                <p>Cómo afectan los sistemas de referencia a satélites GPS, telescopios espaciales y experimentos de física de partículas.</p>
+                <a href="#" onclick="openCaseStudies()">
+                    <i></i> Leer Papers
+                </a>
+            </div>
+            
+            <div>
+                <div>COMUNIDAD</div>
+                <i></i>
+                <h3>Foro de Discusión</h3>
+                <p>Plantea tus dudas sobre problemas de dinámica, comparte soluciones y colabora con otros estudiantes.</p>
+                <a href="#" onclick="openForum()">
+                    <i></i> Unirse al Foro
+                </a>
+            </div>
+            
+            <div>
+                <div>EVALUACIÓN</div>
+                <i></i>
+                <h3>Banco de Problemas</h3>
+                <p>Más de 50 problemas clasificados por dificultad, con soluciones detalladas y retroalimentación inmediata.</p>
+                <a href="#" onclick="openProblemBank()">
+                    <i></i> Practicar
+                </a>
+            </div>
+            
+            <div>
+                <div>EXTRA</div>
+                <i></i>
+                <h3>Aplicación Móvil</h3>
+                <p>Simulador de sistemas de referencia para tu teléfono. Usa el sensor de movimiento para experimentar.</p>
+                <a href="#" onclick="downloadApp()">
+                    <i></i> Descargar App
+                </a>
+            </div>
+            
+            <div>
+                <div>DATOS</div>
+                <i></i>
+                <h3>Conjuntos de Datos</h3>
+                <p>Datos reales de experimentos con sistemas de referencia para análisis con Python, MATLAB o Excel.</p>
+                <a href="#" onclick="openDatasets()">
+                    <i></i> Acceder a Datos
+                </a>
+            </div>
+        </div>
+        
+        <div>
+            <h3>
+                <i></i> APRENDIZAJE CONTINUO
+            </h3>
+            <p>
+                Estos recursos están diseñados para complementar tu aprendizaje. Te recomendamos comenzar con el video 3D, 
+                luego revisar la guía de estudio, practicar con las simulaciones y finalmente evaluar tu conocimiento 
+                con el banco de problemas. ¡El orden es flexible según tu estilo de aprendizaje!
+            </p>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2>EVALUACIÓN INTERACTIVA</h2>
+        
+        <div id="quiz-container">
+            <div>
+                <div>
+                    <div id="quizProgress"></div>
+                </div>
+                <div>
+                    <span id="currentQuestion">1</span> de <span id="totalQuestions">5</span>
+                </div>
+            </div>
+            
+            <div id="quizQuestion">
+                ¿Qué caracteriza a un sistema de referencia inercial?
+            </div>
+            
+            <div id="quizOptions">
+                
+            </div>
+            
+            <div id="quizFeedback">
+                
+            </div>
+            
+            <div>
+                <button id="prevBtn" onclick="prevQuestion()" disabled>
+                    <i></i> Anterior
+                </button>
+                <button id="nextBtn" onclick="nextQuestion()">
+                    Siguiente <i></i>
+                </button>
+                <button id="submitBtn" onclick="submitQuiz()">
+                    <i></i> Finalizar Evaluación
+                </button>
+            </div>
+            
+            <div>
+                <div>
+                    <i></i>
+                    <span>Tiempo estimado: 8-10 minutos</span>
+                </div>
+                <div>
+                    <i></i>
+                    <span>Dificultad: Media</span>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h3>
+                <i></i> CERTIFICACIÓN DE CONOCIMIENTO
+            </h3>
+            <p>
+                Al completar exitosamente esta evaluación (80% o más de aciertos), podrás descargar un certificado digital 
+                que acredita tu comprensión de los sistemas de referencia en física.
+            </p>
+            <button onclick="viewCertificate()">
+                <i></i> Ver Certificado de Ejemplo
+            </button>
+        </div>
+    </section>
+
+    
+
+    
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

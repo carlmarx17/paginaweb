@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ilíada: Geometría Analítica de la Guerra de Troya - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    <div>
+        
+        
+        <div>
+            <section>
+                <div>
+                    <div>
+                        <div>
+                            <div>PUNTUACIÓN</div>
+                            <div id="score">0</div>
+                        </div>
+                        <div>
+                            <div>NIVEL</div>
+                            <div id="level">1</div>
+                        </div>
+                        <div>
+                            <div>VIDAS</div>
+                            <div id="lives">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div>
+                        <button>
+                            <i></i>
+                            <span>Flecha</span>
+                        </button>
+                        <button>
+                            <i></i>
+                            <span>Bola de Cañón</span>
+                        </button>
+                        <button>
+                            <i></i>
+                            <span>Bola de Fuego</span>
+                        </button>
+                        <button>
+                            <i></i>
+                            <span>Catapulta</span>
+                        </button>
+                    </div>
+                    
+                    
+                    <div>
+                        <button>
+                            <i></i>
+                            <span>Tierra</span>
+                            <small>g = 9.8 m/s²</small>
+                        </button>
+                        <button>
+                            <i></i>
+                            <span>Luna</span>
+                            <small>g = 1.6 m/s²</small>
+                        </button>
+                        <button>
+                            <i></i>
+                            <span>Marte</span>
+                            <small>g = 3.7 m/s²</small>
+                        </button>
+                        <button>
+                            <i></i>
+                            <span>Júpiter</span>
+                            <small>g = 24.8 m/s²</small>
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <canvas id="gameCanvas" width="800" height="500"></canvas>
+                        <div>
+                            <div id="message"></div>
+                            <div id="pedagogicalFeedback"></div>
+                        </div>
+                        <div id="windIndicator">
+                            <i></i>
+                            <span id="windValue">Viento: 0 m/s</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>
+                                <span>ÁNGULO (θ)</span>
+                                <span id="angleVal">45°</span>
+                            </div>
+                            <input type="range" id="angle" min="10" max="80" value="45">
+                            <div>
+                                <span>Bajo (10°)</span>
+                                <span>Alto (80°)</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <span>VELOCIDAD (v₀)</span>
+                                <span id="powerVal">25 m/s</span>
+                            </div>
+                            <input type="range" id="power" min="10" max="50" value="25">
+                            <div>
+                                <span>10 m/s</span>
+                                <span>50 m/s</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <button id="fireBtn">
+                                <i></i> ¡DISPARAR!
+                            </button>
+                            <button id="resetBtn">
+                                <i></i> REINICIAR NIVEL
+                            </button>
+                        </div>
+                        
+                        
+                        <div>
+                            <input type="checkbox" id="ghostMode" checked>
+                            <label for="ghostMode">
+                                <i></i> Modo Fantasma (ver trayectorias anteriores)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4><i></i> Desafío del Nivel</h4>
+                    <p id="challengeText">Nivel 1: Paris debe derribar a Menelao. Calcula la velocidad inicial necesaria si el ángulo es fijo (45°) y la distancia es de 300m.</p>
+                    <button id="showAnswerBtn">
+                        <i></i> Mostrar solución
+                    </button>
+                    <div id="challengeAnswer"></div>
+                </div>
+                
+                
+                <div>
+                    <h4><i></i> Mejores Puntuaciones</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Nombre</th>
+                                <th>Puntuación</th>
+                                <th>Nivel</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            
+                        </tbody>
+                    </table>
+                    <input type="text" id="playerName" placeholder="Ingresa tu nombre para guardar tu récord" maxlength="20">
+                    <button id="saveScoreBtn">
+                        <i></i> Guardar Puntuación
+                    </button>
+                </div>
+            </section>
+            
+            <section>
+                <div>
+                    <div>
+                        <h3><i></i> Conceptos del Tiro Parabólico</h3>
+                        <ul>
+                            <li><i></i> <strong>Ángulo de lanzamiento (θ):</strong> Determina la forma de la parábola. A 45° se logra el máximo alcance.</li>
+                            <li><i></i> <strong>Velocidad inicial (v₀):</strong> A mayor velocidad, mayor alcance y altura.</li>
+                            <li><i></i> <strong>Aceleración de la gravedad (g):</strong> Varía según el planeta. En la Tierra es 9.8 m/s².</li>
+                            <li><i></i> <strong>Componentes del movimiento:</strong> Horizontal (MRU) y Vertical (MRUV).</li>
+                        </ul>
+                        
+                        <div>
+                            <h4>Objetivos de Aprendizaje</h4>
+                            <ul>
+                                <li>Calcular el alcance máximo de un proyectil.</li>
+                                <li>Determinar la altura máxima en función del ángulo.</li>
+                                <li>Resolver problemas de tiro parabólico en contexto histórico.</li>
+                                <li>Analizar la trayectoria mediante ecuaciones cuadráticas.</li>
+                            </ul>
+                        </div>
+                        
+                        <h3><i></i> Fórmulas Clave</h3>
+                        <div>
+                            <p><strong>Alcance horizontal (R):</strong> R = (v₀² × sin(2θ)) / g</p>
+                            <p><strong>Altura máxima (h):</strong> h = (v₀² × sin²θ) / (2g)</p>
+                            <p><strong>Tiempo de vuelo (t):</strong> t = (2v₀ × sinθ) / g</p>
+                            <p>Donde v₀ = velocidad inicial (m/s), θ = ángulo (grados), g = gravedad (m/s²)</p>
+                        </div>
+                        
+                        
+                        <div>
+                            <h4><i></i> Logros Desbloqueados</h4>
+                            <div id="achievementsGrid">
+                                
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4><i></i> Lee la Ilíada de Homero</h4>
+                            <div>
+                                <div>
+                                    <strong>LA ILÍADA</strong><br>
+                                    <hr>
+                                    <span>HOMERO</span><br>
+                                    <small>Épica Griega</small>
+                                </div>
+                            </div>
+                            <p>Descubre la historia completa de la Guerra de Troya, las hazañas de Aquiles, Héctor y los héroes griegos.</p>
+                            <a href="https://www.gutenberg.org/ebooks/6130" target="_blank">
+                                <i></i> Leer gratis en Project Gutenberg
+                            </a>
+                        </div>
+                        
+                        <div>
+                            <h4><i></i> Contexto Histórico</h4>
+                            <p>En la Ilíada, los guerreros usaban arcos y catapultas. Paris mató a Aquiles con una flecha en el talón, y los griegos usaron máquinas de asedio para derribar las murallas de Troya. Este simulador te permite recrear esos momentos con física real.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        
+    </div>
+
+    
+    <audio id="fireSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-arrow-whoosh-1491.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hitSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-metal-hit-explosion-1992.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="missSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-cartoon-falling-whistle-392.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="levelUpSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="achievementSound" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" type="audio/mpeg">
+    </audio>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

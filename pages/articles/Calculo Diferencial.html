@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Diferencial | Límites y Derivadas Interactivo - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        <h2>1. Límites</h2>
+        
+        <div>
+            <div>
+                <span>Concepto Fundamental</span>
+                <h3>¿Qué es un Límite?</h3>
+                <p>Un límite describe el valor al que se aproxima una función cuando su variable independiente se acerca a un valor particular.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;\lim_{x&space;\to&space;a}&space;f(x)&space;=&space;L" 
+                         alt="Limite f(x) = L">
+                </div>
+                <p>"Cuando x tiende a a, f(x) tiende a L"</p>
+            </div>
+
+            <div>
+                <span>Propiedades</span>
+                <h3>Reglas Básicas</h3>
+                
+                <div>
+                    <p><strong>Suma de límites:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lim_{x\to&space;a}[f(x)&plus;g(x)]&space;=&space;\lim_{x\to&space;a}f(x)&space;&plus;&space;\lim_{x\to&space;a}g(x)" 
+                        >
+                    
+                    <hr>
+                    
+                    <p><strong>Producto de límites:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lim_{x\to&space;a}[f(x)\cdot&space;g(x)]&space;=&space;\lim_{x\to&space;a}f(x)\cdot\lim_{x\to&space;a}g(x)" 
+                        >
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h3>🧮 Calculadora de Límites Interactiva</h3>
+            <p>Selecciona un tipo de límite y observa el resultado</p>
+            
+            <div>
+                <div>
+                    <label for="tipoLimite">
+                        <span>🔢</span>
+                        <span>Tipo de Límite:</span>
+                    </label>
+                    <select id="tipoLimite">
+                        <option value="finito">Límite Finito</option>
+                        <option value="infinito">Límite al Infinito</option>
+                        <option value="cero">Límite 0/0</option>
+                        <option value="trigonometrico">Límite Trigonométrico</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="funcionLimite">
+                        <span>𝑓(𝑥)</span>
+                        <span>Función:</span>
+                    </label>
+                    <select id="funcionLimite">
+                        <option value="x^2">x²</option>
+                        <option value="1/x">1/x</option>
+                        <option value="sin(x)/x">sen(x)/x</option>
+                        <option value="(x^2-1)/(x-1)">(x²-1)/(x-1)</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="valorLimite">
+                        <span>→</span>
+                        <span>Valor de x:</span>
+                    </label>
+                    <select id="valorLimite">
+                        <option value="2">2</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="infinito">∞</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="calcularLimite()">
+                    <span>🧮</span>
+                    <span>Calcular Límite</span>
+                </button>
+            </div>
+            
+            <div id="resultadoLimite"></div>
+        </div>
+
+        <h2>2. La Derivada</h2>
+
+        <div>
+            <div>
+                <span>Definición Formal</span>
+                <h3>Derivada como Límite</h3>
+                <p>La derivada de una función en un punto es la pendiente de la recta tangente en ese punto.</p>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;f'(x)&space;=&space;\lim_{h&space;\to&space;0}&space;\frac{f(x&plus;h)&space;-&space;f(x)}{h}" 
+                         alt="Definición de Derivada">
+                </div>
+            </div>
+
+            <div>
+                <span>Interpretaciones</span>
+                <h3>Significado Físico</h3>
+                
+                <div>
+                    <p><strong>Velocidad Instantánea:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;v(t)&space;=&space;\frac{ds}{dt}&space;=&space;s'(t)" 
+                        >
+                    
+                    <hr>
+                    
+                    <p><strong>Aceleración:</strong></p>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;a(t)&space;=&space;\frac{dv}{dt}&space;=&space;v'(t)&space;=&space;s''(t)" 
+                        >
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h3>🎮 Simulador de Derivadas</h3>
+            <p>Selecciona una función y observa su derivada</p>
+            
+            <div>
+                <div>
+                    <label for="funcionSelect">
+                        <span>𝑓(𝑥)</span>
+                        <span>Función:</span>
+                    </label>
+                    <select id="funcionSelect">
+                        <option value="x^2">x²</option>
+                        <option value="x^3">x³</option>
+                        <option value="sin(x)">sen(x)</option>
+                        <option value="cos(x)">cos(x)</option>
+                        <option value="e^x">eˣ</option>
+                        <option value="ln(x)">ln(x)</option>
+                        <option value="sqrt(x)">√x</option>
+                        <option value="1/x">1/x</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="puntoDerivada">
+                        <span>𝑥₀</span>
+                        <span>Punto para evaluar:</span>
+                    </label>
+                    <select id="puntoDerivada">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="pi">π</option>
+                        <option value="e">e</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="reglaSelect">
+                        <span>📐</span>
+                        <span>Regla a aplicar:</span>
+                    </label>
+                    <select id="reglaSelect">
+                        <option value="potencia">Regla de la Potencia</option>
+                        <option value="producto">Regla del Producto</option>
+                        <option value="cociente">Regla del Cociente</option>
+                        <option value="cadena">Regla de la Cadena</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="calcularDerivada()">
+                    <span>∫</span>
+                    <span>Calcular Derivada</span>
+                </button>
+            </div>
+            
+            <div id="resultadoDerivada"></div>
+        </div>
+
+        <h2>3. Reglas de Derivación</h2>
+        
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Regla</th>
+                        <th>Fórmula (LaTeX)</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Potencia</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}(x^n)&space;=&space;nx^{n-1}"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;(x^5)'&space;=&space;5x^4"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Producto</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;(f\cdot&space;g)'&space;=&space;f'g&space;&plus;&space;fg'"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;(x\cdot\sin&space;x)'&space;=&space;\sin&space;x&space;&plus;&space;x\cos&space;x"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cociente</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\left(\frac{f}{g}\right)'&space;=&space;\frac{f'g&space;-&space;fg'}{g^2}"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;\left(\frac{x}{\ln&space;x}\right)'&space;=&space;\frac{\ln&space;x&space;-&space;1}{(\ln&space;x)^2}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cadena</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}f(g(x))&space;=&space;f'(g(x))\cdot&space;g'(x)"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;(\sin(x^2))'&space;=&space;2x\cos(x^2)"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exponencial</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}(e^x)&space;=&space;e^x"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;(e^{3x})'&space;=&space;3e^{3x}"></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Logarítmica</strong></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}(\ln&space;x)&space;=&space;\frac{1}{x}"></td>
+                        <td><img src="https://latex.codecogs.com/svg.latex?\small&space;(\ln(5x))'&space;=&space;\frac{1}{x}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <div>
+            <div>
+                <div>🔍</div>
+                <div>
+                    <h3>Ejercicio Interactivo: Derivada por Definición</h3>
+                    <p>Calcula la derivada usando la definición por límites</p>
+                </div>
+            </div>
+            
+            <div>
+                <p>Calcula la derivada de <strong>f(x) = x²</strong> usando la definición por límites:</p>
+                <p>f'(x) = lim [f(x+h) - f(x)]/h</p>
+            </div>
+            
+            <div>
+                <button onclick="mostrarSolucion('solucion1')">
+                    <span>🧮</span>
+                    <span>Mostrar Solución</span>
+                </button>
+                <button onclick="ocultarSolucion('solucion1')">
+                    <span>🔄</span>
+                    <span>Ocultar Solución</span>
+                </button>
+            </div>
+            
+            <div id="solucion1">
+                <div>
+                    <strong>Paso 1: Aplicar la definición</strong><br>
+                    f'(x) = lim [(x+h)² - x²]/h
+                </div>
+                
+                <div>
+                    <strong>Paso 2: Desarrollar (x+h)²</strong><br>
+                    (x+h)² = x² + 2xh + h²
+                </div>
+                
+                <div>
+                    <strong>Paso 3: Sustituir en el límite</strong><br>
+                    f'(x) = lim [(x² + 2xh + h²) - x²]/h = lim [2xh + h²]/h
+                </div>
+                
+                <div>
+                    <strong>Paso 4: Simplificar</strong><br>
+                    f'(x) = lim [h(2x + h)]/h = lim (2x + h)
+                </div>
+                
+                <div>
+                    <strong>Paso 5: Evaluar el límite cuando h→0</strong><br>
+                    f'(x) = 2x + 0 = 2x
+                </div>
+                
+                <div>
+                    <strong>Respuesta:</strong> La derivada de f(x) = x² es f'(x) = 2x
+                </div>
+            </div>
+        </div>
+
+        <h2>4. Aplicaciones de la Derivada</h2>
+        
+        <div>
+            <div>
+                <span>Optimización</span>
+                <h3>Máximos y Mínimos</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;f'(x)&space;=&space;0" 
+                         alt="Puntos críticos">
+                </div>
+                
+                <p>Los puntos críticos ocurren donde la derivada es cero o no existe.</p>
+                
+                <div>
+                    <p><strong>Criterio de la segunda derivada:</strong></p>
+                    <ul>
+                        <li>Si f''(x) > 0 → Mínimo local</li>
+                        <li>Si f''(x) < 0 → Máximo local</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <span>Razón de Cambio</span>
+                <h3>Problemas de Tasas</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;\frac{dy}{dx}&space;=&space;\frac{dy/dt}{dx/dt}" 
+                         alt="Regla de la cadena">
+                </div>
+                
+                <p>Para problemas relacionados donde dos cantidades varían con el tiempo.</p>
+                
+                <div>
+                    <p><strong>Ejemplo:</strong> Un globo se infla a razón de 100 cm³/s. ¿Qué tan rápido aumenta el radio cuando r = 10 cm?</p>
+                </div>
+            </div>
+
+            <div>
+                <span>Aproximación Lineal</span>
+                <h3>Linealización</h3>
+                
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\Large&space;L(x)&space;=&space;f(a)&space;&plus;&space;f'(a)(x-a)" 
+                         alt="Linealización">
+                </div>
+                
+                <p>Aproxima valores de funciones cerca de un punto conocido.</p>
+                
+                <div>
+                    <p><strong>Ejemplo:</strong> Calcular √4.1 usando linealización en a = 4.</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <div>
+                <div>📦</div>
+                <div>
+                    <h3>Problema de Optimización Interactivo</h3>
+                    <p>Aplicación en el mundo real</p>
+                </div>
+            </div>
+            
+            <div>
+                <p>Se quiere construir una caja rectangular sin tapa con una pieza de cartón de 12 cm × 20 cm, cortando cuadrados iguales en las esquinas. ¿Qué tamaño deben tener los cuadrados para maximizar el volumen de la caja?</p>
+            </div>
+            
+            <div>
+                <button onclick="mostrarSolucion('solucion2')">
+                    <span>🧮</span>
+                    <span>Mostrar Solución</span>
+                </button>
+                <button onclick="ocultarSolucion('solucion2')">
+                    <span>🔄</span>
+                    <span>Ocultar Solución</span>
+                </button>
+            </div>
+            
+            <div id="solucion2">
+                <div>
+                    <strong>Paso 1: Definir variables</strong><br>
+                    Sea x = lado del cuadrado cortado (en cm).<br>
+                    Las dimensiones de la caja serán:<br>
+                    Largo: 20 - 2x, Ancho: 12 - 2x, Altura: x
+                </div>
+                
+                <div>
+                    <strong>Paso 2: Función volumen</strong><br>
+                    V(x) = x(20 - 2x)(12 - 2x) = 4x³ - 64x² + 240x
+                </div>
+                
+                <div>
+                    <strong>Paso 3: Derivar</strong><br>
+                    V'(x) = 12x² - 128x + 240
+                </div>
+                
+                <div>
+                    <strong>Paso 4: Encontrar puntos críticos</strong><br>
+                    Resolver V'(x) = 0<br>
+                    12x² - 128x + 240 = 0<br>
+                    Dividiendo entre 4: 3x² - 32x + 60 = 0<br>
+                    Soluciones: x = (32 ± √(1024 - 720))/6 = (32 ± √304)/6<br>
+                    x₁ ≈ 8.21, x₂ ≈ 2.45
+                </div>
+                
+                <div>
+                    <strong>Paso 5: Determinar solución válida</strong><br>
+                    x₁ ≈ 8.21 no es válido (mayor que 6, la mitad del ancho)<br>
+                    x₂ ≈ 2.45 cm es la solución
+                </div>
+                
+                <div>
+                    <strong>Respuesta:</strong> Los cuadrados deben tener aproximadamente 2.45 cm de lado para maximizar el volumen de la caja.
+                </div>
+            </div>
+        </div>
+
+        <h2>5. Teoremas Fundamentales</h2>
+        
+        <div>
+            <div>
+                <h3>Teorema del Valor Medio</h3>
+                <p>Si f es continua en [a,b] y derivable en (a,b), existe c ∈ (a,b) tal que:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;f'(c)&space;=&space;\frac{f(b)-f(a)}{b-a}">
+                </div>
+                <p>La pendiente de la recta tangente en c es igual a la pendiente de la recta secante entre a y b.</p>
+            </div>
+            
+            <div>
+                <h3>Regla de L'Hôpital</h3>
+                <p>Para límites indeterminados de la forma 0/0 o ∞/∞:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\lim_{x\to&space;a}\frac{f(x)}{g(x)}&space;=&space;\lim_{x\to&space;a}\frac{f'(x)}{g'(x)}">
+                </div>
+                <p>Ejemplo: 
+                <img src="https://latex.codecogs.com/svg.latex?\small&space;\lim_{x\to0}\frac{\sin&space;x}{x}&space;=&space;\lim_{x\to0}\frac{\cos&space;x}{1}&space;=&space;1"></p>
+            </div>
+            
+            <div>
+                <h3>Teorema de Taylor</h3>
+                <p>Aproxima funciones mediante polinomios:</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;f(x)&space;=&space;\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n">
+                </div>
+                <p>Polinomio de Taylor de orden n alrededor de x = a.</p>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <button id="botonScroll" onclick="irArriba()" aria-label="Volver arriba">
+        ↑
+    </button>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

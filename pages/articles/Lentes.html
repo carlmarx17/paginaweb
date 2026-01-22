@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrietty: El Mundo de las Lentes | Prof. Carlos Alberto Martínez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                Exploración Óptica Borrowers
+            </div>
+            <h1>Óptica en lo Diminuto</h1>
+            <p>
+                "Incluso una gota de rocío puede ser una lente que nos revela el alma del universo."
+            </p>
+            <div>
+                <a href="#simulador">
+                    <i></i> EXPLORAR EL MUNDO
+                </a>
+            </div>
+        </div>
+        <div>
+            <i></i>
+        </div>
+    </section>
+
+    <main>
+
+        
+        <section id="lentes">
+            <div>
+                <h2>La Magia del Cristal</h2>
+                
+            </div>
+
+            <div>
+                <div>
+                    <h3>Lentes Convergentes</h3>
+                    <p>
+                        Como la lupa que Arrietty usa para leer los periódicos humanos, estas lentes concentran la luz en un punto llamado **foco**.
+                    </p>
+                    <div>
+                        <p>
+                            $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$
+                        </p>
+                        <p>Ley de las Lentes Delgadas</p>
+                    </div>
+                    <ul>
+                        <li>Foco ($f$): Valor positivo (+).</li>
+                        <li>Magnifica objetos cercanos para los Borrowers.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Lentes Divergentes</h3>
+                    <p>
+                        Estas lentes dispersan los rayos de luz. Útiles para que los Diminutos vean paisajes humanos amplios desde su escondite.
+                    </p>
+                    <div>
+                        <p>
+                            $P = \frac{1}{f}$
+                        </p>
+                        <p>Potencia Óptica (Dioptrías)</p>
+                    </div>
+                    <ul>
+                        <li>Foco ($f$): Valor negativo (-).</li>
+                        <li>Siempre produce imágenes virtuales y derechas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulador">
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <h2>Taller de Borrowers</h2>
+                            <p>"Para un Diminuto, la precisión es cuestión de supervivencia. Ajusta la óptica con cuidado."</p>
+                        </div>
+
+                        <div>
+                            <div>
+                                <label>Tipo de Cristal</label>
+                                <div>
+                                    <button onclick="changeLens('conv')" id="btnConv">Convergente</button>
+                                    <button onclick="changeLens('div')" id="btnDiv">Divergente</button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <label>Posición ($d_o$)</label>
+                                    <span id="objVal">30 cm</span>
+                                </div>
+                                <input type="range" id="objRange" min="5" max="100" value="30" oninput="updateSim()">
+                            </div>
+
+                            <div>
+                                <div>
+                                    <label>Foco ($f$)</label>
+                                    <span id="focVal">20 cm</span>
+                                </div>
+                                <input type="range" id="focRange" min="10" max="50" value="20" oninput="updateSim()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <canvas id="lensCanvas"></canvas>
+                        </div>
+                        <div>
+                            <div>
+                                <span>Imagen en:</span>
+                                <span id="resDi">--</span>
+                            </div>
+                            <div>
+                                <span>Aumento (M):</span>
+                                <span id="resM">--</span>
+                            </div>
+                            <div>
+                                <span>Estado:</span>
+                                <span id="resType">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="sistemas">
+            <div>
+                <h2>Instrumentos de los Borrowers</h2>
+                
+            </div>
+
+            <div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h3>Telescopio Refractor</h3>
+                    <p>
+                        Para ver las estrellas desde el jardín. Combina dos lentes convergentes para traer lo lejano al alcance de la mano.
+                    </p>
+                    <div>
+                        <p>$M = -\frac{f_{obj}}{f_{ocu}}$</p>
+                        <p>Magnificación Angular</p>
+                    </div>
+                    <div>
+                        <strong>Configuración:</strong> La separación entre lentes debe ser igual a la suma de sus focos: $L = f_{obj} + f_{ocu}$.
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h3>Microscopio Compuesto</h3>
+                    <p>
+                        Para observar los detalles de un pétalo o el ala de una abeja. Un sistema que multiplica el poder del cristal.
+                    </p>
+                    <div>
+                        <p>$M_{total} = M_{obj} \cdot M_{ocu}$</p>
+                        <p>Poder de Aumento Total</p>
+                    </div>
+                    <div>
+                        <strong>Secreto:</strong> La imagen real formada por el primer lente sirve como "objeto" para el segundo, creando una ampliación masiva.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="maestro">
+            <div>
+                
+                
+                <div>
+                    <div>
+                        <h2>Audiencia con el Maestro Carlos</h2>
+                        <p>
+                            "La física es la herramienta de los gigantes, pero es el secreto mejor guardado de los pequeños."
+                        </p>
+                    </div>
+
+                    <div>
+                        <div>
+                            <i></i>
+                            <h4>Mensajería Académica</h4>
+                            <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                            <p>Consultas sobre óptica, sistemas complejos y asesoría científica personalizada.</p>
+                        </div>
+                        
+                        <div>
+                            <i></i>
+                            <h4>Línea del Jardín</h4>
+                            <p>+57 310 310 6954</p>
+                            <p>Prof. Carlos Alberto Martínez S.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://wa.me/573103106954" target="_blank">
+                            <i></i> REFUERZO DE ÓPTICA
+                        </a>
+                    </div>
+
+                    
+                    <div>
+                        <div>
+                            <i></i>
+                            <div>
+                                <p>Uso Legítimo y Derechos de Autor</p>
+                                <p>
+                                    Este entorno interactivo es una obra de carácter **estrictamente educativo**. Se fundamenta en la doctrina del **Uso Legítimo (Fair Use)** para la enseñanza científica. Todos los derechos reservados sobre la temática, estética, personajes y marcas visuales pertenecen a **Studio Ghibli** y sus creadores. Este material no tiene fines comerciales.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

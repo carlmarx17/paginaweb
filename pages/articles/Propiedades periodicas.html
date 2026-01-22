@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Tabla Periódica | Prof. Carlos Alberto Martinez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Mundo Química</span>
+                <h1>
+                    Propiedades <span>Periódicas</span> con Rigor Físico
+                </h1>
+                <p>
+                    Material desarrollado por el <strong>Prof. Carlos Alberto Martinez Sibaja</strong>. Entiende el "por qué" de la química a través de la física.
+                </p>
+                <div>
+                    <a href="#coulomb">Justificación Física</a>
+                    <a href="#practica">Simulacro ICFES</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <span>Ley de Coulomb</span>
+                        <div>F</div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>"A mayor carga en el núcleo y menor distancia, más fuerte es la atracción sobre los electrones."</p>
+                        </div>
+                        <div>
+                            <span>$F = k_e \frac{q_1 q_2}{r^2}$</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="coulomb">
+            <h2>
+                <span>⚛️</span> El Corazón de la Propiedad: Ley de Coulomb
+            </h2>
+            <div>
+                <div>
+                    <p>Todas las tendencias que ves en la tabla periódica se explican por la **atracción electrostática** entre el núcleo (positivo) y los electrones (negativos). La ley de Coulomb nos dice:</p>
+                    <div>
+                        <p>
+                            $F \propto \frac{Z_{eff}}{r^2}$
+                        </p>
+                        <ul>
+                            <li><strong>F:</strong> Fuerza de atracción sobre el electrón de valencia.</li>
+                            <li><strong>Zeff:</strong> Carga Nuclear Efectiva (cuántos protones "siente" realmente el electrón).</li>
+                            <li><strong>r:</strong> Radio atómico (distancia del núcleo al electrón).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3>¿Por qué cambia el Radio?</h3>
+                    <div>
+                        <p><strong>En un Periodo:</strong> Al aumentar el número atómico (Z), hay más protones tirando de los electrones. Como la distancia (r) es similar, la fuerza (F) aumenta y "comprime" el átomo. ¡Por eso los átomos de la derecha son más pequeños!</p>
+                        <hr>
+                        <p><strong>En un Grupo:</strong> Al bajar, se añaden capas de energía. Esto aumenta mucho la distancia (r). Según la ley de Coulomb, como la distancia está al cuadrado y en el denominador, la fuerza de atracción cae drásticamente, haciendo al átomo más grande y sus electrones más fáciles de quitar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="visualizador">
+            <div>
+                <div>
+                    <div>
+                        <h2>Explorador de Tendencias</h2>
+                        <p>Visualiza cómo la fuerza de Coulomb altera las propiedades.</p>
+                        
+                        <div>
+                            <button onclick="updateTrend('radio')">
+                                Radio Atómico <span>← ↓</span>
+                            </button>
+                            <button onclick="updateTrend('electro')">
+                                Electronegatividad <span>→ ↑</span>
+                            </button>
+                            <button onclick="updateTrend('ion')">
+                                Energía de Ionización <span>→ ↑</span>
+                            </button>
+                        </div>
+                        <div id="prop-desc">
+                            <h4>Radio Atómico</h4>
+                            <p>Es inversamente proporcional a la fuerza de atracción nuclear. Aumenta al bajar en un grupo porque el aumento de capas predomina sobre la carga nuclear.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <div id="arrow-h">
+                                
+                            </div>
+                            <div id="arrow-v">
+                                
+                            </div>
+                            <div>
+                                <div>TABLA PERIÓDICA</div>
+                                <div id="trend-label">Aumenta hacia la Izquierda y Abajo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="practica">
+            <div>
+                <h2>Simulacro Tipo ICFES</h2>
+                <p>Preguntas de selección múltiple con única respuesta, basadas en análisis de datos.</p>
+            </div>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <span>1</span>
+                        <p>Considere dos elementos: X (Z=11) y Y (Z=17). Ambos se encuentran en el periodo 3. De acuerdo con la ley de Coulomb, ¿cuál de las siguientes afirmaciones es correcta sobre su radio atómico?</p>
+                    </div>
+                    <div>
+                        <button onclick="revealIcfes(this, false, 'Incorrecto. El elemento Y tiene más protones, por lo que atrae con más fuerza sus electrones.')">A. El radio de X es menor que el de Y porque X tiene menos electrones.</button>
+                        <button onclick="revealIcfes(this, true, '¡Correcto! Y tiene mayor carga nuclear (más protones), lo que aumenta la fuerza de atracción y reduce el radio.')">B. El radio de Y es menor que el de X debido a una mayor carga nuclear efectiva.</button>
+                        <button onclick="revealIcfes(this, false, 'Falso. El radio atómico NO es igual para elementos de un mismo periodo.')">C. Ambos tienen el mismo radio porque tienen el mismo número de niveles de energía.</button>
+                        <button onclick="revealIcfes(this, false, 'El radio aumenta hacia la izquierda, no hacia la derecha.')">D. El radio de Y es mayor porque tiene más niveles de energía ocupados.</button>
+                    </div>
+                    
+                </div>
+
+                
+                <div>
+                    <div>
+                        <span>2</span>
+                        <p>La energía de ionización es la energía mínima requerida para remover un electrón de un átomo neutro en estado gaseoso. Al bajar en el grupo de los metales alcalinos (Li, Na, K, Rb), esta energía disminuye principalmente porque:</p>
+                    </div>
+                    <div>
+                        <button onclick="revealIcfes(this, false, 'Al contrario, el núcleo es más positivo al bajar.')">A. El núcleo se vuelve menos positivo y atrae menos a los electrones.</button>
+                        <button onclick="revealIcfes(this, true, '¡Correcto! Según Coulomb, al aumentar la distancia (r), la fuerza (F) disminuye drásticamente, facilitando la remoción del electrón.')">B. El aumento en el radio atómico debilita la fuerza de atracción núcleo-electrón.</button>
+                        <button onclick="revealIcfes(this, false, 'El efecto pantalla aumenta, no disminuye.')">C. El efecto pantalla disminuye, permitiendo que el núcleo atraiga más fuerte.</button>
+                        <button onclick="revealIcfes(this, false, 'La masa atómica no influye en la atracción electrostática núcleo-electrón.')">D. La masa atómica aumenta, lo que genera inestabilidad en el orbital S.</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            
+            <div>
+                <div>
+                    <h2>Prof. Carlos Alberto Martinez Sibaja</h2>
+                    <p>Liderando la enseñanza de las ciencias con rigor y claridad. Tutorías especializadas para bachillerato y preparación universitaria.</p>
+                </div>
+                <div>
+                    <div>
+                        
+                        <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                    </div>
+                    <div>
+                        
+                        <span>Cel: 3103106954</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Divina Comedia del Cálculo: El Infierno de Riemann - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    <div>
+        
+        
+        
+
+        
+        <div>
+            <h2>
+                <i></i> El Infierno de las Sumas de Riemann
+            </h2>
+            <p>
+                Así como Dante descendió a los nueve círculos del Infierno, tú, estudiante del cálculo, 
+                deberás descender al abismo de las sumas infinitas. Aquí en el primer círculo, 
+                enfrentarás el concepto que fundó el cálculo integral: <strong>las Sumas de Riemann</strong>.
+            </p>
+            
+            <div>
+                "¡Oh, vosotros los que entráis, abandonad toda esperanza de áreas exactas sin el límite!"
+            </div>
+            
+            <p>
+                En este infierno matemático, dividiremos el área bajo una curva en rectángulos infinitamente 
+                delgados, sumaremos sus áreas, y mediante el poder del límite, ascenderemos hacia 
+                la verdadera integral. Es un viaje de aproximación y perfección.
+            </p>
+        </div>
+
+        
+        <div>
+            <div onclick="mostrarExplicacion('circulo1')">
+                <div>1</div>
+                <h3>El Círculo de los Límites</h3>
+                <p>Donde lo finito se encuentra con lo infinito</p>
+            </div>
+            
+            <div onclick="mostrarExplicacion('circulo2')">
+                <div>2</div>
+                <h3>El Círculo de las Particiones</h3>
+                <p>Dividir el área en fragmentos de verdad</p>
+            </div>
+            
+            <div onclick="mostrarExplicacion('circulo3')">
+                <div>3</div>
+                <h3>El Círculo de la Suma</h3>
+                <p>Acumular lo infinitamente pequeño</p>
+            </div>
+        </div>
+
+        
+        <div>
+            <h2>
+                <i></i> El Abismo Visual: Sumas de Riemann en Acción
+            </h2>
+            <p>
+                Manipula los controles para ver cómo las sumas de Riemann se acercan al área verdadera 
+                bajo la curva. A medida que aumentas el número de rectángulos, el cálculo se vuelve más 
+                preciso, pero el viaje más tortuoso.
+            </p>
+            
+            <div>
+                <canvas id="canvasRiemann"></canvas>
+            </div>
+            
+            <div>
+                <div>
+                    <label for="sliderRectangulos">
+                        <i></i> Número de Rectángulos: 
+                        <span id="valorRectangulos">5</span>
+                    </label>
+                    <input type="range" id="sliderRectangulos" 
+                           min="1" max="100" value="5" step="1">
+                </div>
+                
+                <div>
+                    <label for="selectorFuncion">
+                        <i></i> Función a Integrar:
+                    </label>
+                    <select id="selectorFuncion">
+                        <option value="x2">f(x) = x² (Parábola)</option>
+                        <option value="sin">f(x) = sin(x) (Seno)</option>
+                        <option value="exp">f(x) = eˣ (Exponencial)</option>
+                        <option value="sqrt">f(x) = √x (Raíz cuadrada)</option>
+                    </select>
+                </div>
+                
+                <button onclick="alternarTipoSuma()">
+                    <i></i> Cambiar Tipo de Suma
+                    <span id="tipoSumaActual">(Izquierda)</span>
+                </button>
+            </div>
+            
+            <div>
+                <div>
+                    <h4>
+                        <i></i> Aproximación Actual:
+                    </h4>
+                    <div id="aproximacionArea">
+                        Área ≈ 0.00
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>
+                        <i></i> Valor Exacto:
+                    </h4>
+                    <div id="valorExacto">
+                        Área real = 2.67
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <div>
+                <h3><i></i> El Concepto del Límite</h3>
+                <p>En el infierno de Riemann, el límite es tu único salvador. A medida que el número de rectángulos (n) tiende a infinito, el ancho de cada rectángulo (Δx) tiende a cero.</p>
+                <div>
+                    lim<sub>n→∞</sub> Σ f(xᵢ)Δx
+                </div>
+                <p>Este proceso transforma la suma discreta en una integral continua, elevándote del infierno de la aproximación al paraíso de la exactitud.</p>
+            </div>
+            
+            <div>
+                <h3><i></i> La Partición del Intervalo</h3>
+                <p>Así como Dante dividió el Infierno en círculos, Riemann dividió el intervalo [a, b] en n subintervalos:</p>
+                <div>
+                    a = x₀ < x₁ < x₂ < ... < xₙ = b
+                </div>
+                <p>Cada subintervalo [xᵢ₋₁, xᵢ] tiene ancho Δx = (b - a)/n. Esta división es la esencia del método: descomponer lo complejo en partes manejables.</p>
+            </div>
+            
+            <div>
+                <h3><i></i> Los Puntos de Muestra</h3>
+                <p>En cada subintervalo, elegimos un punto de muestra xᵢ*. Aquí enfrentas tres caminos:</p>
+                <ul>
+                    <li><strong>Suma por la izquierda:</strong> xᵢ* = xᵢ₋₁</li>
+                    <li><strong>Suma por la derecha:</strong> xᵢ* = xᵢ</li>
+                    <li><strong>Suma por el punto medio:</strong> xᵢ* = (xᵢ₋₁ + xᵢ)/2</li>
+                </ul>
+                <p>Cada elección te lleva a una aproximación diferente, pero todas convergen al mismo límite.</p>
+            </div>
+        </div>
+
+        
+        <div>
+            <h2>
+                <i></i> El Viaje a Través del Infinito: 5 Pasos
+            </h2>
+            
+            <div>
+                <h3>Paso 1: Encontrarse en la Selva Oscura</h3>
+                <p>Te enfrentas a una función continua f(x) en un intervalo [a, b]. Tu misión: encontrar el área bajo la curva. Sin herramientas, esta tarea parece imposible, como la selva oscura donde Dante se perdió.</p>
+            </div>
+            
+            <div>
+                <h3>Paso 2: La Partición del Intervalo</h3>
+                <p>Divide el intervalo [a, b] en n subintervalos iguales. Cada división es como un círculo del infierno: cuanto más dividas, más cerca estarás de la verdad, pero más arduo será el cálculo.</p>
+            </div>
+            
+            <div>
+                <h3>Paso 3: Construir los Rectángulos</h3>
+                <p>Para cada subintervalo, construye un rectángulo cuya altura sea f(xᵢ*). Estos rectángulos son tus guías a través del infierno, imperfectos pero necesarios.</p>
+            </div>
+            
+            <div>
+                <h3>Paso 4: La Suma de las Áreas</h3>
+                <p>Calcula el área de cada rectángulo y súmalas todas. Esta suma de Riemann es una aproximación del área verdadera. Es el momento en que vislumbras la salida del infierno.</p>
+            </div>
+            
+            <div>
+                <h3>Paso 5: El Límite hacia la Salvación</h3>
+                <p>Toma el límite cuando n → ∞. En este momento, los rectángulos se vuelven infinitamente delgados, la suma se transforma en integral, y asciendes del infierno de la aproximación al paraíso de la exactitud:</p>
+                <div>
+                    ∫<sub>a</sub><sup>b</sup> f(x) dx = lim<sub>n→∞</sub> Σ f(xᵢ*)Δx
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h2>
+                <i></i> La Fórmula Sagrada
+            </h2>
+            <div>
+                ∫<sub>a</sub><sup>b</sup> f(x) dx = lim<sub>‖P‖→0</sub> Σ<sub>i=1</sub><sup>n</sup> f(xᵢ*) Δxᵢ
+            </div>
+            <p>
+                Esta es la puerta que separa el Infierno de las aproximaciones del Paraíso de las integrales exactas. 
+                Domínala, y estarás listo para ascender al Purgatorio de las Técnicas de Integración.
+            </p>
+            <button 
+                    onclick="avanzarAlPurgatorio()">
+                <i></i> Ascender al Purgatorio de las Técnicas de Integración
+            </button>
+        </div>
+
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

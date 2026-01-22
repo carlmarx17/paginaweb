@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinámica Universitaria - MathJax v3 Enabled - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+
+        <section>
+            <h2><i></i> Newton en su máxima expresión</h2>
+            <p>La dinámica clásica se resume en la capacidad de relacionar las interacciones (fuerzas) con el cambio de movimiento:</p>
+            
+            <div>
+                $\sum \vec{F} = \frac{d\vec{p}}{dt} = m \cdot \vec{a}$
+            </div>
+            
+            <p>Donde $\vec{p} = m\vec{v}$ es el momento lineal. En tus simulaciones de plasma, esta ecuación se vuelve más compleja debido a los campos magnéticos, pero la esencia es la misma.</p>
+        </section>
+
+        <section>
+            <h2><i></i> Interacciones Fundamentales</h2>
+            <table>
+                <tr>
+                    <th>Fuerza</th>
+                    <th>Descripción Científica</th>
+                    <th>Expresión Matemática</th>
+                </tr>
+                <tr>
+                    <td>Peso</td>
+                    <td>Atracción gravitatoria local.</td>
+                    <td>$\vec{P} = m\vec{g}$</td>
+                </tr>
+                <tr>
+                    <td>Fricción</td>
+                    <td>Fuerza disipativa de contacto.</td>
+                    <td>$f_k = \mu_k N$</td>
+                </tr>
+                <tr>
+                    <td>Elástica</td>
+                    <td>Ley de Hooke (resortes).</td>
+                    <td>$F_e = -k\Delta x$</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2><i></i> El Plano Inclinado</h2>
+            <p>Al rotar el sistema de coordenadas, el peso se descompone vectorialmente respecto al ángulo $\theta$ del plano:</p>
+            
+            
+
+            <div>
+                $P_x = mg \sin(\theta)$
+                $P_y = mg \cos(\theta)$
+            </div>
+            <p>Si la aceleración es nula en el eje $y$, entonces la Normal es exactamente $N = mg \cos(\theta)$.</p>
+        </section>
+
+        <section>
+            <h2><i></i> Teorema del Trabajo y la Energía</h2>
+            <p>El trabajo realizado por una fuerza neta es igual a la variación de la energía cinética del sistema:</p>
+            
+            
+
+            <div>
+                $W = \int_{r_1}^{r_2} \vec{F} \cdot d\vec{r} = \Delta K = \frac{1}{2}m(v_f^2 - v_i^2)$
+            </div>
+            <p>Esta es la forma integral. Para una fuerza constante, se simplifica a $W = F \cdot d \cdot \cos(\phi)$.</p>
+        </section>
+
+        <section>
+            <h2><i></i> Reto Universitario</h2>
+            <p>Una fuerza variable $F(x) = 3x^2 + 2$ actúa sobre un cuerpo de 2 kg. Hallar el trabajo realizado desde $x=0$ hasta $x=2$ metros.</p>
+            
+            <div id="solucion">
+                <p>Aplicamos la definición integral del trabajo:</p>
+                $W = \int_{0}^{2} (3x^2 + 2) dx$
+                <p>Integrando paso a paso:</p>
+                $W = [x^3 + 2x]_0^2 = (2^3 + 2(2)) - (0) = 8 + 4 = \mathbf{12 \, J}$
+            </div>
+            
+            <button onclick="document.getElementById('solucion').style.display='block'">Resolver Integral</button>
+        </section>
+
+    </div>
+
+    
+
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

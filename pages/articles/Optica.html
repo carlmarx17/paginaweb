@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óptica - Guía Pedagógica Completa | Física para Secundaria - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    <section>
+        <div>
+            <h1>💡 Óptica</h1>
+            <p>La ciencia que ilumina nuestro entendimiento del universo</p>
+            <div>
+                <span>🎯 Nivel: Secundaria</span>
+                <span>⏱️ Tiempo estimado: 4-6 horas</span>
+                <span>📊 Complejidad: Media</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <div>
+            <h2>📚 Contenido de la Guía</h2>
+            <p>
+                Explora cada sección haciendo clic en las tarjetas. Esta guía sigue un enfoque pedagógico progresivo.
+            </p>
+            
+            <div>
+                <div onclick="scrollToSection('introduccion')">
+                    <div>01</div>
+                    <div>Introducción a la Óptica</div>
+                    <div>Conceptos básicos, naturaleza de la luz y principios fundamentales</div>
+                </div>
+                
+                <div onclick="scrollToSection('reflexion')">
+                    <div>02</div>
+                    <div>Reflexión de la Luz</div>
+                    <div>Leyes de la reflexión, tipos de reflexión y aplicaciones prácticas</div>
+                </div>
+                
+                <div onclick="scrollToSection('refraccion')">
+                    <div>03</div>
+                    <div>Refracción de la Luz</div>
+                    <div>Ley de Snell, índice de refracción y fenómenos relacionados</div>
+                </div>
+                
+                <div onclick="scrollToSection('espejos')">
+                    <div>04</div>
+                    <div>Espejos</div>
+                    <div>Espejos planos y esféricos, formación de imágenes y ecuaciones</div>
+                </div>
+                
+                <div onclick="scrollToSection('lentes')">
+                    <div>05</div>
+                    <div>Lentes</div>
+                    <div>Lentes convergentes y divergentes, poder dióptrico y aplicaciones</div>
+                </div>
+                
+                <div onclick="scrollToSection('experimentos')">
+                    <div>06</div>
+                    <div>Experimentos y Práctica</div>
+                    <div>Actividades prácticas, curiosidades y ejercicios interactivos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <main>
+        <div>
+            
+            
+            <section id="introduccion">
+                <div>
+                    <div>🌟</div>
+                    <h2>Introducción a la Óptica</h2>
+                    <p>La óptica es la rama de la física que estudia la luz, sus propiedades, comportamiento e interacciones con la materia.</p>
+                </div>
+                
+                <div>
+                    <h3>¿Qué es la luz?</h3>
+                    <p>La luz es una forma de energía electromagnética que se propaga mediante ondas y que puede ser percibida por el ojo humano. Tiene un comportamiento dual: se manifiesta tanto como onda como partícula (fotón).</p>
+                    
+                    <div>
+                        <h4>💡 Dato Interesante</h4>
+                        <p>El ojo humano solo puede percibir una pequeña fracción del espectro electromagnético, llamada "luz visible", que va desde aproximadamente 380 nm (violeta) hasta 750 nm (rojo).</p>
+                    </div>
+                    
+                    <h4>Propiedades Fundamentales de la Luz</h4>
+                    <ul>
+                        <li><strong>Propagación rectilínea:</strong> En medios homogéneos, la luz se propaga en línea recta.</li>
+                        <li><strong>Reflexión:</strong> Cambio de dirección cuando la luz encuentra una superficie.</li>
+                        <li><strong>Refracción:</strong> Cambio de dirección al pasar de un medio a otro.</li>
+                        <li><strong>Dispersión:</strong> Separación de la luz en sus colores componentes.</li>
+                        <li><strong>Difracción:</strong> Capacidad de rodear obstáculos.</li>
+                    </ul>
+                    
+                    <div>
+                        <div>
+                            <span>Velocidad de la luz en diferentes medios</span>
+                            <span id="velocidadValor">100%</span>
+                        </div>
+                        <div>
+                            <div id="barraVelocidad"></div>
+                        </div>
+                        <div>
+                            <span>Vacío: 300,000 km/s</span>
+                            <span>Agua: 225,000 km/s</span>
+                            <span>Vidrio: 200,000 km/s</span>
+                            <span>Diamante: 124,000 km/s</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>⚡</div>
+                            <h4>Velocidad de la Luz</h4>
+                            <p>En el vacío: c = 299,792,458 m/s (aproximadamente 300,000 km/s). Es la velocidad máxima posible en el universo.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🌍</div>
+                            <h4>Aplicaciones Cotidianas</h4>
+                            <p>Desde gafas y microscopios hasta fibra óptica y láseres, la óptica está presente en nuestra vida diaria.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🔬</div>
+                            <h4>Importancia Científica</h4>
+                            <p>Permite estudiar objetos celestes distantes, observar microorganismos y desarrollar tecnologías médicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="reflexion">
+                <div>
+                    <div>🪞</div>
+                    <h2>Reflexión de la Luz</h2>
+                    <p>Fenómeno por el cual un rayo de luz cambia de dirección al incidir sobre una superficie.</p>
+                </div>
+                
+                <div>
+                    <h3>Leyes de la Reflexión</h3>
+                    <p>La reflexión de la luz sigue dos leyes fundamentales establecidas desde la antigüedad:</p>
+                    
+                    <div>
+                        <h4>📐 Leyes de la Reflexión</h4>
+                        <ol>
+                            <li><strong>Primera Ley:</strong> El rayo incidente, la normal (línea perpendicular a la superficie) y el rayo reflejado se encuentran en un mismo plano.</li>
+                            <li><strong>Segunda Ley:</strong> El ángulo de incidencia (θᵢ) es igual al ángulo de reflexión (θᵣ).</li>
+                        </ol>
+                    </div>
+                    
+                    <div>
+                        <div>θᵢ = θᵣ</div>
+                        <div>
+                            Donde:<br>
+                            <strong>θᵢ</strong> = Ángulo entre el rayo incidente y la normal<br>
+                            <strong>θᵣ</strong> = Ángulo entre el rayo reflejado y la normal
+                        </div>
+                    </div>
+                    
+                    <h4>Tipos de Reflexión</h4>
+                    
+                    <div>
+                        <div>
+                            <div>🪞 Reflexión Especular</div>
+                            <div>→→→ →→→</div>
+                            <div>Superficie lisa y pulida</div>
+                        </div>
+                        <div>
+                            En la reflexión especular (regular), los rayos paralelos incidentes se reflejan también de forma paralela, formando imágenes nítidas. Ejemplo: espejos.
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>🌫️ Reflexión Difusa</div>
+                            <div>→→→ ⇶⇶⇶</div>
+                            <div>Superficie rugosa</div>
+                        </div>
+                        <div>
+                            En la reflexión difusa (irregular), los rayos paralelos incidentes se reflejan en múltiples direcciones debido a las irregularidades de la superficie. Esto nos permite ver los objetos desde cualquier ángulo.
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>📝 Ejemplo Práctico 1</div>
+                        <div>
+                            <div>
+                                Un rayo de luz incide sobre un espejo plano formando un ángulo de 40° con la superficie. Calcula el ángulo de reflexión.
+                            </div>
+                            <div>
+                                <div>
+                                    <strong>Paso 1:</strong> Identificar los datos<br>
+                                    Ángulo con la superficie: 40°<br>
+                                    Recordar: El ángulo se mide respecto a la normal
+                                </div>
+                                <div>
+                                    <strong>Paso 2:</strong> Calcular el ángulo de incidencia<br>
+                                    Si el rayo forma 40° con la superficie, entonces forma (90° - 40°) = 50° con la normal.<br>
+                                    Por lo tanto: θᵢ = 50°
+                                </div>
+                                <div>
+                                    <strong>Paso 3:</strong> Aplicar la ley de reflexión<br>
+                                    θᵢ = θᵣ<br>
+                                    θᵣ = 50°
+                                </div>
+                                <div>
+                                    <strong>Respuesta:</strong> El ángulo de reflexión es de 50° respecto a la normal.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>🚗</div>
+                            <h4>Espejos Retrovisores</h4>
+                            <p>Los espejos retrovisores nocturnos tienen una palanquita que cambia el ángulo del espejo para reducir el deslumbramiento de los faros de otros vehículos.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🎭</div>
+                            <h4>Espejos de Teatro</h4>
+                            <p>En los camerinos de teatro se usan espejos rodeados de bombillas que proporcionan una iluminación uniforme, evitando sombras y mostrando cómo se verá bajo las luces del escenario.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🏙️</div>
+                            <h4>Rascacielos Espejados</h4>
+                            <p>Algunos edificios modernos con fachadas completamente espejadas pueden causar problemas al reflejar intensamente la luz solar hacia calles y edificios vecinos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="refraccion">
+                <div>
+                    <div>🌊</div>
+                    <h2>Refracción de la Luz</h2>
+                    <p>Cambio de dirección de la luz al pasar de un medio a otro con diferente densidad óptica.</p>
+                </div>
+                
+                <div>
+                    <h3>Índice de Refracción</h3>
+                    <p>El <strong>índice de refracción (n)</strong> es una medida de cuánto se reduce la velocidad de la luz en un medio respecto al vacío.</p>
+                    
+                    <div>
+                        <div>n = c / v</div>
+                        <div>
+                            Donde:<br>
+                            <strong>n</strong> = Índice de refracción (adimensional)<br>
+                            <strong>c</strong> = Velocidad de la luz en el vacío (3 × 10⁸ m/s)<br>
+                            <strong>v</strong> = Velocidad de la luz en el medio
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>📊 Índices de Refracción Comunes</h4>
+                        <ul>
+                            <li><strong>Vacío:</strong> n = 1.0000</li>
+                            <li><strong>Aire:</strong> n ≈ 1.0003 (normalmente aproximamos a 1)</li>
+                            <li><strong>Agua:</strong> n ≈ 1.33</li>
+                            <li><strong>Vidrio común:</strong> n ≈ 1.50 - 1.60</li>
+                            <li><strong>Diamante:</strong> n ≈ 2.42</li>
+                            <li><strong>Glicerina:</strong> n ≈ 1.47</li>
+                        </ul>
+                    </div>
+                    
+                    <h4>Ley de Snell</h4>
+                    <p>Formulada por Willebrord Snell en 1621, describe la relación entre los ángulos de incidencia y refracción:</p>
+                    
+                    <div>
+                        <div>n₁ · sen(θ₁) = n₂ · sen(θ₂)</div>
+                        <div>
+                            Donde:<br>
+                            <strong>n₁, n₂</strong> = Índices de refracción de los medios 1 y 2<br>
+                            <strong>θ₁</strong> = Ángulo de incidencia (respecto a la normal)<br>
+                            <strong>θ₂</strong> = Ángulo de refracción (respecto a la normal)
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>⚠️ Regla Mnemotécnica</h4>
+                        <p><strong>De menos a más (n₁ < n₂):</strong> El rayo se acerca a la normal (θ₂ < θ₁).<br>
+                        <strong>De más a menos (n₁ > n₂):</strong> El rayo se aleja de la normal (θ₂ > θ₁).</p>
+                    </div>
+                    
+                    <div>
+                        <div>📝 Ejemplo Práctico 2</div>
+                        <div>
+                            <div>
+                                Un rayo de luz pasa del aire (n=1.00) al agua (n=1.33) con un ángulo de incidencia de 30°. Calcula el ángulo de refracción.
+                            </div>
+                            <div>
+                                <div>
+                                    <strong>Paso 1:</strong> Identificar datos<br>
+                                    n₁ = 1.00 (aire)<br>
+                                    n₂ = 1.33 (agua)<br>
+                                    θ₁ = 30°<br>
+                                    sen(30°) = 0.5
+                                </div>
+                                <div>
+                                    <strong>Paso 2:</strong> Aplicar la Ley de Snell<br>
+                                    n₁ · sen(θ₁) = n₂ · sen(θ₂)<br>
+                                    1.00 · 0.5 = 1.33 · sen(θ₂)<br>
+                                    0.5 = 1.33 · sen(θ₂)
+                                </div>
+                                <div>
+                                    <strong>Paso 3:</strong> Despejar sen(θ₂)<br>
+                                    sen(θ₂) = 0.5 / 1.33 ≈ 0.376
+                                </div>
+                                <div>
+                                    <strong>Paso 4:</strong> Calcular θ₂<br>
+                                    θ₂ = arcsen(0.376) ≈ 22.1°
+                                </div>
+                                <div>
+                                    <strong>Respuesta:</strong> El ángulo de refracción es aproximadamente 22.1°. Nota cómo el rayo se acerca a la normal al pasar a un medio más denso.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Reflexión Total Interna</h4>
+                    <p>Cuando la luz pasa de un medio más denso a uno menos denso (n₁ > n₂) y el ángulo de incidencia supera un valor crítico (θc), toda la luz se refleja en lugar de refractarse.</p>
+                    
+                    <div>
+                        <div>sen(θc) = n₂ / n₁</div>
+                        <div>
+                            Donde:<br>
+                            <strong>θc</strong> = Ángulo crítico para reflexión total interna<br>
+                            <strong>n₁</strong> = Índice del medio más denso (incidente)<br>
+                            <strong>n₂</strong> = Índice del medio menos denso
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>🧪 Experimento: El Lápiz Roto</div>
+                        <div>
+                            <div>
+                                <div>
+                                    <strong>Materiales necesarios:</strong>
+                                    <div>
+                                        <div>🥛 Vaso transparente</div>
+                                        <div>✏️ Lápiz o pajita</div>
+                                        <div>💧 Agua</div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <strong>Procedimiento:</strong><br>
+                                    1. Llena 3/4 del vaso con agua.<br>
+                                    2. Coloca el lápiz o pajita dentro del vaso, inclinándolo.<br>
+                                    3. Observa desde diferentes ángulos.
+                                </div>
+                                
+                                <div>
+                                    <strong>¿Qué observarás?</strong><br>
+                                    El lápiz parecerá quebrado en la superficie del agua. La parte sumergida aparecerá desplazada.
+                                </div>
+                                
+                                <div>
+                                    <strong>Explicación científica:</strong><br>
+                                    La luz que proviene del lápiz sumergido se refracta al pasar del agua al aire. Tu cerebro interpreta que la luz viaja en línea recta, por lo que percibe el lápiz en una posición diferente a la real.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>✅ Aplicaciones de la Reflexión Total Interna</h4>
+                        <ul>
+                            <li><strong>Fibra óptica:</strong> Transmisión de datos a larga distancia con muy poca pérdida.</li>
+                            <li><strong>Prismáticos y telescopios:</strong> Uso de prismas para enderezar la imagen.</li>
+                            <li><strong>Diamantes:</strong> Su alto índice de refracción (n=2.42) causa múltiples reflexiones internas, creando su característico brillo.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="espejos">
+                <div>
+                    <div>🔍</div>
+                    <h2>Espejos</h2>
+                    <p>Superficies pulidas que reflejan la luz formando imágenes virtuales o reales.</p>
+                </div>
+                
+                <div>
+                    <h3>Tipos de Espejos</h3>
+                    
+                    <div>
+                        <div>
+                            <div>🪞</div>
+                            <h4>Espejos Planos</h4>
+                            <p>Superficie plana que produce imágenes virtuales, derechas y del mismo tamaño que el objeto. La distancia objeto-espejo es igual a la distancia imagen-espejo.</p>
+                        </div>
+                        
+                        <div>
+                            <div>👁️</div>
+                            <h4>Espejos Cóncavos</h4>
+                            <p>Superficie curva hacia dentro. Pueden formar imágenes reales o virtuales, invertidas o derechas, dependiendo de la posición del objeto.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🚗</div>
+                            <h4>Espejos Convexos</h4>
+                            <p>Superficie curva hacia fuera. Siempre forman imágenes virtuales, derechas y más pequeñas que el objeto. Usados en espejos retrovisores.</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Elementos de un Espejo Esférico</h4>
+                    <ul>
+                        <li><strong>Centro de curvatura (C):</strong> Centro de la esfera de la que proviene el espejo.</li>
+                        <li><strong>Radio de curvatura (R):</strong> Distancia desde el vértice al centro de curvatura.</li>
+                        <li><strong>Vértice (V):</strong> Punto medio del espejo.</li>
+                        <li><strong>Eje principal:</strong> Línea que une el vértice con el centro de curvatura.</li>
+                        <li><strong>Foco (F):</strong> Punto donde convergen los rayos paralelos al eje principal (espejo cóncavo) o parecen divergir (espejo convexo).</li>
+                    </ul>
+                    
+                    <div>
+                        <div>1/f = 1/p + 1/q</div>
+                        <div>
+                            <strong>Ecuación de los espejos:</strong><br>
+                            <strong>f</strong> = Distancia focal (f = R/2)<br>
+                            <strong>p</strong> = Distancia objeto-espejo<br>
+                            <strong>q</strong> = Distancia imagen-espejo<br>
+                            <strong>Convención de signos:</strong> p positiva (objeto real), q positiva (imagen real), f positiva (espejo cóncavo), f negativa (espejo convexo)
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>🎯 Reglas para Trazar Rayos en Espejos Esféricos</h4>
+                        <ol>
+                            <li>Rayo paralelo al eje principal → Se refleja pasando por el foco (cóncavo) o como si viniera del foco (convexo).</li>
+                            <li>Rayo que pasa por el foco → Se refleja paralelo al eje principal.</li>
+                            <li>Rayo que pasa por el centro de curvatura → Se refleja sobre sí mismo.</li>
+                            <li>Rayo que incide en el vértice → Se refleja con el mismo ángulo respecto al eje principal.</li>
+                        </ol>
+                    </div>
+                    
+                    <div>
+                        <div>📝 Ejemplo Práctico 3</div>
+                        <div>
+                            <div>
+                                Un objeto se coloca a 30 cm de un espejo cóncavo cuya distancia focal es de 10 cm. Determina la posición y naturaleza de la imagen.
+                            </div>
+                            <div>
+                                <div>
+                                    <strong>Paso 1:</strong> Identificar datos<br>
+                                    p = 30 cm (positivo porque es objeto real)<br>
+                                    f = 10 cm (positivo porque es espejo cóncavo)<br>
+                                    Ecuación: 1/f = 1/p + 1/q
+                                </div>
+                                <div>
+                                    <strong>Paso 2:</strong> Sustituir valores<br>
+                                    1/10 = 1/30 + 1/q<br>
+                                    1/q = 1/10 - 1/30 = 3/30 - 1/30 = 2/30 = 1/15
+                                </div>
+                                <div>
+                                    <strong>Paso 3:</strong> Calcular q<br>
+                                    1/q = 1/15 → q = 15 cm
+                                </div>
+                                <div>
+                                    <strong>Paso 4:</strong> Analizar resultados<br>
+                                    q = +15 cm → Imagen real (se forma del mismo lado que el objeto reflejado)<br>
+                                    Aumento: M = -q/p = -15/30 = -0.5 → Imagen invertida y reducida a la mitad
+                                </div>
+                                <div>
+                                    <strong>Respuesta:</strong> La imagen se forma a 15 cm del espejo, es real, invertida y de la mitad del tamaño del objeto.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>🎪</div>
+                            <h4>Espejos de Feria</h4>
+                            <p>Los espejos deformantes de las ferias suelen ser cilíndricos o cónicos, no esféricos. Esto crea distorsiones diferentes según la orientación del espejo.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🚽</div>
+                            <h4>Espejos Retrovisores Nocturnos</h4>
+                            <p>Muchos espejos retrovisores tienen dos posiciones: diurna (reflexión normal) y nocturna (el espejo se inclina ligeramente para reflejar menos luz).</p>
+                        </div>
+                        
+                        <div>
+                            <div>🏨</div>
+                            <h4>Espejos de Seguridad</h4>
+                            <p>En tiendas y estacionamientos se usan espejos convexos para ampliar el campo de visión y reducir puntos ciegos.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="lentes">
+                <div>
+                    <div>👓</div>
+                    <h2>Lentes</h2>
+                    <p>Dispositivos ópticos que refractan la luz para formar imágenes, corregir la visión o amplificar objetos.</p>
+                </div>
+                
+                <div>
+                    <h3>Clasificación de Lentes</h3>
+                    
+                    <div>
+                        <div>
+                            <div>🔍 Lentes Convergentes</div>
+                            <div>⏳ (Biconvexa)</div>
+                            <div>Más gruesas en el centro</div>
+                        </div>
+                        <div>
+                            Las lentes convergentes (positivas) desvían los rayos de luz hacia el eje óptico. Pueden formar imágenes reales o virtuales dependiendo de la posición del objeto.
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>👁️ Lentes Divergentes</div>
+                            <div>⌛ (Bicóncava)</div>
+                            <div>Más delgadas en el centro</div>
+                        </div>
+                        <div>
+                            Las lentes divergentes (negativas) desvían los rayos de luz alejándolos del eje óptico. Siempre forman imágenes virtuales, derechas y más pequeñas.
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>1/f = (n - 1)(1/R₁ - 1/R₂)</div>
+                        <div>
+                            <strong>Ecuación del fabricante de lentes:</strong><br>
+                            <strong>f</strong> = Distancia focal<br>
+                            <strong>n</strong> = Índice de refracción del material<br>
+                            <strong>R₁, R₂</strong> = Radios de curvatura de las superficies (positivos si convexos, negativos si cóncavos)
+                        </div>
+                    </div>
+                    
+                    <h4>Poder Dióptrico</h4>
+                    <p>El poder de una lente se mide en dioptrías (D), que es el inverso de la distancia focal en metros:</p>
+                    
+                    <div>
+                        <div>P = 1/f</div>
+                        <div>
+                            Donde:<br>
+                            <strong>P</strong> = Poder dióptrico (en dioptrías, D)<br>
+                            <strong>f</strong> = Distancia focal (en metros)<br>
+                            <strong>Convención:</strong> P positivo para lentes convergentes, P negativo para lentes divergentes
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>👁️ Corrección de Defectos Visuales</h4>
+                        <ul>
+                            <li><strong>Miopía:</strong> El ojo es "demasiado largo" o la córnea "demasiado curva". Se corrige con lentes divergentes (cóncavas).</li>
+                            <li><strong>Hipermetropía:</strong> El ojo es "demasiado corto" o la córnea "demasiado plana". Se corrige con lentes convergentes (convexas).</li>
+                            <li><strong>Astigmatismo:</strong> Curvatura irregular de la córnea. Se corrige con lentes cilíndricas.</li>
+                            <li><strong>Presbicia:</strong> Pérdida de elasticidad del cristalino con la edad. Se corrige con lentes convergentes para visión cercana.</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div>🧪 Experimento: Lente de Agua Casera</div>
+                        <div>
+                            <div>
+                                <div>
+                                    <strong>Materiales necesarios:</strong>
+                                    <div>
+                                        <div>🥛 Botella plástica transparente</div>
+                                        <div>💧 Agua</div>
+                                        <div>📰 Periódico o libro</div>
+                                        <div>📏 Regla (opcional)</div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <strong>Procedimiento:</strong><br>
+                                    1. Llena completamente una botella de plástico transparente con agua y ciérrala bien.<br>
+                                    2. Coloca la botella sobre un texto pequeño.<br>
+                                    3. Observa las letras a través de la botella, moviéndola hacia arriba y hacia abajo.
+                                </div>
+                                
+                                <div>
+                                    <strong>¿Qué observarás?</strong><br>
+                                    Las letras aparecerán agrandadas cuando la botella esté a cierta distancia del texto.
+                                </div>
+                                
+                                <div>
+                                    <strong>Explicación científica:</strong><br>
+                                    El agua dentro de la botella curva actúa como una lente convergente. La curvatura de la botella hace que la luz se refracte, creando una imagen virtual ampliada del objeto.
+                                </div>
+                                
+                                <div>
+                                    <strong>Variante científica:</strong><br>
+                                    Prueba con diferentes líquidos (agua con azúcar, aceite, alcohol). ¿Cambia el aumento? El índice de refracción diferente afectará la distancia focal de tu "lente".
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>🧩 Desafíos de Aprendizaje</h3>
+                        
+                        <div>
+                            <div>Desafío 1: El Misterio de la Piscina</div>
+                            <p><strong>Problema:</strong> Una piscina tiene 2 metros de profundidad real. Desde arriba, ¿qué profundidad aparente verá una persona? (n_agua = 1.33)</p>
+                            <p><strong>Pista:</strong> Usa la fórmula: profundidad aparente = profundidad real / n</p>
+                        </div>
+                        
+                        <div>
+                            <div>Desafío 2: Corrección Visual</div>
+                            <p><strong>Problema:</strong> Una persona miope necesita lentes de -2.5 dioptrías. ¿Cuál es su distancia focal? ¿Qué tipo de lente necesita?</p>
+                            <p><strong>Pista:</strong> Recuerda que P = 1/f (con f en metros)</p>
+                        </div>
+                        
+                        <div>
+                            <div>Desafío 3: Ángulo Crítico</div>
+                            <p><strong>Problema:</strong> Calcula el ángulo crítico para la reflexión total interna entre el vidrio (n=1.5) y el aire (n=1.0).</p>
+                            <p><strong>Pista:</strong> Usa la fórmula: sen(θc) = n₂/n₁</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section id="experimentos">
+                <div>
+                    <div>🧪</div>
+                    <h2>Experimentos y Práctica</h2>
+                    <p>Aprende haciendo: experimentos seguros para comprender los principios ópticos.</p>
+                </div>
+                
+                <div>
+                    <h3>Experimentos Caseros</h3>
+                    
+                    <div>
+                        <div>🌈 Experimento: Prisma Casero con CD</div>
+                        <div>
+                            <div>
+                                <div>
+                                    <strong>Materiales necesarios:</strong>
+                                    <div>
+                                        <div>💿 CD o DVD viejo</div>
+                                        <div>🔦 Linterna o luz solar</div>
+                                        <div>🏠 Pared blanca o cartulina</div>
+                                        <div>📐 Transportador (opcional)</div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <strong>Procedimiento:</strong><br>
+                                    1. En una habitación oscura, coloca el CD sobre una mesa con la cara reflectante hacia arriba.<br>
+                                    2. Dirige la luz de la linterna hacia el CD con un ángulo de aproximadamente 45°.<br>
+                                    3. Observa el reflejo en la pared blanca.
+                                </div>
+                                
+                                <div>
+                                    <strong>¿Qué observarás?</strong><br>
+                                    Verás un espectro de colores (arcoíris) proyectado en la pared.
+                                </div>
+                                
+                                <div>
+                                    <strong>Explicación científica:</strong><br>
+                                    Las pistas microscópicas del CD actúan como una red de difracción. La luz blanca se descompone en sus colores componentes porque cada longitud de onda se difracta en un ángulo ligeramente diferente.
+                                </div>
+                                
+                                <div>
+                                    <strong>Variante científica:</strong><br>
+                                    Prueba con diferentes ángulos de incidencia. ¿Cambia el patrón de colores? Mide los ángulos para diferentes colores usando un transportador.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>🔍 Experimento: Cámara Oscura Casera</div>
+                        <div>
+                            <div>
+                                <div>
+                                    <strong>Materiales necesarios:</strong>
+                                    <div>
+                                        <div>📦 Caja de zapatos con tapa</div>
+                                        <div>📄 Papel vegetal o cebolla</div>
+                                        <div>📌 Alfiler o aguja</div>
+                                        <div>🔪 Cutter o tijeras</div>
+                                        <div>🔲 Cinta adhesiva</div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <strong>Procedimiento:</strong><br>
+                                    1. Haz un pequeño agujero (2-3 mm) en el centro de un extremo de la caja con el alfiler.<br>
+                                    2. En el extremo opuesto, recorta un rectángulo y pega el papel vegetal para crear una pantalla.<br>
+                                    3. Cierra la caja y asegúrate de que no entre luz excepto por el agujero.<br>
+                                    4. Apunta el agujero hacia una ventana u objeto iluminado.
+                                </div>
+                                
+                                <div>
+                                    <strong>¿Qué observarás?</strong><br>
+                                    Verás una imagen invertida del exterior proyectada en la pantalla de papel.
+                                </div>
+                                
+                                <div>
+                                    <strong>Explicación científica:</strong><br>
+                                    Estás construyendo el principio básico de todas las cámaras fotográficas. La luz viaja en línea recta, por lo que los rayos de la parte superior del objeto llegan a la parte inferior de la pantalla, y viceversa, creando una imagen invertida.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Curiosidades Ópticas</h3>
+                    
+                    <div>
+                        <div>
+                            <div>🌌</div>
+                            <h4>El Cielo Nocturno y las Estrellas</h4>
+                            <p>Las estrellas "titilan" porque la luz viaja a través de capas atmosféricas turbulentas con diferentes índices de refracción. Los planetas, al ser más cercanos, titilan menos.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🦋</div>
+                            <h4>Colores Estructurales</h4>
+                            <p>Los colores de las alas de mariposa y las plumas de pavo real no provienen de pigmentos, sino de estructuras microscópicas que interfieren con la luz. Estos colores cambian según el ángulo de visión.</p>
+                        </div>
+                        
+                        <div>
+                            <div>🏜️</div>
+                            <h4>Espejismos en el Desierto</h4>
+                            <p>Los "espejismos" de agua en el desierto son causados por la refracción. El aire cerca de la arena caliente es menos denso, curvando la luz de manera que vemos una imagen del cielo como si fuera agua en el suelo.</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4>✅ Consejos para el Estudio de la Óptica</h4>
+                        <ol>
+                            <li><strong>Dibuja siempre los diagramas:</strong> Representar los rayos de luz te ayuda a visualizar los problemas.</li>
+                            <li><strong>Usa la convención de signos:</strong> Es crucial para resolver correctamente las ecuaciones.</li>
+                            <li><strong>Relaciona con experiencias cotidianas:</strong> Piensa en ejemplos reales (gafas, espejos, arcoíris).</li>
+                            <li><strong>Practica con problemas variados:</strong> Comienza con situaciones simples y aumenta la complejidad gradualmente.</li>
+                            <li><strong>Haz experimentos:</strong> La óptica es especialmente adecuada para experimentación casera segura.</li>
+                        </ol>
+                    </div>
+                    
+                    <h3>Resumen de Fórmulas Clave</h3>
+                    
+                    <div>
+                        <div>n = c / v</div>
+                        <div>Índice de refracción</div>
+                    </div>
+                    
+                    <div>
+                        <div>n₁ · sen(θ₁) = n₂ · sen(θ₂)</div>
+                        <div>Ley de Snell</div>
+                    </div>
+                    
+                    <div>
+                        <div>sen(θc) = n₂ / n₁ (con n₁ > n₂)</div>
+                        <div>Ángulo crítico para reflexión total interna</div>
+                    </div>
+                    
+                    <div>
+                        <div>1/f = 1/p + 1/q</div>
+                        <div>Ecuación de espejos y lentes delgadas</div>
+                    </div>
+                    
+                    <div>
+                        <div>M = h'/h = -q/p</div>
+                        <div>Aumento lineal</div>
+                    </div>
+                    
+                    <div>
+                        <div>P = 1/f</div>
+                        <div>Poder dióptrico (f en metros)</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    
+    
+    
+    
+    <button id="botonScrollTop" onclick="scrollToTop()" aria-label="Volver arriba">
+        ↑
+    </button>
+    
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

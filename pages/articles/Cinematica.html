@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemática - El Movimiento y sus Leyes | Física Joven - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    
+
+    
+    <main>
+        <div>
+            
+            <section id="conceptos">
+                <h2>Conceptos Fundamentales</h2>
+                
+                <div>
+                    <h3><i></i> ¿Qué es la Cinemática?</h3>
+                    <p>La cinemática es la rama de la física que estudia el movimiento de los cuerpos sin considerar las causas que lo producen. Se enfoca en describir <strong>cómo</strong> se mueven los objetos, no <strong>por qué</strong> se mueven.</p>
+                </div>
+
+                <div>
+                    <div>
+                        <div><i></i></div>
+                        <h4>Posición</h4>
+                        <p>Ubicación de un objeto en el espacio respecto a un sistema de referencia.</p>
+                        <div>x, y, z (coordenadas)</div>
+                    </div>
+                    
+                    <div>
+                        <div><i></i></div>
+                        <h4>Desplazamiento</h4>
+                        <p>Cambio de posición de un objeto. Es una magnitud vectorial.</p>
+                        <div>Δx = x<sub>f</sub> - x<sub>i</sub></div>
+                    </div>
+                    
+                    <div>
+                        <div><i></i></div>
+                        <h4>Velocidad</h4>
+                        <p>Rapidez con que cambia la posición de un objeto.</p>
+                        <div>v = Δx / Δt</div>
+                    </div>
+                    
+                    <div>
+                        <div><i></i></div>
+                        <h4>Aceleración</h4>
+                        <p>Rapidez con que cambia la velocidad de un objeto.</p>
+                        <div>a = Δv / Δt</div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="movimientos">
+                <h2>Tipos de Movimiento</h2>
+                
+                <div>
+                    <div>MRU</div>
+                    <div>MRUV</div>
+                    <div>Parabólico</div>
+                    <div>Circular</div>
+                </div>
+
+                
+                <div id="mru">
+                    <div>
+                        <h3><i></i> Movimiento Rectilíneo Uniforme (MRU)</h3>
+                        <p>Un objeto se mueve con MRU cuando recorre distancias iguales en tiempos iguales, manteniendo una velocidad constante.</p>
+                        
+                        <div>x = x₀ + v · t</div>
+                        
+                        <div>
+                            <h4>Simulador de MRU</h4>
+                            <div>
+                                <div>
+                                    <label for="mru-posicion">Posición inicial (m):</label>
+                                    <input type="number" id="mru-posicion" value="0">
+                                </div>
+                                <div>
+                                    <label for="mru-velocidad">Velocidad (m/s):</label>
+                                    <input type="number" id="mru-velocidad" value="5">
+                                </div>
+                                <div>
+                                    <label for="mru-tiempo">Tiempo (s):</label>
+                                    <input type="number" id="mru-tiempo" value="10">
+                                </div>
+                            </div>
+                            <button onclick="simularMRU()">
+                                <i></i> Simular MRU
+                            </button>
+                            <div id="mru-canvas">
+                                
+                            </div>
+                            <div>
+                                <canvas id="mru-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="mruv">
+                    <div>
+                        <h3><i></i> Movimiento Rectilíneo Uniformemente Variado (MRUV)</h3>
+                        <p>Un objeto se mueve con MRUV cuando su velocidad cambia de manera uniforme en el tiempo, es decir, con aceleración constante.</p>
+                        
+                        <div>x = x₀ + v₀·t + ½·a·t²</div>
+                        <div>v = v₀ + a·t</div>
+                        
+                        <div>
+                            <h4>Simulador de MRUV</h4>
+                            <div>
+                                <div>
+                                    <label for="mruv-posicion">Posición inicial (m):</label>
+                                    <input type="number" id="mruv-posicion" value="0">
+                                </div>
+                                <div>
+                                    <label for="mruv-velocidad">Velocidad inicial (m/s):</label>
+                                    <input type="number" id="mruv-velocidad" value="10">
+                                </div>
+                                <div>
+                                    <label for="mruv-aceleracion">Aceleración (m/s²):</label>
+                                    <input type="number" id="mruv-aceleracion" value="2">
+                                </div>
+                                <div>
+                                    <label for="mruv-tiempo">Tiempo (s):</label>
+                                    <input type="number" id="mruv-tiempo" value="5">
+                                </div>
+                            </div>
+                            <button onclick="simularMRUV()">
+                                <i></i> Simular MRUV
+                            </button>
+                            <div id="mruv-canvas">
+                                
+                            </div>
+                            <div>
+                                <canvas id="mruv-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="parabolico">
+                    <div>
+                        <h3><i></i> Movimiento Parabólico</h3>
+                        <p>Es el movimiento de un objeto lanzado al aire con una velocidad inicial que forma un ángulo con la horizontal, describiendo una trayectoria parabólica.</p>
+                        
+                        <div>x = v₀·cos(θ)·t</div>
+                        <div>y = v₀·sen(θ)·t - ½·g·t²</div>
+                        
+                        <div>
+                            <h4>Simulador de Movimiento Parabólico</h4>
+                            <div>
+                                <div>
+                                    <label for="par-velocidad">Velocidad inicial (m/s):</label>
+                                    <input type="number" id="par-velocidad" value="20">
+                                </div>
+                                <div>
+                                    <label for="par-angulo">Ángulo (°):</label>
+                                    <input type="number" id="par-angulo" value="45" min="0" max="90">
+                                </div>
+                                <div>
+                                    <label for="par-altura">Altura inicial (m):</label>
+                                    <input type="number" id="par-altura" value="0">
+                                </div>
+                            </div>
+                            <button onclick="simularParabolico()">
+                                <i></i> Simular Tiro Parabólico
+                            </button>
+                            <div id="parabolico-canvas">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="circular">
+                    <div>
+                        <h3><i></i> Movimiento Circular</h3>
+                        <p>Es el movimiento de un objeto que describe una trayectoria circular con velocidad angular constante (MCU) o variable (MCUV).</p>
+                        
+                        <div>θ = θ₀ + ω·t</div>
+                        <div>ω = ω₀ + α·t</div>
+                        
+                        <div>
+                            <h4>Simulador de Movimiento Circular</h4>
+                            <div>
+                                <div>
+                                    <label for="circ-radio">Radio (m):</label>
+                                    <input type="number" id="circ-radio" value="5">
+                                </div>
+                                <div>
+                                    <label for="circ-velocidad">Velocidad angular (rad/s):</label>
+                                    <input type="number" id="circ-velocidad" value="2">
+                                </div>
+                                <div>
+                                    <label for="circ-tiempo">Tiempo (s):</label>
+                                    <input type="number" id="circ-tiempo" value="10">
+                                </div>
+                            </div>
+                            <button onclick="simularCircular()">
+                                <i></i> Simular Movimiento Circular
+                            </button>
+                            <div id="circular-canvas">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="practica">
+                <h2>¡Pon a Prueba tus Conocimientos!</h2>
+                
+                <div>
+                    <div>
+                        <h4><i></i> Problema de MRU</h4>
+                        <p>Un automóvil viaja a 72 km/h. ¿Qué distancia recorre en 30 minutos?</p>
+                        <input type="number" id="practice-mru" placeholder="Tu respuesta en metros">
+                        <button onclick="checkPracticeMRU()">
+                            <i></i> Comprobar
+                        </button>
+                        <div id="mru-practice-result"></div>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Problema de MRUV</h4>
+                        <p>Un corredor acelera desde el reposo a 2 m/s². ¿Qué velocidad tendrá después de 5 segundos?</p>
+                        <input type="number" id="practice-mruv" placeholder="Tu respuesta en m/s">
+                        <button onclick="checkPracticeMRUV()">
+                            <i></i> Comprobar
+                        </button>
+                        <div id="mruv-practice-result"></div>
+                    </div>
+                    
+                    <div>
+                        <h4><i></i> Problema de Tiro Parabólico</h4>
+                        <p>Se lanza una pelota con velocidad inicial de 15 m/s a 30°. ¿Cuál es su alcance máximo?</p>
+                        <input type="number" id="practice-parabolico" placeholder="Tu respuesta en metros">
+                        <button onclick="checkPracticeParabolico()">
+                            <i></i> Comprobar
+                        </button>
+                        <div id="parabolico-practice-result"></div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section id="aplicaciones">
+                <h2>Aplicaciones en la Vida Real</h2>
+                
+                <div>
+                    <h3><i></i> La Cinemática en Nuestro Día a Día</h3>
+                    <p>La cinemática está presente en muchas situaciones cotidianas y tecnologías modernas:</p>
+                    
+                    <div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Transporte</h4>
+                            <p>Cálculo de tiempos de viaje, diseño de carreteras y sistemas de navegación</p>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Deportes</h4>
+                            <p>Análisis de trayectorias en baloncesto, fútbol, golf y otros deportes</p>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Exploración Espacial</h4>
+                            <p>Cálculo de órbitas y trayectorias de naves espaciales</p>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>Robótica</h4>
+                            <p>Programación de movimientos precisos en brazos robóticos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3><i></i> ¿Listo para el siguiente nivel?</h3>
+                    <p>Ahora que dominas la cinemática, puedes explorar otros temas de física:</p>
+                    <div>
+                        <button onclick="window.location.href='dinamica.html'">
+                            <i></i> Dinámica
+                        </button>
+                        <button onclick="window.location.href='energia.html'">
+                            <i></i> Energía y Trabajo
+                        </button>
+                        <button onclick="window.location.href='fluidos.html'">
+                            <i></i> Fluidos
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

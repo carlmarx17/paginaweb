@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Reacciones Orgánicas | Prof. Carlos Alberto Martinez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Transformación Química</span>
+                <h1>
+                    El Arte de Romper y <span>Crear Enlaces</span>
+                </h1>
+                <p>
+                    Las moléculas orgánicas no son estáticas. Descubre los mecanismos de reacción, la energía de activación y cómo predecir productos. Incluye video clase, explicaciones detalladas y 10 preguntas ICFES.
+                </p>
+                <div>
+                    <a href="#video">Ver Clase</a>
+                    <a href="#tipos">Mecanismos</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <canvas id="reactionCanvas" width="400" height="250"></canvas>
+                    <p>Perfil de Energía: Reactivos → Productos</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="video">
+            <div>
+                <div>
+                    <div>
+                        <span>▶</span>
+                        <h2>Clase Interactiva</h2>
+                    </div>
+                    
+                    <div>
+                        <iframe src="https://www.youtube.com/embed/gdHecHHkj38" title="Reacciones Orgánicas - Amigos de la Química" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p>Una introducción visual a los mecanismos básicos de la química orgánica.</p>
+                </div>
+
+                <div>
+                    <div>
+                        
+                        
+                        <div>
+                            <span>CANAL RECOMENDADO</span>
+                            <h3>Breaking Vlad</h3>
+                            <p>El canal definitivo para profundizar. Explicaciones rigurosas, humor y química orgánica de alto nivel.</p>
+                            
+                            <a href="https://www.youtube.com/@BreakingVlad" target="_blank">
+                                
+                                Ir al Canal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="conceptos">
+            <div>
+                <h2>Conceptos Clave</h2>
+                <p>Entiende los pilares de la química orgánica</p>
+            </div>
+
+            <div>
+                
+                <div>
+                    <div>
+                        <div>•</div>
+                        <h3>Sustitución Radicálica</h3>
+                    </div>
+                    <div>
+                        <p><strong>Definición:</strong> Radicales libres (átomos con electrón desapareado) atacan C-H. Requiere energía UV o calor.</p>
+
+                        <p><strong>Fases:</strong> Iniciación → Propagación → Terminación</p>
+
+                        <p><strong>Ejemplo:</strong> CH₄ + Cl₂ → CH₃Cl + HCl (bajo luz UV)</p>
+
+                        <p><strong>Nota:</strong> Produce múltiples productos (mono-, di-, trisustitución).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="practica">
+            <div>
+                <h2>Entrenamiento ICFES</h2>
+                <p>10 preguntas para evaluar tu comprensión. Analiza cada una cuidadosamente.</p>
+                <div>
+                    <button onclick="resetAllQuestions()">
+                        Reiniciar Prueba
+                    </button>
+                </div>
+            </div>
+            
+            <div>
+                
+                <div>
+                    <div>
+                        <span>1</span>
+                        <div>
+                            <p>Al hacer reaccionar eteno ($C_2H_4$) con hidrógeno en presencia de un catalizador de níquel, se obtiene etano. Este proceso es:</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button onclick="answerQuestion(this, false, 'No. En sustitución se reemplaza un átomo por otro, aquí se añaden átomos.')">
+                            A) Sustitución radicálica
+                        </button>
+                        <button onclick="answerQuestion(this, true, '✓ Correcto. Cataliza la reacción facilitando el ataque electrofílico. Protonates el alqueno.')">
+                            A) Catalizador (baja Ea)
+                        </button>
+                        <button onclick="answerQuestion(this, false, 'El H₂SO₄ actúa como catalizador, no se consume en la reacción neta.')">
+                            B) Reactivo principal
+                        </button>
+                        <button onclick="answerQuestion(this, false, 'No. El ácido facilita, no inhibe la reacción.')">
+                            C) Inhibidor
+                        </button>
+                        <button onclick="answerQuestion(this, false, 'Aunque es soluble, su función es catalítica, no simplemente disolver.')">
+                            D) Disolvente
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div id="resultSummary">
+                <h3>Resumen de tu Desempeño</h3>
+                <div>
+                    <div>
+                        <p id="scoreDisplay">0/10</p>
+                        <p>Respuestas Correctas</p>
+                    </div>
+                    <div>
+                        <p id="percentageDisplay">0%</p>
+                        <p>Porcentaje</p>
+                    </div>
+                    <div>
+                        <p id="feedbackDisplay">---</p>
+                        <p>Evaluación</p>
+                    </div>
+                </div>
+                <p id="feedbackMessage"></p>
+            </div>
+        </section>
+
+        
+        <section>
+            
+            
+            
+            <div>
+                <div>
+                    <h2>Prof. Carlos Alberto Martinez Sibaja</h2>
+                    <p>Especialista en Química Orgánica | Tutorías Personalizadas</p>
+                </div>
+
+                <p>
+                    ¿Necesitas ayuda con mecanismos de reacción, cinética o equilibrio químico? Ofrezco tutorías personalizadas adaptadas a tu nivel y ritmo de aprendizaje. Aprovecha mi experiencia para dominar la química orgánica y prepararte exitosamente para el ICFES.
+                </p>
+
+                <div>
+                    
+                    <div>
+                        
+                        <div>
+                            <p>WhatsApp</p>
+                            <a href="https://wa.me/573103106954" target="_blank">+57 310 310 6954</a>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        
+                        <div>
+                            <p>Correo Electrónico</p>
+                            <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p>📍 Ubicación: Medellín, Antioquia - Colombia</p>
+                    <p>Disponible para tutorías presenciales en Medellín y sesiones virtuales en toda Colombia. Horarios flexibles según tu disponibilidad.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDOs Lineales: Teoría, Ejemplos y Soluciones | Tutorías Carlos - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    <section id="inicio">
+        <div>
+            <h1>Ecuaciones Diferenciales Ordinarias Lineales</h1>
+            <div id="edo-animada">
+                $a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + ... + a_1(x)y' + a_0(x)y = g(x)$
+            </div>
+            <p>Descubre la belleza y aplicación de las EDOs lineales con explicaciones claras, ejemplos prácticos y métodos de solución paso a paso. Aprende de forma efectiva con pedagogía probada.</p>
+            <div>
+                <a href="#teoria">
+                    <i></i>
+                    Comenzar a Aprender
+                </a>
+                <a href="#ejemplos">
+                    <i></i>
+                    Ver Ejemplos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="teoria">
+        <div>
+            <h2>Teoría de EDOs Lineales</h2>
+            <div>
+                <div>
+                    <p>Las <strong>Ecuaciones Diferenciales Ordinarias (EDOs) lineales</strong> son aquellas donde la función desconocida y sus derivadas aparecen de forma lineal. Son fundamentales en física, ingeniería, economía y biología para modelar fenómenos de evolución en el tiempo.</p>
+                    
+                    <div>
+                        <h4><i></i> Definición Formal</h4>
+                        <p>Una EDO lineal de orden n tiene la forma general:</p>
+                        <div>
+                            $a_n(x)\frac{d^ny}{dx^n} + a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}} + \cdots + a_1(x)\frac{dy}{dx} + a_0(x)y = g(x)$
+                        </div>
+                        <p>Donde \(a_i(x)\) son funciones continuas y \(g(x)\) es el término no homogéneo.</p>
+                    </div>
+
+                    <h3>¿Por qué son importantes?</h3>
+                    <p>Las EDOs lineales modelan sistemas donde el principio de superposición se cumple: si y₁ e y₂ son soluciones, entonces cualquier combinación lineal c₁y₁ + c₂y₂ también lo es.</p>
+
+                    <div>
+                        <h4><i></i> Método General de Solución</h4>
+                        
+                        <div>
+                            <div>1</div>
+                            <div>
+                                <h5>Identificar el tipo de EDO</h5>
+                                <p>Determinar si es de coeficientes constantes o variables, homogénea o no homogénea.</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>2</div>
+                            <div>
+                                <h5>Resolver la ecuación homogénea</h5>
+                                <p>Encontrar la solución complementaria \(y_c\) resolviendo \(L[y] = 0\).</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>3</div>
+                            <div>
+                                <h5>Encontrar una solución particular</h5>
+                                <p>Usar métodos como coeficientes indeterminados o variación de parámetros para encontrar \(y_p\).</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>4</div>
+                            <div>
+                                <h5>Solución general</h5>
+                                <p>La solución completa es \(y = y_c + y_p\).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="ejemplos">
+        <div>
+            <h2>Ejemplos Resueltos Paso a Paso</h2>
+            <div>
+                
+                <div>
+                    <h4><span><i></i></span>EDO Lineal de Primer Orden</h4>
+                    <div>
+                        <strong>Problema:</strong> Resolver \(y' + 2y = e^{-x}\)
+                    </div>
+                    <div>
+                        <h6>Solución:</h6>
+                        <p><strong>Paso 1:</strong> Factor integrante: \(\mu(x) = e^{\int 2 dx} = e^{2x}\)</p>
+                        <p><strong>Paso 2:</strong> Multiplicar: \(e^{2x}y' + 2e^{2x}y = e^{x}\)</p>
+                        <p><strong>Paso 3:</strong> Reconocer derivada: \(\frac{d}{dx}[e^{2x}y] = e^{x}\)</p>
+                        <p><strong>Paso 4:</strong> Integrar: \(e^{2x}y = e^{x} + C\)</p>
+                        <p><strong>Paso 5:</strong> Solución: \(y = e^{-x} + Ce^{-2x}\)</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4><span><i></i></span>EDO Lineal de Segundo Orden Homogénea</h4>
+                    <div>
+                        <strong>Problema:</strong> Resolver \(y'' - 3y' + 2y = 0\)
+                    </div>
+                    <div>
+                        <h6>Solución:</h6>
+                        <p><strong>Paso 1:</strong> Ecuación característica: \(r^2 - 3r + 2 = 0\)</p>
+                        <p><strong>Paso 2:</strong> Raíces: \(r = 1\) y \(r = 2\)</p>
+                        <p><strong>Paso 3:</strong> Solución general: \(y = C_1 e^{x} + C_2 e^{2x}\)</p>
+                        <p><strong>Interpretación:</strong> Sistema sobreamortiguado en física.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4><span><i></i></span>EDO No Homogénea con Coeficientes Indeterminados</h4>
+                    <div>
+                        <strong>Problema:</strong> Resolver \(y'' + 4y = \sin(2x)\)
+                    </div>
+                    <div>
+                        <h6>Solución:</h6>
+                        <p><strong>Paso 1:</strong> Solución homogénea: \(y_h = C_1\cos(2x) + C_2\sin(2x)\)</p>
+                        <p><strong>Paso 2:</strong> Proponer solución particular: \(y_p = Ax\cos(2x) + Bx\sin(2x)\)</p>
+                        <p><strong>Paso 3:</strong> Sustituir y determinar coeficientes: \(A = -\frac{1}{4}, B = 0\)</p>
+                        <p><strong>Paso 4:</strong> Solución completa: \(y = C_1\cos(2x) + C_2\sin(2x) - \frac{1}{4}x\cos(2x)\)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <div>
+            <div>
+                <h3>Simulador de EDOs Lineales</h3>
+                <p>Experimenta con diferentes parámetros y observa cómo cambia la solución.</p>
+                
+                <div>
+                    <div>
+                        <label for="coeficiente-a">Coeficiente a:</label>
+                        <input type="range" id="coeficiente-a" min="0.1" max="5" step="0.1" value="1">
+                        <span id="valor-a">1.0</span>
+                    </div>
+                    
+                    <div>
+                        <label for="coeficiente-b">Coeficiente b:</label>
+                        <input type="range" id="coeficiente-b" min="0.1" max="5" step="0.1" value="2">
+                        <span id="valor-b">2.0</span>
+                    </div>
+                    
+                    <button onclick="calcularSolucion()">
+                        <i></i> Calcular Solución
+                    </button>
+                </div>
+                
+                <div id="resultado-simulador">
+                    <h4>Solución:</h4>
+                    <p id="solucion-texto">\(y = e^{-2x}(C_1\cos(x) + C_2\sin(x))\)</p>
+                    <p id="interpretacion">Interpretación: Oscilaciones amortiguadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="pedagogia">
+        <div>
+            <h2>¿Cómo Aprender EDOs Efectivamente?</h2>
+            <div>
+                <div>
+                    <h3>Pedagogía Basada en la Neurociencia del Aprendizaje</h3>
+                    <p>El cerebro aprende mejor cuando:</p>
+                    <ul>
+                        <li>La información se presenta en <strong>chunks</strong> (fragmentos manejables)</li>
+                        <li>Hay <strong>interacción</strong> y <strong>práctica</strong> activa</li>
+                        <li>Se conectan conceptos nuevos con conocimientos previos</li>
+                        <li>Se usa <strong>espaciamiento</strong> de la práctica (no todo de una vez)</li>
+                    </ul>
+                    
+                    <h4>Estrategias Comprobadas:</h4>
+                    <div>
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Estudio Espaciado</h5>
+                            <p>Mejor 30 minutos al día que 4 horas seguidas</p>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Práctica Activa</h5>
+                            <p>Resuelve problemas, no solo leas soluciones</p>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Interleaving</h5>
+                            <p>Mezcla diferentes tipos de problemas</p>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                <i></i>
+                            </div>
+                            <h5>Auto-Explicación</h5>
+                            <p>Explica cada paso como si enseñaras a alguien</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <div>
+            <h2>Recursos Adicionales</h2>
+            <div>
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h4>Video Tutoriales</h4>
+                    <p>Explicaciones visuales paso a paso con animaciones</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h4>Problemas Resueltos</h4>
+                    <p>Colección de ejercicios con soluciones detalladas</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h4>Ejercicios Interactivos</h4>
+                    <p>Practica con retroalimentación inmediata</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <i></i>
+                    </div>
+                    <h4>Sesiones en Grupo</h4>
+                    <p>Aprende colaborativamente con otros estudiantes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contacto">
+        <div>
+            <h2>¿Necesitas Ayuda Personalizada?</h2>
+            <div>
+                <div>
+                    <h3>Contacto Directo</h3>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Email</h5>
+                            <p>carlossibaja644@gmail.com</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Teléfono / WhatsApp</h5>
+                            <p>+57 310 310 6954</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Ubicación</h5>
+                            <p>Clases online y presenciales en Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <div>
+                            <h5>Especialidad</h5>
+                            <p>EDOs, Cálculo, Física Matemática</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="https://wa.me/573103106954" title="WhatsApp">
+                            <i></i>
+                        </a>
+                        <a href="#" title="Telegram">
+                            <i></i>
+                        </a>
+                        <a href="#" title="YouTube">
+                            <i></i>
+                        </a>
+                        <a href="#" title="LinkedIn">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form id="contactForm">
+                    <div>
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div>
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="nivel">Nivel de Estudio *</label>
+                        <select id="nivel" name="nivel" required>
+                            <option value="">Selecciona tu nivel</option>
+                            <option value="bachillerato">Bachillerato/Preparatoria</option>
+                            <option value="universidad">Universidad</option>
+                            <option value="posgrado">Posgrado</option>
+                            <option value="autodidacta">Autodidacta</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tema">Tema de Interés *</label>
+                        <select id="tema" name="tema" required>
+                            <option value="">Selecciona un tema</option>
+                            <option value="edos-lineales">EDOs Lineales</option>
+                            <option value="edos-no-lineales">EDOs No Lineales</option>
+                            <option value="sistemas-edos">Sistemas de EDOs</option>
+                            <option value="transformada-laplace">Transformada de Laplace</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Describe tu nivel actual, dificultades específicas y objetivos de aprendizaje..." required></textarea>
+                    </div>
+                    <button type="submit">
+                        <i></i>
+                        Solicitar Tutoría Personalizada
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <div id="confirmationModal">
+        <div>
+            <div>
+                <i></i>
+            </div>
+            <h3>¡Solicitud Enviada!</h3>
+            <p>He recibido tu solicitud de tutoría. Te contactaré en menos de 24 horas para coordinar una clase de diagnóstico gratuita.</p>
+            <button onclick="closeModal()">
+                <i></i>
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    
+    <div id="errorModal">
+        <div>
+            <div>
+                <i></i>
+            </div>
+            <h3>Error al Enviar</h3>
+            <p id="errorMessage">Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente o contáctame directamente por WhatsApp.</p>
+            <button onclick="closeErrorModal()">
+                <i></i>
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

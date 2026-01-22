@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regla de la Cadena | Tutorías de Ciencias - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    <section id="inicio">
+        <div>
+            <h1>Regla de la Cadena en Derivadas</h1>
+            <p>Aprende a derivar funciones compuestas con esta poderosa herramienta del cálculo diferencial. Claras explicaciones, ejemplos interactivos y ejercicios prácticos.</p>
+            <a href="#explicacion">Comenzar a Aprender</a>
+        </div>
+    </section>
+
+    
+    <section id="explicacion">
+        <div>
+            <h2>¿Qué es la Regla de la Cadena?</h2>
+            <div>
+                <div>
+                    <h3>Fórmula de la Regla de la Cadena</h3>
+                    <div>
+                        (f ∘ g)'(x) = f'(g(x)) · g'(x)
+                    </div>
+                    <p>o en notación de Leibniz:</p>
+                    <div>
+                        dy/dx = (dy/du) · (du/dx)
+                    </div>
+                </div>
+                <div>
+                    <h3>Explicación Conceptual</h3>
+                    <p>La regla de la cadena es una fórmula para calcular la derivada de la composición de dos o más funciones. Es una de las reglas más importantes del cálculo diferencial y se aplica cuando una función está dentro de otra función.</p>
+                    <p>En términos simples: si tenemos una función <strong>y = f(u)</strong> donde <strong>u = g(x)</strong>, entonces la derivada de <strong>y</strong> respecto a <strong>x</strong> es el producto de la derivada de <strong>f</strong> respecto a <strong>u</strong> por la derivada de <strong>u</strong> respecto a <strong>x</strong>.</p>
+                    <p>Esta regla es fundamental para derivar funciones como sen(x²), e^(3x), ln(cos x), y muchas otras que encuentras en problemas reales de física, ingeniería y economía.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="visualizador">
+        <div>
+            <h2>Visualizador Interactivo</h2>
+            <p>Explora cómo funciona la regla de la cadena con diferentes funciones</p>
+            
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <label for="funcionExterior">Función Exterior f(u):</label>
+                            <select id="funcionExterior">
+                                <option value="sen">sen(u)</option>
+                                <option value="cos">cos(u)</option>
+                                <option value="exp">eᵘ</option>
+                                <option value="ln">ln(u)</option>
+                                <option value="cuadrado">u²</option>
+                                <option value="cubo">u³</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="funcionInterior">Función Interior g(x):</label>
+                            <select id="funcionInterior">
+                                <option value="x2">x²</option>
+                                <option value="2x">2x</option>
+                                <option value="3x">3x</option>
+                                <option value="senx">sen(x)</option>
+                                <option value="cosx">cos(x)</option>
+                                <option value="exp">eˣ</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="puntoX">Punto de evaluación x = <span id="valorX">0</span></label>
+                        <input type="range" id="puntoX" min="-3" max="3" step="0.1" value="0">
+                    </div>
+                </div>
+                
+                <div>
+                    <canvas id="graficoReglaCadena"></canvas>
+                </div>
+                
+                <div>
+                    <div>
+                        <div>Función Compuesta</div>
+                        <div id="funcionCompuesta">sen(x²)</div>
+                    </div>
+                    <div>
+                        <div>Derivada f'(g(x))</div>
+                        <div id="derivadaExterior">cos(x²)</div>
+                    </div>
+                    <div>
+                        <div>Derivada g'(x)</div>
+                        <div id="derivadaInterior">2x</div>
+                    </div>
+                    <div>
+                        <div>Derivada Final</div>
+                        <div id="derivadaFinal">2x·cos(x²)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="ejemplos">
+        <div>
+            <h2>Ejemplos de Aplicación</h2>
+            <p>Aprende con estos ejemplos prácticos de la regla de la cadena</p>
+            
+            <div>
+                <div>
+                    <h4>Ejemplo 1: Función Exponencial</h4>
+                    <p>Derivar: y = e^(3x)</p>
+                    <div>
+                        f(u) = eᵘ, g(x) = 3x<br>
+                        f'(u) = eᵘ, g'(x) = 3<br>
+                        y' = e^(3x) · 3 = 3e^(3x)
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>Ejemplo 2: Función Trigonométrica</h4>
+                    <p>Derivar: y = sen(x²)</p>
+                    <div>
+                        f(u) = sen(u), g(x) = x²<br>
+                        f'(u) = cos(u), g'(x) = 2x<br>
+                        y' = cos(x²) · 2x = 2x·cos(x²)
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>Ejemplo 3: Función Logarítmica</h4>
+                    <p>Derivar: y = ln(cos x)</p>
+                    <div>
+                        f(u) = ln(u), g(x) = cos x<br>
+                        f'(u) = 1/u, g'(x) = -sen x<br>
+                        y' = (1/cos x) · (-sen x) = -tan x
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="ejercicio">
+        <div>
+            <h2>Ejercicio Interactivo</h2>
+            <div>
+                <div>
+                    <h4>Ejercicio: Aplica la Regla de la Cadena</h4>
+                    <p>Calcula la derivada de la siguiente función usando la regla de la cadena:</p>
+                    <div>
+                        y = (2x³ - 5x + 1)⁴
+                    </div>
+                    <p>Selecciona la opción correcta:</p>
+                </div>
+                
+                <div>
+                    <div onclick="verificarRespuesta(1)">
+                        <input type="radio" name="opcion" id="opcion1">
+                        <label for="opcion1">y' = 4(2x³ - 5x + 1)³ · (6x² - 5)</label>
+                    </div>
+                    
+                    <div onclick="verificarRespuesta(2)">
+                        <input type="radio" name="opcion" id="opcion2">
+                        <label for="opcion2">y' = 4(6x² - 5)³</label>
+                    </div>
+                    
+                    <div onclick="verificarRespuesta(3)">
+                        <input type="radio" name="opcion" id="opcion3">
+                        <label for="opcion3">y' = (2x³ - 5x + 1)⁴ · (6x² - 5)</label>
+                    </div>
+                    
+                    <div onclick="verificarRespuesta(4)">
+                        <input type="radio" name="opcion" id="opcion4">
+                        <label for="opcion4">y' = 4(2x³ - 5x + 1)³</label>
+                    </div>
+                </div>
+                
+                <div id="resultado-ejercicio"></div>
+                
+                <div id="pasos-solucion">
+                    <h4>Solución Paso a Paso:</h4>
+                    <div>
+                        <strong>Paso 1:</strong> Identificar las funciones:<br>
+                        f(u) = u⁴ (función exterior) y g(x) = 2x³ - 5x + 1 (función interior)
+                    </div>
+                    <div>
+                        <strong>Paso 2:</strong> Calcular las derivadas:<br>
+                        f'(u) = 4u³ y g'(x) = 6x² - 5
+                    </div>
+                    <div>
+                        <strong>Paso 3:</strong> Aplicar la regla de la cadena:<br>
+                        y' = f'(g(x)) · g'(x) = 4(2x³ - 5x + 1)³ · (6x² - 5)
+                    </div>
+                </div>
+                
+                <button onclick="mostrarSolucion()">Mostrar Solución Completa</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contacto">
+        <div>
+            <h2>¿Necesitas Ayuda con Cálculo?</h2>
+            <p>Contáctame para clases personalizadas de cálculo diferencial e integral</p>
+            
+            <form onsubmit="enviarFormulario(event)">
+                <div>
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <div>
+                    <label for="nivel">Nivel de Estudio</label>
+                    <select id="nivel" name="nivel">
+                        <option value="bachillerato">Bachillerato</option>
+                        <option value="universidad">Universidad</option>
+                        <option value="posgrado">Posgrado</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required>Me gustaría recibir más información sobre tus tutorías de cálculo...</textarea>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

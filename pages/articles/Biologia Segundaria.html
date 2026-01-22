@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biología Interactiva | El Mundo Vivo - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <section>
+        <div>
+            <h1>Explora el Secreto de la <span>Vida</span></h1>
+            <p>Desde la microscópica célula hasta los vastos ecosistemas. Aprende biología de forma visual, interactiva y natural.</p>
+            <a href="#microscopio">Entrar al Laboratorio</a>
+        </div>
+    </section>
+
+    <section id="microscopio">
+        <div>
+            <h2>🔬 Microscopio Virtual</h2>
+            <p>Explora las células animales y vegetales en detalle. Haz clic en los orgánulos para aprender sobre sus funciones.</p>
+            
+            <div>
+                <div>
+                    <div>
+                        <button onclick="setCellType('animal')">Célula Animal</button>
+                        <button onclick="setCellType('vegetal')">Célula Vegetal</button>
+                    </div>
+
+                    <div id="listaPartes">
+                        
+                    </div>
+                    
+                    <div>
+                        <strong>💡 Dato Curioso:</strong> <span id="datoCurioso">Las células animales no tienen pared celular, por eso son flexibles.</span>
+                    </div>
+                </div>
+
+                <div>
+                    <canvas id="cellCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="genetica">
+        <div>
+            <h2>🧬 Genética</h2>
+            <p>Descubre los secretos de la herencia, el ADN y cómo se transmite la información biológica de generación en generación.</p>
+            
+            <div>
+                <div>
+                    <div>🧬</div>
+                    <h3>ADN y ARN</h3>
+                    <p>Estructura del ADN, replicación, transcripción y traducción. El código genético y la síntesis de proteínas.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🧫</div>
+                    <h3>Leyes de Mendel</h3>
+                    <p>Los principios de la herencia genética. Cruzamientos, genotipos, fenotipos y cuadros de Punnett.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🧬</div>
+                    <h3>Mutaciones</h3>
+                    <p>Tipos de mutaciones genéticas, sus causas y consecuencias. Mutaciones somáticas y germinales.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>👨‍👩‍👧‍👦</div>
+                    <h3>Herencia Humana</h3>
+                    <p>Patrones de herencia en humanos. Enfermedades genéticas, pedigrís y consejo genético.</p>
+                    <a href="#">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="evolucion">
+        <div>
+            <h2>🦖 Evolución</h2>
+            <p>Comprende cómo las especies cambian a lo largo del tiempo a través de la selección natural, la deriva genética y otros mecanismos evolutivos.</p>
+            
+            <div>
+                <div>
+                    <div>📜</div>
+                    <h3>Teoría de Darwin</h3>
+                    <p>Selección natural, variación, adaptación y la evidencia de la evolución. El viaje del HMS Beagle.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🦴</div>
+                    <h3>Registro Fósil</h3>
+                    <p>Fósiles como evidencia de la evolución. Datación relativa y absoluta. Los principales hallazgos fósiles.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🧬</div>
+                    <h3>Genética de Poblaciones</h3>
+                    <p>Frecuencias alélicas, equilibrio de Hardy-Weinberg, deriva genética y flujo génico.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🌳</div>
+                    <h3>Árbol Filogenético</h3>
+                    <p>Relaciones evolutivas entre especies. Cladogramas y taxonomía. El árbol de la vida.</p>
+                    <a href="#">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecologia">
+        <div>
+            <h2>🌍 Ecología</h2>
+            <p>Estudia las relaciones entre los organismos y su entorno, los ecosistemas, y cómo mantener el equilibrio ambiental.</p>
+            
+            <div>
+                <div>
+                    <div>🌿</div>
+                    <h3>Ecosistemas</h3>
+                    <p>Componentes bióticos y abióticos. Tipos de ecosistemas terrestres y acuáticos. Dinámica de poblaciones.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🔄</div>
+                    <h3>Ciclos Biogeoquímicos</h3>
+                    <p>Ciclo del agua, carbono, nitrógeno y fósforo. Importancia para el mantenimiento de la vida.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🦁</div>
+                    <h3>Cadenas Alimentarias</h3>
+                    <p>Flujo de energía en los ecosistemas. Niveles tróficos, productores, consumidores y descomponedores.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🏞️</div>
+                    <h3>Conservación</h3>
+                    <p>Biodiversidad, especies en peligro y áreas protegidas. Impacto humano y desarrollo sostenible.</p>
+                    <a href="#">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cuerpo-humano">
+        <div>
+            <h2>👤 Cuerpo Humano</h2>
+            <p>Explora la anatomía y fisiología humana, los sistemas que nos mantienen vivos y cómo interactúan entre sí.</p>
+            
+            <div>
+                <div>
+                    <div>🫀</div>
+                    <h3>Sistema Circulatorio</h3>
+                    <p>Corazón, vasos sanguíneos y sangre. Transporte de oxígeno, nutrientes y desechos.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🧠</div>
+                    <h3>Sistema Nervioso</h3>
+                    <p>Cerebro, médula espinal y neuronas. Procesamiento de información y control del cuerpo.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🫁</div>
+                    <h3>Sistema Respiratorio</h3>
+                    <p>Pulmones, tráquea y bronquios. Intercambio de gases: oxígeno y dióxido de carbono.</p>
+                    <a href="#">Explorar</a>
+                </div>
+                <div>
+                    <div>🍎</div>
+                    <h3>Sistema Digestivo</h3>
+                    <p>Proceso de digestión, absorción de nutrientes y eliminación de desechos. Órganos involucrados.</p>
+                    <a href="#">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tutorias">
+        <div>
+            <h2>¿Necesitas ayuda con Biología?</h2>
+            <p>Prepara tus exámenes de secundaria o universidad con explicaciones claras y diagramas visuales.</p>
+            <form id="contactForm">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <select>
+                    <option value="">Selecciona un tema de interés</option>
+                    <option value="celulas">Células</option>
+                    <option value="genetica">Genética</option>
+                    <option value="evolucion">Evolución</option>
+                    <option value="ecologia">Ecología</option>
+                    <option value="cuerpo-humano">Cuerpo Humano</option>
+                </select>
+                <button type="submit">Solicitar Tutoría</button>
+            </form>
+        </div>
+    </section>
+
+    
+
+    
+    <a href="#" id="backToTop">
+        <i></i>
+    </a>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

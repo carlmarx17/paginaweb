@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master en Transformaciones Lineales | Visualizador Interactivo - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    <div>
+        
+
+        
+
+        <div>
+            
+            <div>
+                <span>Laboratorio Visual</span>
+                <h2>Transformación en R²</h2>
+                <p>Modifica la matriz <b>A</b> o usa preajustes:</p>
+                
+                <div>
+                    <canvas id="canvas2d"></canvas>
+                    <div>
+                        <div>
+                            <input type="number" id="m11" value="1" step="0.1" oninput="draw()">
+                            <input type="number" id="m12" value="0.5" step="0.1" oninput="draw()">
+                            <input type="number" id="m21" value="0" step="0.1" oninput="draw()">
+                            <input type="number" id="m22" value="1" step="0.1" oninput="draw()">
+                        </div>
+                        <div>
+                            <button onclick="setPreset(1,0,0,1)">Identidad</button>
+                            <button onclick="setPreset(0,-1,1,0)">Rot 90°</button>
+                            <button onclick="setPreset(1,0,0,-1)">Reflex X</button>
+                            <button onclick="setPreset(2,0,0,2)">Escala 2</button>
+                            <button onclick="setPreset(1,1,0,1)">Shear X</button>
+                            <button onclick="setPreset(0,0,0,0)">Zero</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div>
+                <span>Invertibilidad</span>
+                <h2>Matriz Inversa</h2>
+                <p>Una transformación es reversible si su determinante es diferente de cero.</p>
+                <div id="inverse-display">
+                    A⁻¹ = No calculada
+                </div>
+                <button onclick="calcularInversa()">Calcular Inversa A⁻¹</button>
+                <div id="inverse-feedback">
+                    Ingresa valores en la matriz de la izquierda para calcular.
+                </div>
+            </div>
+        </div>
+
+        <div>
+            
+            <div>
+                <span>Dinámica</span>
+                <h2>Autovalores y Autovectores</h2>
+                <p>Direcciones invariantes bajo la transformación.</p>
+                <div>
+                    A<b>v</b> = λ<b>v</b>
+                </div>
+                <button onclick="calcularAutovalores()">Ver Autovalores</button>
+                <div id="eigen-result"></div>
+            </div>
+
+            
+            <div>
+                <span>Estructura</span>
+                <h2>Rango y Nulidad</h2>
+                <p>El rango es la dimensión de la imagen.</p>
+                <div>
+                    dim(V) = Rango + Nulidad
+                </div>
+                <div id="rank-status">
+                    Invertible (Rango 2)
+                </div>
+            </div>
+        </div>
+
+        
+        <section>
+            <h2>Prueba tu conocimiento</h2>
+            <p>¿Qué sucede con el área de un cuadrado unitario si la transformación tiene det(A) = 2?</p>
+            <div onclick="checkQuiz(this, false)">Se mantiene igual</div>
+            <div onclick="checkQuiz(this, true)">Se duplica</div>
+            <div onclick="checkQuiz(this, false)">Se reduce a la mitad</div>
+            <div id="quiz-feedback"></div>
+        </section>
+
+        
+        <section>
+            <h2>¿Necesitas ayuda con Álgebra Lineal?</h2>
+            <p>Contáctame para asesorías personalizadas, resolución de talleres o proyectos de software matemático.</p>
+            <div>
+                <a href="https://wa.me/573103106954" target="_blank">
+                    <span>📱 WhatsApp</span>
+                </a>
+                <a href="mailto:carlossibaja644@gmail.com">
+                    <span>✉️ Enviar Correo</span>
+                </a>
+            </div>
+            <p>Carlos Sibaja - Desarrollador & Tutor</p>
+        </section>
+
+        
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

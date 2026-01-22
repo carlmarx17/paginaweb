@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alicia: Óptica a través del Espejo | Prof. Carlos Alberto Martínez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    
+    <section>
+        
+        <div>
+            <div>
+                Física & Fantasía
+            </div>
+            <h1>
+                Mundo <span>Óptico</span>
+            </h1>
+            <p>
+                "Si yo tuviera un mundo propio, todo sería un disparate... <span>menos la física.</span>"
+            </p>
+            <div>
+                <a href="#simulador">
+                    INICIAR SIMULACIÓN
+                </a>
+                <a href="#teoria">
+                    EXPLORAR LEYES
+                </a>
+            </div>
+        </div>
+        <div>
+            <i></i>
+        </div>
+    </section>
+
+    <main>
+
+        
+        <section id="teoria">
+            <div>
+                <h2>Leyes del Cristal</h2>
+                
+                <p>"Un reflejo es solo la luz pidiendo permiso para volver."</p>
+            </div>
+
+            <div>
+                <div>
+                    <h3>
+                        <span>01</span> El Rebote Perfecto
+                    </h3>
+                    <p>
+                        Alicia nota que al mirar el espejo, la luz sigue una trayectoria predecible. La **Ley de Reflexión** establece que el rayo incidente y el reflejado forman el mismo ángulo respecto a la normal.
+                    </p>
+                    <div>
+                        <div>
+                            $\theta_i = \theta_r$
+                        </div>
+                    </div>
+                    <div>
+                        <strong>Nota del Maestro:</strong> Este principio surge del Tiempo Mínimo de Fermat. La naturaleza siempre elige el camino más eficiente, incluso en Wonderland.
+                    </div>
+                </div>
+
+                <div>
+                    <h3>
+                        <span>02</span> La Imagen Virtual
+                    </h3>
+                    <p>
+                        Al otro lado del cristal, Alicia ve un mundo que parece real pero no lo es. En espejos planos, la imagen es siempre **Virtual**, **Derecha** y de **Tamaño Real**.
+                    </p>
+                    <div>
+                        <div>
+                            <i></i>
+                            <span>Simetría: $d_o = d_i$</span>
+                        </div>
+                        <div>
+                            <i></i>
+                            <span>Inversión Lateral</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Ecuación Fundamental</p>
+                        <div>
+                            $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$
+                        </div>
+                        <p>Para espejos planos: $f \rightarrow \infty$, por lo tanto $d_i = -d_o$</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulador">
+            <div>
+                
+                <div>
+                    <div>
+                        <div>
+                            <h2>El Laboratorio Óptico</h2>
+                            <p>Manipula la realidad de Wonderland ajustando los parámetros físicos del espejo.</p>
+                        </div>
+                        <div>
+                            <div>
+                                <label>Arquitectura del Espejo</label>
+                                <div>
+                                    <button onclick="changeMirrorType('plano')" id="btnPlano">Plano</button>
+                                    <button onclick="changeMirrorType('concavo')" id="btnConcavo">Cóncavo</button>
+                                    <button onclick="changeMirrorType('convexo')" id="btnConvexo">Convexo</button>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <label>Posición del Objeto</label>
+                                        <span id="objectPosValue">30 cm</span>
+                                    </div>
+                                    <input type="range" id="objectPos" min="10" max="120" value="30" oninput="updateSimulation()">
+                                </div>
+                                <div id="focalControl">
+                                    <div>
+                                        <label>Distancia Focal</label>
+                                        <span id="focalLengthValue">20 cm</span>
+                                    </div>
+                                    <input type="range" id="focalLength" min="10" max="60" value="20" oninput="updateSimulation()">
+                                </div>
+                            </div>
+                            <button onclick="resetSimulation()">
+                                <i></i> REINICIAR UNIVERSO
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <canvas id="mirrorCanvas"></canvas>
+                        </div>
+                        <div>
+                            <div>
+                                <p>Imagen en:</p>
+                                <p id="imagePos">--</p>
+                            </div>
+                            <div>
+                                <p>Aumento (M):</p>
+                                <p id="magnification">--</p>
+                            </div>
+                            <div>
+                                <p>Naturaleza:</p>
+                                <p id="imageCharacteristics">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="literatura">
+            <div>
+                <h2>Reflejos del Alma</h2>
+                
+            </div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>A través del Espejo</h4>
+                        <p>"Carroll usa la simetría para explorar la lógica inversa de un mundo donde el tiempo y el espacio se reflejan."</p>
+                    </div>
+                    <p>Lewis Carroll (1871)</p>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>Dorian Gray</h4>
+                        <p>"El lienzo actúa como un espejo moral, registrando la entropía ética que el rostro oculta."</p>
+                    </div>
+                    <p>Oscar Wilde (1890)</p>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>Blancanieves</h4>
+                        <p>"La voz de la verdad objetiva encarnada en un cristal que no sabe mentir ante la vanidad."</p>
+                    </div>
+                    <p>Hermanos Grimm (1812)</p>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            <i></i>
+                        </div>
+                        <h4>Espejo de Oesed</h4>
+                        <p>"No muestra la realidad, sino el deseo más desesperado de quien lo mira."</p>
+                    </div>
+                    <p>J.K. Rowling (1997)</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="experimentos">
+            <div>
+                
+                <div>
+                    <div>
+                        <h2>Laboratorio del Sombrerero</h2>
+                    </div>
+                    <div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>El Caleidoscopio Infinito</h4>
+                            <p>Crea patrones fractales simétricos uniendo tres espejos en triángulo (60°).</p>
+                            <div>
+                                <span>
+                                    Física: $N = \frac{360^\circ}{\theta} - 1$
+                                </span>
+                                <button onclick="showExperimentDetail('caleidoscopio')">VER PROCEDIMIENTO</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>La Cuchara de la Reina</h4>
+                            <p>Usa una cuchara pulida para entender focos reales y virtuales en segundos.</p>
+                            <div>
+                                <span>
+                                    Deducción: $R = 2f$
+                                </span>
+                                <button onclick="showExperimentDetail('cuchara')">VER PROCEDIMIENTO</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div><i></i></div>
+                            <h4>El Rayo Desviado</h4>
+                            <p>Usa un láser y un espejo para iluminar objetos ocultos tras las esquinas.</p>
+                            <div>
+                                <span>
+                                    $\theta_i = \theta_r$
+                                </span>
+                                <button onclick="showExperimentDetail('rayo')">VER PROCEDIMIENTO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="codice">
+            <div>
+                <div>
+                    <h2>Códice de Problemas</h2>
+                </div>
+                <div>
+                    
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <i></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Caso I: El Gato de Cheshire</h3>
+                                <p>La sonrisa del gato está a $20 \text{ cm}$ de un espejo cóncavo ($f=10 \text{ cm}$). ¿Dónde aparecerá la imagen?</p>
+                                <div>
+                                    <button onclick="toggleSolve('sol1')">Revelar Solución</button>
+                                    <button onclick="simulateProblem(1)">Ejecutar Simulación</button>
+                                </div>
+                                <div id="sol1">
+                                    <div>
+                                        $\frac{1}{10} = \frac{1}{20} + \frac{1}{d_i}$
+                                    </div>
+                                    <div>
+                                        $\frac{1}{d_i} = \frac{1}{10} - \frac{1}{20} = \frac{1}{20} \implies d_i = 20 \text{ cm}$
+                                    </div>
+                                    <p>Imagen Real, Invertida y del mismo tamaño ($M=-1$).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <div>
+                        <span>Desafío Rápido</span>
+                        <h3>Prueba de Óptica Real</h3>
+                    </div>
+                    <div>
+                        <div>
+                            <p>1. ¿Qué tipo de imagen produce siempre un espejo convexo?</p>
+                            <div>
+                                <button onclick="checkQuiz(this, 0)">Real e invertida</button>
+                                <button onclick="checkQuiz(this, 1)">Virtual y derecha</button>
+                                <button onclick="checkQuiz(this, 2)">Real y ampliada</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="examen">
+            <div>
+                
+                <h3>Protocolo de Supervivencia</h3>
+                <div>
+                    <div>
+                        <h4>
+                            Reglas de Signos Críticas
+                        </h4>
+                        <ul>
+                            <li>
+                                <div><i></i></div>
+                                <div>
+                                    <strong>$d_o$ (Objeto)</strong>
+                                    <p>Siempre Positivo. El objeto siempre es real ante el espejo.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div><i></i></div>
+                                <div>
+                                    <strong>$d_i$ (Imagen)</strong>
+                                    <p>Positivo = Real (Frente). Negativo = Virtual (Detrás).</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="maestro">
+            <div>
+                
+                <div>
+                    <h2>Audiencia Real</h2>
+                    <div>
+                        <div>
+                            <i></i>
+                            <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                        </div>
+                        <div>
+                            <i></i>
+                            <p>+57 310 310 6954</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="https://wa.me/573103106954" target="_blank">
+                            <i></i> SOLICITAR REFUERZO
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

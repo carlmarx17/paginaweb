@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo y Energía - Guía Interactiva | Física - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                <div>
+                    <span>Aprende Física</span>
+                    <h1>
+                        ⚡ Trabajo y Energía
+                    </h1>
+                    <p>
+                        Domina los principios de conservación con explicaciones claras, ecuaciones matemáticas precisas y simulaciones interactivas.
+                    </p>
+                    <div>
+                        <a href="#simulacion">Probar Simulador</a>
+                        <a href="#contenido">Leer Teoría</a>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>🎢</div>
+                        <div>Energía Mecánica</div>
+                        <div>
+                            \( E_m = E_c + E_p \)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="contenido">
+        
+        
+        <section>
+            <div>
+                <h2>📑 Contenido de la Guía</h2>
+                <div>
+                    <ul>
+                        <li><a href="#simulacion"><span>★</span> 1. Laboratorio Virtual (Simulador)</a></li>
+                        <li><a href="#introduccion"><span>•</span> 2. Introducción</a></li>
+                        <li><a href="#trabajo"><span>•</span> 3. Trabajo Mecánico</a></li>
+                        <li><a href="#energia-cinetica"><span>•</span> 4. Energía Cinética</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#energia-potencial"><span>•</span> 5. Energía Potencial (Gravitatoria y Elástica)</a></li>
+                        <li><a href="#conservacion"><span>•</span> 6. Conservación de la Energía</a></li>
+                        <li><a href="#walter-lewin"><span>★</span> 7. El Experimento de Walter Lewin</a></li>
+                        <li><a href="#ejercicios"><span>•</span> 8. Ejercicios Resueltos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulacion">
+            <div>
+                <div>
+                    <h2>
+                        <span>🎢</span> Laboratorio de Energía
+                    </h2>
+                    <p>Observa cómo la energía potencial se transforma en cinética y viceversa.</p>
+                </div>
+                <div>
+                    <button id="sim-reset">Reiniciar</button>
+                    <button id="sim-toggle">Pausar / Iniciar</button>
+                </div>
+            </div>
+
+            <div>
+                
+                <div>
+                    <canvas id="energyCanvas" width="800" height="400"></canvas>
+                    <div>
+                        h = Altura | v = Velocidad
+                    </div>
+                </div>
+
+                
+                <div>
+                    
+                    <div>
+                        <h3>Monitor de Energía</h3>
+                        
+                        <div>
+                            <div>
+                                <div>
+                                    <span>Cinética \( (E_c) \)</span>
+                                    <span id="val-ke">0 J</span>
+                                </div>
+                                <div>
+                                    <div id="bar-ke"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <span>Potencial \( (E_p) \)</span>
+                                    <span id="val-pe">0 J</span>
+                                </div>
+                                <div>
+                                    <div id="bar-pe"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <span>Total \( (E_m) \)</span>
+                                    <span id="val-te">0 J</span>
+                                </div>
+                                <div>
+                                    <div id="bar-te"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <label>Masa del Patinador \( (m) \)</label>
+                        <input type="range" id="mass-slider" min="10" max="100" value="60">
+                        <div id="mass-val">60 kg</div>
+                        
+                        <div>
+                            <strong>Nota:</strong> Se desprecia la fricción. La energía mecánica total se conserva constante (\( E_c + E_p = cte \)).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="introduccion">
+            <h2>1. Introducción al Trabajo y Energía</h2>
+            <p>
+                La energía es la moneda de cambio del universo. No se crea ni se destruye, solo se transforma. En mecánica, estudiamos cómo las fuerzas realizan <strong>trabajo</strong> para transferir energía a un sistema, cambiándola de una forma a otra (por ejemplo, de movimiento a altura).
+            </p>
+            
+            <div>
+                <h4>💡 Concepto Clave</h4>
+                <p>
+                    El <strong>Trabajo</strong> es el mecanismo de transferencia de energía. La <strong>Energía</strong> es la capacidad de un sistema para realizar trabajo.
+                </p>
+            </div>
+        </section>
+
+        
+        <section id="trabajo">
+            <h2>2. Trabajo Mecánico \( (W) \)</h2>
+            <p>Se realiza trabajo cuando una fuerza desplaza un objeto. Solo la componente de la fuerza paralela al desplazamiento realiza trabajo.</p>
+
+            <div>
+                $ W = F \cdot d \cdot \cos(\theta) $
+            </div>
+            <p>Donde \( F \) es la magnitud de la fuerza, \( d \) el desplazamiento y \( \theta \) el ángulo entre ambos vectores.</p>
+
+            <div>
+                <div>
+                    <strong>Trabajo Positivo \( (\theta < 90^\circ) \)</strong>
+                    La fuerza ayuda al movimiento. Aumenta la velocidad (energía) del objeto.
+                </div>
+                <div>
+                    <strong>Trabajo Negativo \( (\theta > 90^\circ) \)</strong>
+                    La fuerza se opone al movimiento (ej. fricción). Disminuye la energía.
+                </div>
+                <div>
+                    <strong>Trabajo Nulo \( (\theta = 90^\circ) \)</strong>
+                    Fuerzas perpendiculares (como la Normal) no realizan trabajo.
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="energia-cinetica">
+            <h2>3. Energía Cinética \( (E_c) \)</h2>
+            <p>Es la energía asociada al movimiento de un cuerpo.</p>
+
+            <div>
+                $ E_c = \frac{1}{2} m v^2 $
+            </div>
+
+            <div>
+                <h4>Teorema del Trabajo y la Energía</h4>
+                <p>El trabajo neto realizado sobre un objeto es igual al cambio en su energía cinética:</p>
+                <div>\( W_{neto} = \Delta E_c = E_{c,final} - E_{c,inicial} \)</div>
+            </div>
+        </section>
+
+        
+        <section id="energia-potencial">
+            <h2>4. Energía Potencial \( (E_p) \)</h2>
+            <p>Es la energía almacenada debido a la posición o configuración del sistema.</p>
+
+            <div>
+                
+                <div>
+                    <h3>
+                         Gravitatoria \( (E_{pg}) \)
+                    </h3>
+                    <p>Debido a la altura \( h \) respecto a un nivel de referencia.</p>
+                    <div>
+                        $ E_{pg} = m \cdot g \cdot h $
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h3>
+                         Elástica \( (E_{pe}) \)
+                    </h3>
+                    <p>Almacenada en resortes comprimidos o estirados una distancia \( x \).</p>
+                    <div>
+                        $ E_{pe} = \frac{1}{2} k x^2 $
+                    </div>
+                    <p>\( k \) = constante del resorte (N/m)</p>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="conservacion">
+            <h2>5. Conservación de la Energía Mecánica</h2>
+            <p>Si solo actúan <strong>fuerzas conservativas</strong> (como la gravedad o la fuerza elástica) y no hay fricción, la energía mecánica total permanece constante.</p>
+
+            <div>
+                $ E_{m,inicial} = E_{m,final} $
+                <br>
+                $ \frac{1}{2}mv_i^2 + mgh_i + \frac{1}{2}kx_i^2 = \frac{1}{2}mv_f^2 + mgh_f + \frac{1}{2}kx_f^2 $
+            </div>
+        </section>
+
+        
+        <section id="walter-lewin">
+            <div>
+                <div>
+                    <span>Experimento Clásico</span>
+                    <h2>El Péndulo de la Muerte</h2>
+                </div>
+                <p>El legendario profesor Walter Lewin demuestra su fe inquebrantable en la conservación de la energía.</p>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>¿Por qué no le golpea la bola?</h3>
+                    <p>
+                        En el experimento, el profesor Lewin sostiene una bola de metal pesada justo pegada a su barbilla y la suelta sin empujarla. La bola oscila alejándose y regresando hacia su cara a gran velocidad.
+                    </p>
+                    
+                    <div>
+                        <h4>Explicación Física:</h4>
+                        <p>
+                            La energía mecánica total se conserva. Al inicio, toda la energía es Potencial Gravitatoria \( (E_p) \) y la velocidad es cero \( (E_c=0) \).
+                        </p>
+                        <p>
+                            Al regresar, la bola <strong>no puede tener más energía</strong> de la que tenía al principio. Como hay una pequeña pérdida por fricción con el aire, la bola nunca alcanzará la altura original exacta, deteniéndose milímetros antes de tocar su barbilla.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        "La física funciona. Y todavía estoy vivo." — Walter Lewin
+                    </div>
+                </div>
+                
+                <div>
+                    
+                    <iframe src="https://youtube.com/clip/UgkxdSjJF0TbU6QgBZWDBwKhB0k0_sHXJt7D?si=Hi4MVMc9QacmXwbK" title="Walter Lewin Pendulum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="potencia">
+            <h2>7. Potencia \( (P) \)</h2>
+            <p>La rapidez con la que se realiza un trabajo.</p>
+            <div>
+                $ P = \frac{W}{t} = \vec{F} \cdot \vec{v} $
+            </div>
+            <p>Unidad SI: Watt (W) = Joule/segundo</p>
+        </section>
+
+        
+        <section id="ejercicios">
+            <h2>📝 Ejercicios Resueltos</h2>
+
+            
+            <div>
+                <h4>Ejemplo 1: Trabajo de una fuerza</h4>
+                <p>Se empuja una caja de 20 kg con una fuerza de 100 N a 30° respecto a la horizontal, desplazándola 5 metros. ¿Cuánto trabajo se realiza?</p>
+                
+                <div>
+                    <p>Solución:</p>
+                    <p>Aplicamos la fórmula del trabajo:</p>
+                    $ W = 100 \cdot 5 \cdot \cos(30^\circ) $
+                    $ W = 500 \cdot 0.866 = \mathbf{433 \text{ J}} $
+                </div>
+            </div>
+
+            
+            <div>
+                <h4>Ejemplo 2: Montaña Rusa (Conservación)</h4>
+                <p>Un carrito de 500 kg cae desde el reposo a 30 m de altura. ¿Qué velocidad lleva cuando está a 10 m del suelo? (Sin fricción).</p>
+                
+                <div>
+                    <p>Planteamiento:</p>
+                    <p>\( E_{m,A} = E_{m,B} \) (La energía se conserva)</p>
+                    <p>En A (inicio): Solo tiene potencial \( (v=0) \). \( E_A = mgh_A \)</p>
+                    <p>En B (final): Tiene cinética y potencial. \( E_B = \frac{1}{2}mv_B^2 + mgh_B \)</p>
+                    
+                    <p>Desarrollo:</p>
+                    $ \require{cancel} \cancel{m}gh_A = \frac{1}{2}\cancel{m}v_B^2 + \cancel{m}gh_B $
+                    $ g(h_A - h_B) = \frac{1}{2}v_B^2 $
+                    $ v_B = \sqrt{2g(h_A - h_B)} = \sqrt{2 \cdot 9.8 \cdot (30 - 10)} $
+                    $ v_B = \sqrt{392} \approx \mathbf{19.8 \text{ m/s}} $
+                </div>
+            </div>
+
+            
+            <div>
+                <h4>Ejemplo 3: El Resorte</h4>
+                <p>Un bloque de 2 kg comprime 0.2 m un resorte vertical \( (k=1000 \text{ N/m}) \). Al soltarse, ¿qué altura máxima alcanza?</p>
+                
+                <div>
+                    <p>Solución:</p>
+                    <p>Toda la energía elástica inicial se convierte en potencial gravitatoria en el punto más alto (donde \( v=0 \)).</p>
+                    $ E_{pe, inicial} = E_{pg, final} $
+                    $ \frac{1}{2}kx^2 = mgh $
+                    $ 0.5 \cdot 1000 \cdot (0.2)^2 = 2 \cdot 9.8 \cdot h $
+                    $ 20 = 19.6 \cdot h \rightarrow h = \mathbf{1.02 \text{ m}} $
+                </div>
+            </div>
+
+            
+            <div>
+                <h4>Ejemplo 4: El Péndulo (Nuevo)</h4>
+                <p>Un péndulo de 2 metros de largo se suelta desde un ángulo donde la bola está 0.5 m más alta que en su punto más bajo. ¿Cuál es su velocidad máxima?</p>
+                
+                <div>
+                    <p>Análisis:</p>
+                    <p>La velocidad máxima ocurre en el punto más bajo, donde toda la \( E_p \) se ha convertido en \( E_c \).</p>
+                    $ mgh = \frac{1}{2}mv^2 \rightarrow v = \sqrt{2gh} $
+                    $ v = \sqrt{2 \cdot 9.8 \cdot 0.5} = \sqrt{9.8} \approx \mathbf{3.13 \text{ m/s}} $
+                </div>
+            </div>
+
+            
+            <div>
+                <h4>Ejemplo 5: Potencia Humana (Nuevo)</h4>
+                <p>Una persona de 70 kg sube corriendo unas escaleras de 4 metros de altura vertical en 5 segundos. ¿Qué potencia desarrolla?</p>
+                
+                <div>
+                    <p>Solución:</p>
+                    <p>Primero calculamos el trabajo realizado contra la gravedad \( (W = mgh) \).</p>
+                    $ W = 70 \text{ kg} \cdot 9.8 \text{ m/s}^2 \cdot 4 \text{ m} = 2744 \text{ J} $
+                    <p>Ahora la potencia \( (P = W/t) \):</p>
+                    $ P = \frac{2744 \text{ J}}{5 \text{ s}} = \mathbf{548.8 \text{ Watts}} \approx 0.73 \text{ HP} $
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            <div>
+                <h2>¿Listo para más física?</h2>
+                <p>Recuerda que la energía es la clave para entender desde máquinas simples hasta el cosmos.</p>
+            </div>
+            
+        </section>
+
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

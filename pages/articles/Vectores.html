@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea Vectorial: Navegación Interestelar | Prof. Carlos Martínez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                Módulo de Astrofísica Teórica
+            </div>
+            <h1>
+                ODISEA <span>VECTORIAL</span>
+            </h1>
+            <p>
+                "En el espacio, la dirección es tan vital como la potencia. Un error de 1° es un destino a mil años luz de casa."
+            </p>
+            <div>
+                <a href="#laboratorio">Inicializar Puente</a>
+                <a href="#definicion">Manual de Vuelo</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+
+        
+        <section id="definicion">
+            <div>
+                <div>
+                    <h2>01. Anatomía de un <span>Vector</span></h2>
+                    <p>
+                        A diferencia de los <strong>escalares</strong> (como la temperatura o la masa), un <strong>Vector</strong> es una magnitud física que requiere dos datos fundamentales para estar completa:
+                    </p>
+                    <div>
+                        <div>
+                            <h4>Magnitud (Módulo)</h4>
+                            <p>Representa el valor numérico y la unidad (ej. 500 km/h). Geométricamente, es el largo de la flecha.</p>
+                        </div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Es la orientación de la recta que contiene al vector, definida comúnmente por un ángulo $\theta$.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>¿Por qué es importante?</h4>
+                        <p>
+                            Entender los vectores permite calcular trayectorias de interceptación, distribuir fuerzas en estructuras espaciales y entender cómo los campos magnéticos guían el plasma estelar. En el plano, nos permite <strong>descomponer</strong> movimientos complejos en tareas simples de $x$ e $y$.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    
+                    <div>
+                        <h3>Propiedades Matemáticas</h3>
+                        <div>
+                            <div>
+                                <span>Representación:</span> $\vec{V} = V_x\hat{i} + V_y\hat{j}$
+                            </div>
+                            <div>
+                                <span>Magnitud:</span> $|\vec{V}| = \sqrt{V_x^2 + V_y^2}$
+                            </div>
+                            <div>
+                                <span>Dirección:</span> $\theta = \arctan(V_y / V_x)$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="laboratorio">
+            <div>
+                <div>V-NAV</div>
+                
+                <div>
+                    <div>
+                        <div>
+                            <h2>Consola de Propulsión</h2>
+                            <p>Ajuste de Trayectoria Interestelar</p>
+                        </div>
+
+                        <div>
+                            <div>
+                                <div>
+                                    <span>Empuje A ($\vec{A}$)</span>
+                                    <span id="axVal">40, 30</span>
+                                </div>
+                                <div>
+                                    <label>Componente X</label>
+                                    <input type="range" id="ax" min="-100" max="100" value="40" oninput="draw()">
+                                    <label>Componente Y</label>
+                                    <input type="range" id="ay" min="-100" max="100" value="30" oninput="draw()">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <span>Empuje B ($\vec{B}$)</span>
+                                    <span id="bxVal">-30, 60</span>
+                                </div>
+                                <div>
+                                    <label>Componente X</label>
+                                    <input type="range" id="bx" min="-100" max="100" value="-30" oninput="draw()">
+                                    <label>Componente Y</label>
+                                    <input type="range" id="by" min="-100" max="100" value="60" oninput="draw()">
+                                </div>
+                            </div>
+
+                            <div>
+                                <div><span>MODULO A:</span> <span id="magA">--</span></div>
+                                <div><span>MODULO B:</span> <span id="magB">--</span></div>
+                                <hr>
+                                <div><span>SUMA ($\vec{A}+\vec{B}$):</span> <span id="sumVec">--</span></div>
+                                <div><span>PROD. PUNTO:</span> <span id="dotRes">--</span></div>
+                                <div><span>PROD. CRUZ (ÁREA):</span> <span id="crossRes">--</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <canvas id="vectorCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="ejercicios">
+            <div>
+                <h2>Misiones de <span>Entrenamiento</span></h2>
+                <p>Bitácora de Cálculo y Desafíos de Campo</p>
+            </div>
+
+            <div>
+                
+                <div>
+                    <h3>
+                        <i></i> Casos Resueltos
+                    </h3>
+
+                    
+                    <div>
+                        <h4>Caso 01: Interceptación Orbital</h4>
+                        <p>Una nave tiene un vector de velocidad $\vec{v}_1 = (3, 4)$ m/s. Se le aplica un empuje adicional $\vec{v}_2 = (2, -1)$ m/s. ¿Cuál es la velocidad final?</p>
+                        
+                        <button onclick="toggleSolve('sol1')">Ver Resolución</button>
+                        
+                        <div id="sol1">
+                            <div>
+                                <p><span>1</span> Sumar componentes X: $3 + 2 = 5$</p>
+                                <p><span>2</span> Sumar componentes Y: $4 + (-1) = 3$</p>
+                                <p><span>3</span> Vector Resultante: $\vec{v}_R = (5, 3)$ m/s</p>
+                                <p><span>4</span> Magnitud: $\sqrt{5^2 + 3^2} = \sqrt{25+9} \approx 5.83$ m/s</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <h4>Caso 02: Eficiencia de Empuje</h4>
+                        <p>Determina si los vectores $\vec{A} = (4, 2)$ y $\vec{B} = (-1, 2)$ son perpendiculares utilizando el Producto Punto.</p>
+                        
+                        <button onclick="toggleSolve('sol2')">Ver Resolución</button>
+                        
+                        <div id="sol2">
+                            <div>
+                                <p><span>1</span> Fórmula: $\vec{A} \cdot \vec{B} = (A_x \cdot B_x) + (A_y \cdot B_y)$</p>
+                                <p><span>2</span> Cálculo: $(4 \cdot -1) + (2 \cdot 2) = -4 + 4 = 0$</p>
+                                <p>Conclusión: Como el producto punto es 0, los vectores son ortogonales (forman 90°).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <h3>
+                        <i></i> Misiones Propuestas
+                    </h3>
+
+                    <div>
+                        <div>
+                            <div>
+                                <h5>Misión A: Módulo de Escape</h5>
+                                <p>Un escape se lanza con componentes $(12, 5)$. Calcula su magnitud (rapidez) y el ángulo de dirección respecto al eje X positivo.</p>
+                            </div>
+
+                            <div>
+                                <h5>Misión B: Fuerza Resultante</h5>
+                                <p>Dos motores aplican fuerzas $\vec{F}_1 = (10, 20)$ N y $\vec{F}_2 = (-5, 10)$ N. Encuentra el vector de fuerza total y dibújalo mentalmente en el simulador.</p>
+                            </div>
+
+                            <div>
+                                <h5>Misión C: Área de Influencia</h5>
+                                <p>Dados $\vec{A} = (3, 1)$ y $\vec{B} = (0, 4)$, calcula el área del paralelogramo que forman utilizando el Producto Cruz en 2D.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="maestro">
+            <div>
+                
+                <div>
+                    <h2>COMANDO DE <span>TIERRA</span></h2>
+                    <p>
+                        "La educación es el único vector que siempre apunta hacia el progreso."
+                    </p>
+                    
+                    <div>
+                        <div>
+                            <i></i>
+                            <h4>Transmisión de Datos</h4>
+                            <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a>
+                        </div>
+                        <div>
+                            <i></i>
+                            <h4>Frecuencia Directa</h4>
+                            <p>+57 310 310 6954</p>
+                            <p>Comandante: Carlos Alberto Martínez S.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://wa.me/573103106954" target="_blank">
+                            <i></i> Solicitar Apoyo Técnico
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

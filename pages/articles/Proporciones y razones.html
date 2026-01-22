@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Proporción | Prof. Carlos Alberto Martinez - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    
+
+    <main>
+        
+        
+        <section>
+            <div>
+                <span>Aritmética Aplicada</span>
+                <h1>
+                    Descubre el equilibrio de las <span>Proporciones</span>
+                </h1>
+                <p>
+                    Aprende a comparar cantidades y resolver problemas de la vida cotidiana con el <strong>Prof. Carlos Martinez</strong>.
+                </p>
+                <div>
+                    <a href="#regla-de-tres">Resolver Proporción</a>
+                    <a href="#explorador">Ver Razones</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    
+                    <div>
+                        <div>Definición de Razón</div>
+                        <div>A : B</div>
+                        <p>
+                            Es la comparación entre dos cantidades mediante un cociente. Nos dice cuántas veces un número contiene a otro.
+                        </p>
+                        <div>
+                            <span>Ejemplo:</span> 2 de cada 3 estudiantes prefieren las matemáticas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="explorador">
+            <div>
+                <div>
+                    <h2>
+                        Explorador Visual de Razones
+                    </h2>
+                    <p>Compara dos grupos de elementos y observa cómo cambia su relación numérica.</p>
+                    
+                    <div>
+                        <div>
+                            <div>
+                                <label>Grupo A (Rojos)</label>
+                                <span id="val-a">4</span>
+                            </div>
+                            <input type="range" id="input-a" min="1" max="12" value="4">
+                        </div>
+                        <div>
+                            <div>
+                                <label>Grupo B (Azules)</label>
+                                <span id="val-b">6</span>
+                            </div>
+                            <input type="range" id="input-b" min="1" max="12" value="6">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <div>
+                                <div>Razón Directa</div>
+                                <div id="res-razon">4 : 6</div>
+                            </div>
+                            <div>
+                                <div>Simplificada</div>
+                                <div id="res-simple">2 : 3</div>
+                            </div>
+                        </div>
+                        <p id="res-texto">Por cada 2 rojos hay 3 azules.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div id="container-a"></div>
+                    
+                    <div id="container-b"></div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="regla-de-tres">
+            <div>
+                <h2>La Regla de Tres Simple</h2>
+                <p>Si tres valores son conocidos, ¡podemos encontrar el cuarto!</p>
+            </div>
+
+            <div>
+                <div>
+                    <div>
+                        <h3>
+                            
+                            Calculadora de $x$
+                        </h3>
+                        
+                        <div>
+                            
+                            <div>
+                                <input type="number" id="p-a" value="10">
+                            </div>
+                            <div>es a</div>
+                            <div>
+                                <input type="number" id="p-b" value="20">
+                            </div>
+
+                            
+                            <div>
+                                
+                                <div>COMO</div>
+                                
+                            </div>
+
+                            
+                            <div>
+                                <input type="number" id="p-c" value="5">
+                            </div>
+                            <div>es a</div>
+                            <div>
+                                <div>X</div>
+                            </div>
+                        </div>
+
+                        <button onclick="resolverProporcion()">
+                            Encontrar valor de X
+                        </button>
+                    </div>
+
+                    <div id="p-resultado-box">
+                        <div id="p-instruccion">
+                            
+                            <p>Ingresa los valores y haz clic en calcular para ver el procedimiento paso a paso.</p>
+                        </div>
+
+                        <div id="p-procedimiento">
+                            <div>
+                                <div>Resultado Final</div>
+                                <div id="res-x">10</div>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <div>1</div>
+                                    <p>Multiplicamos en cruz: <span id="step-1">20 × 5</span></p>
+                                </div>
+                                <div>
+                                    <div>2</div>
+                                    <p>Dividimos por el restante: <span id="step-2">... ÷ 10</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            
+            <div id="ejemplos">
+                <h3>
+                    <span>💡</span> Aplicaciones Reales
+                </h3>
+                <div>
+                    <div>
+                        <div>La Receta</div>
+                        <p>Si 4 personas necesitan 200g de harina, ¿cuánto necesitan 10 personas? La proporción nos ayuda a ajustar las cantidades exactas.</p>
+                    </div>
+                    <div>
+                        <div>El Mapa</div>
+                        <p>Si 1 cm en el papel equivale a 50 km reales, la proporción permite calcular distancias reales midiendo el mapa.</p>
+                    </div>
+                    <div>
+                        <div>Velocidad</div>
+                        <p>Si un auto recorre 120 km en 2 horas, ¿cuánto recorrerá en 5 horas a la misma velocidad?</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="practica">
+                <h3>
+                    <span>🎯</span> Ejercicios de Práctica
+                </h3>
+                <div>
+                    <div>
+                        <p>Si 3 lápices cuestan $1.500, ¿cuánto cuestan 9 lápices?</p>
+                        <button onclick="this.textContent = '$4.500'; this.classList.add('bg-green-600', 'text-white')">Revelar</button>
+                    </div>
+                    <div>
+                        <p>En una mezcla hay 2 tazas de agua por 5 de jugo. ¿Cuántas de agua para 15 de jugo?</p>
+                        <button onclick="this.textContent = '6 tazas'; this.classList.add('bg-green-600', 'text-white')">Revelar</button>
+                    </div>
+                    <div>
+                        <p>Simplifica la razón 20 : 50</p>
+                        <button onclick="this.textContent = '2 : 5'; this.classList.add('bg-green-600', 'text-white')">Revelar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section>
+            
+            <div>
+                <div>
+                    <h2>¿Quieres profundizar en el tema?</h2>
+                    <p>El profesor Carlos Martinez ofrece asesorías especializadas para estudiantes que desean mejorar sus habilidades matemáticas.</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <div>Docente</div>
+                        <div>Prof. Carlos A. Martinez</div>
+                    </div>
+                    <div>
+                        <div>WhatsApp</div>
+                        <div>3103106954</div>
+                    </div>
+                    <div>
+                        <div>
+                            <div>Email de contacto</div>
+                            <div>carlossibaja644@gmail.com</div>
+                        </div>
+                        <a href="mailto:carlossibaja644@gmail.com">
+                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

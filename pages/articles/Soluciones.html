@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Químicas - Laboratorio Virtual - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <section>
+        <div>
+            <h1>Soluciones Químicas - Laboratorio Virtual</h1>
+            <p>Explora, simula y domina los conceptos de concentración con herramientas interactivas y ejemplos prácticos.</p>
+        </div>
+    </section>
+
+    <div>
+        
+        <section>
+            <h3>📚 Contenidos de esta lección</h3>
+            <div>
+                <a href="#conceptos">🧪 Conceptos Fundamentales</a>
+                <a href="#simulacion">🔬 Simulación de Molaridad</a>
+                <a href="#formulas">📊 Fórmulas de Concentración</a>
+                <a href="#ejemplos">📝 Ejemplos Resueltos</a>
+                <a href="#quiz">🧠 Ponte a Prueba</a>
+            </div>
+        </section>
+
+        
+        <section id="conceptos">
+            <h2>
+                <span>🧪</span>
+                1. Conceptos Fundamentales
+            </h2>
+            <p>Una <strong>solución<span>Mezcla homogénea de dos o más sustancias. Las partículas del soluto son tan pequeñas que no se pueden ver a simple vista.</span></strong> es una mezcla homogénea de dos o más sustancias. Sus componentes principales son:</p>
+            
+            <div>
+                <button onclick="showComparison()">
+                    <span>🔄</span>
+                    <span>Comparar Soluto vs Solvente</span>
+                </button>
+                <button onclick="showExamples()">
+                    <span>💡</span>
+                    <span>Ver Ejemplos Comunes</span>
+                </button>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>Soluto</h3>
+                    <p>Es la sustancia que se disuelve y se encuentra en <strong>menor cantidad</strong>.</p>
+                    <div>
+                        Ejemplos: Sal, azúcar, café soluble
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Solvente</h3>
+                    <p>Es la sustancia que disuelve al soluto y se encuentra en <strong>mayor cantidad</strong>.</p>
+                    <div>
+                        Ejemplos: Agua, alcohol, acetona
+                    </div>
+                </div>
+            </div>
+            
+            <p>La <strong>concentración</strong> de una solución indica la cantidad de soluto disuelta en una cantidad determinada de solvente o solución.</p>
+            
+            <div id="comparisonContent">
+                <h4>🔄 Comparación Detallada</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Soluto</th>
+                            <th>Solvente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cantidad en la solución</td>
+                            <td>Menor</td>
+                            <td>Mayor</td>
+                        </tr>
+                        <tr>
+                            <td>Estado físico inicial</td>
+                            <td>Cualquiera (sólido, líquido, gas)</td>
+                            <td>Cualquiera (generalmente líquido)</td>
+                        </tr>
+                        <tr>
+                            <td>Función</td>
+                            <td>Ser disuelto</td>
+                            <td>Disolver</td>
+                        </tr>
+                        <tr>
+                            <td>Ejemplo en agua salada</td>
+                            <td>Cloruro de sodio (sal)</td>
+                            <td>Agua</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="examplesContent">
+                <h4>💡 Ejemplos de Soluciones Comunes</h4>
+                <div>
+                    <div>
+                        <strong>Aire</strong><br>
+                        <small>Soluto: Oxígeno<br>Solvente: Nitrógeno</small>
+                    </div>
+                    <div>
+                        <strong>Agua de mar</strong><br>
+                        <small>Soluto: Sales minerales<br>Solvente: Agua</small>
+                    </div>
+                    <div>
+                        <strong>Refresco</strong><br>
+                        <small>Soluto: Azúcar, CO₂<br>Solvente: Agua</small>
+                    </div>
+                    <div>
+                        <strong>Acero</strong><br>
+                        <small>Soluto: Carbono<br>Solvente: Hierro</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="simulacion">
+            <h2>
+                <span>🔬</span>
+                2. Laboratorio Virtual: Simulación de Molaridad
+            </h2>
+            <p>Usa los controles para modificar la cantidad de soluto y el volumen de la solución. Observa cómo cambia la concentración (color e intensidad) y el resultado numérico en tiempo real.</p>
+            
+            <div>
+                <button onclick="resetSimulation()">
+                    <span>🔄</span>
+                    <span>Reiniciar Simulación</span>
+                </button>
+                <button onclick="showPresets()">
+                    <span>⚗️</span>
+                    <span>Usar Valores Predefinidos</span>
+                </button>
+            </div>
+            
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <div>🧂</div>
+                            <div>
+                                Soluto<br>
+                                <span id="solutoNombre">NaCl</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div>Solución</div>
+                            <div id="simLiquid"></div>
+                            <div id="particlesContainer"></div>
+                            <div>
+                                <span id="volumeIndicator">1.0 L</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div>
+                                💧
+                            </div>
+                            <div>
+                                Solvente<br>Agua
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <div>Masa molar</div>
+                            <div id="molarMassVal">58.44 g/mol</div>
+                            <div>del soluto</div>
+                        </div>
+                        <div>
+                            <div>Masa de soluto</div>
+                            <div id="massVal">58.44 g</div>
+                            <div>en solución</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <label>
+                            <span>Moles de Soluto (n):</span>
+                            <span id="molesVal">1.0 mol</span>
+                        </label>
+                        <input type="range" id="molesRange" min="0.1" max="5.0" step="0.1" value="1.0" oninput="updateSimulation()">
+                        <div>
+                            <span>0.1 mol</span>
+                            <span>5.0 mol</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Volumen de Solución (V):</span>
+                            <span id="volVal">1.0 L</span>
+                        </label>
+                        <input type="range" id="volRange" min="0.2" max="2.0" step="0.1" value="1.0" oninput="updateSimulation()">
+                        <div>
+                            <span>0.2 L</span>
+                            <span>2.0 L</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label>
+                            <span>Tipo de Soluto:</span>
+                            <span id="soluteType">Cloruro de sodio (NaCl)</span>
+                        </label>
+                        <select id="soluteSelect" onchange="changeSolute()">
+                            <option value="NaCl">Cloruro de sodio (NaCl) - 58.44 g/mol</option>
+                            <option value="HCl">Ácido clorhídrico (HCl) - 36.46 g/mol</option>
+                            <option value="NaOH">Hidróxido de sodio (NaOH) - 40.00 g/mol</option>
+                            <option value="C6H12O6">Glucosa (C₆H₁₂O₆) - 180.16 g/mol</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        🧪 Concentración = <span id="molarityResult">1.00</span> M (moles/L)
+                    </div>
+                    
+                    <div>
+                        <p><strong>💡 Interpretación de resultados:</strong></p>
+                        <ul>
+                            <li>Más de 3.0 M: <strong>Solución concentrada</strong> (color intenso)</li>
+                            <li>Entre 1.0 M y 3.0 M: <strong>Solución moderada</strong></li>
+                            <li>Menos de 1.0 M: <strong>Solución diluida</strong> (color claro)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="presetsContainer">
+                <h4>⚗️ Valores Predefinidos</h4>
+                <div>
+                    <button onclick="setPreset(0.5, 0.5)">
+                        Diluida (0.5 M)
+                    </button>
+                    <button onclick="setPreset(1, 1)">
+                        Estándar (1.0 M)
+                    </button>
+                    <button onclick="setPreset(3, 0.5)">
+                        Concentrada (6.0 M)
+                    </button>
+                    <button onclick="setPreset(0.1, 2)">
+                        Muy diluida (0.05 M)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="formulas">
+            <h2>
+                <span>📊</span>
+                3. Fórmulas de Concentración
+            </h2>
+            <p>Existen varias formas de expresar la concentración de una solución. Las más comunes son:</p>
+            
+            <div>
+                <div>
+                    <h4>
+                        <span>🔢</span>
+                        Molaridad (M)
+                    </h4>
+                    <div>M = n / V(L)</div>
+                    <p><strong>Donde:</strong></p>
+                    <ul>
+                        <li><strong>n</strong> = moles de soluto</li>
+                        <li><strong>V(L)</strong> = volumen de solución en litros</li>
+                    </ul>
+                    <p>Expresa los <strong>moles de soluto por litro de solución</strong>. Es la unidad más utilizada en química.</p>
+                    <div>
+                        Unidad: mol/L = M (molar)
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>
+                        <span>⚖️</span>
+                        Porcentaje masa/masa (%m/m)
+                    </h4>
+                    <div>%m/m = (g soluto / g solución) × 100</div>
+                    <p><strong>Donde:</strong></p>
+                    <ul>
+                        <li><strong>g soluto</strong> = masa de soluto en gramos</li>
+                        <li><strong>g solución</strong> = masa total de solución en gramos</li>
+                    </ul>
+                    <p>Indica la <strong>masa de soluto en 100g de solución</strong>. Común en alimentos y productos comerciales.</p>
+                    <div>
+                        Ejemplo: Suero salino al 0.9%
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>
+                        <span>💧</span>
+                        Porcentaje volumen/volumen (%v/v)
+                    </h4>
+                    <div>%v/v = (mL soluto / mL solución) × 100</div>
+                    <p><strong>Donde:</strong></p>
+                    <ul>
+                        <li><strong>mL soluto</strong> = volumen de soluto en mL</li>
+                        <li><strong>mL solución</strong> = volumen total de solución en mL</li>
+                    </ul>
+                    <p>Indica el <strong>volumen de soluto en 100mL de solución</strong>. Usado para soluciones líquido-líquido.</p>
+                    <div>
+                        Ejemplo: Alcohol al 70%
+                    </div>
+                </div>
+            </div>
+            
+            <h3>📈 Comparación entre Unidades de Concentración</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unidad</th>
+                        <th>Símbolo</th>
+                        <th>Fórmula</th>
+                        <th>Aplicación Principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Molaridad</td>
+                        <td>M</td>
+                        <td>mol soluto / L solución</td>
+                        <td>Cálculos estequiométricos en química</td>
+                    </tr>
+                    <tr>
+                        <td>Molalidad</td>
+                        <td>m</td>
+                        <td>mol soluto / kg solvente</td>
+                        <td>Propiedades coligativas</td>
+                    </tr>
+                    <tr>
+                        <td>% m/m</td>
+                        <td>%</td>
+                        <td>(g soluto / g solución) × 100</td>
+                        <td>Industria alimentaria y farmacéutica</td>
+                    </tr>
+                    <tr>
+                        <td>Partes por millón</td>
+                        <td>ppm</td>
+                        <td>mg soluto / kg solución</td>
+                        <td>Contaminantes en agua y aire</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+        <section id="ejemplos">
+            <h2>
+                <span>📝</span>
+                4. Ejemplos Resueltos Paso a Paso
+            </h2>
+            <p>A continuación, algunos ejemplos prácticos para aplicar las fórmulas de concentración:</p>
+            
+            <div>
+                <div>
+                    <h4>
+                        <span>1️⃣</span>
+                        Ejemplo de Molaridad
+                    </h4>
+                    <p><strong>Problema:</strong> Calcula la molaridad de una solución que contiene 20 g de NaOH en 500 mL de solución.</p>
+                    
+                    <button onclick="toggleSolution('sol1')">
+                        <span>👁️</span>
+                        <span>Ver Solución Paso a Paso</span>
+                    </button>
+                    
+                    <div id="sol1">
+                        <ol>
+                            <li><strong>Datos:</strong> m(NaOH) = 20 g, V = 500 mL = 0.5 L</li>
+                            <li><strong>Masa molar del NaOH:</strong> Na(23) + O(16) + H(1) = 40 g/mol</li>
+                            <li><strong>Moles de NaOH:</strong> n = m/MM = 20 g / 40 g/mol = 0.5 mol</li>
+                            <li><strong>Molaridad:</strong> M = n/V = 0.5 mol / 0.5 L = <strong>1.0 M</strong></li>
+                        </ol>
+                        <div>
+                            Respuesta: La solución es 1.0 M
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>
+                        <span>2️⃣</span>
+                        Ejemplo de % m/m
+                    </h4>
+                    <p><strong>Problema:</strong> ¿Cuál es el %m/m de una solución preparada con 15 g de sal en 285 g de agua?</p>
+                    
+                    <button onclick="toggleSolution('sol2')">
+                        <span>👁️</span>
+                        <span>Ver Solución Paso a Paso</span>
+                    </button>
+                    
+                    <div id="sol2">
+                        <ol>
+                            <li><strong>Datos:</strong> m(soluto) = 15 g, m(solvente) = 285 g</li>
+                            <li><strong>Masa total de solución:</strong> m(solución) = 15 g + 285 g = 300 g</li>
+                            <li><strong>% m/m:</strong> % = (15 g / 300 g) × 100 = <strong>5%</strong></li>
+                            <li><strong>Interpretación:</strong> Hay 5 g de sal en cada 100 g de solución</li>
+                        </ol>
+                        <div>
+                            Respuesta: La solución es al 5% m/m
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>
+                        <span>3️⃣</span>
+                        Ejemplo de Conversión
+                    </h4>
+                    <p><strong>Problema:</strong> Una solución de HCl tiene una densidad de 1.19 g/mL y 37% m/m. Calcula su molaridad.</p>
+                    
+                    <button onclick="toggleSolution('sol3')">
+                        <span>👁️</span>
+                        <span>Ver Solución Paso a Paso</span>
+                    </button>
+                    
+                    <div id="sol3">
+                        <ol>
+                            <li><strong>Base de cálculo:</strong> 100 g de solución</li>
+                            <li><strong>Masa de HCl:</strong> 37 g (por el 37%)</li>
+                            <li><strong>Volumen de solución:</strong> V = m/d = 100 g / 1.19 g/mL ≈ 84.03 mL = 0.08403 L</li>
+                            <li><strong>Moles de HCl:</strong> n = 37 g / 36.46 g/mol ≈ 1.015 mol</li>
+                            <li><strong>Molaridad:</strong> M = 1.015 mol / 0.08403 L ≈ <strong>12.08 M</strong></li>
+                        </ol>
+                        <div>
+                            Respuesta: La solución es aproximadamente 12.1 M
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="quiz">
+            <h2>
+                <span>🧠</span>
+                5. Ponte a Prueba - Quiz Interactivo
+            </h2>
+            
+            <div>
+                <div>
+                    Puntuación: <span id="scoreValue">0</span>/5
+                </div>
+                <div>
+                    <div id="quizProgress"></div>
+                </div>
+                <button onclick="resetQuiz()">
+                    <span>🔄</span>
+                    Reiniciar Quiz
+                </button>
+            </div>
+            
+            <div>
+                <div>
+                    <h4>1. Si disolvemos 0.5 moles de NaCl en agua suficiente para completar 2 Litros de solución, ¿cuál es la Molaridad?</h4>
+                    <button onclick="checkAnswer(this, false, 'quiz1')">A) 1.0 M</button>
+                    <button onclick="checkAnswer(this, true, 'quiz1')">B) 0.25 M</button>
+                    <button onclick="checkAnswer(this, false, 'quiz1')">C) 4.0 M</button>
+                    <button onclick="checkAnswer(this, false, 'quiz1')">D) 2.5 M</button>
+                    <div id="quiz1-feedback"></div>
+                </div>
+                
+                <div>
+                    <h4>2. ¿Cuál es el solvente en una solución de agua con azúcar al 5%?</h4>
+                    <button onclick="checkAnswer(this, false, 'quiz2')">A) El azúcar</button>
+                    <button onclick="checkAnswer(this, true, 'quiz2')">B) El agua</button>
+                    <button onclick="checkAnswer(this, false, 'quiz2')">C) Ninguno</button>
+                    <button onclick="checkAnswer(this, false, 'quiz2')">D) Ambos</button>
+                    <div id="quiz2-feedback"></div>
+                </div>
+                
+                <div>
+                    <h4>3. Calcula la molaridad de una solución con 80 g de NaOH en 2 L de solución (Masa molar NaOH = 40 g/mol).</h4>
+                    <button onclick="checkAnswer(this, false, 'quiz3')">A) 0.5 M</button>
+                    <button onclick="checkAnswer(this, false, 'quiz3')">B) 2.0 M</button>
+                    <button onclick="checkAnswer(this, true, 'quiz3')">C) 1.0 M</button>
+                    <button onclick="checkAnswer(this, false, 'quiz3')">D) 4.0 M</button>
+                    <div id="quiz3-feedback"></div>
+                </div>
+                
+                <div>
+                    <h4>4. ¿Cuál de las siguientes NO es una unidad de concentración?</h4>
+                    <button onclick="checkAnswer(this, false, 'quiz4')">A) Molaridad (M)</button>
+                    <button onclick="checkAnswer(this, false, 'quiz4')">B) Porcentaje m/m (%)</button>
+                    <button onclick="checkAnswer(this, true, 'quiz4')">C) Temperatura (°C)</button>
+                    <button onclick="checkAnswer(this, false, 'quiz4')">D) Partes por millón (ppm)</button>
+                    <div id="quiz4-feedback"></div>
+                </div>
+                
+                <div>
+                    <h4>5. Para preparar 500 mL de una solución 0.1 M de NaCl, ¿cuántos gramos necesitas? (Masa molar NaCl = 58.44 g/mol)</h4>
+                    <button onclick="checkAnswer(this, false, 'quiz5')">A) 58.44 g</button>
+                    <button onclick="checkAnswer(this, false, 'quiz5')">B) 2.92 g</button>
+                    <button onclick="checkAnswer(this, true, 'quiz5')">C) 2.92 g (aproximadamente)</button>
+                    <button onclick="checkAnswer(this, false, 'quiz5')">D) 5.84 g</button>
+                    <div id="quiz5-feedback"></div>
+                </div>
+            </div>
+            
+            <div id="quizResults">
+                <h3>🎉 ¡Quiz Completado!</h3>
+                <p id="finalScore"></p>
+                <p id="performanceMessage"></p>
+            </div>
+        </section>
+    </div>
+
+    
+
+    <a href="https://wa.me/573103106954?text=Hola%20Profe%20Carlos,%20estoy%20interesado%20en%20una%20tutoría%20de%20química" target="_blank" aria-label="Chat en WhatsApp">
+        
+    </a>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

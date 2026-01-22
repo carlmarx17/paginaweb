@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Referencia | Masterclass Física - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+    <button id="themeToggle" aria-label="Cambiar tema">
+        <i></i>
+    </button>
+
+    
+    <div>
+        <button onclick="openARViewer()">
+            <i></i>
+            Vista AR
+        </button>
+    </div>
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                <h1>SISTEMAS DE REFERENCIA</h1>
+                <p>La base fundamental de toda la física mecánica. Sin un punto de observación, no existe movimiento medible. 
+                Explora cómo el mismo fenómeno físico puede describirse de maneras diferentes dependiendo de quién lo observa 
+                y desde dónde lo hace.</p>
+                <div>
+                    <a href="#video">
+                        <i></i> VER VIDEO 3D
+                    </a>
+                    <a href="#laboratorio">
+                        <i></i> INICIAR SIMULACIÓN
+                    </a>
+                </div>
+                <div>
+                    <div>
+                        <div>3</div>
+                        <div>Leyes Fundamentales</div>
+                    </div>
+                    <div>
+                        <div>5</div>
+                        <div>Simulaciones</div>
+                    </div>
+                    <div>
+                        <div>12</div>
+                        <div>Recursos</div>
+                    </div>
+                    <div>
+                        <div>10</div>
+                        <div>Ejercicios</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="teoria">
+        
+    </section>
+
+    
+    <section id="historia">
+        <h2>HISTORIA Y EVOLUCIÓN CONCEPTUAL</h2>
+        
+        <div>
+            <div>
+                <div>1687</div>
+                <div>
+                    <h3><i></i> Newton y los Sistemas Absolutos</h3>
+                    <p>Isaac Newton introduce el concepto de espacio y tiempo absolutos en su obra "Philosophiæ Naturalis Principia Mathematica". Define el movimiento como cambio de posición respecto a un espacio absoluto e inmutable.</p>
+                    <div>
+                        <span>Primera Ley de Newton</span>
+                        $\vec{F} = 0 \implies \vec{v} = \text{constante}$
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div>1887</div>
+                <div>
+                    <h3><i></i> Experimento de Michelson-Morley</h3>
+                    <p>Fallo en detectar el "viento del éter", lo que cuestionó la existencia de un sistema de referencia absoluto para la luz. Este experimento sentó las bases para la teoría de la relatividad especial.</p>
+                    <p>
+                        <i></i> Resultado: No se detectó movimiento relativo al éter.
+                    </p>
+                </div>
+            </div>
+            
+            <div>
+                <div>1905</div>
+                <div>
+                    <h3><i></i> Einstein y la Relatividad Especial</h3>
+                    <p>Albert Einstein publica su teoría de la relatividad especial, postulando que las leyes de la física son las mismas en todos los sistemas inerciales y que la velocidad de la luz es constante en el vacío.</p>
+                    <div>
+                        <span>Transformaciones de Lorentz</span>
+                        $t' = \gamma \left(t - \frac{vx}{c^2}\right)$
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div>1915</div>
+                <div>
+                    <h3><i></i> Relatividad General</h3>
+                    <p>Einstein extiende sus ideas a sistemas acelerados y gravitación, introduciendo que el espacio-tiempo se curva en presencia de masa y energía. Los sistemas de referencia locales inerciales son aquellos en caída libre.</p>
+                </div>
+            </div>
+            
+            <div>
+                <div>1970s</div>
+                <div>
+                    <h3><i></i> Sistemas de Referencia Modernos</h3>
+                    <p>Desarrollo de sistemas de referencia celestes (ICRF) y terrestres (ITRF) de alta precisión, esenciales para el GPS, astronomía de posición y estudios geodésicos.</p>
+                    <div>
+                        <div>
+                            <div>ICRF</div>
+                            <div>Marco de Referencia Celeste Internacional</div>
+                        </div>
+                        <div>
+                            <div>ITRF</div>
+                            <div>Marco de Referencia Terrestre Internacional</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="video">
+        
+    </section>
+
+    
+    <section id="laboratorio">
+        
+    </section>
+
+    
+    <section id="problemas">
+        <h2>PROBLEMAS RESUELTOS PASO A PASO</h2>
+        
+        <div>
+            <div>
+                <div>NIVEL BÁSICO</div>
+                <h3><i></i> Tren en movimiento</h3>
+                <p>Un tren se mueve a 60 km/h. Un pasajero camina hacia la locomotora a 5 km/h dentro del tren. ¿Qué velocidad mide un observador en tierra?</p>
+                <button onclick="toggleSolution(1)">
+                    <i></i> Ver Solución
+                </button>
+                <div id="solution1">
+                    <h4>Paso 1: Identificar sistemas</h4>
+                    <p>Sistema S: Tierra (fijo). Sistema S': Tren (móvil a 60 km/h).</p>
+                    
+                    <h4>Paso 2: Aplicar transformación</h4>
+                    <p>Velocidad relativa del pasajero respecto al tren: v' = 5 km/h.</p>
+                    <div>
+                        $V = V_{tren} + v' = 60 + 5 = 65 \text{ km/h}$
+                    </div>
+                    
+                    <h4>Paso 3: Interpretar resultado</h4>
+                    <p>El observador en tierra ve al pasajero moverse a 65 km/h en la misma dirección que el tren.</p>
+                </div>
+            </div>
+            
+            <div>
+                <div>NIVEL INTERMEDIO</div>
+                <h3><i></i> Barco cruzando un río</h3>
+                <p>Un barco que navega a 10 m/s en aguas tranquilas cruza un río de 200 m de ancho con corriente de 4 m/s. ¿Cuál debe ser su dirección para llegar directamente al punto opuesto?</p>
+                <button onclick="toggleSolution(2)">
+                    <i></i> Ver Solución
+                </button>
+                <div id="solution2">
+                    <h4>Paso 1: Establecer coordenadas</h4>
+                    <p>Eje X: dirección de la corriente. Eje Y: perpendicular al río.</p>
+                    
+                    <h4>Paso 2: Componentes de velocidad</h4>
+                    <div>
+                        $v_x = v_{barco} \cdot \sin\theta - v_{corriente} = 0$
+                        $v_y = v_{barco} \cdot \cos\theta$
+                    </div>
+                    
+                    <h4>Paso 3: Resolver para θ</h4>
+                    <div>
+                        $\sin\theta = \frac{v_{corriente}}{v_{barco}} = \frac{4}{10} = 0.4$
+                        $\theta = \arcsin(0.4) \approx 23.6^\circ$
+                    </div>
+                    
+                    <p>El barco debe orientarse 23.6° contra la corriente.</p>
+                </div>
+            </div>
+            
+            <div>
+                <div>NIVEL AVANZADO</div>
+                <h3><i></i> Efecto Coriolis en avión</h3>
+                <p>Un avión vuela a 900 km/h desde el ecuador hacia el polo norte siguiendo un meridiano. Calcular la aceleración de Coriolis y su efecto después de 2 horas de vuelo.</p>
+                <button onclick="toggleSolution(3)">
+                    <i></i> Ver Solución
+                </button>
+                <div id="solution3">
+                    <h4>Paso 1: Parámetros conocidos</h4>
+                    <p>Velocidad del avión: v = 900 km/h = 250 m/s</p>
+                    <p>Velocidad angular terrestre: ω = 7.29 × 10⁻⁵ rad/s</p>
+                    
+                    <h4>Paso 2: Aceleración de Coriolis</h4>
+                    <div>
+                        $\vec{a}_c = -2\vec{\omega} \times \vec{v}$
+                        $a_c = 2\omega v \sin\phi$
+                    </div>
+                    
+                    <h4>Paso 3: Desplazamiento lateral</h4>
+                    <div>
+                        $\Delta x = \frac{1}{3}\omega v t^2 \sin\phi$
+                        $\Delta x \approx \frac{1}{3}(7.29\times10^{-5})(250)(7200)^2 \approx 31.5 \text{ km}$
+                    </div>
+                    
+                    <p>Después de 2 horas, el avión se habrá desviado aproximadamente 31.5 km hacia el este.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <button onclick="openProblemBank()">
+                <i></i> BANCO DE 50 PROBLEMAS
+            </button>
+        </div>
+    </section>
+
+    
+    <section id="conversor">
+        <h2>CONVERSOR DE SISTEMAS DE REFERENCIA</h2>
+        
+        <div>
+            <h3>
+                <i></i> Transformación Galileana
+            </h3>
+            
+            <div>
+                <div>
+                    <h4>Sistema Original (S)</h4>
+                    <div>
+                        <label>Posición X (m):</label>
+                        <input type="number" id="posX" value="100" step="10">
+                    </div>
+                    <div>
+                        <label>Posición Y (m):</label>
+                        <input type="number" id="posY" value="50" step="10">
+                    </div>
+                    <div>
+                        <label>Tiempo (s):</label>
+                        <input type="number" id="time" value="10" step="1">
+                    </div>
+                </div>
+                
+                <div>
+                    <h4>Sistema Móvil (S')</h4>
+                    <div>
+                        <label>Velocidad en X (m/s):</label>
+                        <input type="number" id="velX" value="5" step="0.5">
+                    </div>
+                    <div>
+                        <label>Velocidad en Y (m/s):</label>
+                        <input type="number" id="velY" value="0" step="0.5">
+                    </div>
+                    <div>
+                        <label>Tipo de Transformación:</label>
+                        <select id="transformType">
+                            <option value="galileo">Galileana (v ≪ c)</option>
+                            <option value="lorentz">Lorentz (alta velocidad)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="calculateTransformation()">
+                    <i></i> CALCULAR TRANSFORMACIÓN
+                </button>
+            </div>
+            
+            <div id="conversionResult">
+                <h4>Resultado de la Transformación:</h4>
+                <div id="resultValue">x' = 50 m, y' = 50 m, t' = 10 s</div>
+                <div id="resultFormula">
+                    Fórmula aplicada: x' = x - v_x·t, y' = y - v_y·t, t' = t
+                </div>
+            </div>
+            
+            <div>
+                <h4>
+                    <i></i> Interpretación Física
+                </h4>
+                <p id="interpretation">Para un observador en el sistema S' moviéndose a 5 m/s en la dirección X positiva, las coordenadas del evento cambian según las transformaciones galileanas. El tiempo permanece absoluto.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <div>
+        
+        <div>
+            <h2>
+                EL UNIVERSO NO TIENE CENTRO
+            </h2>
+            <p>
+                Cada punto del cosmos puede servir como sistema de referencia válido. La física moderna nos enseña que no hay posición privilegiada para observar el universo.
+            </p>
+            <div>
+                <button onclick="openCosmologyModal()">
+                    <i></i> Explorar Cosmología
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <section id="glosario">
+        <h2>GLOSARIO INTERACTIVO</h2>
+        
+        <div>
+            <div>
+                <button onclick="filterGlossary('all')">Todos los términos</button>
+                <button onclick="filterGlossary('basico')">Conceptos Básicos</button>
+                <button onclick="filterGlossary('avanzado')">Conceptos Avanzados</button>
+                <button onclick="filterGlossary('historico')">Términos Históricos</button>
+            </div>
+            
+            <div>
+                <div>
+                    <div>CONCEPTO BÁSICO</div>
+                    <h3>Sistema de Referencia Inercial</h3>
+                    <p>Sistema de coordenadas en el que un cuerpo libre de fuerzas se mueve con velocidad constante (reposo o MRU). Cumple las leyes de Newton en su forma simple.</p>
+                    <div>
+                        <span>Ejemplo:</span> Laboratorio fijo en la Tierra (aproximadamente).
+                    </div>
+                </div>
+                
+                <div>
+                    <div>CONCEPTO AVANZADO</div>
+                    <h3>Transformaciones de Lorentz</h3>
+                    <p>Conjunto de ecuaciones que relacionan las coordenadas espacio-tiempo entre dos sistemas inerciales en relatividad especial. Reducen a las transformaciones de Galileo para v ≪ c.</p>
+                    <div>
+                        $x' = \gamma(x - vt), \quad t' = \gamma\left(t - \frac{vx}{c^2}\right)$
+                    </div>
+                </div>
+                
+                <div>
+                    <div>TÉRMINO HISTÓRICO</div>
+                    <h3>Éter Luminífero</h3>
+                    <p>Medio hipotético postulado en el siglo XIX para propagar las ondas de luz, análogo al aire para el sonido. El experimento de Michelson-Morley descartó su existencia.</p>
+                </div>
+                
+                <div>
+                    <div>CONCEPTO AVANZADO</div>
+                    <h3>Fuerza de Coriolis</h3>
+                    <p>Fuerza ficticia que aparece en sistemas de referencia en rotación. Desvía objetos en movimiento lateralmente respecto a la dirección de rotación.</p>
+                    <div>
+                        <span>Aplicación:</span> Formación de ciclones, desgaste desigual de rieles.
+                    </div>
+                </div>
+                
+                <div>
+                    <div>CONCEPTO BÁSICO</div>
+                    <h3>Relatividad Galileana</h3>
+                    <p>Principio que establece que las leyes mecánicas son las mismas en todos los sistemas inerciales. El tiempo es absoluto y las velocidades se suman vectorialmente.</p>
+                </div>
+                
+                <div>
+                    <div>CONCEPTO AVANZADO</div>
+                    <h3>Sistema de Referencia Comóvil</h3>
+                    <p>Sistema de coordenadas que se expande con el universo. Utilizado en cosmología para describir la expansión cósmica sin favorecer ningún punto del espacio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="recursos">
+        
+    </section>
+
+    
+    <section id="comunidad">
+        <h2>COMUNIDAD FÍSICA_LAB</h2>
+        
+        <div>
+            <h3>
+                <i></i> Conecta con otros estudiantes
+            </h3>
+            
+            <div>
+                <div>
+                    <div>1,247</div>
+                    <div>Estudiantes activos</div>
+                </div>
+                <div>
+                    <div>356</div>
+                    <div>Problemas resueltos</div>
+                </div>
+                <div>
+                    <div>89</div>
+                    <div>Proyectos compartidos</div>
+                </div>
+                <div>
+                    <div>24/7</div>
+                    <div>Soporte disponible</div>
+                </div>
+            </div>
+            
+            <div>
+                <h4>
+                    <i></i> Discusiones recientes
+                </h4>
+                
+                <div>
+                    <div>
+                        <div>
+                            <i></i> ¿Sistema inercial en un ascensor?
+                        </div>
+                        <div>hace 2 horas</div>
+                    </div>
+                    <p>Discusión sobre si un ascensor en caída libre constituye un sistema inercial...</p>
+                    <div>
+                        <span>12 respuestas</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <div>
+                        <div>
+                            <i></i> Experimento casero con sistemas de referencia
+                        </div>
+                        <div>hace 1 día</div>
+                    </div>
+                    <p>Comparto mi experimento con dos cámaras y una plataforma móvil...</p>
+                    <div>
+                        <span>8 respuestas</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <button onclick="openForum()">
+                        <i></i> Acceder al foro completo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="quiz">
+        
+    </section>
+
+    
+    <section id="proyectos">
+        <h2>PROYECTOS DE INVESTIGACIÓN</h2>
+        
+        <div>
+            <div>
+                <div>
+                    <h3>
+                        <i></i> Sistema de Referencia para Vehículos Autónomos
+                    </h3>
+                    <div>
+                        Proyecto de investigación en colaboración con la Universidad Nacional
+                    </div>
+                </div>
+                <div>
+                    <p>Desarrollo de un sistema de referencia híbrido que combine GPS, inerciales y visión computacional para navegación precisa de vehículos autónomos en entornos urbanos.</p>
+                    
+                    <div>
+                        <div>Robótica</div>
+                        <div>Navegación</div>
+                        <div>Filtro de Kalman</div>
+                        <div>SLAM</div>
+                    </div>
+                    
+                    <div>
+                        <button onclick="openProjectDetails(1)">
+                            <i></i> Detalles
+                        </button>
+                        <button onclick="downloadProjectResources(1)">
+                            <i></i> Recursos
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <h3>
+                        <i></i> Corrección Relativista para Satélites
+                    </h3>
+                    <div>
+                        Estudio teórico-práctico de efectos relativistas en sistemas orbitales
+                    </div>
+                </div>
+                <div>
+                    <p>Análisis detallado de las correcciones por dilatación temporal y contracción espacial necesarias para mantener la precisión en sistemas de navegación por satélite.</p>
+                    
+                    <div>
+                        <div>Relatividad</div>
+                        <div>GPS</div>
+                        <div>Órbitas</div>
+                        <div>Precisión</div>
+                    </div>
+                    
+                    <div>
+                        <button onclick="openProjectDetails(2)">
+                            <i></i> Detalles
+                        </button>
+                        <button onclick="downloadProjectResources(2)">
+                            <i></i> Recursos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <div id="cosmologyModal">
+        <div>
+            <button onclick="closeModal('cosmologyModal')">&times;</button>
+            <h2>
+                <i></i> Sistemas de Referencia en Cosmología
+            </h2>
+            <p>En cosmología, el sistema de referencia comóvil es fundamental. Se define como el sistema que se expande con el universo, de modo que las galaxias lejanas mantienen coordenadas fijas.</p>
+            
+            <div>
+                $ds^2 = -c^2dt^2 + a(t)^2\left[\frac{dr^2}{1-kr^2} + r^2(d\theta^2 + \sin^2\theta d\phi^2)\right]$
+                <span>Métrica de Friedmann-Lemaître-Robertson-Walker</span>
+            </div>
+            
+            <p>Donde <em>a(t)</em> es el factor de escala que describe la expansión cósmica, y <em>k</em> determina la geometría del universo.</p>
+            
+            <h3>Principio Cosmológico</h3>
+            <p>Establece que, a grandes escalas, el universo es homogéneo e isótropo. No hay posiciones ni direcciones privilegiadas.</p>
+            
+            <button onclick="closeModal('cosmologyModal')">
+                <i></i> Cerrar
+            </button>
+        </div>
+    </div>
+
+    <div id="problemBankModal">
+        <div>
+            <button onclick="closeModal('problemBankModal')">&times;</button>
+            <h2>
+                <i></i> Banco de Problemas
+            </h2>
+            <p>Selecciona una categoría para acceder a los problemas:</p>
+            
+            <div>
+                <div onclick="selectProblemCategory('cinematica')">
+                    <i></i>
+                    <h3>Cinemática</h3>
+                    <p>15 problemas</p>
+                </div>
+                <div onclick="selectProblemCategory('relatividad')">
+                    <i></i>
+                    <h3>Relatividad</h3>
+                    <p>10 problemas</p>
+                </div>
+                <div onclick="selectProblemCategory('rotacion')">
+                    <i></i>
+                    <h3>Rotación</h3>
+                    <p>12 problemas</p>
+                </div>
+                <div onclick="selectProblemCategory('aplicaciones')">
+                    <i></i>
+                    <h3>Aplicaciones</h3>
+                    <p>13 problemas</p>
+                </div>
+            </div>
+            
+            <button onclick="closeModal('problemBankModal')">
+                <i></i> Cerrar
+            </button>
+        </div>
+    </div>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

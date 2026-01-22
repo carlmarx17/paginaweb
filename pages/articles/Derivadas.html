@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivadas | Guía Interactiva y Tutorías - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <div>
+        
+        
+
+        <h2>1. Concepto de Derivada</h2>
+        
+        <div>
+            <div>
+                <span>Definición Fundamental</span>
+                <h3>¿Qué es la Derivada?</h3>
+                <p>La derivada de una función f(x) en un punto x = a representa la tasa de cambio instantánea.</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\huge&space;f'(x)&space;=&space;\lim_{h&space;\to&space;0}&space;\frac{f(x+h)&space;-&space;f(x)}{h}" 
+                         alt="Definición de derivada">
+                </div>
+            </div>
+
+            <div>
+                <span>Interpretación Geométrica</span>
+                <h3>Recta Tangente</h3>
+                <p>Es la pendiente de la recta tangente a la gráfica de f en el punto (a, f(a)).</p>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;y&space;-&space;f(a)&space;=&space;f'(a)(x&space;-&space;a)" 
+                         alt="Ecuación de la tangente">
+                </div>
+            </div>
+        </div>
+
+        <div id="visualizador">
+            <h3>📊 Visualizador Interactivo</h3>
+            <p>Explora funciones y sus derivadas con rectas tangentes dinámicas</p>
+            
+            <div>
+                <div>
+                    <label for="funcionDerivada">Función f(x):</label>
+                    <select id="funcionDerivada">
+                        <option value="x2">f(x) = x²</option>
+                        <option value="x3">f(x) = x³</option>
+                        <option value="sin">f(x) = sen(x)</option>
+                        <option value="cos">f(x) = cos(x)</option>
+                        <option value="exp">f(x) = eˣ</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="puntoX">Punto x = <span id="valorX">0</span></label>
+                    <input type="range" id="puntoX" min="-5" max="5" step="0.1" value="0">
+                </div>
+            </div>
+
+            <div>
+                <canvas id="graficoDerivada"></canvas>
+            </div>
+
+            <div>
+                <div>
+                    <div>Valor de f(x)</div>
+                    <div id="valorFuncion">0.00</div>
+                </div>
+                <div>
+                    <div>Derivada f'(x)</div>
+                    <div id="valorDerivada">0.00</div>
+                </div>
+                <div>
+                    <div>Pendiente</div>
+                    <div id="pendienteTangente">0.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tutorias">
+            <div>
+                <h2>¿Te gustaría dominar todas las derivadas?</h2>
+                <p>No solo la regla de la cadena, sino todas las técnicas de derivación con clases personalizadas.</p>
+                
+                <div>
+                    <div>
+                        <div>🎯</div>
+                        <h4>Clases Personalizadas</h4>
+                        <p>Atención individualizada adaptada a tu ritmo.</p>
+                    </div>
+                    <div>
+                        <div>📚</div>
+                        <h4>Material Exclusivo</h4>
+                        <p>Apuntes y ejercicios resueltos para ti.</p>
+                    </div>
+                    <div>
+                        <div>💻</div>
+                        <h4>Modalidad Online</h4>
+                        <p>Clases desde casa con pizarra digital.</p>
+                    </div>
+                    <div>
+                        <div>📈</div>
+                        <h4>Seguimiento</h4>
+                        <p>Evaluaciones para medir tu progreso.</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.link/3zyxd2" target="_blank">📞 Reserva tu clase de prueba gratuita</a>
+            </div>
+        </div>
+        <h2>2. Reglas de Derivación</h2>
+
+        <div>
+            <div>
+                <span>Regla de la Potencia</span>
+                <h3>Derivada de xⁿ</h3>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}(x^n)&space;=&space;nx^{n-1}" 
+                         alt="Regla de la potencia">
+                </div>
+                <p><strong>Ejemplo:</strong> d/dx(x³) = 3x²</p>
+            </div>
+
+            <div>
+                <span>Regla del Producto</span>
+                <h3>Derivada de u·v</h3>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}(uv)&space;=&space;u'v&space;+&space;uv'" 
+                         alt="Regla del producto">
+                </div>
+                <p><strong>Ejemplo:</strong> d/dx(x²·sen(x)) = 2x·sen(x) + x²·cos(x)</p>
+            </div>
+
+            <div>
+                <span>Regla de la Cadena</span>
+                <h3>Derivada de f(g(x))</h3>
+                <div>
+                    <img src="https://latex.codecogs.com/svg.latex?\large&space;\frac{d}{dx}f(g(x))&space;=&space;f'(g(x))&space;\cdot&space;g'(x)" 
+                         alt="Regla de la cadena">
+                </div>
+                <p><strong>Ejemplo:</strong> d/dx(sen(x²)) = cos(x²)·2x</p>
+            </div>
+        </div>
+
+        <h2>3. Tabla de Derivadas Comunes</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Función f(x)</th>
+                    <th>Derivada f'(x)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>c (constante)</td><td>0</td></tr>
+                <tr><td>x</td><td>1</td></tr>
+                <tr><td>xⁿ</td><td>n·xⁿ⁻¹</td></tr>
+                <tr><td>eˣ</td><td>eˣ</td></tr>
+                <tr><td>ln(x)</td><td>1/x</td></tr>
+                <tr><td>sen(x)</td><td>cos(x)</td></tr>
+                <tr><td>cos(x)</td><td>-sen(x)</td></tr>
+                <tr><td>tan(x)</td><td>sec²(x)</td></tr>
+            </tbody>
+        </table>
+
+        <section>
+            <h2>Lo que dicen mis estudiantes</h2>
+            <div>
+                <div>
+                    <p>"Gracias a las clases con Carlos, pasé de tener dificultades en cálculo a sacar la mejor nota de mi grupo. Su explicación de la regla de la cadena fue especialmente clara."</p>
+                    <div>
+                        <div>MG</div>
+                        <div>
+                            <h5>María González</h5>
+                            <small>Estudiante de Ingeniería</small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p>"Preparé mi examen final de cálculo diferencial con Carlos y obtuve un 9.5. Su metodología paso a paso y la paciencia para explicar son increíbles."</p>
+                    <div>
+                        <div>JR</div>
+                        <div>
+                            <h5>Juan Rodríguez</h5>
+                            <small>Estudiante de Física</small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p>"Las clases online son excelentes. La pizarra digital y los recursos interactivos hacen que conceptos complejos como las derivadas implícitas sean mucho más comprensibles."</p>
+                    <div>
+                        <div>AL</div>
+                        <div>
+                            <h5>Ana López</h5>
+                            <small>Estudiante de Economía</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>¿Necesitas Ayuda con Cálculo?</h2>
+            <p>Contáctame para clases personalizadas de cálculo diferencial e integral</p>
+            
+            <form onsubmit="enviarFormulario(event)">
+                <div>
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="tema">Tema de Interés</label>
+                    <select id="tema" name="tema">
+                        <option value="derivadas">Derivadas</option>
+                        <option value="integrales">Integrales</option>
+                        <option value="examen">Preparación Examen</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required>Hola Carlos, me gustaría recibir más información...</textarea>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </div>
+
+    
+
+    <button id="botonScroll">↑</button>
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadística y Probabilidad - Sobrevive al Semestre - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+    
+    
+
+    
+    <section>
+        <div>
+            <div>
+                <h1>Estadística y Probabilidad 📈</h1>
+                <p>Tu guía de supervivencia para aprobar sin sufrir (mucho)</p>
+                <div>
+                    <span>🎲 Probabilidad</span>
+                    <span>📊 Estadística Descriptiva</span>
+                    <span>📉 Distribuciones</span>
+                    <span>🧮 Inferencia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div>
+        
+        <div>
+            <a href="#probabilidad"><i></i> Probabilidad</a>
+            <a href="#descriptiva"><i></i> Descriptiva</a>
+            <a href="#distribuciones"><i></i> Distribuciones</a>
+            <a href="#inferencia"><i></i> Inferencia</a>
+            <a href="#quiz"><i></i> Quiz</a>
+        </div>
+
+        
+        <section>
+            <h2>
+                <i></i>
+                Bienvenido al Infierno de los Números
+            </h2>
+
+            <p>
+                Felicidades, has llegado a Estadística y Probabilidad. Ese lugar mágico donde:
+            </p>
+
+            <div>
+                <div>
+                    <div>🎯</div>
+                    <div>El 68% es "normal"</div>
+                    <p>Y tú pensando que eras especial... Spoiler: estás en la primera desviación estándar.</p>
+                </div>
+
+                <div>
+                    <div>🎲</div>
+                    <div>Todo es "probable"</div>
+                    <p>¿Aprobar sin estudiar? Probabilidad: 0.000001. ¿Que sea una pregunta del quiz? Probabilidad: 0.99</p>
+                </div>
+
+                <div>
+                    <div>📊</div>
+                    <div>Las gráficas mienten</div>
+                    <p>Como tu ex. Pero aprendes a interpretarlas para que no te engañen.</p>
+                </div>
+
+                <div>
+                    <div>🤯</div>
+                    <div>El p-valor es vida</div>
+                    <p>Si p < 0.05, rechazas H₀. Si no entiendes esto, estás en problemas.</p>
+                </div>
+            </div>
+
+            <div>
+                <div>😂 Verdad Universal</div>
+                <p><strong>Estudiante:</strong> "Profe, ¿esto entra en el examen?"<br>
+                <strong>Profesor de Estadística:</strong> "Con un 95% de confianza, sí."<br>
+                <strong>Estudiante:</strong> *estudia todo*<br>
+                <strong>Examen:</strong> *pregunta del 5%*</p>
+            </div>
+        </section>
+
+        
+        <section id="probabilidad">
+            <h2>
+                <i></i>
+                1. Probabilidad Básica
+            </h2>
+
+            <p>La probabilidad es el arte de predecir el futuro... y equivocarse con precisión matemática.</p>
+
+            <div>
+                <div>
+                    <div>Definición Clásica</div>
+                    <p>Cuando todos los resultados son igualmente probables.</p>
+                    <div>
+                        P(A) = casos favorables / casos posibles
+                    </div>
+                    <p>
+                        Ejemplo: ¿Probabilidad de sacar un 6 en un dado? 1/6 = 16.67%
+                    </p>
+                </div>
+
+                <div>
+                    <div>Regla de la Suma</div>
+                    <p>Cuando A y B son eventos mutuamente excluyentes.</p>
+                    <div>
+                        P(A ∪ B) = P(A) + P(B)
+                    </div>
+                    <p>
+                        Ejemplo: ¿Probabilidad de sacar 5 O 6? 1/6 + 1/6 = 1/3
+                    </p>
+                </div>
+
+                <div>
+                    <div>Regla del Producto</div>
+                    <p>Para eventos independientes.</p>
+                    <div>
+                        P(A ∩ B) = P(A) × P(B)
+                    </div>
+                    <p>
+                        Ejemplo: ¿Dos monedas salen cara? 0.5 × 0.5 = 0.25
+                    </p>
+                </div>
+
+                <div>
+                    <div>Probabilidad Condicional</div>
+                    <p>La probabilidad de A dado que B ya ocurrió.</p>
+                    <div>
+                        P(A|B) = P(A ∩ B) / P(B)
+                    </div>
+                    <p>
+                        Cuando tu crush dice "hablamos luego" = P(salir|visto) ≈ 0
+                    </p>
+                </div>
+            </div>
+
+            
+            <div>
+                <h3>
+                    🎲 Simulador de Lanzamiento de Dados
+                </h3>
+
+                <div id="diceContainer">
+                    <div id="dice1"></div>
+                    <div id="dice2"></div>
+                </div>
+
+                <button onclick="rollDice()">
+                    <i></i>
+                    ¡Lanzar Dados!
+                </button>
+
+                <div id="diceResults">
+                    <h4>Resultados:</h4>
+                    <div>
+                        <span>Dado 1:</span>
+                        <span id="dice1Result">-</span>
+                    </div>
+                    <div>
+                        <span>Dado 2:</span>
+                        <span id="dice2Result">-</span>
+                    </div>
+                    <div>
+                        <span>Suma Total:</span>
+                        <span id="diceSum">-</span>
+                    </div>
+                    <div>
+                        <span>Lanzamientos:</span>
+                        <span id="rollCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div>💀 Ley de Murphy Probabilística</div>
+                <p>Si hay dos caminos y uno te lleva al éxito, la probabilidad de que escojas el equivocado es del 100%. 
+                Esto no está en tu libro de texto, pero lo comprobarás en el examen.</p>
+            </div>
+        </section>
+
+        
+        <section id="descriptiva">
+            <h2>
+                <i></i>
+                2. Estadística Descriptiva
+            </h2>
+
+            <p>El arte de resumir mil números en tres que nadie va a entender igual.</p>
+
+            <h3>Medidas de Tendencia Central</h3>
+
+            <div>
+                <div>
+                    <div>📊</div>
+                    <div>Media (μ o x̄)</div>
+                    <div>
+                        x̄ = Σx / n
+                    </div>
+                    <p>El promedio. El que te dice que "en promedio" te va bien... aunque hayas reprobado 3 parciales.</p>
+                </div>
+
+                <div>
+                    <div>🎯</div>
+                    <div>Mediana</div>
+                    <div>
+                        Valor central ordenado
+                    </div>
+                    <p>El valor del medio. Útil cuando Bill Gates entra al salón y la media salarial se dispara.</p>
+                </div>
+
+                <div>
+                    <div>👑</div>
+                    <div>Moda</div>
+                    <div>
+                        Valor más frecuente
+                    </div>
+                    <p>El número popular. Como ese amigo que todos conocen en las fiestas.</p>
+                </div>
+            </div>
+
+            <h3>Medidas de Dispersión</h3>
+
+            <div>
+                <div>
+                    <div>📏</div>
+                    <div>Rango</div>
+                    <div>
+                        R = Max - Min
+                    </div>
+                    <p>La diferencia entre tu mejor y peor calificación. Doloroso pero simple.</p>
+                </div>
+
+                <div>
+                    <div>📐</div>
+                    <div>Varianza (σ²)</div>
+                    <div>
+                        σ² = Σ(x - μ)² / n
+                    </div>
+                    <p>Qué tan lejos están tus datos de la media. Al cuadrado porque así es más doloroso.</p>
+                </div>
+
+                <div>
+                    <div>📊</div>
+                    <div>Desviación Estándar (σ)</div>
+                    <div>
+                        σ = √(σ²)
+                    </div>
+                    <p>La raíz de la varianza. Ahora sí en unidades que puedes entender.</p>
+                </div>
+
+                <div>
+                    <div>%</div>
+                    <div>Coef. de Variación</div>
+                    <div>
+                        CV = (σ / μ) × 100%
+                    </div>
+                    <p>Para comparar dispersión entre conjuntos con diferentes unidades. Útil, confuso, necesario.</p>
+                </div>
+            </div>
+
+            
+            <div>
+                <h3>
+                    🧮 Calculadora de Estadística Descriptiva
+                </h3>
+
+                <div>
+                    <label>Ingresa tus datos (separados por comas):</label>
+                    <input type="text" id="dataInput" placeholder="Ej: 5, 7, 3, 9, 2, 8, 4, 6, 10, 5">
+                </div>
+
+                <button onclick="calculateStats()">
+                    <i></i>
+                    Calcular Estadísticas
+                </button>
+
+                <div id="statsResults">
+                    <h4>Resultados:</h4>
+                    <div>
+                        <span>Media (x̄):</span>
+                        <span id="meanResult">-</span>
+                    </div>
+                    <div>
+                        <span>Mediana:</span>
+                        <span id="medianResult">-</span>
+                    </div>
+                    <div>
+                        <span>Moda:</span>
+                        <span id="modeResult">-</span>
+                    </div>
+                    <div>
+                        <span>Desviación Estándar (σ):</span>
+                        <span id="stdDevResult">-</span>
+                    </div>
+                    <div>
+                        <span>Varianza (σ²):</span>
+                        <span id="varianceResult">-</span>
+                    </div>
+                    <div>
+                        <span>Rango:</span>
+                        <span id="rangeResult">-</span>
+                    </div>
+                </div>
+
+                <div id="dataChart">
+                    <h4>Visualización de Datos</h4>
+                    <div id="barChart"></div>
+                </div>
+            </div>
+
+            <div>
+                <div>😅 Realidad Estadística</div>
+                <p><strong>Profesor:</strong> "La media de sus calificaciones es 7.5"<br>
+                <strong>Tú:</strong> "¡Genial!"<br>
+                <strong>Profesor:</strong> "La desviación estándar es 3.2"<br>
+                <strong>Tú:</strong> "..."<br>
+                <strong>Narrador:</strong> "El estudiante tenía un 4 y pensaba que iba bien."</p>
+            </div>
+        </section>
+
+        
+        <section id="distribuciones">
+            <h2>
+                <i></i>
+                3. Distribuciones de Probabilidad
+            </h2>
+
+            <p>Donde descubres que todo en el universo sigue patrones... excepto tu vida amorosa.</p>
+
+            <h3>Distribuciones Discretas</h3>
+
+            <div>
+                <div>
+                    <div>🎯</div>
+                    <div>Binomial</div>
+                    <div>
+                        P(X=k) = C(n,k) × p^k × (1-p)^(n-k)
+                    </div>
+                    <p>Éxitos en n intentos. Como aprobar 3 de 5 exámenes.</p>
+                    <p><strong>Ejemplo:</strong> Lanzar una moneda 10 veces.</p>
+                </div>
+
+                <div>
+                    <div>📞</div>
+                    <div>Poisson</div>
+                    <div>
+                        P(X=k) = (λ^k × e^(-λ)) / k!
+                    </div>
+                    <p>Eventos en un intervalo de tiempo. Como mensajes de tu ex a las 3 AM.</p>
+                    <p><strong>Ejemplo:</strong> Llamadas por hora en un call center.</p>
+                </div>
+
+                <div>
+                    <div>🎰</div>
+                    <div>Geométrica</div>
+                    <div>
+                        P(X=k) = (1-p)^(k-1) × p
+                    </div>
+                    <p>Intentos hasta el primer éxito. Como matches en Tinder.</p>
+                    <p><strong>Ejemplo:</strong> Lanzamientos hasta sacar un 6.</p>
+                </div>
+            </div>
+
+            <h3>Distribución Normal (La Reina)</h3>
+
+            <div>
+                <p>
+                    La distribución más famosa del universo. Tiene forma de campana y describe TODO: alturas, pesos, IQ, errores de medición... 
+                    hasta el tiempo que tardas en llegar tarde a clase.
+                </p>
+
+                <div>
+                    f(x) = (1 / (σ√(2π))) × e^(-(x-μ)²/(2σ²))
+                </div>
+
+                <div>
+                    <canvas id="normalCanvas"></canvas>
+                </div>
+
+                <div>
+                    <div>
+                        <div>68%</div>
+                        <div>dentro de ±1σ</div>
+                        <div>La mayoría somos mediocres</div>
+                    </div>
+                    <div>
+                        <div>95%</div>
+                        <div>dentro de ±2σ</div>
+                        <div>Casi todos estamos aquí</div>
+                    </div>
+                    <div>
+                        <div>99.7%</div>
+                        <div>dentro de ±3σ</div>
+                        <div>Los outliers son raros</div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div>🤓 Chiste de Estadístico</div>
+                <p>Tres estadísticos van de caza. Ven un pato. El primero dispara 1 metro a la izquierda. 
+                El segundo dispara 1 metro a la derecha. El tercero grita: "¡Le dimos!"<br><br>
+                <em>Bienvenido a la estadística, donde el promedio es perfecto pero la realidad apesta.</em></p>
+            </div>
+        </section>
+
+        
+        <section id="inferencia">
+            <h2>
+                <i></i>
+                4. Inferencia Estadística
+            </h2>
+
+            <p>El arte de adivinar cosas sobre toda una población usando solo una muestra. Como juzgar un restaurante por una sola visita.</p>
+
+            <h3>Intervalos de Confianza</h3>
+
+            <div>
+                <div>Intervalo de Confianza para la Media</div>
+                <div>
+                    IC = x̄ ± Z(α/2) × (σ/√n)
+                </div>
+                <p>
+                    <strong>¿Qué significa?</strong> "Estoy 95% seguro de que la media verdadera está en este rango."<br>
+                    <strong>Traducción:</strong> "No tengo ni idea, pero matemáticamente suena bien."
+                </p>
+                <div>
+                    <strong>Valores Z comunes:</strong><br>
+                    • 90% de confianza: Z = 1.645<br>
+                    • 95% de confianza: Z = 1.96 (el más usado)<br>
+                    • 99% de confianza: Z = 2.576
+                </div>
+            </div>
+
+            <h3>Pruebas de Hipótesis</h3>
+
+            <div>
+                <h4>El Proceso (en 5 pasos que olvidarás en el examen)</h4>
+                
+                <div>
+                    <div>
+                        <strong>1. Plantear Hipótesis</strong><br>
+                        • H₀ (Nula): "No hay efecto" (lo aburrido)<br>
+                        • H₁ (Alternativa): "Sí hay efecto" (lo interesante)
+                    </div>
+                    
+                    <div>
+                        <strong>2. Elegir nivel de significancia (α)</strong><br>
+                        Generalmente α = 0.05 (porque sí, no preguntes)
+                    </div>
+                    
+                    <div>
+                        <strong>3. Calcular el estadístico de prueba</strong><br>
+                        Z = (x̄ - μ₀) / (σ/√n) para muestras grandes<br>
+                        t = (x̄ - μ₀) / (s/√n) para muestras pequeñas
+                    </div>
+                    
+                    <div>
+                        <strong>4. Calcular p-valor</strong><br>
+                        La probabilidad de obtener tus resultados si H₀ fuera cierta
+                    </div>
+                    
+                    <div>
+                        <strong>5. Decidir</strong><br>
+                        Si p < α: Rechazas H₀ (¡hay efecto!)<br>
+                        Si p ≥ α: No rechazas H₀ (no hay evidencia suficiente)
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div>💀 Error Tipo I vs Error Tipo II</div>
+                <p><strong>Error Tipo I (α):</strong> Rechazar H₀ cuando es verdadera.<br>
+                <em>Ejemplo:</em> Declararte a alguien que NO está interesado. Rechazaste la "hipótesis nula" (que no le gustas) incorrectamente. Vergüenza nivel: máximo.<br><br>
+                
+                <strong>Error Tipo II (β):</strong> No rechazar H₀ cuando es falsa.<br>
+                <em>Ejemplo:</em> NO declararte a alguien que SÍ está interesado. Te quedaste con la "hipótesis nula" cuando era falsa. Arrepentimiento nivel: infinito.<br><br>
+                
+                <strong>Conclusión:</strong> En estadística y en la vida, siempre la cagas de una forma u otra.</p>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>
+                <i></i>
+                Cheat Sheet: Fórmulas que te salvarán la vida
+            </h2>
+
+            <div>
+                <h3>
+                    📝 Guárdalo, imprímelo, tatuátelo
+                </h3>
+
+                <div>
+                    <span>Probabilidad Clásica:</span>
+                    <span>P(A) = n(A) / n(S)</span>
+                </div>
+
+                <div>
+                    <span>Probabilidad Condicional:</span>
+                    <span>P(A|B) = P(A ∩ B) / P(B)</span>
+                </div>
+
+                <div>
+                    <span>Media:</span>
+                    <span>μ = Σx / n</span>
+                </div>
+
+                <div>
+                    <span>Varianza:</span>
+                    <span>σ² = Σ(x - μ)² / n</span>
+                </div>
+
+                <div>
+                    <span>Desviación Estándar:</span>
+                    <span>σ = √(σ²)</span>
+                </div>
+
+                <div>
+                    <span>Z-score:</span>
+                    <span>Z = (x - μ) / σ</span>
+                </div>
+
+                <div>
+                    <span>Intervalo de Confianza:</span>
+                    <span>IC = x̄ ± Z × (σ/√n)</span>
+                </div>
+
+                <div>
+                    <span>Tamaño de Muestra:</span>
+                    <span>n = (Z² × σ² × (σ² / E²)</span>
+                </div>
+
+                <div>
+                    <span>Binomial:</span>
+                    <span>P(X=k) = C(n,k) × p^k × (1-p)^(n-k)</span>
+                </div>
+
+                <div>
+                    <span>Poisson:</span>
+                    <span>P(X=k) = (λ^k × e^(-λ)) / k!</span>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="quiz">
+            <h2>
+                <i></i>
+                Quiz: ¿Sobrevivirás el examen?
+            </h2>
+
+            <p>Momento de la verdad. Si fallas aquí, estudia más. Si apruebas, igual estudia más.</p>
+
+            <div>
+                
+                <div>
+                    <div>1. Si lanzas dos dados, ¿cuál es la probabilidad de obtener suma 7?</div>
+                    <div>
+                        <div onclick="checkAnswer(this, false, 'q1')">A) 1/12</div>
+                        <div onclick="checkAnswer(this, true, 'q1')">B) 1/6</div>
+                        <div onclick="checkAnswer(this, false, 'q1')">C) 1/9</div>
+                        <div onclick="checkAnswer(this, false, 'q1')">D) 1/36</div>
+                    </div>
+                    <div id="q1"></div>
+                </div>
+
+                
+                <div>
+                    <div>2. En una distribución normal, ¿qué porcentaje de datos está dentro de ±1 desviación estándar?</div>
+                    <div>
+                        <div onclick="checkAnswer(this, false, 'q2')">A) 95%</div>
+                        <div onclick="checkAnswer(this, true, 'q2')">B) 68%</div>
+                        <div onclick="checkAnswer(this, false, 'q2')">C) 99.7%</div>
+                        <div onclick="checkAnswer(this, false, 'q2')">D) 50%</div>
+                    </div>
+                    <div id="q2"></div>
+                </div>
+
+                
+                <div>
+                    <div>3. Si p-valor = 0.03 y α = 0.05, debes:</div>
+                    <div>
+                        <div onclick="checkAnswer(this, true, 'q3')">A) Rechazar H₀</div>
+                        <div onclick="checkAnswer(this, false, 'q3')">B) No rechazar H₀</div>
+                        <div onclick="checkAnswer(this, false, 'q3')">C) Aumentar el tamaño de muestra</div>
+                        <div onclick="checkAnswer(this, false, 'q3')">D) Llorar</div>
+                    </div>
+                    <div id="q3"></div>
+                </div>
+
+                
+                <div>
+                    <div>4. La mediana es mejor que la media cuando:</div>
+                    <div>
+                        <div onclick="checkAnswer(this, false, 'q4')">A) Los datos son simétricos</div>
+                        <div onclick="checkAnswer(this, true, 'q4')">B) Hay valores atípicos (outliers)</div>
+                        <div onclick="checkAnswer(this, false, 'q4')">C) Quieres impresionar al profe</div>
+                        <div onclick="checkAnswer(this, false, 'q4')">D) Es martes</div>
+                    </div>
+                    <div id="q4"></div>
+                </div>
+
+                
+                <div>
+                    <div>5. ¿Cuál distribución usas para eventos raros en un intervalo de tiempo?</div>
+                    <div>
+                        <div onclick="checkAnswer(this, false, 'q5')">A) Normal</div>
+                        <div onclick="checkAnswer(this, false, 'q5')">B) Binomial</div>
+                        <div onclick="checkAnswer(this, true, 'q5')">C) Poisson</div>
+                        <div onclick="checkAnswer(this, false, 'q5')">D) Uniforme</div>
+                    </div>
+                    <div id="q5"></div>
+                </div>
+
+                
+                <div>
+                    <div>6. Si el intervalo de confianza del 95% NO incluye el valor hipotético μ₀, entonces:</div>
+                    <div>
+                        <div onclick="checkAnswer(this, true, 'q6')">A) Rechazas H₀ a nivel α = 0.05</div>
+                        <div onclick="checkAnswer(this, false, 'q6')">B) No rechazas H₀</div>
+                        <div onclick="checkAnswer(this, false, 'q6')">C) Necesitas más datos</div>
+                        <div onclick="checkAnswer(this, false, 'q6')">D) El profesor se equivocó</div>
+                    </div>
+                    <div id="q6"></div>
+                </div>
+            </div>
+
+            <div>
+                <div>🎓 Mensaje Final</div>
+                <p>Si llegaste hasta aquí, felicidades. Ya sabes más estadística que el 68% de la población 
+                (suponiendo una distribución normal del conocimiento estadístico, con μ = "confusión" y σ = "pánico").
+                <br><br>
+                <strong>Recuerda:</strong> La estadística no miente, pero los estadísticos sí. Y tu profesor también, 
+                cuando dice que "el examen será fácil".</p>
+            </div>
+        </section>
+    </div>
+
+    
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

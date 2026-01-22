@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisea: Trigonometría de la Navegación | Tutorías Carlos - Profesor Carlos Martinez</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../../index.html" class="navbar-logo">
+                <i class="fas fa-atom"></i> Profesor Carlos Martinez
+            </a>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
+                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
+                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-10">
+        <!-- Back Button -->
+        <div class="mb-4 mt-4">
+            <a href="../../index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+        </div>
+
+        <article class="content-article">
+            <!-- Injected Content Starts Here -->
+            
+
+
+
+
+    
+
+    <section>
+        <div>
+            <h1>Trigonometría de la Navegación</h1>
+            <p>"Aprende a medir la distancia a la costa y el rumbo hacia Ítaca usando la ciencia de los ángulos y los triángulos."</p>
+        </div>
+    </section>
+
+    <section id="teoria">
+        <h2>El Arte de la Triangulación</h2>
+        
+        <div>
+            <h3>1. Triangulación de Posición</h3>
+            <p>Para determinar la distancia a un punto de referencia (como el faro de una isla), Odiseo utiliza la triangulación. Si conoce la distancia entre dos puntos en su nave y mide los ángulos de observación hacia el faro, puede hallar su posición exacta.</p>
+            <div>
+                $\text{Relación SOH-CAH-TOA:}$
+                $\tan(\theta) = \frac{\text{Cateto Opuesto}}{\text{Cateto Adyacente}}$
+            </div>
+            <p>Si la altura del mástil es conocida, midiendo el ángulo de depresión hacia un objeto en el mar, podemos calcular la distancia horizontal.</p>
+        </div>
+
+        <div id="leyes">
+            <h3>2. Ley de Senos y Cosenos en el Mar</h3>
+            <p>Cuando el triángulo de navegación no es rectángulo (oblicuángulo), recurrimos a las leyes fundamentales de la trigonometría esférica aplicada al plano:</p>
+            <div>
+                $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+                $a^2 = b^2 + c^2 - 2bc \cos A$
+            </div>
+            <p>Estas herramientas permiten calcular el rumbo necesario para compensar la deriva causada por los vientos de Eolo.</p>
+        </div>
+    </section>
+
+    
+
+    <section id="simulador">
+        <h2>Laboratorio de Triangulación</h2>
+        <div id="simulador-trig">
+            <p>Ajusta los ángulos de visión para calcular la distancia de la nave a Ítaca.</p>
+            <div>
+                <canvas id="trigCanvas"></canvas>
+            </div>
+            <div>
+                <div>
+                    <label>Ángulo de Elevación (\(\alpha\)): <span id="angVal">30</span>°</label>
+                    <input type="range" id="angSlider" min="10" max="80" step="1" value="30">
+                </div>
+                <div>
+                    <label>Altura del Mástil (\(h\)): <span id="hVal">20</span> m</label>
+                    <input type="range" id="hSlider" min="5" max="50" step="1" value="20">
+                </div>
+            </div>
+            <div>
+                <h4>Resultados de Navegación:</h4>
+                <p>Distancia Horizontal a Tierra (\(d = h / \tan \alpha\)): <span id="distRes">34.64</span> metros</p>
+                <p>Distancia Visual (Hipotenusa): <span id="hipRes">40.00</span> metros</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz">
+        <h2>Desafío del Astrónomo</h2>
+        <div id="quiz-section">
+            <p id="quizQuestion">Si Odiseo ve la cima de un acantilado de 100m con un ángulo de elevación de 45°, ¿a qué distancia se encuentra de la base del acantilado?</p>
+            <div id="quizOptions">
+                
+            </div>
+            <p id="quizFeedback"></p>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Navega con Seguridad en las Matemáticas</h2>
+        <p>¿Necesitas ayuda con trigonometría, geometría o cálculo aplicado? Estoy aquí para guiarte en tu travesía académica.</p>
+        
+        <div>
+            <p><strong>Carlos Martínez</strong></p>
+            <p>Tutorías Especializadas en Ciencias Exactas</p>
+            <p><i></i> <a href="mailto:carlossibaja644@gmail.com">carlossibaja644@gmail.com</a></p>
+            <p><i></i> +57 310 310 6954</p>
+        </div>
+
+        <a href="https://wa.me/573103106954" target="_blank">
+            <i></i> Contactar por WhatsApp
+        </a>
+    </section>
+
+    
+
+    
+
+
+            <!-- Injected Content Ends Here -->
+        </article>
+
+        <!-- Dynamic Navigation (Next/Prev) -->
+        <div id="article-navigation" class="article-nav">
+            <!-- Content injected by js/article-nav.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h3>Profesor Carlos Martinez</h3>
+                <p>Educación de calidad para todos.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../../pages/guias.html">Guías</a></li>
+                    <li><a href="../../pages/mundos.html">Mundos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/app.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>
