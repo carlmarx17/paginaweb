@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Química | Las Leyes de los Gases | Mundo Académico</title>
+    <title>Mundo Química | Mundo Académico</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
         rel="stylesheet">
@@ -41,7 +41,7 @@
         <!-- Hero Section -->
         <header class="hero animacion-entrada">
             <div class="hero-content">
-                <h1>Mundo Química | Las Leyes de los Gases</h1>
+                <h1>Mundo Química</h1>
                 <p>Aprende la química de los gases con analogías que nunca olvidarás. ¡Descubre cómo se comportan las partículas cuando les das "chocolate" (energía)!...</p>
 
                 <div class="hero-estadisticas">
@@ -96,16 +96,21 @@
         <p>¿Qué pasa cuando a un salón lleno de niños les das chocolate, Vive 100 o Speed? ¡Se vuelven locos! En química, esto es exactamente lo que ocurre con los gases cuando aumentamos su energía.</p>
         
         <div>
-            <iframe src="https://drive.google.com/file/d/1jgiQZK8KwChHnWim4enJp5MVtV-TvDJ-/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
+<div class="video-wrapper">
+
+<div class="video-wrapper">
+<iframe src="https://drive.google.com/file/d/1jgiQZK8KwChHnWim4enJp5MVtV-TvDJ-/preview" allow="autoplay" allowfullscreen></iframe>
+</div>
+
+</div>
+ </div>
         
         <div>
             <div>
                 <div>🔥</div>
                 <h3>Energía Térmica (Chocolate)</h3>
                 <p>El chocolate es la <strong>Temperatura</strong>. A mayor chocolate, los niños corren a "Speed 100". En un gas, esto aumenta la velocidad de las moléculas.</p>
-                <div>
-                    \[ \text{Temperatura} \uparrow = \text{Energía} \uparrow \]
+                <div class="ecuacion">\[ \text{Temperatura} \uparrow = \text{Energía} \uparrow \]
                 </div>
             </div>
             
@@ -113,8 +118,7 @@
                 <div>💥</div>
                 <h3>Presión (Los Choques)</h3>
                 <p>Como corren tan rápido, chocan más veces contra las paredes del salón. ¡Eso es la <strong>Presión</strong>! Más choques = mayor presión.</p>
-                <div>
-                    \[ \text{Choques} \uparrow = \text{Presión} \uparrow \]
+                <div class="ecuacion">\[ \text{Choques} \uparrow = \text{Presión} \uparrow \]
                 </div>
             </div>
             
@@ -122,8 +126,7 @@
                 <div>📈</div>
                 <h3>Volumen (Espacio)</h3>
                 <p>Si los niños tienen mucha energía, no van a estar quietos en un rincón. ¡Querrán todo el salón para ellos! Más energía = más espacio necesario.</p>
-                <div>
-                    \[ \text{Energía} \uparrow = \text{Volumen} \uparrow \]
+                <div class="ecuacion">\[ \text{Energía} \uparrow = \text{Volumen} \uparrow \]
                 </div>
             </div>
         </div>
@@ -246,7 +249,7 @@
             </div>
             
             <div>
-                <div>🔥 Ley de Gay-Lussac: P vs T</div>
+                <div class="ecuacion">🔥 Ley de Gay-Lussac: P vs T</div>
                 <p>Presión y Temperatura son <strong>directamente proporcionales</strong> (a V constante)</p>
                 <canvas id="gayLussacChart"></canvas>
                 <p>P ∝ T (Línea recta que pasa por el origen)</p>
@@ -268,7 +271,7 @@
                 <h3>Ley de Boyle</h3>
                 <p><strong>Relación:</strong> Presión vs Volumen</p>
                 <p>A temperatura constante, el volumen de un gas es <strong>inversamente proporcional</strong> a su presión.</p>
-                <div>\[ P_1V_1 = P_2V_2 \]</div>
+                <div class="ecuacion">\[ P_1V_1 = P_2V_2 \]</div>
                 <p><strong>Analogía:</strong> Apretar un salón de niños (↓V) hace que choquen más (↑P).</p>
             </div>
             
@@ -278,7 +281,7 @@
                 <h3>Ley de Charles</h3>
                 <p><strong>Relación:</strong> Volumen vs Temperatura</p>
                 <p>A presión constante, el volumen de un gas es <strong>directamente proporcional</strong> a su temperatura.</p>
-                <div>\[ \frac{V_1}{T_1} = \frac{V_2}{T_2} \]</div>
+                <div class="ecuacion">\[ \frac{V_1}{T_1} = \frac{V_2}{T_2} \]</div>
                 <p><strong>Analogía:</strong> Más chocolate (↑T) hace que los niños necesiten más espacio (↑V).</p>
             </div>
             
@@ -288,7 +291,7 @@
                 <h3>Ley de Gay-Lussac</h3>
                 <p><strong>Relación:</strong> Presión vs Temperatura</p>
                 <p>A volumen constante, la presión de un gas es <strong>directamente proporcional</strong> a su temperatura.</p>
-                <div>\[ \frac{P_1}{T_1} = \frac{P_2}{T_2} \]</div>
+                <div class="ecuacion">\[ \frac{P_1}{T_1} = \frac{P_2}{T_2} \]</div>
                 <p><strong>Analogía:</strong> En un salón fijo, más chocolate (↑T) causa más choques (↑P).</p>
             </div>
             
@@ -298,7 +301,7 @@
                 <h3>Ley de Avogadro</h3>
                 <p><strong>Relación:</strong> Volumen vs Cantidad</p>
                 <p>A presión y temperatura constantes, el volumen es <strong>directamente proporcional</strong> a los moles.</p>
-                <div>\[ \frac{V_1}{n_1} = \frac{V_2}{n_2} \]</div>
+                <div class="ecuacion">\[ \frac{V_1}{n_1} = \frac{V_2}{n_2} \]</div>
                 <p><strong>Analogía:</strong> Más niños en el salón (↑n) necesitan más espacio (↑V).</p>
             </div>
             
@@ -308,7 +311,7 @@
                 <h3>Ley Combinada</h3>
                 <p><strong>Relación:</strong> P, V y T</p>
                 <p>Combina las leyes de Boyle, Charles y Gay-Lussac cuando cambian múltiples variables.</p>
-                <div>\[ \frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2} \]</div>
+                <div class="ecuacion">\[ \frac{P_1V_1}{T_1} = \frac{P_2V_2}{T_2} \]</div>
                 <p><strong>Analogía:</strong> Cambios simultáneos en el salón, chocolate y apretón.</p>
             </div>
             
@@ -318,7 +321,7 @@
                 <h3>Ley Ideal</h3>
                 <p><strong>Relación:</strong> P, V, n, T</p>
                 <p>Ecuación de estado que relaciona todas las variables de un gas ideal.</p>
-                <div>\[ PV = nRT \]</div>
+                <div class="ecuacion">\[ PV = nRT \]</div>
                 <p><strong>Donde R = 0.0821 atm·L/mol·K</strong></p>
                 <p><strong>Analogía:</strong> La ecuación maestra del comportamiento del salón completo.</p>
             </div>

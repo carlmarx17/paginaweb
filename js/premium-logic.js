@@ -69,6 +69,63 @@ function initCounters() {
     setInterval(actualizarContadores, 10000);
 }
 
+// --- QUIZ LOGIC ---
+function checkAnswer(element, isCorrect, quizId) {
+    const parent = element.parentElement;
+    const options = parent.querySelectorAll('.opcion');
+
+    // Clear previous results in this quiz
+    options.forEach(opt => {
+        opt.classList.remove('correcta', 'incorrecta');
+    });
+
+    if (isCorrect) {
+        element.classList.add('correcta');
+        // Play success sound or animation if needed
+        element.style.animation = 'pulse 0.5s ease-in-out';
+    } else {
+        element.classList.add('incorrecta');
+        // Subtle shake animation
+        element.style.animation = 'shake 0.4s ease-in-out';
+    }
+
+    // Feedback message if quizId provided
+    const feedbackEl = document.getElementById(quizId);
+    if (feedbackEl) {
+        feedbackEl.style.display = 'block';
+        feedbackEl.style.padding = '15px';
+        feedbackEl.style.marginTop = '10px';
+        feedbackEl.style.borderRadius = '10px';
+        feedbackEl.style.fontWeight = 'bold';
+
+        if (isCorrect) {
+            feedbackEl.style.background = '#d4edda';
+            feedbackEl.style.color = '#155724';
+            feedbackEl.innerHTML = '¡Excelente! Respuesta correcta. 🌟';
+        } else {
+            feedbackEl.style.background = '#f8d7da';
+            feedbackEl.style.color = '#721c24';
+            feedbackEl.innerHTML = 'Casi... intenta de nuevo. 💡';
+        }
+    }
+}
+
+// --- ANIMATIONS FOR QUIZ ---
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+    }
+`;
+document.head.appendChild(style);
+
 // --- INICIALIZACIÓN ---
 window.addEventListener('DOMContentLoaded', () => {
     initDarkMode();

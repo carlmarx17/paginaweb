@@ -4,73 +4,956 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo de Saberes - Guías de Estudio</title>
+    <title>Universo de Saberes - Biblioteca Digital Interdisciplinaria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/library.css">
+        .card-transition {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card-transition:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Enlaces del modal - Estilo Botón */
+        .topic-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .topic-link:hover {
+            transform: translateX(4px);
+            background-color: #f1f5f9;
+            /* Slate 100 */
+        }
+
+        /* Estilos para scroll horizontal en móviles para los filtros */
+        .overflow-x-auto::-webkit-scrollbar {
+            display: none;
+        }
+
+        .overflow-x-auto {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Scrollbar personalizado para paneles */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        @keyframes modalPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .animate-modal {
+            animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="text-slate-900 overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-700">
 
-    <!-- React & Babel for JSX -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Navegación -->
+    <header class="sticky top-0 z-50 w-full glass-header shadow-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center py-4 gap-6">
+                <!-- Logo -->
+                <div class="flex items-center gap-4 group cursor-pointer"
+                    onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div
+                        class="bg-gradient-to-br from-indigo-600 to-violet-700 p-2.5 rounded-2xl shadow-lg shadow-indigo-200 group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-book-sparkles text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1
+                            class="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-800">
+                            Universo de Saberes
+                        </h1>
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400">Ciencia & Humanidades
+                        </p>
+                    </div>
+                </div>
 
-    <header class="library-header">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <a href="../index.html" class="logo"
-                style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <div class="logo-icon" style="background: var(--gradiente-secundario);">
-                    <i class="fas fa-book-sparkles"></i>
+                <!-- Buscador -->
+                <div class="relative w-full md:w-[450px]">
+                    <span class="absolute inset-y-0 left-4 flex items-center text-slate-400 pointer-events-none">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" id="searchInput" placeholder="Buscar: Genética, Macondo, Cálculo..."
+                        class="block w-full pl-12 pr-4 py-3 border-0 rounded-2xl bg-white/50 ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 transition-all shadow-sm text-sm font-medium text-slate-600 placeholder:text-slate-400">
                 </div>
-                <div>
-                    <h1
-                        style="font-size: 1.2rem; margin: 0; background: var(--gradiente-secundario); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
-                        Universo de Saberes</h1>
-                    <span
-                        style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; font-weight: 700;">Ciencia
-                        & Humanidades</span>
-                </div>
-            </a>
-            <!-- React will handle the search box inside the main container -->
+            </div>
         </div>
     </header>
 
-    <main class="container" style="padding: 3rem 1rem;">
-        <!-- React App Mount Point -->
-        <div id="guias-root">
-            <div style="text-align: center; padding: 4rem;">
-                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--color-secundario);"></i>
-                <p style="margin-top: 1rem; color: var(--slate-500);">Cargando experiencia interactiva...</p>
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+        <!-- PANEL DE FILTROS -->
+        <div
+            class="bg-white rounded-[2rem] p-6 shadow-xl shadow-slate-100 mb-12 border border-slate-100 relative overflow-hidden">
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full blur-3xl -mr-16 -mt-16 opacity-50 pointer-events-none">
             </div>
+
+            <div class="flex flex-col gap-6 relative z-10">
+                <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
+                    <!-- Categorías -->
+                    <div class="w-full">
+                        <h3
+                            class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <i class="fas fa-layer-group"></i> Explorar Materias
+                        </h3>
+                        <div class="flex overflow-x-auto pb-2 xl:pb-0 gap-3" id="typeFilters">
+                            <button onclick="filterType('all')" data-filter="all"
+                                class="filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-200 ring-2 ring-offset-2 ring-indigo-600 transition-all">
+                                Todo
+                            </button>
+                            <button onclick="filterType('literatura')" data-filter="literatura"
+                                class="filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-600 hover:bg-slate-50 ring-1 ring-slate-200 transition-all">
+                                <i class="fas fa-book-open mr-2 opacity-50 text-emerald-600"></i>Mundos Literarios
+                            </button>
+                            <button onclick="filterType('matematicas')" data-filter="matematicas"
+                                class="filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-600 hover:bg-slate-50 ring-1 ring-slate-200 transition-all">
+                                <i class="fas fa-calculator mr-2 opacity-50 text-rose-500"></i>Matemáticas
+                            </button>
+                            <button onclick="filterType('fisica')" data-filter="fisica"
+                                class="filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-600 hover:bg-slate-50 ring-1 ring-slate-200 transition-all">
+                                <i class="fas fa-atom mr-2 opacity-50 text-cyan-500"></i>Física
+                            </button>
+                            <button onclick="filterType('quimica')" data-filter="quimica"
+                                class="filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-600 hover:bg-slate-50 ring-1 ring-slate-200 transition-all">
+                                <i class="fas fa-flask mr-2 opacity-50 text-teal-500"></i>Química
+                            </button>
+                            <button onclick="filterType('biologia')" data-filter="biologia"
+                                class="filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-600 hover:bg-slate-50 ring-1 ring-slate-200 transition-all">
+                                <i class="fas fa-dna mr-2 opacity-50 text-green-500"></i>Biología
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Niveles -->
+                    <div id="levelFilterContainer"
+                        class="hidden xl:border-l xl:border-slate-100 xl:pl-8 fade-in flex-shrink-0">
+                        <h3
+                            class="text-xs font-black text-slate-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <i class="fas fa-signal"></i> Nivel Educativo
+                        </h3>
+                        <div class="bg-slate-100/50 p-1.5 rounded-xl inline-flex gap-1" id="levelFilters">
+                            <button onclick="filterLevel('all')" data-level="all"
+                                class="level-btn px-4 py-1.5 rounded-lg text-sm font-bold bg-white text-indigo-600 shadow-sm transition-all">
+                                Todos
+                            </button>
+                            <button onclick="filterLevel('secundaria')" data-level="secundaria"
+                                class="level-btn px-4 py-1.5 rounded-lg text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors">
+                                Secundaria
+                            </button>
+                            <button onclick="filterLevel('universitario')" data-level="universitario"
+                                class="level-btn px-4 py-1.5 rounded-lg text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors">
+                                Universitario
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de estado -->
+        <div class="flex items-center justify-between mb-6 px-2">
+            <span class="text-sm font-bold text-slate-400" id="resultCount">Cargando biblioteca...</span>
+        </div>
+
+        <!-- GRID DE TARJETAS -->
+        <div id="guidesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+
+        <!-- Estado Vacío -->
+        <div id="emptyState" class="hidden py-32 text-center">
+            <div
+                class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-slate-100 mb-6 animate-bounce">
+                <i class="fas fa-search text-4xl text-slate-300"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-700">No encontramos resultados</h3>
+            <p class="text-slate-500 mb-6">Intenta con otros términos o filtros.</p>
+            <button onclick="resetFilters()"
+                class="px-6 py-2 bg-indigo-600 text-white rounded-lg font-bold hover:bg-indigo-700 transition-colors">
+                Ver todo el catálogo
+            </button>
         </div>
     </main>
 
-    <!-- React Logic -->
-    <script type="text/babel" src="../js/components/SearchFilter.jsx"></script>
-    <script type="module">
-        import { guidesData } from '../js/data.js';
-        import { openModal } from '../js/library-utils.js'; // I'll refactor library.js a bit
+    <!-- MODAL -->
+    <div id="contentModal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop">
+        </div>
+        <div class="absolute inset-0 overflow-y-auto py-6 px-4 flex items-center justify-center">
+            <div class="relative w-full max-w-5xl bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-modal opacity-0 transform scale-95"
+                id="modalPanel">
+                <!-- Encabezado Modal -->
+                <div id="modalHeader"
+                    class="relative h-48 md:h-56 flex-shrink-0 flex items-center px-8 md:px-12 text-white transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+                    </div>
+                    <div class="relative z-20 w-full pr-12">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span id="modalBadge"
+                                class="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/10"></span>
+                            <span id="modalLevelBadge"
+                                class="hidden px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest bg-white/20 backdrop-blur-md border border-white/10"></span>
+                        </div>
+                        <h2 id="modalTitle"
+                            class="text-3xl md:text-5xl font-extrabold mb-2 leading-tight drop-shadow-lg"></h2>
+                        <div class="flex items-center gap-4 text-sm font-medium opacity-90">
+                            <span id="modalTopicCount" class="flex items-center gap-1"><i class="far fa-list-alt"></i>
+                                <span></span></span>
+                        </div>
+                    </div>
+                    <button onclick="closeModal()"
+                        class="absolute top-6 right-6 z-30 bg-white/20 hover:bg-white/30 backdrop-blur-md text-white w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-lg border border-white/20">
+                        <i class="fas fa-times text-lg"></i>
+                    </button>
+                </div>
 
-        const root = ReactDOM.createRoot(document.getElementById('guias-root'));
-        root.render(React.createElement(window.SearchFilter, { data: guidesData, openModal: window.openModal }));
+                <!-- Cuerpo Modal -->
+                <div class="flex flex-col md:flex-row flex-grow overflow-hidden bg-white">
+                    <!-- Info -->
+                    <div class="flex-1 p-8 md:p-10 border-r border-slate-100 overflow-y-auto custom-scrollbar">
+                        <div class="prose prose-slate max-w-none">
+                            <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">Detalles del
+                                Tema</h3>
+                            <p id="modalBody" class="text-slate-600 text-lg leading-relaxed mb-8"></p>
+                        </div>
+                        <a id="mainGuideBtn" href="#" target="_blank" rel="noopener noreferrer"
+                            class="hidden group w-full bg-indigo-600 hover:bg-indigo-700 text-white p-4 rounded-xl font-bold text-center shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-3 transform active:scale-95 mb-8">
+                            <div class="bg-white/20 p-2 rounded-lg"><i class="fas fa-file-pdf text-lg"></i></div>
+                            <div class="text-left"><span
+                                    class="block text-xs uppercase opacity-80 tracking-wide">Recurso
+                                    Principal</span><span class="block text-lg">Abrir Guía Completa</span></div>
+                            <i
+                                class="fas fa-external-link-alt ml-auto opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        </a>
+                        <div class="bg-indigo-50/80 rounded-2xl p-6 border border-indigo-100 flex gap-4 items-start">
+                            <i class="fas fa-info-circle text-indigo-500 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-indigo-900 mb-1">Instrucciones</h4>
+                                <p class="text-indigo-700 text-sm leading-relaxed">Los temas marcados con candado 🔒
+                                    están en desarrollo. Haz clic en los disponibles para acceder.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lista -->
+                    <div class="w-full md:w-[450px] bg-slate-50 flex flex-col border-l border-slate-200">
+                        <div
+                            class="p-6 border-b border-slate-200 bg-white flex justify-between items-center shadow-sm z-10">
+                            <div>
+                                <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Contenido</h3>
+                                <p class="text-xs text-slate-500 mt-0.5">Índice de subtemas</p>
+                            </div>
+                        </div>
+                        <div id="topicsList" class="flex-grow overflow-y-auto custom-scrollbar p-4 space-y-2 relative">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // CONFIGURACIÓN DE RUTAS BASE
+        const baseUrl = "https://sites.google.com/view/carlosmartinezprofesor/guias-estudio";
+        const baseExclusive = "https://sites.google.com/view/carlosmartinezprofesor/mundos-literarios-excusive";
+        const suffix = "?authuser=0";
+
+        // --- BASE DE DATOS COMPLETA (INCLUYE "PRÓXIMAMENTE") ---
+        const db = [
+            // ================== MATEMÁTICAS - SECUNDARIA ==================
+            {
+                id: "m-s-1", title: "Aritmética", type: "academico", level: "secundaria",
+                color: "text-rose-600", bg: "bg-rose-500", icon: "fa-calculator", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-segundaria/aritmetica${suffix}`,
+                desc: "Números, fracciones, porcentajes y operaciones básicas.",
+                subtopics: [
+                    { name: "Números enteros y racionales", url: `${baseUrl}/matematicas-segundaria/aritmetica/numeros-enteros-y-racionales${suffix}` },
+                    { name: "Fracciones", url: `${baseUrl}/matematicas-segundaria/aritmetica/fracciones${suffix}` },
+                    { name: "Porcentajes", url: `${baseUrl}/matematicas-segundaria/aritmetica/porcentajes${suffix}` },
+                    { name: "Operaciones Básicas", url: `${baseUrl}/matematicas-segundaria/aritmetica/operaciones${suffix}` },
+                    { name: "Proporciones y razones", url: `${baseUrl}/matematicas-segundaria/aritmetica/proporciones-y-razones${suffix}` }
+                ]
+            },
+            {
+                id: "m-s-2", title: "Álgebra Básica", type: "academico", level: "secundaria",
+                color: "text-rose-600", bg: "bg-rose-500", icon: "fa-superscript", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-segundaria/algebra-basica${suffix}`,
+                desc: "Ecuaciones, sistemas y factorización.",
+                subtopics: [
+                    { name: "Ecuaciones de primer grado", url: `${baseUrl}/matematicas-segundaria/algebra-basica/ecuaciones-de-primer-grado${suffix}` },
+                    { name: "Sistemas de ecuaciones", url: `${baseUrl}/matematicas-segundaria/algebra-basica/sistemas-de-ecuaciones${suffix}` },
+                    { name: "Factorización", url: `${baseUrl}/matematicas-segundaria/algebra-basica/factorizacion${suffix}` },
+                    { name: "Productos Notables", url: "#" }
+                ]
+            },
+            {
+                id: "m-s-3", title: "Geometría", type: "academico", level: "secundaria",
+                color: "text-rose-600", bg: "bg-rose-500", icon: "fa-shapes", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-segundaria/geometria${suffix}`,
+                desc: "Figuras, áreas y teoremas fundamentales.",
+                subtopics: [
+                    { name: "Perímetros y Áreas", url: `${baseUrl}/matematicas-segundaria/geometria/perimetros-y-areas${suffix}` },
+                    { name: "Teorema de Pitágoras", url: `${baseUrl}/matematicas-segundaria/geometria/pitagoras${suffix}` },
+                    { name: "Teorema de Tales", url: `${baseUrl}/matematicas-segundaria/geometria/teorema-de-tales${suffix}` }
+                ]
+            },
+            {
+                id: "m-s-4", title: "Trigonometría", type: "academico", level: "secundaria",
+                color: "text-rose-600", bg: "bg-rose-500", icon: "fa-draw-polygon", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-segundaria/trigonometria${suffix}`,
+                desc: "Relaciones triangulares y funciones.",
+                subtopics: [
+                    { name: "Aplicaciones Trigonometría", url: `${baseUrl}/matematicas-segundaria/trigonometria/aplicaicones-trigonometria${suffix}` }
+                ]
+            },
+            {
+                id: "m-s-5", title: "Estadística y Prob.", type: "academico", level: "secundaria",
+                color: "text-rose-600", bg: "bg-rose-500", icon: "fa-chart-bar", status: "pronto",
+                mainUrl: "#", desc: "Análisis de datos e interpretación.", subtopics: [] // Marcador
+            },
+
+            // ================== MATEMÁTICAS - UNIVERSITARIA ==================
+            {
+                id: "m-u-1", title: "Cálculo Diferencial", type: "academico", level: "universitario",
+                color: "text-rose-800", bg: "bg-rose-800", icon: "fa-chart-line", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-universitarias/calculo-diferencial${suffix}`,
+                desc: "Límites, derivadas y estudio de funciones.",
+                subtopics: [
+                    { name: "Funciones Exponenciales", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/funciones/funciones-exponenciales${suffix}` },
+                    { name: "Límites y continuidad", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/limites-y-continuidad${suffix}` },
+                    { name: "Derivadas", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/derivadas${suffix}` },
+                    { name: "Regla de la Cadena", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/regla-de-la-cadena${suffix}` },
+                    { name: "Optimización", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/optimizacion${suffix}` }
+                ]
+            },
+            {
+                id: "m-u-2", title: "Cálculo Integral", type: "academico", level: "universitario",
+                color: "text-rose-800", bg: "bg-rose-800", icon: "fa-infinity", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-universitarias/calculo-integral${suffix}`,
+                desc: "Integración, áreas y volúmenes.",
+                subtopics: [
+                    { name: "Sumas de Riemann", url: `${baseUrl}/matematicas-universitarias/calculo-integral/sumas-de-riemann${suffix}` },
+                    { name: "Integral Definida e Indefinida", url: `${baseUrl}/matematicas-universitarias/calculo-integral/integral-definida-e-indefinida${suffix}` },
+                    { name: "Técnicas de Integración", url: `${baseUrl}/matematicas-universitarias/calculo-integral/tecnicas-de-integracion${suffix}` },
+                    { name: "Teorema Fundamental", url: `${baseUrl}/matematicas-universitarias/calculo-integral/teorema-fundamental-del-calculo${suffix}` },
+                    { name: "Aplicaciones", url: `${baseUrl}/matematicas-universitarias/calculo-integral/aplicaciones${suffix}` }
+                ]
+            },
+            {
+                id: "m-u-3", title: "Álgebra Lineal", type: "academico", level: "universitario",
+                color: "text-rose-800", bg: "bg-rose-800", icon: "fa-vector-square", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-universitarias/algebra-lineal${suffix}`,
+                desc: "Espacios vectoriales y matrices.",
+                subtopics: [
+                    { name: "Matrices y Determinantes", url: `${baseUrl}/matematicas-universitarias/algebra-lineal/matrices-y-determinantes${suffix}` },
+                    { name: "Sistemas Lineales", url: `${baseUrl}/matematicas-universitarias/algebra-lineal/sistemas-de-ecuaciones-lineales${suffix}` },
+                    { name: "Transformaciones Lineales", url: `${baseUrl}/matematicas-universitarias/algebra-lineal/transformaciones-lineales${suffix}` }
+                ]
+            },
+            {
+                id: "m-u-4", title: "Ec. Diferenciales", type: "academico", level: "universitario",
+                color: "text-rose-800", bg: "bg-rose-800", icon: "fa-wave-square", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-universitarias/ecuaciones-diferenciales${suffix}`,
+                desc: "Modelado matemático y ecuaciones dinámicas.",
+                subtopics: [
+                    { name: "EDO Primer Orden", url: `${baseUrl}/matematicas-universitarias/ecuaciones-diferenciales/edo-primer-orden${suffix}` },
+                    { name: "Ecuación de Bernoulli", url: `${baseUrl}/matematicas-universitarias/ecuacion-diferencial-de-bernoulli${suffix}` },
+                    { name: "EDO Lineales", url: `${baseUrl}/matematicas-universitarias/ecuaciones-diferenciales/edo-lineales${suffix}` }
+                ]
+            },
+            {
+                id: "m-u-5", title: "Probabilidad Univ.", type: "academico", level: "universitario",
+                color: "text-rose-800", bg: "bg-rose-800", icon: "fa-dice", status: "disponible",
+                mainUrl: `${baseUrl}/matematicas-universitarias/probabilidad-y-estadistica${suffix}`,
+                desc: "Estadística inferencial y distribuciones.",
+                subtopics: [
+                    { name: "Inferencia Estadística", url: `${baseUrl}/matematicas-universitarias/probabilidad-y-estadistica/inferencia-estadistica${suffix}` },
+                    { name: "Deducción", url: `${baseUrl}/matematicas-universitarias/probabilidad-y-estadistica/deduccion${suffix}` }
+                ]
+            },
+
+            // ================== FÍSICA - SECUNDARIA ==================
+            {
+                id: "f-s-1", title: "Mecánica", type: "academico", level: "secundaria",
+                color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-cogs", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-segundaria/mecanica${suffix}`,
+                desc: "Movimiento, fuerzas y energía.",
+                subtopics: [
+                    { name: "Magnitudes", url: `${baseUrl}/fisica-segundaria/mecanica/magnitudes${suffix}` },
+                    { name: "Conversión de Unidades", url: `${baseUrl}/fisica-segundaria/mecanica/conversion-de-unidades${suffix}` },
+                    { name: "Vectores", url: `${baseUrl}/fisica-segundaria/mecanica/vectores${suffix}` },
+                    { name: "Movimiento Circular", url: `${baseUrl}/fisica-segundaria/mecanica/cinematica/movimiento-circular${suffix}` },
+                    { name: "Leyes de Newton", url: `${baseUrl}/fisica-segundaria/mecanica/leyes-de-newton${suffix}` },
+                    { name: "Conservación Momento", url: `${baseUrl}/fisica-segundaria/mecanica/conservacion-momento${suffix}` },
+                    { name: "Trabajo y Energía", url: `${baseUrl}/fisica-segundaria/mecanica/trabajo-y-energia${suffix}` }
+                ]
+            },
+            {
+                id: "f-s-2", title: "Calor y Temperatura", type: "academico", level: "secundaria",
+                color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-thermometer-half", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-segundaria/calor-y-temperatura${suffix}`,
+                desc: "Termodinámica básica.",
+                subtopics: [
+                    { name: "Dilatación Térmica", url: `${baseUrl}/fisica-segundaria/calor-y-temperatura/dilatacion-termica${suffix}` }
+                ]
+            },
+            {
+                id: "f-s-3", title: "Óptica", type: "academico", level: "secundaria",
+                color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-eye", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-segundaria/optica${suffix}`,
+                desc: "Luz, reflexión y refracción.",
+                subtopics: [
+                    { name: "Espejos", url: `${baseUrl}/fisica-segundaria/optica/espejos${suffix}` },
+                    { name: "Lentes", url: `${baseUrl}/fisica-segundaria/optica/lentes${suffix}` }
+                ]
+            },
+            {
+                id: "f-s-4", title: "Electricidad", type: "academico", level: "secundaria",
+                color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-bolt", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-segundaria/electricidad${suffix}`,
+                desc: "Circuitos y carga eléctrica.",
+                subtopics: [
+                    { name: "Ley de Ohm", url: `${baseUrl}/fisica-segundaria/electricidad/ley-de-ohm${suffix}` }
+                ]
+            },
+            {
+                id: "f-s-6", title: "Astronomía", type: "academico", level: "secundaria",
+                color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-star", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-segundaria/astronomia${suffix}`,
+                desc: "El cosmos y la vida en el universo.",
+                subtopics: [
+                    { name: "Astrobiología", url: `${baseUrl}/fisica-segundaria/astronomia/astrobiologia${suffix}` },
+                    { name: "Coordenadas Astronómicas", url: `${baseUrl}/fisica-segundaria/astronomia/coordenadas-astornomicas${suffix}` }
+                ]
+            },
+
+            // ================== FÍSICA - UNIVERSITARIA ==================
+            {
+                id: "f-u-1", title: "Mecánica Univ.", type: "academico", level: "universitario",
+                color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-atom", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-universitaria/mecanica${suffix}`,
+                desc: "Física clásica avanzada.",
+                subtopics: [
+                    { name: "Cinemática Vectorial", url: `${baseUrl}/fisica-universitaria/mecanica/cinematica-vectorial${suffix}` },
+                    { name: "Dinámica", url: `${baseUrl}/fisica-universitaria/mecanica/dinamica${suffix}` },
+                    { name: "Cuerpo Rígido", url: `${baseUrl}/fisica-universitaria/mecanica/cuerpo-rigidio${suffix}` },
+                    { name: "Sistema de referencia", url: `${baseUrl}/fisica-universitaria/mecanica/sistema-de-referencia${suffix}` }
+                ]
+            },
+            {
+                id: "f-u-2", title: "Electromagnetismo", type: "academico", level: "universitario",
+                color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-magnet", status: "disponible",
+                mainUrl: `${baseUrl}/fisica-universitaria/electromagnetismo${suffix}`,
+                desc: "Campos y ondas electromagnéticas.",
+                subtopics: [
+                    { name: "Ley de Coulomb", url: `${baseUrl}/fisica-universitaria/electromagnetismo/ley-de-columb${suffix}` },
+                    { name: "Leyes de Kirchhoff", url: `${baseUrl}/fisica-universitaria/electromagnetismo/leyes-de-kirchoff${suffix}` }
+                ]
+            },
+            {
+                id: "f-u-3", title: "Termodinámica", type: "academico", level: "universitario",
+                color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-temperature-high", status: "pronto",
+                mainUrl: "#", desc: "Energía, entropía y calor.", subtopics: []
+            },
+            {
+                id: "f-u-4", title: "Física Moderna", type: "academico", level: "universitario",
+                color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-radiation", status: "pronto",
+                mainUrl: "#", desc: "Relatividad y cuántica.", subtopics: []
+            },
+
+            // ================== QUÍMICA - SECUNDARIA ==================
+            {
+                id: "q-s-1", title: "Modelos Atómicos", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-atom", status: "disponible",
+                mainUrl: `${baseUrl}/quimica-segundaria/modelos-atomicos${suffix}`,
+                desc: "Estructura de la materia.",
+                subtopics: [
+                    { name: "Distribuciones Electrónicas", url: `${baseUrl}/quimica-segundaria/modelos-atomicos/distribuciones-electronicas${suffix}` }
+                ]
+            },
+            {
+                id: "q-s-5", title: "Soluciones", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-vial", status: "disponible",
+                mainUrl: `${baseUrl}/quimica-segundaria/soluciones${suffix}`,
+                desc: "Mezclas homogéneas y pH.",
+                subtopics: [
+                    { name: "Ácidos y Bases", url: `${baseUrl}/quimica-segundaria/soluciones/acidos-y-bases${suffix}` }
+                ]
+            },
+            {
+                id: "q-s-4", title: "Reacciones", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-flask", status: "disponible",
+                mainUrl: `${baseUrl}/quimica-segundaria/reacciones-quimicas${suffix}`,
+                desc: "Cambios químicos y estequiometría.",
+                subtopics: [
+                    { name: "Estequiometría", url: `${baseUrl}/quimica-segundaria/reacciones-quimicas/estecquiometria${suffix}` }
+                ]
+            },
+            {
+                id: "q-s-2", title: "Tabla Periódica", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-table", status: "disponible",
+                mainUrl: `${baseUrl}/quimica-segundaria/tabla-periodica${suffix}`,
+                desc: "Elementos y propiedades.", subtopics: []
+            },
+            {
+                id: "q-s-6", title: "Química Orgánica", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-leaf", status: "disponible",
+                mainUrl: `${baseUrl}/quimica-segundaria/quimca-organica${suffix}`,
+                desc: "El carbono y sus compuestos.", subtopics: []
+            },
+            {
+                id: "q-s-7", title: "Nomenclatura", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-tag", status: "disponible",
+                mainUrl: "#",
+                desc: "Reglas para nombrar compuestos.",
+                subtopics: [
+                    { name: "Estados de Oxidación", url: `${baseUrl}/quimica-segundaria/nomenclatura/estados-de-oxidacion${suffix}` }
+                ]
+            },
+            {
+                id: "q-s-8", title: "Gases", type: "academico", level: "secundaria",
+                color: "text-teal-600", bg: "bg-teal-500", icon: "fa-cloud", status: "disponible",
+                mainUrl: `${baseUrl}/quimica-segundaria/gases${suffix}`,
+                desc: "Leyes y comportamiento de los gases.", subtopics: []
+            },
+
+            // ================== QUÍMICA - UNIVERSITARIA / BIOQUÍMICA ==================
+            {
+                id: "q-u-3", title: "Bioquímica", type: "academico", level: "universitario",
+                color: "text-teal-800", bg: "bg-teal-700", icon: "fa-dna", status: "disponible",
+                mainUrl: `${baseUrl}/bioquimica${suffix}`,
+                desc: "Moléculas de la vida.",
+                subtopics: [
+                    { name: "Lípidos", url: `${baseUrl}/bioquimica/lipidos${suffix}` },
+                    { name: "Proteínas", url: `${baseUrl}/bioquimica/proteinas${suffix}` }
+                ]
+            },
+            {
+                id: "q-u-1", title: "Química Orgánica", type: "academico", level: "universitario",
+                color: "text-teal-800", bg: "bg-teal-700", icon: "fa-leaf", status: "pronto",
+                mainUrl: "#", desc: "Mecanismos de reacción.", subtopics: []
+            },
+
+            // ================== BIOLOGÍA - SECUNDARIA ==================
+            {
+                id: "b-s-1", title: "Teoría Celular", type: "academico", level: "secundaria",
+                color: "text-green-600", bg: "bg-green-500", icon: "fa-circle", status: "disponible",
+                mainUrl: `${baseUrl}/biologia-segundaria/teoria-celular${suffix}`,
+                desc: "La unidad de la vida.",
+                subtopics: [
+                    { name: "Mitosis y Meiosis", url: `${baseUrl}/biologia-segundaria/teoria-celular/mitosis-y-meiosis${suffix}` }
+                ]
+            },
+            {
+                id: "b-s-4", title: "Ecología", type: "academico", level: "secundaria",
+                color: "text-green-600", bg: "bg-green-500", icon: "fa-tree", status: "disponible",
+                mainUrl: `${baseUrl}/biologia-segundaria/ecologia${suffix}`,
+                desc: "Interacciones biológicas.",
+                subtopics: [
+                    { name: "Metrología Macondo", url: `${baseUrl}/biologia-segundaria/ecologia/metrologia-macondo${suffix}` },
+                    { name: "Ecosistemas y Biomas", url: `${baseUrl}/biologia-segundaria/ecologia/ecosistemas-y-biomas${suffix}` }
+                ]
+            },
+            {
+                id: "b-s-3", title: "Cuerpo Humano", type: "academico", level: "secundaria",
+                color: "text-green-600", bg: "bg-green-500", icon: "fa-walking", status: "disponible",
+                mainUrl: `${baseUrl}/biologia-segundaria/cuerpo-humano${suffix}`,
+                desc: "Anatomía y fisiología.",
+                subtopics: [
+                    { name: "Aparato Digestivo", url: `${baseUrl}/biologia-segundaria/cuerpo-humano/aparato-digestivo${suffix}` }
+                ]
+            },
+            {
+                id: "b-s-2", title: "Genética", type: "academico", level: "secundaria",
+                color: "text-green-600", bg: "bg-green-500", icon: "fa-dna", status: "disponible",
+                mainUrl: `${baseUrl}/biologia-segundaria/genetica${suffix}`,
+                desc: "Herencia y ADN.",
+                subtopics: [
+                    { name: "Leyes de Mendel", url: `${baseUrl}/biologia-segundaria/genetica/leyes-de-mendel${suffix}` },
+                    { name: "ADN y ARN", url: `${baseUrl}/biologia-segundaria/genetica/adn-y-arn${suffix}` }
+                ]
+            },
+            {
+                id: "b-u-10", title: "Biología Univ.", type: "academico", level: "universitario",
+                color: "text-green-800", bg: "bg-green-700", icon: "fa-microscope", status: "disponible",
+                mainUrl: "#",
+                desc: "Biología avanzada.",
+                subtopics: [
+                    { name: "Neurociencia del Soma", url: `${baseUrl}/biologia-universitaria/neurociencia-del-soma${suffix}` }
+                ]
+            },
+
+            // ================== MUNDOS LITERARIOS EXCLUSIVE ==================
+            {
+                id: "l-1", title: "Macondo", type: "literatura", level: null,
+                color: "text-emerald-700", bg: "bg-emerald-600", icon: "fa-leaf", status: "disponible",
+                mainUrl: `${baseExclusive}/macondo${suffix}`,
+                desc: "Cien años de soledad. Ecología y genética.",
+                subtopics: [
+                    { name: "Peligros de la endogamia", url: `${baseExclusive}/macondo/peligros-de-la-endogamia${suffix}` },
+                    { name: "Descubrimientos científicos", url: `${baseExclusive}/macondo/descubrimientos-cientificos${suffix}` }
+                ]
+            },
+            {
+                id: "l-3", title: "La Odisea", type: "literatura", level: null,
+                color: "text-orange-700", bg: "bg-orange-500", icon: "fa-ship", status: "disponible",
+                mainUrl: `${baseExclusive}/odisea${suffix}`,
+                desc: "Homero. Ciencia antigua y navegación.",
+                subtopics: []
+            },
+            {
+                id: "l-12", title: "Sherlock Holmes", type: "literatura", level: null,
+                color: "text-red-900", bg: "bg-red-800", icon: "fa-search", status: "disponible",
+                mainUrl: `${baseExclusive}/sherlock${suffix}`,
+                desc: "A. Conan Doyle. Deducción y forense.",
+                subtopics: [
+                    { name: "Venenos", url: `${baseExclusive}/sherlock/venenos${suffix}` },
+                    { name: "Lógica", url: `${baseExclusive}/sherlock/logica${suffix}` }
+                ]
+            },
+            {
+                id: "l-14", title: "Jurassic Park", type: "literatura", level: null,
+                color: "text-emerald-800", bg: "bg-emerald-700", icon: "fa-dragon", status: "disponible",
+                mainUrl: `${baseExclusive}/jurasic${suffix}`,
+                desc: "Michael Crichton. Clonación y Caos.",
+                subtopics: []
+            },
+            {
+                id: "l-20", title: "El Principito", type: "literatura", level: null,
+                color: "text-yellow-600", bg: "bg-yellow-500", icon: "fa-star", status: "disponible",
+                mainUrl: `${baseExclusive}/principito${suffix}`,
+                desc: "Saint-Exupéry. Astrobiología poética.",
+                subtopics: [
+                    { name: "Bao Baos", url: `${baseExclusive}/principito/bao-baos${suffix}` },
+                    { name: "Astrobiología asteroide", url: `${baseExclusive}/principito/astobiologia-en-el-asteroide${suffix}` }
+                ]
+            },
+            {
+                id: "l-10", title: "Frankenstein", type: "literatura", level: null,
+                color: "text-green-800", bg: "bg-green-700", icon: "fa-bolt", status: "disponible",
+                mainUrl: `${baseExclusive}/frankestein${suffix}`,
+                desc: "Mary Shelley. Bioética y electricidad.",
+                subtopics: []
+            },
+            {
+                id: "l-7", title: "Viaje al Centro", type: "literatura", level: null,
+                color: "text-amber-800", bg: "bg-amber-700", icon: "fa-mountain", status: "disponible",
+                mainUrl: `${baseExclusive}/vaije-al-centro-de-la-tierra${suffix}`,
+                desc: "Julio Verne. Geología profunda.",
+                subtopics: []
+            },
+
+            // --- RESTAURACIÓN DE LIBROS PENDIENTES ---
+            { id: "l-13", title: "Dune", type: "literatura", level: null, color: "text-amber-600", bg: "bg-amber-500", icon: "fa-wind", status: "pronto", mainUrl: "#", desc: "Frank Herbert. Ecología.", subtopics: [] },
+            { id: "l-5", title: "1984", type: "literatura", level: null, color: "text-slate-700", bg: "bg-slate-600", icon: "fa-eye", status: "pronto", mainUrl: "#", desc: "Orwell. Vigilancia.", subtopics: [] },
+            { id: "l-15", title: "Un Mundo Feliz", type: "literatura", level: null, color: "text-pink-700", bg: "bg-pink-600", icon: "fa-vial", status: "pronto", mainUrl: "#", desc: "Huxley. Genética.", subtopics: [] },
+            { id: "l-17", title: "El Marciano", type: "literatura", level: null, color: "text-orange-600", bg: "bg-orange-500", icon: "fa-space-shuttle", status: "pronto", mainUrl: "#", desc: "Andy Weir. Supervivencia.", subtopics: [] },
+            { id: "l-16", title: "Solaris", type: "literatura", level: null, color: "text-indigo-600", bg: "bg-indigo-500", icon: "fa-brain", status: "pronto", mainUrl: "#", desc: "Lem. Consciencia.", subtopics: [] },
+            { id: "l-2", title: "Utopía", type: "literatura", level: null, color: "text-blue-700", bg: "bg-blue-600", icon: "fa-city", status: "pronto", mainUrl: "#", desc: "Moro. Sociedad.", subtopics: [] },
+            { id: "l-4", title: "Dante", type: "literatura", level: null, color: "text-purple-700", bg: "bg-purple-600", icon: "fa-fire", status: "pronto", mainUrl: "#", desc: "Cosmología medieval.", subtopics: [] },
+            { id: "l-6", title: "Fahrenheit 451", type: "literatura", level: null, color: "text-red-700", bg: "bg-red-600", icon: "fa-fire-extinguisher", status: "pronto", mainUrl: "#", desc: "Bradbury. Censura.", subtopics: [] },
+            { id: "l-8", title: "Guerra de Mundos", type: "literatura", level: null, color: "text-lime-700", bg: "bg-lime-600", icon: "fa-rocket", status: "pronto", mainUrl: "#", desc: "Wells. Invasión.", subtopics: [] },
+            { id: "l-9", title: "Yo, Robot", type: "literatura", level: null, color: "text-cyan-700", bg: "bg-cyan-600", icon: "fa-robot", status: "pronto", mainUrl: "#", desc: "Asimov. Leyes robóticas.", subtopics: [] },
+            { id: "l-11", title: "Drácula", type: "literatura", level: null, color: "text-rose-900", bg: "bg-rose-900", icon: "fa-wine-glass", status: "pronto", mainUrl: "#", desc: "Stoker. Hematología.", subtopics: [] }
+        ];
+
+        // --- LÓGICA DE LA APLICACIÓN ---
+
+        let currentTypeFilter = 'all';
+        let currentLevelFilter = 'all';
+        let currentSearch = '';
+
+        function getCategoryFromId(id) {
+            if (id.startsWith('m-')) return 'matematicas';
+            if (id.startsWith('f-')) return 'fisica';
+            if (id.startsWith('q-')) return 'quimica';
+            if (id.startsWith('b-')) return 'biologia';
+            if (id.startsWith('l-')) return 'literatura';
+            return 'otro';
+        }
+
+        function renderCards() {
+            const grid = document.getElementById('guidesGrid');
+            const emptyState = document.getElementById('emptyState');
+            const resultCount = document.getElementById('resultCount');
+
+            const filtered = db.filter(item => {
+                const itemCategory = getCategoryFromId(item.id);
+                let matchesType = false;
+                if (currentTypeFilter === 'all') {
+                    matchesType = true;
+                } else if (currentTypeFilter === 'literatura') {
+                    matchesType = item.type === 'literatura';
+                } else {
+                    matchesType = itemCategory === currentTypeFilter;
+                }
+
+                const matchesLevel = (item.level === null) || (currentLevelFilter === 'all') || (item.level === currentLevelFilter);
+                const searchText = currentSearch.toLowerCase();
+                const matchesSearch = item.title.toLowerCase().includes(searchText) ||
+                    item.desc.toLowerCase().includes(searchText) ||
+                    item.subtopics.some(sub => sub.name.toLowerCase().includes(searchText));
+
+                return matchesType && matchesLevel && matchesSearch;
+            });
+
+            grid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                resultCount.textContent = "0 resultados";
+            } else {
+                emptyState.classList.add('hidden');
+                resultCount.textContent = `${filtered.length} guías encontradas`;
+
+                filtered.forEach(item => {
+                    let levelBadge = '';
+                    if (item.level === 'secundaria') {
+                        levelBadge = `<span class="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide shadow-sm flex items-center gap-1"><i class="fas fa-school"></i>Sec</span>`;
+                    } else if (item.level === 'universitario') {
+                        levelBadge = `<span class="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide shadow-sm flex items-center gap-1"><i class="fas fa-university"></i>Univ</span>`;
+                    } else {
+                        levelBadge = `<span class="bg-white/30 backdrop-blur-md text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wide shadow-sm border border-white/20 flex items-center gap-1"><i class="fas fa-book-open"></i>Lit. y Ciencia</span>`;
+                    }
+
+                    const card = document.createElement('div');
+                    card.className = 'card-transition bg-white rounded-[2rem] overflow-hidden border border-slate-100 cursor-pointer flex flex-col h-full relative group';
+                    card.onclick = () => openModal(item);
+
+                    // Previsualización de temas: solo mostramos los que tienen enlace activo primero
+                    const sortedTopics = [...item.subtopics].sort((a, b) => (b.url !== '#' ? 1 : 0) - (a.url !== '#' ? 1 : 0));
+
+                    const previewTopics = sortedTopics.slice(0, 3).map(t =>
+                        `<div class="flex items-center gap-2 text-[11px] text-slate-500 mb-1">
+                            <i class="fas ${t.url !== '#' ? 'fa-check text-emerald-400' : 'fa-lock text-slate-300'} text-[9px]"></i> 
+                            <span class="truncate ${t.url === '#' ? 'opacity-60' : ''}">${t.name}</span>
+                        </div>`
+                    ).join('');
+
+                    const extraCount = Math.max(0, item.subtopics.length - 3);
+                    const footerText = extraCount > 0 ? `+ ${extraCount} temas` : 'Ver detalles';
+
+                    // Opacidad si no está disponible
+                    const opacityClass = item.status === 'pronto' ? 'opacity-70 grayscale-[0.5]' : '';
+                    const statusIcon = item.status === 'pronto' ? '<span class="absolute top-4 left-4 bg-slate-800 text-white px-2 py-0.5 rounded text-[9px] font-bold uppercase">Próximamente</span>' : '';
+
+                    card.innerHTML = `
+                        <div class="h-44 ${item.bg} flex items-center justify-center relative overflow-hidden flex-shrink-0 ${opacityClass}">
+                            <i class="fas ${item.icon} text-white text-7xl opacity-20 absolute group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500"></i>
+                            <div class="absolute top-4 right-4 z-10">${levelBadge}</div>
+                            ${statusIcon}
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-extrabold text-slate-800 group-hover:text-indigo-600 transition-colors mb-2 leading-tight">${item.title}</h3>
+                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4 pb-3 border-b border-slate-100">${item.desc}</p>
+                            <div class="mb-4">${previewTopics}</div>
+                            <div class="mt-auto pt-2 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition-colors">
+                                <span>${footerText}</span>
+                                <span class="bg-slate-50 group-hover:bg-indigo-50 p-2 rounded-full transition-colors"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        function openModal(item) {
+            const modal = document.getElementById('contentModal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const panel = document.getElementById('modalPanel');
+
+            document.getElementById('modalTitle').textContent = item.title;
+            document.getElementById('modalHeader').className = `relative h-48 md:h-56 flex-shrink-0 flex items-center px-8 md:px-12 text-white ${item.bg}`;
+            document.getElementById('modalBody').textContent = item.desc;
+            document.getElementById('modalTopicCount').querySelector('span').textContent = `${item.subtopics.length} recursos disponibles`;
+            document.getElementById('modalBadge').textContent = item.type === 'literatura' ? 'Literatura & Ciencia' : 'Académico';
+
+            const levelBadge = document.getElementById('modalLevelBadge');
+            if (item.level) {
+                levelBadge.classList.remove('hidden');
+                levelBadge.textContent = item.level;
+            } else {
+                levelBadge.classList.add('hidden');
+            }
+
+            const mainBtn = document.getElementById('mainGuideBtn');
+            if (item.mainUrl && item.mainUrl !== '#') {
+                mainBtn.href = item.mainUrl;
+                mainBtn.classList.remove('hidden');
+                mainBtn.classList.add('flex');
+            } else {
+                mainBtn.classList.add('hidden');
+                mainBtn.classList.remove('flex');
+            }
+
+            const list = document.getElementById('topicsList');
+            list.innerHTML = '';
+
+            if (item.subtopics.length === 0) {
+                list.innerHTML = `
+                    <div class="text-center py-12 text-slate-400">
+                        <i class="fas fa-hard-hat text-3xl mb-2 opacity-50"></i>
+                        <p class="text-sm">Contenido en desarrollo</p>
+                    </div>`;
+            } else {
+                item.subtopics.forEach((sub, idx) => {
+                    const isLink = sub.url !== '#';
+                    const el = document.createElement(isLink ? 'a' : 'div');
+
+                    if (isLink) {
+                        el.href = sub.url;
+                        el.target = "_blank";
+                        el.rel = "noopener noreferrer";
+                    }
+
+                    el.className = `topic-link p-4 rounded-xl border border-slate-100 bg-white hover:border-indigo-200 mb-3 group cursor-pointer ${!isLink ? 'opacity-60 cursor-not-allowed' : ''}`;
+
+                    el.innerHTML = `
+                        <span class="w-8 h-8 rounded-lg ${isLink ? 'bg-indigo-50 text-indigo-600' : 'bg-slate-100 text-slate-400'} flex items-center justify-center text-xs font-bold mr-3 flex-shrink-0">${idx + 1}</span>
+                        <span class="text-sm font-semibold text-slate-700 flex-grow group-hover:text-indigo-700 transition-colors">${sub.name}</span>
+                        <i class="fas ${isLink ? 'fa-external-link-alt text-indigo-400' : 'fa-lock text-slate-300'} text-xs ml-2"></i>
+                    `;
+                    list.appendChild(el);
+                });
+            }
+
+            modal.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'scale-95');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contentModal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const panel = document.getElementById('modalPanel');
+
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('opacity-0', 'scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.getElementById('modalBackdrop').onclick = closeModal;
+
+        function filterType(type) {
+            currentTypeFilter = type;
+            document.querySelectorAll('#typeFilters button').forEach(btn => {
+                const isActive = btn.dataset.filter === type;
+                btn.className = isActive
+                    ? 'filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-indigo-600 text-white shadow-lg shadow-indigo-200 ring-2 ring-offset-2 ring-indigo-600 transition-all'
+                    : 'filter-btn whitespace-nowrap px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-slate-600 hover:bg-slate-50 ring-1 ring-slate-200 transition-all';
+            });
+
+            const levelContainer = document.getElementById('levelFilterContainer');
+            const academicTypes = ['matematicas', 'fisica', 'quimica', 'biologia'];
+
+            if (academicTypes.includes(type)) {
+                levelContainer.classList.remove('hidden');
+            } else {
+                levelContainer.classList.add('hidden');
+                currentLevelFilter = 'all';
+                filterLevel('all');
+            }
+            renderCards();
+        }
+
+        function filterLevel(level) {
+            currentLevelFilter = level;
+            document.querySelectorAll('#levelFilters button').forEach(btn => {
+                const isActive = btn.dataset.level === level;
+                if (isActive) {
+                    btn.classList.remove('text-slate-500', 'hover:text-indigo-600');
+                    btn.classList.add('bg-white', 'text-indigo-600', 'shadow-sm');
+                } else {
+                    btn.classList.add('text-slate-500', 'hover:text-indigo-600');
+                    btn.classList.remove('bg-white', 'text-indigo-600', 'shadow-sm');
+                }
+            });
+            renderCards();
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            currentSearch = '';
+            filterType('all');
+        }
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            renderCards();
+        });
+
+        window.onload = renderCards;
     </script>
-
-    <!-- Legacy utils for Modal (refactored from library.js) -->
-    <script src="../js/library-utils.js"></script>
-
-    <!-- Scripts -->
-    <!-- Type module allows using imports in library.js -->
-    <script type="module" src="../js/library.js"></script>
 </body>
 
 </html>

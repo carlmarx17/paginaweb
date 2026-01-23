@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Holmes | La Enciclopedia de la Lógica | Mundo Académico</title>
+    <title>Mundo Holmes | Mundo Académico</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
         rel="stylesheet">
@@ -41,7 +41,7 @@
         <!-- Hero Section -->
         <header class="hero animacion-entrada">
             <div class="hero-content">
-                <h1>Mundo Holmes | La Enciclopedia de la Lógica</h1>
+                <h1>Mundo Holmes</h1>
                 <p>Invierte el valor de verdad. Si es verdad que llueve, es falso que no llueve....</p>
 
                 <div class="hero-estadisticas">
@@ -96,7 +96,7 @@
                 
                 <div>
                     <div>
-                        <div>T/F</div>
+                        <div class="ecuacion">T/F</div>
                         <h3>Laboratorio de Verdad</h3>
                         
                         <div>
@@ -112,19 +112,19 @@
 
                         <div>
                             <div>
-                                <div>$P \wedge Q$</div>
+                                <div class="ecuacion">$P \wedge Q$</div>
                                 <div id="lab-and">FALSO</div>
                             </div>
                             <div>
-                                <div>$P \vee Q$</div>
+                                <div class="ecuacion">$P \vee Q$</div>
                                 <div id="lab-or">VERDADERO</div>
                             </div>
                             <div>
-                                <div>$P \to Q$</div>
+                                <div class="ecuacion">$P \to Q$</div>
                                 <div id="lab-imp">FALSO</div>
                             </div>
                             <div>
-                                <div>$P \leftrightarrow Q$</div>
+                                <div class="ecuacion">$P \leftrightarrow Q$</div>
                                 <div id="lab-iff">FALSO</div>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                 
                 <div>
                     <h5>Modus Ponendo Ponens</h5>
-                    <div>$ P \to Q, P \vdash Q $</div>
+                    <div class="ecuacion">$ P \to Q, P \vdash Q $</div>
                     <p>"Afirmando el antecedente, afirmo el consecuente".</p>
                     <div>
                         <strong>Ejemplo:</strong> Si hay arsénico (P), huele a almendras (Q). Hay arsénico. Ergo, huele a almendras.
@@ -155,7 +155,7 @@
                 
                 <div>
                     <h5>Modus Tollendo Tollens</h5>
-                    <div>$ P \to Q, \neg Q \vdash \neg P $</div>
+                    <div class="ecuacion">$ P \to Q, \neg Q \vdash \neg P $</div>
                     <p>"Negando el consecuente, niego el antecedente".</p>
                     <div>
                         <strong>Ejemplo:</strong> Si fuera el ladrón (P), tendría la llave (Q). No tiene la llave. Ergo, no es el ladrón.
@@ -165,7 +165,7 @@
                 
                 <div>
                     <h5>Silogismo Hipotético</h5>
-                    <div>$ P \to Q, Q \to R \vdash P \to R $</div>
+                    <div class="ecuacion">$ P \to Q, Q \to R \vdash P \to R $</div>
                     <p>"Ley de la Transitividad".</p>
                     <div>
                         <strong>Ejemplo:</strong> Si llueve, el suelo se moja. Si se moja, hay huellas. Si llueve, habrá huellas.
@@ -175,7 +175,7 @@
                 
                 <div>
                     <h5>Silogismo Disyuntivo</h5>
-                    <div>$ P \vee Q, \neg P \vdash Q $</div>
+                    <div class="ecuacion">$ P \vee Q, \neg P \vdash Q $</div>
                     <p>"Descarte de posibilidades".</p>
                     <div>
                         <strong>Ejemplo:</strong> Fue Moriarty o Moran. No fue Moriarty. Entonces fue Moran.
@@ -185,7 +185,7 @@
                 
                 <div>
                     <h5>Dilema Constructivo</h5>
-                    <div>$ (P \to Q) \wedge (R \to S), P \vee R \vdash Q \vee S $</div>
+                    <div class="ecuacion">$ (P \to Q) \wedge (R \to S), P \vee R \vdash Q \vee S $</div>
                     <p>"El ataque en dos frentes".</p>
                     <div>
                         <strong>Ejemplo:</strong> Si ataco por mar gano (Q), si ataco por tierra gano (S). Ataco por mar o tierra. Ganaré de todos modos.
@@ -195,7 +195,7 @@
                 
                 <div>
                     <h5>Reductio ad Absurdum</h5>
-                    <div>$ P \to (Q \wedge \neg Q) \vdash \neg P $</div>
+                    <div class="ecuacion">$ P \to (Q \wedge \neg Q) \vdash \neg P $</div>
                     <p>"Prueba por contradicción".</p>
                     <div>
                         <strong>Ejemplo:</strong> Asumo que es inocente (P). Eso implica que estaba en dos lugares a la vez (Contradicción). Ergo, no es inocente.
@@ -256,11 +256,11 @@
                         <p>Cuantificadores para generalizaciones</p>
                         <div>
                             <div>
-                                <div>$\forall x (P(x) \to Q(x))$</div>
+                                <div class="ecuacion">$\forall x (P(x) \to Q(x))$</div>
                                 <div>Cuantificador Universal (Para todo)</div>
                             </div>
                             <div>
-                                <div>$\exists x (P(x) \wedge Q(x))$</div>
+                                <div class="ecuacion">$\exists x (P(x) \wedge Q(x))$</div>
                                 <div>Cuantificador Existencial (Existe al menos uno)</div>
                             </div>
                         </div>
@@ -370,8 +370,6 @@
                 <p>Carlos Sibaja | Investigaciones Lógicas</p>
             </div>
         </section>
-
-    </main>
         </main>
 
         <!-- Noticias Section (Injected) -->

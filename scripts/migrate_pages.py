@@ -25,33 +25,78 @@ def migrate():
             # Extract Title
             title_match = re.search(r'<title>(.*?)</title>', content, re.IGNORECASE | re.DOTALL)
             title = title_match.group(1).strip() if title_match else filename.replace('.html', '')
-            # Remove breadcrumbs/extra info from title if present
-            title = title.split(' - ')[0]
+            title = title.split(' - ')[0].split(' | ')[0]
             
             # Extract Main Content
-            # Looking for <!-- Injected Content Starts Here --> and <!-- Injected Content Ends Here -->
-            content_start = '<!-- Injected Content Starts Here -->'
-            content_end = '<!-- Injected Content Ends Here -->'
-            
-            start_idx = content.find(content_start)
-            end_idx = content.find(content_end)
-            
-            if start_idx != -1 and end_idx != -1:
-                main_content = content[start_idx + len(content_start):end_idx].strip()
+            # We need to be careful here if the file is already migrated
+            if '<!-- Injected Content Starts Here -->' in content:
+                content_start = '<!-- Injected Content Starts Here -->'
+                content_end = '<!-- Injected Content Ends Here -->'
+                start_idx = content.find(content_start)
+                end_idx = content.find(content_end)
+                if start_idx != -1 and end_idx != -1:
+                    main_content = content[start_idx + len(content_start):end_idx].strip()
             else:
-                # Fallback: extract inside <article class="content-article">
                 article_match = re.search(r'<article class="content-article">(.*?)</article>', content, re.IGNORECASE | re.DOTALL)
                 if article_match:
                     main_content = article_match.group(1).strip()
                 else:
-                    # Final fallback: extract inside <main>
                     main_match = re.search(r'<main.*?>(.*?)</main>', content, re.IGNORECASE | re.DOTALL)
                     main_content = main_match.group(1).strip() if main_match else content
+
+            # --- PREMIM CONTENT ENHANCEMENT ---
             
-            # Extract Description (First P or H1 subtext)
+            # 1. Enhance Images
+            main_content = re.sub(r'<img\s+(?!class=["\']imagen-premium)', r'<img class="imagen-premium" ', main_content)
+            
+            # 2. Enhance Videos (iframe)
+            main_content = re.sub(r'(?<!<div class="video-wrapper">)\s*(<iframe.*?>.*?</iframe>)\s*(?!</div>)', r'\n<div class="video-wrapper">\n\1\n</div>\n', main_content, flags=re.DOTALL)
+            
+            # 3. Enhance Quizzes
+            # First, normalize options that might have been partially migrated
+            main_content = main_content.replace('class="opcion"', '')
+            
+            # Define a more robust quiz pattern
+            # It looks for a question followed by a container of options
+            def quiz_replacer(match):
+                question_text = match.group(1).strip()
+                options_html = match.group(2).strip()
+                
+                # Extract quiz ID
+                quiz_id_match = re.search(r'[\'"](q\d+)[\'"]', options_html)
+                quiz_id = quiz_id_match.group(1) if quiz_id_match else "quiz_feedback"
+                
+                # Add class 'opcion' to each option div
+                # We look for divs that have checkAnswer
+                options_html = re.sub(r'<div\s+onclick="checkAnswer', r'<div class="opcion" onclick="checkAnswer', options_html)
+                
+                return f"""
+<div class="pregunta-container">
+    <div class="pregunta-texto"><h3>{question_text}</h3></div>
+    <div class="opciones-grid">
+        {options_html}
+    </div>
+    <div id="{quiz_id}" class="feedback-quiz"></div>
+</div>"""
+
+            # This pattern matches: <div>1. Question</div> <div> <div onclick>...</div> ... </div>
+            # We use a non-greedy .*? to avoid capturing multiple quizzes as one
+            main_content = re.sub(r'<div>(\d+\..*?)</div>\s*<div>\s*((?:<div\s+onclick="checkAnswer.*?</div>\s*)+)</div>', quiz_replacer, main_content, flags=re.DOTALL)
+
+            # 4. Enhance Equations
+            equation_keywords = r'P\(|μ|σ|Σ|=|×|\+|-|/|\\'
+            # We look for divs that only contain text and math symbols
+            def equation_replacer(match):
+                text = match.group(1).strip()
+                if '<' not in text: # No inner tags
+                    return f'<div class="ecuacion">{text}</div>'
+                return match.group(0)
+
+            main_content = re.sub(r'<div>\s*([^<]*?({equation_keywords})[^<]*?)\s*</div>', equation_replacer, main_content)
+
+            # Extract Description
             desc_match = re.search(r'<p>(.*?)</p>', main_content, re.IGNORECASE | re.DOTALL)
             description = desc_match.group(1).strip() if desc_match else "Explora este fascinante tema con nosotros."
-            # Clean up HTML tags from description
             description = re.sub(r'<.*?>', '', description)[:150] + "..."
             
             # Replace placeholders
@@ -64,7 +109,7 @@ def migrate():
             with open(file_path, 'w', encoding='utf-8') as f:
                 f.write(new_html)
             
-            print(f"Migrated: {filename}")
+            print(f"Migrated & Enhanced: {filename}")
 
 if __name__ == "__main__":
     migrate()
