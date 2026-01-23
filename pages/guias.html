@@ -104,6 +104,50 @@
                 opacity: 1;
             }
         }
+
+        /* Estilos Noticias Premium */
+        .seccion-noticias {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f1f5f9;
+        }
+
+        .grid-noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tarjeta-noticia {
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .tarjeta-noticia:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .noticia-azul {
+            background: #eff6ff;
+            border-color: #dbeafe;
+        }
+
+        .noticia-verde {
+            background: #f0fdf4;
+            border-color: #dcfce7;
+        }
+
+        .noticia-roja {
+            background: #fef2f2;
+            border-color: #fee2e2;
+        }
     </style>
 </head>
 
@@ -146,7 +190,7 @@
 
         <!-- PANEL DE FILTROS -->
         <div
-            class="bg-white rounded-[2rem] p-6 shadow-xl shadow-slate-100 mb-12 border border-slate-100 relative overflow-hidden">
+            class="bg-white rounded-[2rem] p-6 shadow-xl shadow-slate-100 mb-8 border border-slate-100 relative overflow-hidden">
             <div
                 class="absolute top-0 right-0 w-64 h-64 bg-indigo-50 rounded-full blur-3xl -mr-16 -mt-16 opacity-50 pointer-events-none">
             </div>
@@ -212,6 +256,34 @@
                 </div>
             </div>
         </div>
+
+        <!-- SECCIÓN DE NOTICIAS (Distintiva) -->
+        <section class="seccion-noticias">
+            <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                <i class="fas fa-newspaper"></i> Actualidad Académica
+            </h3>
+            <div class="grid-noticias">
+                <div class="tarjeta-noticia noticia-azul"
+                    onclick="alert('Explora los nuevos laboratorios de Química Virtual')">
+                    <span class="text-2xl mb-2 block">🧪</span>
+                    <h4 class="font-bold text-blue-900">Nuevos Labs Virtuales</h4>
+                    <p class="text-sm text-blue-700">Simulaciones interactivas para experimentos de química orgánica
+                        ahora disponibles.</p>
+                </div>
+                <div class="tarjeta-noticia noticia-verde"
+                    onclick="alert('Actualización completa de guías de Biología')">
+                    <span class="text-2xl mb-2 block">🧬</span>
+                    <h4 class="font-bold text-green-900">Actualización: ADN</h4>
+                    <p class="text-sm text-green-700">Nuevas guías visuales sobre genética y herencia mendeliana.</p>
+                </div>
+                <div class="tarjeta-noticia noticia-roja" onclick="alert('Inscríbete en las próximas olimpiadas')">
+                    <span class="text-2xl mb-2 block">🏆</span>
+                    <h4 class="font-bold text-red-900">Olimpiadas Mundo Fracción</h4>
+                    <p class="text-sm text-red-700">¡Prepárate! Inscripciones abiertas para el torneo de matemáticas
+                        interactivo.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Barra de estado -->
         <div class="flex items-center justify-between mb-6 px-2">
@@ -315,122 +387,121 @@
     </div>
 
     <script>
-        // CONFIGURACIÓN DE RUTAS BASE
-        const baseUrl = "https://sites.google.com/view/carlosmartinezprofesor/guias-estudio";
-        const baseExclusive = "https://sites.google.com/view/carlosmartinezprofesor/mundos-literarios-excusive";
-        const suffix = "?authuser=0";
+        // CONFIGURACIÓN DE RUTAS BASE LOCALES
+        const baseUrl = "articles";
+        const baseExclusive = "articles";
 
-        // --- BASE DE DATOS COMPLETA (INCLUYE "PRÓXIMAMENTE") ---
+        // --- BASE DE DATOS COMPLETA (SINCRONIZADA CON REPOSIORIO LOCAL) ---
         const db = [
             // ================== MATEMÁTICAS - SECUNDARIA ==================
             {
                 id: "m-s-1", title: "Aritmética", type: "academico", level: "secundaria",
                 color: "text-rose-600", bg: "bg-rose-500", icon: "fa-calculator", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-segundaria/aritmetica${suffix}`,
+                mainUrl: `${baseUrl}/Aritmetica.html`,
                 desc: "Números, fracciones, porcentajes y operaciones básicas.",
                 subtopics: [
-                    { name: "Números enteros y racionales", url: `${baseUrl}/matematicas-segundaria/aritmetica/numeros-enteros-y-racionales${suffix}` },
-                    { name: "Fracciones", url: `${baseUrl}/matematicas-segundaria/aritmetica/fracciones${suffix}` },
-                    { name: "Porcentajes", url: `${baseUrl}/matematicas-segundaria/aritmetica/porcentajes${suffix}` },
-                    { name: "Operaciones Básicas", url: `${baseUrl}/matematicas-segundaria/aritmetica/operaciones${suffix}` },
-                    { name: "Proporciones y razones", url: `${baseUrl}/matematicas-segundaria/aritmetica/proporciones-y-razones${suffix}` }
+                    { name: "Números enteros y racionales", url: `${baseUrl}/Numeros enteros y racionales.html` },
+                    { name: "Fracciones", url: `${baseUrl}/Fracciones.html` },
+                    { name: "Porcentajes", url: `${baseUrl}/Porcentajes.html` },
+                    { name: "Operaciones Básicas", url: `${baseUrl}/Operaciones.html` },
+                    { name: "Proporciones y razones", url: `${baseUrl}/Proporciones y razones.html` }
                 ]
             },
             {
                 id: "m-s-2", title: "Álgebra Básica", type: "academico", level: "secundaria",
                 color: "text-rose-600", bg: "bg-rose-500", icon: "fa-superscript", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-segundaria/algebra-basica${suffix}`,
+                mainUrl: `${baseUrl}/Algebra Basica.html`,
                 desc: "Ecuaciones, sistemas y factorización.",
                 subtopics: [
-                    { name: "Ecuaciones de primer grado", url: `${baseUrl}/matematicas-segundaria/algebra-basica/ecuaciones-de-primer-grado${suffix}` },
-                    { name: "Sistemas de ecuaciones", url: `${baseUrl}/matematicas-segundaria/algebra-basica/sistemas-de-ecuaciones${suffix}` },
-                    { name: "Factorización", url: `${baseUrl}/matematicas-segundaria/algebra-basica/factorizacion${suffix}` },
+                    { name: "Ecuaciones de primer grado", url: `${baseUrl}/Ecuaciones de primer grado.html` },
+                    { name: "Sistemas de ecuaciones", url: `${baseUrl}/Sistemas de ecuaciones.html` },
+                    { name: "Factorización", url: `${baseUrl}/Factorizacion.html` },
                     { name: "Productos Notables", url: "#" }
                 ]
             },
             {
                 id: "m-s-3", title: "Geometría", type: "academico", level: "secundaria",
                 color: "text-rose-600", bg: "bg-rose-500", icon: "fa-shapes", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-segundaria/geometria${suffix}`,
+                mainUrl: `${baseUrl}/Geometria.html`,
                 desc: "Figuras, áreas y teoremas fundamentales.",
                 subtopics: [
-                    { name: "Perímetros y Áreas", url: `${baseUrl}/matematicas-segundaria/geometria/perimetros-y-areas${suffix}` },
-                    { name: "Teorema de Pitágoras", url: `${baseUrl}/matematicas-segundaria/geometria/pitagoras${suffix}` },
-                    { name: "Teorema de Tales", url: `${baseUrl}/matematicas-segundaria/geometria/teorema-de-tales${suffix}` }
+                    { name: "Perímetros y Áreas", url: `${baseUrl}/Perimetros y areas.html` },
+                    { name: "Teorema de Pitágoras", url: `${baseUrl}/Pitagoras.html` },
+                    { name: "Teorema de Tales", url: `${baseUrl}/Teorema de tales.html` }
                 ]
             },
             {
                 id: "m-s-4", title: "Trigonometría", type: "academico", level: "secundaria",
                 color: "text-rose-600", bg: "bg-rose-500", icon: "fa-draw-polygon", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-segundaria/trigonometria${suffix}`,
+                mainUrl: `${baseUrl}/Trigonometria.html`,
                 desc: "Relaciones triangulares y funciones.",
                 subtopics: [
-                    { name: "Aplicaciones Trigonometría", url: `${baseUrl}/matematicas-segundaria/trigonometria/aplicaicones-trigonometria${suffix}` }
+                    { name: "Aplicaciones Trigonometría", url: `${baseUrl}/Aplicaicones Trigonometria.html` }
                 ]
             },
             {
                 id: "m-s-5", title: "Estadística y Prob.", type: "academico", level: "secundaria",
                 color: "text-rose-600", bg: "bg-rose-500", icon: "fa-chart-bar", status: "pronto",
-                mainUrl: "#", desc: "Análisis de datos e interpretación.", subtopics: [] // Marcador
+                mainUrl: "#", desc: "Análisis de datos e interpretación.", subtopics: []
             },
 
             // ================== MATEMÁTICAS - UNIVERSITARIA ==================
             {
                 id: "m-u-1", title: "Cálculo Diferencial", type: "academico", level: "universitario",
                 color: "text-rose-800", bg: "bg-rose-800", icon: "fa-chart-line", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-universitarias/calculo-diferencial${suffix}`,
+                mainUrl: `${baseUrl}/Calculo Diferencial.html`,
                 desc: "Límites, derivadas y estudio de funciones.",
                 subtopics: [
-                    { name: "Funciones Exponenciales", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/funciones/funciones-exponenciales${suffix}` },
-                    { name: "Límites y continuidad", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/limites-y-continuidad${suffix}` },
-                    { name: "Derivadas", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/derivadas${suffix}` },
-                    { name: "Regla de la Cadena", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/regla-de-la-cadena${suffix}` },
-                    { name: "Optimización", url: `${baseUrl}/matematicas-universitarias/calculo-diferencial/optimizacion${suffix}` }
+                    { name: "Funciones Exponenciales", url: `${baseUrl}/Funciones exponenciales.html` },
+                    { name: "Límites y continuidad", url: `${baseUrl}/Limites y continuidad.html` },
+                    { name: "Derivadas", url: `${baseUrl}/Derivadas.html` },
+                    { name: "Regla de la Cadena", url: `${baseUrl}/Regla de la cadena.html` },
+                    { name: "Optimización", url: `${baseUrl}/Optimizacion.html` }
                 ]
             },
             {
                 id: "m-u-2", title: "Cálculo Integral", type: "academico", level: "universitario",
                 color: "text-rose-800", bg: "bg-rose-800", icon: "fa-infinity", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-universitarias/calculo-integral${suffix}`,
+                mainUrl: `${baseUrl}/Calculo Integral.html`,
                 desc: "Integración, áreas y volúmenes.",
                 subtopics: [
-                    { name: "Sumas de Riemann", url: `${baseUrl}/matematicas-universitarias/calculo-integral/sumas-de-riemann${suffix}` },
-                    { name: "Integral Definida e Indefinida", url: `${baseUrl}/matematicas-universitarias/calculo-integral/integral-definida-e-indefinida${suffix}` },
-                    { name: "Técnicas de Integración", url: `${baseUrl}/matematicas-universitarias/calculo-integral/tecnicas-de-integracion${suffix}` },
-                    { name: "Teorema Fundamental", url: `${baseUrl}/matematicas-universitarias/calculo-integral/teorema-fundamental-del-calculo${suffix}` },
-                    { name: "Aplicaciones", url: `${baseUrl}/matematicas-universitarias/calculo-integral/aplicaciones${suffix}` }
+                    { name: "Sumas de Riemann", url: `${baseUrl}/Sumas de riemann.html` },
+                    { name: "Integral Definida e Indefinida", url: `${baseUrl}/Integral definida e indefinida.html` },
+                    { name: "Técnicas de Integración", url: `${baseUrl}/Tecnicas de integracion.html` },
+                    { name: "Teorema Fundamental", url: `${baseUrl}/Teorema fundamental del calculo.html` },
+                    { name: "Aplicaciones", url: `${baseUrl}/Aplicaciones.html` }
                 ]
             },
             {
                 id: "m-u-3", title: "Álgebra Lineal", type: "academico", level: "universitario",
                 color: "text-rose-800", bg: "bg-rose-800", icon: "fa-vector-square", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-universitarias/algebra-lineal${suffix}`,
+                mainUrl: `${baseUrl}/Algebra Lineal.html`,
                 desc: "Espacios vectoriales y matrices.",
                 subtopics: [
-                    { name: "Matrices y Determinantes", url: `${baseUrl}/matematicas-universitarias/algebra-lineal/matrices-y-determinantes${suffix}` },
-                    { name: "Sistemas Lineales", url: `${baseUrl}/matematicas-universitarias/algebra-lineal/sistemas-de-ecuaciones-lineales${suffix}` },
-                    { name: "Transformaciones Lineales", url: `${baseUrl}/matematicas-universitarias/algebra-lineal/transformaciones-lineales${suffix}` }
+                    { name: "Matrices y Determinantes", url: `${baseUrl}/Matrices y determinantes.html` },
+                    { name: "Sistemas Lineales", url: `${baseUrl}/Sistemas de ecuaciones lineales.html` },
+                    { name: "Transformaciones Lineales", url: `${baseUrl}/Transformaciones lineales.html` }
                 ]
             },
             {
                 id: "m-u-4", title: "Ec. Diferenciales", type: "academico", level: "universitario",
                 color: "text-rose-800", bg: "bg-rose-800", icon: "fa-wave-square", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-universitarias/ecuaciones-diferenciales${suffix}`,
+                mainUrl: `${baseUrl}/Ecuaciones Diferenciales.html`,
                 desc: "Modelado matemático y ecuaciones dinámicas.",
                 subtopics: [
-                    { name: "EDO Primer Orden", url: `${baseUrl}/matematicas-universitarias/ecuaciones-diferenciales/edo-primer-orden${suffix}` },
-                    { name: "Ecuación de Bernoulli", url: `${baseUrl}/matematicas-universitarias/ecuacion-diferencial-de-bernoulli${suffix}` },
-                    { name: "EDO Lineales", url: `${baseUrl}/matematicas-universitarias/ecuaciones-diferenciales/edo-lineales${suffix}` }
+                    { name: "EDO Primer Orden", url: `${baseUrl}/EDO Primer Orden.html` },
+                    { name: "Ecuación de Bernoulli", url: `${baseUrl}/Ecuacion Diferencial de Bernoulli.html` },
+                    { name: "EDO Lineales", url: `${baseUrl}/EDO Lineales.html` }
                 ]
             },
             {
                 id: "m-u-5", title: "Probabilidad Univ.", type: "academico", level: "universitario",
                 color: "text-rose-800", bg: "bg-rose-800", icon: "fa-dice", status: "disponible",
-                mainUrl: `${baseUrl}/matematicas-universitarias/probabilidad-y-estadistica${suffix}`,
+                mainUrl: `${baseUrl}/Probabilidad y Estadistica.html`,
                 desc: "Estadística inferencial y distribuciones.",
                 subtopics: [
-                    { name: "Inferencia Estadística", url: `${baseUrl}/matematicas-universitarias/probabilidad-y-estadistica/inferencia-estadistica${suffix}` },
-                    { name: "Deducción", url: `${baseUrl}/matematicas-universitarias/probabilidad-y-estadistica/deduccion${suffix}` }
+                    { name: "Inferencia Estadística", url: `${baseUrl}/Inferencia estadistica.html` },
+                    { name: "Deducción", url: `${baseUrl}/Deduccion.html` }
                 ]
             },
 
@@ -438,54 +509,54 @@
             {
                 id: "f-s-1", title: "Mecánica", type: "academico", level: "secundaria",
                 color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-cogs", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-segundaria/mecanica${suffix}`,
+                mainUrl: `${baseUrl}/Mecanica.html`,
                 desc: "Movimiento, fuerzas y energía.",
                 subtopics: [
-                    { name: "Magnitudes", url: `${baseUrl}/fisica-segundaria/mecanica/magnitudes${suffix}` },
-                    { name: "Conversión de Unidades", url: `${baseUrl}/fisica-segundaria/mecanica/conversion-de-unidades${suffix}` },
-                    { name: "Vectores", url: `${baseUrl}/fisica-segundaria/mecanica/vectores${suffix}` },
-                    { name: "Movimiento Circular", url: `${baseUrl}/fisica-segundaria/mecanica/cinematica/movimiento-circular${suffix}` },
-                    { name: "Leyes de Newton", url: `${baseUrl}/fisica-segundaria/mecanica/leyes-de-newton${suffix}` },
-                    { name: "Conservación Momento", url: `${baseUrl}/fisica-segundaria/mecanica/conservacion-momento${suffix}` },
-                    { name: "Trabajo y Energía", url: `${baseUrl}/fisica-segundaria/mecanica/trabajo-y-energia${suffix}` }
+                    { name: "Magnitudes", url: `${baseUrl}/Magnitudes.html` },
+                    { name: "Conversión de Unidades", url: `${baseUrl}/Conversion de Unidades.html` },
+                    { name: "Vectores", url: `${baseUrl}/Vectores.html` },
+                    { name: "Movimiento Circular", url: `${baseUrl}/Movimiento circular.html` },
+                    { name: "Leyes de Newton", url: `${baseUrl}/Leyes de Newton.html` },
+                    { name: "Conservación Momento", url: `${baseUrl}/Conservacion Momento.html` },
+                    { name: "Trabajo y Energía", url: `${baseUrl}/Trabajo y energia.html` }
                 ]
             },
             {
                 id: "f-s-2", title: "Calor y Temperatura", type: "academico", level: "secundaria",
                 color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-thermometer-half", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-segundaria/calor-y-temperatura${suffix}`,
+                mainUrl: `${baseUrl}/Calor y Temperatura.html`,
                 desc: "Termodinámica básica.",
                 subtopics: [
-                    { name: "Dilatación Térmica", url: `${baseUrl}/fisica-segundaria/calor-y-temperatura/dilatacion-termica${suffix}` }
+                    { name: "Dilatación Térmica", url: `${baseUrl}/Dilatacion Termica.html` }
                 ]
             },
             {
                 id: "f-s-3", title: "Óptica", type: "academico", level: "secundaria",
                 color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-eye", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-segundaria/optica${suffix}`,
+                mainUrl: `${baseUrl}/Optica.html`,
                 desc: "Luz, reflexión y refracción.",
                 subtopics: [
-                    { name: "Espejos", url: `${baseUrl}/fisica-segundaria/optica/espejos${suffix}` },
-                    { name: "Lentes", url: `${baseUrl}/fisica-segundaria/optica/lentes${suffix}` }
+                    { name: "Espejos", url: `${baseUrl}/Espejos.html` },
+                    { name: "Lentes", url: `${baseUrl}/Lentes.html` }
                 ]
             },
             {
                 id: "f-s-4", title: "Electricidad", type: "academico", level: "secundaria",
                 color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-bolt", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-segundaria/electricidad${suffix}`,
+                mainUrl: `${baseUrl}/Electricidad.html`,
                 desc: "Circuitos y carga eléctrica.",
                 subtopics: [
-                    { name: "Ley de Ohm", url: `${baseUrl}/fisica-segundaria/electricidad/ley-de-ohm${suffix}` }
+                    { name: "Ley de Ohm", url: `${baseUrl}/Ley de ohm.html` }
                 ]
             },
             {
                 id: "f-s-6", title: "Astronomía", type: "academico", level: "secundaria",
                 color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-star", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-segundaria/astronomia${suffix}`,
+                mainUrl: `${baseUrl}/Astronomia.html`,
                 desc: "El cosmos y la vida en el universo.",
                 subtopics: [
-                    { name: "Astrobiología", url: `${baseUrl}/fisica-segundaria/astronomia/astrobiologia${suffix}` },
-                    { name: "Coordenadas Astronómicas", url: `${baseUrl}/fisica-segundaria/astronomia/coordenadas-astornomicas${suffix}` }
+                    { name: "Astrobiología", url: `${baseUrl}/Astrobiologia.html` },
+                    { name: "Coordenadas Astronómicas", url: `${baseUrl}/Coordenadas Astornomicas.html` }
                 ]
             },
 
@@ -493,23 +564,23 @@
             {
                 id: "f-u-1", title: "Mecánica Univ.", type: "academico", level: "universitario",
                 color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-atom", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-universitaria/mecanica${suffix}`,
+                mainUrl: `${baseUrl}/Mecanica Univ.html`,
                 desc: "Física clásica avanzada.",
                 subtopics: [
-                    { name: "Cinemática Vectorial", url: `${baseUrl}/fisica-universitaria/mecanica/cinematica-vectorial${suffix}` },
-                    { name: "Dinámica", url: `${baseUrl}/fisica-universitaria/mecanica/dinamica${suffix}` },
-                    { name: "Cuerpo Rígido", url: `${baseUrl}/fisica-universitaria/mecanica/cuerpo-rigidio${suffix}` },
-                    { name: "Sistema de referencia", url: `${baseUrl}/fisica-universitaria/mecanica/sistema-de-referencia${suffix}` }
+                    { name: "Cinemática Vectorial", url: `${baseUrl}/Cinematica Vectorial.html` },
+                    { name: "Dinámica", url: `${baseUrl}/Dinamica.html` },
+                    { name: "Cuerpo Rígido", url: `${baseUrl}/Cuerpo Rigidio.html` },
+                    { name: "Sistema de referencia", url: `${baseUrl}/Sistema de referencia.html` }
                 ]
             },
             {
                 id: "f-u-2", title: "Electromagnetismo", type: "academico", level: "universitario",
                 color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-magnet", status: "disponible",
-                mainUrl: `${baseUrl}/fisica-universitaria/electromagnetismo${suffix}`,
+                mainUrl: `${baseUrl}/Electromagnetismo.html`,
                 desc: "Campos y ondas electromagnéticas.",
                 subtopics: [
-                    { name: "Ley de Coulomb", url: `${baseUrl}/fisica-universitaria/electromagnetismo/ley-de-columb${suffix}` },
-                    { name: "Leyes de Kirchhoff", url: `${baseUrl}/fisica-universitaria/electromagnetismo/leyes-de-kirchoff${suffix}` }
+                    { name: "Ley de Coulomb", url: `${baseUrl}/Ley de columb.html` },
+                    { name: "Leyes de Kirchhoff", url: `${baseUrl}/Leyes de kirchoff.html` }
                 ]
             },
             {
@@ -527,40 +598,40 @@
             {
                 id: "q-s-1", title: "Modelos Atómicos", type: "academico", level: "secundaria",
                 color: "text-teal-600", bg: "bg-teal-500", icon: "fa-atom", status: "disponible",
-                mainUrl: `${baseUrl}/quimica-segundaria/modelos-atomicos${suffix}`,
+                mainUrl: `${baseUrl}/Modelos Atomicos.html`,
                 desc: "Estructura de la materia.",
                 subtopics: [
-                    { name: "Distribuciones Electrónicas", url: `${baseUrl}/quimica-segundaria/modelos-atomicos/distribuciones-electronicas${suffix}` }
+                    { name: "Distribuciones Electrónicas", url: `${baseUrl}/Distribuciones Electronicas.html` }
                 ]
             },
             {
                 id: "q-s-5", title: "Soluciones", type: "academico", level: "secundaria",
                 color: "text-teal-600", bg: "bg-teal-500", icon: "fa-vial", status: "disponible",
-                mainUrl: `${baseUrl}/quimica-segundaria/soluciones${suffix}`,
+                mainUrl: `${baseUrl}/Soluciones.html`,
                 desc: "Mezclas homogéneas y pH.",
                 subtopics: [
-                    { name: "Ácidos y Bases", url: `${baseUrl}/quimica-segundaria/soluciones/acidos-y-bases${suffix}` }
+                    { name: "Ácidos y Bases", url: `${baseUrl}/Acidos y Bases.html` }
                 ]
             },
             {
                 id: "q-s-4", title: "Reacciones", type: "academico", level: "secundaria",
                 color: "text-teal-600", bg: "bg-teal-500", icon: "fa-flask", status: "disponible",
-                mainUrl: `${baseUrl}/quimica-segundaria/reacciones-quimicas${suffix}`,
+                mainUrl: `${baseUrl}/Reacciones Quimicas.html`,
                 desc: "Cambios químicos y estequiometría.",
                 subtopics: [
-                    { name: "Estequiometría", url: `${baseUrl}/quimica-segundaria/reacciones-quimicas/estecquiometria${suffix}` }
+                    { name: "Estequiometría", url: `${baseUrl}/Estecquiometria.html` }
                 ]
             },
             {
                 id: "q-s-2", title: "Tabla Periódica", type: "academico", level: "secundaria",
                 color: "text-teal-600", bg: "bg-teal-500", icon: "fa-table", status: "disponible",
-                mainUrl: `${baseUrl}/quimica-segundaria/tabla-periodica${suffix}`,
+                mainUrl: `${baseUrl}/Tabla Periodica.html`,
                 desc: "Elementos y propiedades.", subtopics: []
             },
             {
                 id: "q-s-6", title: "Química Orgánica", type: "academico", level: "secundaria",
                 color: "text-teal-600", bg: "bg-teal-500", icon: "fa-leaf", status: "disponible",
-                mainUrl: `${baseUrl}/quimica-segundaria/quimca-organica${suffix}`,
+                mainUrl: `${baseUrl}/Quimica Organica.html`,
                 desc: "El carbono y sus compuestos.", subtopics: []
             },
             {
@@ -569,13 +640,13 @@
                 mainUrl: "#",
                 desc: "Reglas para nombrar compuestos.",
                 subtopics: [
-                    { name: "Estados de Oxidación", url: `${baseUrl}/quimica-segundaria/nomenclatura/estados-de-oxidacion${suffix}` }
+                    { name: "Estados de Oxidación", url: `${baseUrl}/Estados de Oxidacion.html` }
                 ]
             },
             {
                 id: "q-s-8", title: "Gases", type: "academico", level: "secundaria",
                 color: "text-teal-600", bg: "bg-teal-500", icon: "fa-cloud", status: "disponible",
-                mainUrl: `${baseUrl}/quimica-segundaria/gases${suffix}`,
+                mainUrl: `${baseUrl}/Gases.html`,
                 desc: "Leyes y comportamiento de los gases.", subtopics: []
             },
 
@@ -583,11 +654,11 @@
             {
                 id: "q-u-3", title: "Bioquímica", type: "academico", level: "universitario",
                 color: "text-teal-800", bg: "bg-teal-700", icon: "fa-dna", status: "disponible",
-                mainUrl: `${baseUrl}/bioquimica${suffix}`,
+                mainUrl: `${baseUrl}/Bioquimica.html`,
                 desc: "Moléculas de la vida.",
                 subtopics: [
-                    { name: "Lípidos", url: `${baseUrl}/bioquimica/lipidos${suffix}` },
-                    { name: "Proteínas", url: `${baseUrl}/bioquimica/proteinas${suffix}` }
+                    { name: "Lípidos", url: `${baseUrl}/Lipidos.html` },
+                    { name: "Proteínas", url: `${baseUrl}/Proteinas.html` }
                 ]
             },
             {
@@ -600,39 +671,39 @@
             {
                 id: "b-s-1", title: "Teoría Celular", type: "academico", level: "secundaria",
                 color: "text-green-600", bg: "bg-green-500", icon: "fa-circle", status: "disponible",
-                mainUrl: `${baseUrl}/biologia-segundaria/teoria-celular${suffix}`,
+                mainUrl: `${baseUrl}/Teoria Celular.html`,
                 desc: "La unidad de la vida.",
                 subtopics: [
-                    { name: "Mitosis y Meiosis", url: `${baseUrl}/biologia-segundaria/teoria-celular/mitosis-y-meiosis${suffix}` }
+                    { name: "Mitosis y Meiosis", url: `${baseUrl}/Mitosis y Meiosis.html` }
                 ]
             },
             {
                 id: "b-s-4", title: "Ecología", type: "academico", level: "secundaria",
                 color: "text-green-600", bg: "bg-green-500", icon: "fa-tree", status: "disponible",
-                mainUrl: `${baseUrl}/biologia-segundaria/ecologia${suffix}`,
+                mainUrl: `${baseUrl}/Ecologia.html`,
                 desc: "Interacciones biológicas.",
                 subtopics: [
-                    { name: "Metrología Macondo", url: `${baseUrl}/biologia-segundaria/ecologia/metrologia-macondo${suffix}` },
-                    { name: "Ecosistemas y Biomas", url: `${baseUrl}/biologia-segundaria/ecologia/ecosistemas-y-biomas${suffix}` }
+                    { name: "Metrología Macondo", url: `${baseUrl}/Metrologia Macondo.html` },
+                    { name: "Ecosistemas y Biomas", url: `${baseUrl}/Ecosistemas y Biomas.html` }
                 ]
             },
             {
                 id: "b-s-3", title: "Cuerpo Humano", type: "academico", level: "secundaria",
                 color: "text-green-600", bg: "bg-green-500", icon: "fa-walking", status: "disponible",
-                mainUrl: `${baseUrl}/biologia-segundaria/cuerpo-humano${suffix}`,
+                mainUrl: `${baseUrl}/Cuerpo Humano.html`,
                 desc: "Anatomía y fisiología.",
                 subtopics: [
-                    { name: "Aparato Digestivo", url: `${baseUrl}/biologia-segundaria/cuerpo-humano/aparato-digestivo${suffix}` }
+                    { name: "Aparato Digestivo", url: `${baseUrl}/Aparato Digestivo.html` }
                 ]
             },
             {
                 id: "b-s-2", title: "Genética", type: "academico", level: "secundaria",
                 color: "text-green-600", bg: "bg-green-500", icon: "fa-dna", status: "disponible",
-                mainUrl: `${baseUrl}/biologia-segundaria/genetica${suffix}`,
+                mainUrl: `${baseUrl}/Genetica.html`,
                 desc: "Herencia y ADN.",
                 subtopics: [
-                    { name: "Leyes de Mendel", url: `${baseUrl}/biologia-segundaria/genetica/leyes-de-mendel${suffix}` },
-                    { name: "ADN y ARN", url: `${baseUrl}/biologia-segundaria/genetica/adn-y-arn${suffix}` }
+                    { name: "Leyes de Mendel", url: `${baseUrl}/Leyes de Mendel.html` },
+                    { name: "ADN y ARN", url: `${baseUrl}/ADN y ARN.html` }
                 ]
             },
             {
@@ -641,7 +712,7 @@
                 mainUrl: "#",
                 desc: "Biología avanzada.",
                 subtopics: [
-                    { name: "Neurociencia del Soma", url: `${baseUrl}/biologia-universitaria/neurociencia-del-soma${suffix}` }
+                    { name: "Neurociencia del Soma", url: `${baseUrl}/Neurociencia del Soma.html` }
                 ]
             },
 
@@ -649,58 +720,58 @@
             {
                 id: "l-1", title: "Macondo", type: "literatura", level: null,
                 color: "text-emerald-700", bg: "bg-emerald-600", icon: "fa-leaf", status: "disponible",
-                mainUrl: `${baseExclusive}/macondo${suffix}`,
+                mainUrl: `${baseExclusive}/Macondo.html`,
                 desc: "Cien años de soledad. Ecología y genética.",
                 subtopics: [
-                    { name: "Peligros de la endogamia", url: `${baseExclusive}/macondo/peligros-de-la-endogamia${suffix}` },
-                    { name: "Descubrimientos científicos", url: `${baseExclusive}/macondo/descubrimientos-cientificos${suffix}` }
+                    { name: "Peligros de la endogamia", url: `${baseExclusive}/Peligros de la endogamia.html` },
+                    { name: "Descubrimientos científicos", url: `${baseExclusive}/Descubrimientos cientificos.html` }
                 ]
             },
             {
                 id: "l-3", title: "La Odisea", type: "literatura", level: null,
                 color: "text-orange-700", bg: "bg-orange-500", icon: "fa-ship", status: "disponible",
-                mainUrl: `${baseExclusive}/odisea${suffix}`,
+                mainUrl: `${baseExclusive}/Odisea.html`,
                 desc: "Homero. Ciencia antigua y navegación.",
                 subtopics: []
             },
             {
                 id: "l-12", title: "Sherlock Holmes", type: "literatura", level: null,
                 color: "text-red-900", bg: "bg-red-800", icon: "fa-search", status: "disponible",
-                mainUrl: `${baseExclusive}/sherlock${suffix}`,
+                mainUrl: `${baseExclusive}/Sherlock Holmes.html`,
                 desc: "A. Conan Doyle. Deducción y forense.",
                 subtopics: [
-                    { name: "Venenos", url: `${baseExclusive}/sherlock/venenos${suffix}` },
-                    { name: "Lógica", url: `${baseExclusive}/sherlock/logica${suffix}` }
+                    { name: "Venenos", url: `${baseExclusive}/Venenos.html` },
+                    { name: "Lógica", url: `${baseExclusive}/Logica.html` }
                 ]
             },
             {
                 id: "l-14", title: "Jurassic Park", type: "literatura", level: null,
                 color: "text-emerald-800", bg: "bg-emerald-700", icon: "fa-dragon", status: "disponible",
-                mainUrl: `${baseExclusive}/jurasic${suffix}`,
+                mainUrl: `${baseExclusive}/Jurassic Park.html`,
                 desc: "Michael Crichton. Clonación y Caos.",
                 subtopics: []
             },
             {
                 id: "l-20", title: "El Principito", type: "literatura", level: null,
                 color: "text-yellow-600", bg: "bg-yellow-500", icon: "fa-star", status: "disponible",
-                mainUrl: `${baseExclusive}/principito${suffix}`,
+                mainUrl: `${baseExclusive}/El Principito.html`,
                 desc: "Saint-Exupéry. Astrobiología poética.",
                 subtopics: [
-                    { name: "Bao Baos", url: `${baseExclusive}/principito/bao-baos${suffix}` },
-                    { name: "Astrobiología asteroide", url: `${baseExclusive}/principito/astobiologia-en-el-asteroide${suffix}` }
+                    { name: "Bao Baos", url: `${baseExclusive}/Bao baos.html` },
+                    { name: "Astrobiología asteroide", url: `${baseExclusive}/Astobiologia en el asteroide.html` }
                 ]
             },
             {
                 id: "l-10", title: "Frankenstein", type: "literatura", level: null,
                 color: "text-green-800", bg: "bg-green-700", icon: "fa-bolt", status: "disponible",
-                mainUrl: `${baseExclusive}/frankestein${suffix}`,
+                mainUrl: `${baseExclusive}/Frankenstein.html`,
                 desc: "Mary Shelley. Bioética y electricidad.",
                 subtopics: []
             },
             {
                 id: "l-7", title: "Viaje al Centro", type: "literatura", level: null,
                 color: "text-amber-800", bg: "bg-amber-700", icon: "fa-mountain", status: "disponible",
-                mainUrl: `${baseExclusive}/vaije-al-centro-de-la-tierra${suffix}`,
+                mainUrl: `${baseExclusive}/Viaje al Centro.html`,
                 desc: "Julio Verne. Geología profunda.",
                 subtopics: []
             },

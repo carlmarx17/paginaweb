@@ -55,7 +55,8 @@
 
         <!-- Main Content Area -->
         <main class="main-content animacion-entrada animacion-retraso-1">
-            <div>
+            <!-- Injected Content Starts Here -->
+<div>
 
         
         <section id="section1">
@@ -65,8 +66,7 @@
             <div>
                 <div>
                     <div><i></i> Vector Posición en 3D</div>
-                    <div class="ecuacion">\[ \vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k} \]
-                    </div>
+                    <div class="ecuacion">\[ \vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k} \]</div>
                     <p>Donde \( \hat{i}, \hat{j}, \hat{k} \) son los vectores unitarios que forman la base cartesiana, y \( x(t), y(t), z(t) \) son las funciones que describen la posición en cada eje.</p>
                 </div>
             </div>
@@ -96,20 +96,19 @@
             <div>
                 <div>
                     <div><i></i> Definición Vectorial de Velocidad</div>
-                    <div class="ecuacion">\[ \vec{v}(t) = \frac{d\vec{r}}{dt} = \lim_{\Delta t \to 0} \frac{\vec{r}(t+\Delta t) - \vec{r}(t)}{\Delta t} \]
+                    <div>\[ \vec{v}(t) = \frac{d\vec{r}}{dt} = \lim_{\Delta t \to 0} \frac{\vec{r}(t+\Delta t) - \vec{r}(t)}{\Delta t} \]
                     </div>
                 </div>
                 
                 <div>
                     <div><i></i> Componentes de la Velocidad</div>
-                    <div class="ecuacion">\[ \vec{v}(t) = v_x(t)\hat{i} + v_y(t)\hat{j} + v_z(t)\hat{k} = \frac{dx}{dt}\hat{i} + \frac{dy}{dt}\hat{j} + \frac{dz}{dt}\hat{k} \]
+                    <div>\[ \vec{v}(t) = v_x(t)\hat{i} + v_y(t)\hat{j} + v_z(t)\hat{k} = \frac{dx}{dt}\hat{i} + \frac{dy}{dt}\hat{j} + \frac{dz}{dt}\hat{k} \]
                     </div>
                 </div>
             </div>
 
             <div>
-                <div class="ecuacion">\[ \vec{v}(t) = \dot{x}(t)\hat{i} + \dot{y}(t)\hat{j} + \dot{z}(t)\hat{k} \]
-                </div>
+                <div class="ecuacion">\[ \vec{v}(t) = \dot{x}(t)\hat{i} + \dot{y}(t)\hat{j} + \dot{z}(t)\hat{k} \]</div>
                 <p>La notación con punto indica derivada respecto al tiempo</p>
             </div>
 
@@ -124,13 +123,13 @@
             <div>
                 <div>
                     <div><i></i> Definición de Aceleración</div>
-                    <div class="ecuacion">\[ \vec{a}(t) = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} = \ddot{x}(t)\hat{i} + \ddot{y}(t)\hat{j} + \ddot{z}(t)\hat{k} \]
+                    <div>\[ \vec{a}(t) = \frac{d\vec{v}}{dt} = \frac{d^2\vec{r}}{dt^2} = \ddot{x}(t)\hat{i} + \ddot{y}(t)\hat{j} + \ddot{z}(t)\hat{k} \]
                     </div>
                 </div>
                 
                 <div>
                     <div><i></i> Componentes Intrínsecas</div>
-                    <div class="ecuacion">\[ \vec{a} = a_t \hat{u}_t + a_n \hat{u}_n = \frac{dv}{dt} \hat{u}_t + \frac{v^2}{\rho} \hat{u}_n \]
+                    <div>\[ \vec{a} = a_t \hat{u}_t + a_n \hat{u}_n = \frac{dv}{dt} \hat{u}_t + \frac{v^2}{\rho} \hat{u}_n \]
                     </div>
                     <p>Donde \( \hat{u}_t \) es el vector unitario tangente, \( \hat{u}_n \) es el vector unitario normal, y \( \rho \) es el radio de curvatura de la trayectoria.</p>
                 </div>
@@ -141,15 +140,13 @@
                     <div>Aceleración Tangencial</div>
                     <div>↗️</div>
                     <p>Cambia el módulo de la velocidad (rapidez). Es la derivada de la rapidez respecto al tiempo.</p>
-                    <div class="ecuacion">\( a_t = \frac{d|\vec{v}|}{dt} \)
-                    </div>
+                    <div class="ecuacion">\( a_t = \frac{d|\vec{v}|}{dt} \)</div>
                 </div>
                 <div>
                     <div>Aceleración Normal</div>
                     <div>⤵️</div>
                     <p>Cambia la dirección de la velocidad. Es perpendicular a la trayectoria y apunta hacia el centro de curvatura.</p>
-                    <div class="ecuacion">\( a_n = \frac{v^2}{\rho} \)
-                    </div>
+                    <div class="ecuacion">\( a_n = \frac{v^2}{\rho} \)</div>
                 </div>
             </div>
 
@@ -166,7 +163,7 @@
             <div>
                 <div>
                     <div><i></i> Ecuaciones Paramétricas</div>
-                    <div class="ecuacion">\[ \begin{cases}
+                    <div>\[ \begin{cases}
                         x(t) = x_0 + v_{0x}t \\
                         y(t) = y_0 + v_{0y}t - \frac{1}{2}gt^2 \\
                         z(t) = z_0 + v_{0z}t
@@ -191,17 +188,15 @@
                     <h4>Resolución:</h4>
                     
                     <p><strong>1. Vector posición en \( t = 2 \, \text{s} \):</strong></p>
-                    <div class="ecuacion">\[ \vec{r}(2) = (30 \cdot 2)\hat{i} + \left(40 \cdot 2 - \frac{1}{2} \cdot 9.8 \cdot 2^2\right)\hat{j} \]
+                    <div>\[ \vec{r}(2) = (30 \cdot 2)\hat{i} + \left(40 \cdot 2 - \frac{1}{2} \cdot 9.8 \cdot 2^2\right)\hat{j} \]
                     </div>
-                    <div class="ecuacion">\[ \vec{r}(2) = 60\hat{i} + (80 - 19.6)\hat{j} = 60\hat{i} + 60.4\hat{j} \, \text{m} \]
-                    </div>
+                    <div class="ecuacion">\[ \vec{r}(2) = 60\hat{i} + (80 - 19.6)\hat{j} = 60\hat{i} + 60.4\hat{j} \, \text{m} \]</div>
                     
                     <p><strong>2. Vector velocidad en \( t = 2 \, \text{s} \):</strong></p>
-                    <div class="ecuacion">\[ \vec{v}(2) = 30\hat{i} + (40 - 9.8 \cdot 2)\hat{j} = 30\hat{i} + 20.4\hat{j} \, \text{m/s} \]
-                    </div>
+                    <div class="ecuacion">\[ \vec{v}(2) = 30\hat{i} + (40 - 9.8 \cdot 2)\hat{j} = 30\hat{i} + 20.4\hat{j} \, \text{m/s} \]</div>
                     
                     <p><strong>3. Altura máxima:</strong></p>
-                    <div class="ecuacion">\[ y_{\text{max}} = \frac{v_{0y}^2}{2g} = \frac{40^2}{2 \cdot 9.8} = \frac{1600}{19.6} \approx 81.63 \, \text{m} \]
+                    <div>\[ y_{\text{max}} = \frac{v_{0y}^2}{2g} = \frac{40^2}{2 \cdot 9.8} = \frac{1600}{19.6} \approx 81.63 \, \text{m} \]
                     </div>
                     
                     <p>
@@ -219,14 +214,14 @@
             <div>
                 <div>
                     <div><i></i> Relaciones entre magnitudes lineales y angulares</div>
-                    <div class="ecuacion">\[ \vec{v} = \vec{\omega} \times \vec{r} \quad \text{y} \quad \vec{a} = \vec{\alpha} \times \vec{r} + \vec{\omega} \times (\vec{\omega} \times \vec{r}) \]
+                    <div>\[ \vec{v} = \vec{\omega} \times \vec{r} \quad \text{y} \quad \vec{a} = \vec{\alpha} \times \vec{r} + \vec{\omega} \times (\vec{\omega} \times \vec{r}) \]
                     </div>
                     <p>Donde \( \vec{\omega} \) es la velocidad angular y \( \vec{\alpha} \) es la aceleración angular.</p>
                 </div>
                 
                 <div>
                     <div><i></i> Movimiento Circular Uniforme (MCU)</div>
-                    <div class="ecuacion">\[ \begin{cases}
+                    <div>\[ \begin{cases}
                         \theta(t) = \theta_0 + \omega t \\
                         v = \omega R \\
                         a_n = \omega^2 R = \frac{v^2}{R} \\
@@ -237,8 +232,7 @@
             </div>
 
             <div>
-                <div class="ecuacion">\[ \vec{\omega} = \frac{d\theta}{dt} \hat{k} \quad \text{(para rotación en el plano XY)} \]
-                </div>
+                <div class="ecuacion">\[ \vec{\omega} = \frac{d\theta}{dt} \hat{k} \quad \text{(para rotación en el plano XY)} \]</div>
                 <p>El vector velocidad angular es perpendicular al plano de rotación</p>
             </div>
         </section>
@@ -259,22 +253,19 @@
                 <h4>Solución del reto:</h4>
                 
                 <p><strong>1. Vectores velocidad y aceleración:</strong></p>
-                <div class="ecuacion">\[ \vec{v}(t) = \frac{d\vec{r}}{dt} = 3t^2\hat{i} + 2\hat{j} \]
-                </div>
-                <div class="ecuacion">\[ \vec{a}(t) = \frac{d\vec{v}}{dt} = 6t\hat{i} \]
-                </div>
+                <div class="ecuacion">\[ \vec{v}(t) = \frac{d\vec{r}}{dt} = 3t^2\hat{i} + 2\hat{j} \]</div>
+                <div class="ecuacion">\[ \vec{a}(t) = \frac{d\vec{v}}{dt} = 6t\hat{i} \]</div>
                 
                 <p><strong>2. Radio de curvatura en \( t = 1 \, \text{s} \):</strong></p>
-                <div class="ecuacion">\[ \rho = \frac{v^3}{|\vec{v} \times \vec{a}|} = \frac{(3\cdot1^2 + 2)^{3/2}}{|(3\hat{i} + 2\hat{j}) \times (6\hat{i})|} \]
+                <div>\[ \rho = \frac{v^3}{|\vec{v} \times \vec{a}|} = \frac{(3\cdot1^2 + 2)^{3/2}}{|(3\hat{i} + 2\hat{j}) \times (6\hat{i})|} \]
                 </div>
-                <div class="ecuacion">\[ \rho = \frac{(3+2)^{3/2}}{|12\hat{k}|} = \frac{5^{3/2}}{12} \approx \frac{11.18}{12} \approx 0.93 \, \text{m} \]
+                <div>\[ \rho = \frac{(3+2)^{3/2}}{|12\hat{k}|} = \frac{5^{3/2}}{12} \approx \frac{11.18}{12} \approx 0.93 \, \text{m} \]
                 </div>
                 
                 <p><strong>3. Componentes intrínsecas en \( t = 1 \, \text{s} \):</strong></p>
-                <div class="ecuacion">\[ a_t = \frac{\vec{v} \cdot \vec{a}}{v} = \frac{(3\hat{i} + 2\hat{j}) \cdot (6\hat{i})}{\sqrt{13}} = \frac{18}{\sqrt{13}} \approx 5.0 \, \text{m/s}^2 \]
+                <div>\[ a_t = \frac{\vec{v} \cdot \vec{a}}{v} = \frac{(3\hat{i} + 2\hat{j}) \cdot (6\hat{i})}{\sqrt{13}} = \frac{18}{\sqrt{13}} \approx 5.0 \, \text{m/s}^2 \]
                 </div>
-                <div class="ecuacion">\[ a_n = \frac{|\vec{v} \times \vec{a}|}{v} = \frac{12}{\sqrt{13}} \approx 3.33 \, \text{m/s}^2 \]
-                </div>
+                <div class="ecuacion">\[ a_n = \frac{|\vec{v} \times \vec{a}|}{v} = \frac{12}{\sqrt{13}} \approx 3.33 \, \text{m/s}^2 \]</div>
                 
                 <p>
                     🎯 El radio de curvatura es aproximadamente 0.93 m, con \( a_t \approx 5.0 \, \text{m/s}^2 \) y \( a_n \approx 3.33 \, \text{m/s}^2 \).
@@ -293,6 +284,7 @@
         <div onclick="scrollToSection('section5')"></div>
         <div onclick="scrollToSection('section6')"></div>
     </div>
+<!-- Injected Content Ends Here -->
         </main>
 
         <!-- Noticias Section (Injected) -->
