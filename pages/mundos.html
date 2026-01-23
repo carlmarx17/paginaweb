@@ -4,294 +4,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundos Literarios - Biblioteca 3D</title>
-
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Outfit:wght@300;400;600;800&display=swap"
-        rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/library.css">
-
+    <title>Biblioteca de Mundos - Universo Literario</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --bg-deep: #0f1016;
-            --accent-gold: #d97706;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
-        body.dark-theme {
-            background-color: var(--bg-deep);
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #1e1b29;
+            /* Fondo oscuro místico */
             background-image:
-                radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
-            min-height: 100vh;
+                radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(217, 119, 6, 0.1) 0%, transparent 25%);
+            color: #e2e8f0;
         }
 
-        .library-header {
-            background: rgba(15, 16, 22, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 1.5rem 0;
-        }
-
-        .hero-section {
-            padding: 4rem 1rem 2rem;
-            text-align: center;
-        }
-
-        .hero-title {
+        h1,
+        h2,
+        .book-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 900;
-            background: linear-gradient(to bottom, #fff 30%, #94a3b8);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
         }
 
-        .hero-subtitle {
-            font-family: 'Outfit', sans-serif;
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.6;
+        .serif-font {
+            font-family: 'Playfair Display', serif;
         }
 
-        .filters-bar {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 1rem;
-            border-radius: 100px;
-            margin-bottom: 4rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            backdrop-filter: blur(10px);
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: none;
-            color: #94a3b8;
-            padding: 0.75rem 1.5rem;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .filter-btn:hover {
-            color: white;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .filter-btn.active {
-            background: var(--accent-gold);
-            color: white;
-            box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.4);
-        }
-
-        .library-grid-books {
-            gap: 4rem 2.5rem;
-            padding-bottom: 6rem;
-        }
-
-        /* Upgrade book appearance */
+        /* --- ESTILO LIBRO 3D --- */
         .book-container {
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .book-container:hover {
-            transform: translateY(-10px);
+            perspective: 1000px;
         }
 
         .book-cover {
-            border-radius: 4px 12px 12px 4px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-origin: left center;
             box-shadow:
-                -5px 5px 15px rgba(0, 0, 0, 0.5),
-                inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+                -4px 0 10px rgba(0, 0, 0, 0.5),
+                /* Sombra lomo */
+                inset 4px 0 10px rgba(255, 255, 255, 0.1),
+                /* Brillo lomo */
+                inset -1px 0 2px rgba(0, 0, 0, 0.3);
+            /* Borde derecho */
         }
 
-        .book-spine-effect {
+        .book-container:hover .book-cover {
+            transform: rotateY(-15deg) translateX(5px);
+            z-index: 20;
+            box-shadow: -15px 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Efecto de páginas a la derecha */
+        .book-cover::after {
+            content: '';
             position: absolute;
+            top: 2px;
+            right: -8px;
+            /* Espesor del libro */
+            width: 8px;
+            height: calc(100% - 4px);
+            background: linear-gradient(to right, #ccc, #f5f5f5 20%, #ddd 40%, #eee 60%, #ccc);
+            transform: rotateY(90deg);
+            transform-origin: left;
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+        }
+
+        /* Decoración de la estantería */
+        .shelf {
+            border-bottom: 16px solid #4a3b32;
+            /* Madera oscura */
+            border-image: linear-gradient(to right, #3e2f26, #5d4a3f, #3e2f26) 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Sombra debajo del estante */
+        .shelf::after {
+            content: '';
+            position: absolute;
+            bottom: -25px;
             left: 0;
-            top: 0;
-            bottom: 0;
-            width: 12px;
-            background: linear-gradient(to right,
-                    rgba(0, 0, 0, 0.3) 0%,
-                    rgba(0, 0, 0, 0) 20%,
-                    rgba(255, 255, 255, 0.1) 40%,
-                    rgba(0, 0, 0, 0.2) 100%);
-            border-radius: 4px 0 0 4px;
-        }
-
-        .search-box {
-            max-width: 300px;
-            margin-bottom: 0;
-        }
-
-        .search-box input {
-            background: rgba(15, 16, 22, 0.5);
-            border-radius: 100px;
-            padding-left: 2.5rem;
-        }
-
-        /* Modal Enhancements */
-        .modal-overlay {
-            background: rgba(10, 11, 16, 0.9);
-            backdrop-filter: blur(15px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content.dark {
-            background: #161822 !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            transform: scale(0.9) translateY(20px);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            max-width: 800px;
-            width: 90%;
-            overflow: hidden;
-        }
-
-        .modal-overlay.active .modal-content.dark {
-            transform: scale(1) translateY(0);
-        }
-
-        .subtopics-list li a {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
-        }
-
-        .subtopics-list li a:hover {
-            background: rgba(217, 119, 6, 0.1);
-            border-color: rgba(217, 119, 6, 0.3);
-            transform: translateX(5px);
-            color: #fbbf24 !important;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #94a3b8 !important;
-        }
-
-        #emptyState h3 {
-            color: #64748b;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 300;
-        }
-
-        /* Decorative Background Elements */
-        .bg-glow {
-            position: fixed;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(217, 119, 6, 0.03) 0%, transparent 70%);
-            z-index: -1;
+            right: 0;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            filter: blur(8px);
             pointer-events: none;
+        }
+
+        /* Texturas y patrones */
+        .texture-dust {
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.3;
+        }
+
+        .gold-border {
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #2d3748;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4a5568;
+            border-radius: 10px;
+        }
+
+        .subtopic-link:hover {
+            color: #d97706;
+            /* amber-600 */
+            text-decoration: underline;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
     </style>
 </head>
 
-<body class="dark-theme">
-    <div class="bg-glow" style="top: -10%; left: -10%;"></div>
-    <div class="bg-glow" style="bottom: -10%; right: -10%;"></div>
+<body class="antialiased min-h-screen flex flex-col">
 
-    <!-- Header Biblioteca (Mundos) -->
-    <header class="library-header">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <a href="../index.html" class="logo"
-                style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
-                <div class="logo-icon"
-                    style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%); box-shadow: 0 0 15px rgba(217, 119, 6, 0.4); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
-                    <i class="fas fa-book-open" style="color: white; font-size: 1.2rem;"></i>
+    <!-- Audio para efecto de sonido -->
+    <audio id="openBookSound" src="../openbook.mp3" preload="auto"></audio>
+
+    <!-- Header Místico -->
+    <header class="relative bg-[#0f0e13] border-b border-white/5 py-8 md:py-12 shadow-2xl z-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-600 to-amber-300 flex items-center justify-center shadow-[0_0_20px_rgba(217,119,6,0.4)]">
+                    <i class="fas fa-book-open text-[#0f0e13] text-xl"></i>
                 </div>
                 <div>
                     <h1
-                        style="font-family: 'Cinzel', serif; font-size: 1.2rem; margin: 0; color: #fff; letter-spacing: 1px;">
-                        BIBLIOTECA INFINITA</h1>
-                    <span
-                        style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; font-weight: 700;">Mundos
-                        Literarios</span>
+                        class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 to-amber-400">
+                        Biblioteca de Mundos
+                    </h1>
+                    <p class="text-slate-400 text-sm tracking-widest uppercase">Ciencia & Ficción</p>
                 </div>
-            </a>
-
-            <!-- Buscador -->
-            <div class="search-box">
-                <i class="fas fa-search search-icon" style="color: #475569; font-size: 0.9rem;"></i>
-                <input type="text" id="searchInput" placeholder="Buscar un mundo..."
-                    style="border: 1px solid var(--glass-border); color: white;" aria-label="Buscar libros">
             </div>
+
+            <!-- Navegación Rápida -->
+            <nav class="flex gap-4">
+                <a href="../index.html"
+                    class="px-4 py-2 rounded-lg border border-white/10 hover:bg-white/5 text-slate-300 text-sm transition-colors flex items-center gap-2">
+                    <i class="fas fa-arrow-left"></i> Volver al Inicio
+                </a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-[1400px] mx-auto px-4 md:px-8 py-10 w-full">
 
-        <section class="hero-section">
-            <h2 class="hero-title">Mundos Literarios</h2>
-            <p class="hero-subtitle">Explora la ciencia y la imaginación a través de las obras más icónicas de la
-                literatura. Cada libro es un portal a un conocimiento nuevo.</p>
-
-            <!-- Barra de Filtros -->
-            <div class="filters-bar">
-                <button class="filter-btn active" data-filter="all">Todo</button>
-                <button class="filter-btn" data-filter="distopia">Distopías</button>
-                <button class="filter-btn" data-filter="scifi">Sci-Fi</button>
-                <button class="filter-btn" data-filter="clasico">Clásicos</button>
-                <button class="filter-btn" data-filter="fantasia">Fantasía</button>
+        <!-- Panel de Control (Filtros) -->
+        <div
+            class="bg-[#252233] rounded-2xl p-4 mb-12 shadow-xl border border-white/5 flex flex-col lg:flex-row justify-between items-center gap-4 sticky top-4 z-40 backdrop-blur-md bg-opacity-90">
+            <!-- Filtros -->
+            <div class="flex overflow-x-auto gap-2 w-full lg:w-auto pb-2 lg:pb-0 custom-scrollbar">
+                <button onclick="filterBooks('all')"
+                    class="filter-btn active px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-amber-600 text-white shadow-lg shadow-amber-600/20 transition-all whitespace-nowrap">
+                    Todo
+                </button>
+                <button onclick="filterBooks('distopia')"
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-[#1a1824] text-slate-400 hover:text-white hover:bg-[#322f42] border border-white/5 transition-all whitespace-nowrap">
+                    Distopías
+                </button>
+                <button onclick="filterBooks('scifi')"
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-[#1a1824] text-slate-400 hover:text-white hover:bg-[#322f42] border border-white/5 transition-all whitespace-nowrap">
+                    Ciencia Ficción
+                </button>
+                <button onclick="filterBooks('clasico')"
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-[#1a1824] text-slate-400 hover:text-white hover:bg-[#322f42] border border-white/5 transition-all whitespace-nowrap">
+                    Clásicos
+                </button>
+                <button onclick="filterBooks('fantasia')"
+                    class="filter-btn px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider bg-[#1a1824] text-slate-400 hover:text-white hover:bg-[#322f42] border border-white/5 transition-all whitespace-nowrap">
+                    Fantasía
+                </button>
             </div>
-        </section>
 
-        <!-- Grid de Libros 3D -->
-        <div id="libraryGrid" class="library-grid-books">
-            <!-- 3D Books injected by JS -->
+            <!-- Buscador -->
+            <div class="relative w-full lg:w-72">
+                <input type="text" id="searchInput" placeholder="Buscar libro..."
+                    class="w-full bg-[#1a1824] border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+            </div>
+        </div>
+
+        <!-- Estantería de Libros -->
+        <div id="libraryGrid"
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-8 gap-y-16 px-4">
+            <!-- Los libros se generan aquí -->
         </div>
 
         <!-- Estado Vacío -->
-        <div id="emptyState" class="hidden" style="text-align: center; padding: 4rem 1rem;">
-            <div style="font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.2;">
-                <i class="fas fa-book-reader"></i>
-            </div>
-            <h3>El archivo está vacío, intenta otra búsqueda</h3>
+        <div id="emptyState" class="hidden py-20 text-center text-slate-500">
+            <i class="fas fa-ghost text-4xl mb-4 opacity-50"></i>
+            <p>La biblioteca está en silencio... no se encontraron resultados.</p>
         </div>
 
     </main>
 
-    <!-- Audio Element -->
-    <audio id="bookSound" src="../openbook.mp3" preload="auto"></audio>
+    <!-- Modal de Lectura -->
+    <div id="bookModal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity opacity-0" id="modalBackdrop">
+        </div>
 
-    <!-- Scripts -->
-    <script type="module" src="../js/library.js"></script>
+        <div class="absolute inset-0 overflow-y-auto py-8 px-4 flex items-center justify-center pointer-events-none">
+            <div class="pointer-events-auto relative w-full max-w-5xl bg-[#f5f2eb] rounded-r-2xl rounded-l-md shadow-2xl flex flex-col md:flex-row overflow-hidden opacity-0 transform scale-95 transition-all duration-300 min-h-[600px]"
+                id="modalPanel">
+
+                <!-- Borde Izquierdo (Lomo de libro abierto) -->
+                <div class="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-[#8b5a2b] to-[#5d3a1a] z-20"></div>
+
+                <!-- Lado Izquierdo: Visual -->
+                <div
+                    class="w-full md:w-5/12 relative bg-slate-900 overflow-hidden flex flex-col items-center justify-center p-8 text-center text-white">
+                    <!-- Fondo dinámico según color del libro -->
+                    <div id="modalBg" class="absolute inset-0 opacity-40 bg-gradient-to-br from-indigo-900 to-black">
+                    </div>
+                    <div class="absolute inset-0 texture-dust"></div>
+
+                    <div class="relative z-10 w-full flex flex-col items-center">
+                        <span id="modalGenre"
+                            class="text-[10px] tracking-[0.4em] uppercase text-amber-400 mb-6 border-b border-amber-400/30 pb-2">Clásico</span>
+
+                        <div
+                            class="w-32 h-32 rounded-full border-2 border-white/20 flex items-center justify-center mb-6 bg-white/5 backdrop-blur-sm shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                            <i id="modalIcon" class="fas fa-book text-5xl text-white/90"></i>
+                        </div>
+
+                        <h2 id="modalTitle" class="text-3xl md:text-4xl font-bold mb-2 leading-tight drop-shadow-lg">
+                            Título</h2>
+                        <p id="modalAuthor" class="text-sm text-slate-300 italic font-serif">Autor</p>
+                    </div>
+                </div>
+
+                <!-- Lado Derecho: Contenido (Página) -->
+                <div class="w-full md:w-7/12 bg-[#fcfbf9] p-8 md:p-12 relative flex flex-col text-slate-800">
+                    <!-- Botón cerrar -->
+                    <button onclick="closeModal()"
+                        class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors z-20">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+
+                    <div class="flex-grow overflow-y-auto custom-scrollbar pr-2">
+                        <div class="mb-8">
+                            <h3 class="font-bold text-xs uppercase tracking-widest text-slate-400 mb-2">Análisis
+                                Científico</h3>
+                            <p id="modalDesc"
+                                class="text-lg serif-font leading-relaxed text-slate-700 first-letter:text-5xl first-letter:font-black first-letter:text-amber-700 first-letter:mr-2 first-letter:float-left">
+                                <!-- Descripción -->
+                            </p>
+                        </div>
+
+                        <div class="bg-amber-50 border border-amber-100 rounded-xl p-6 mb-8">
+                            <h4 class="font-bold text-amber-900 mb-4 text-sm flex items-center gap-2">
+                                <i class="fas fa-microscope"></i> Conceptos Clave
+                            </h4>
+                            <p class="text-xs text-slate-500 mb-3 italic">Haz clic en los temas subrayados para ir
+                                directamente.</p>
+                            <ul id="modalSubtopics" class="space-y-3">
+                                <!-- Topics -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Footer / Acción -->
+                    <div class="mt-6 pt-6 border-t border-slate-200 flex justify-between items-center">
+                        <div id="modalScienceTags" class="flex gap-2">
+                            <!-- Tags -->
+                        </div>
+                        <a id="modalLink" href="#" target="_blank"
+                            class="px-6 py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-amber-600 transition-colors shadow-lg flex items-center gap-2">
+                            <span>Leer Guía Principal</span> <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                        <span id="modalNoLink" class="text-xs text-slate-400 italic hidden">Próximamente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA ---
+        const baseUrl = "https://sites.google.com/view/carlosmartinezprofesor/mundos-literarios-excusive";
+        const suffix = "?authuser=0";
+
+        const library = [
+            {
+                id: "l-1", title: "Macondo", author: "G. García Márquez", genre: "fantasia",
+                color: "bg-emerald-900", icon: "fa-leaf",
+                mainUrl: "articles/Macondo.html",
+                desc: "Un análisis de 'Cien Años de Soledad' explorando la genética mendeliana en la familia Buendía, la química detrás de los experimentos de alquimia y los ciclos ecológicos de la selva.",
+                science: ["Genética", "Química", "Ecología"],
+                subtopics: [
+                    { name: "Peligros de la Endogamia", url: "articles/Peligros de la Endogamia.html" },
+                    { name: "Descubrimientos Científicos", url: "articles/Descubrimientos cientificos.html" }
+                ]
+            },
+            {
+                id: "l-18", title: "El Principito", author: "Antoine de Saint-Exupéry", genre: "fantasia",
+                color: "bg-indigo-500", icon: "fa-star",
+                mainUrl: "articles/Principito.html",
+                desc: "Un viaje por el asteroide B-612 para comprender la astrobiología en cuerpos menores y la amenaza ecológica de las especies invasoras (Baobabs).",
+                science: ["Astrobiología", "Ecología", "Astronomía"],
+                subtopics: [
+                    { name: "Los Bao Baos", url: "articles/Bao baos.html" },
+                    { name: "Astrobiología en el Asteroide", url: "articles/Astobiologia en el asteroide.html" }
+                ]
+            },
+            {
+                id: "l-13", title: "Dune", author: "Frank Herbert", genre: "scifi",
+                color: "bg-amber-700", icon: "fa-wind",
+                mainUrl: "#",
+                desc: "La obra maestra de la ecología planetaria. Exploramos la gestión de recursos hídricos (destiltrajes), la terraformación de Arrakis y la sociología en entornos extremos.",
+                science: ["Ecología", "Hidrología", "Sociología"],
+                subtopics: [
+                    { name: "Ecología de Arrakis", url: "#" },
+                    { name: "Hidrología y Escasez", url: "#" },
+                    { name: "Terraformación", url: "#" }
+                ]
+            },
+            {
+                id: "l-14", title: "Jurassic Park", author: "Michael Crichton", genre: "scifi",
+                color: "bg-green-800", icon: "fa-dragon",
+                mainUrl: "articles/Jurasic.html",
+                desc: "Más allá de los dinosaurios: un estudio sobre los límites de la ingeniería genética, la viabilidad de la clonación antigua y las inevitables consecuencias de la Teoría del Caos.",
+                science: ["Genética", "Matemáticas", "Paleontología"],
+                subtopics: [
+                    { name: "Clonación y ADN", url: "#" },
+                    { name: "Teoría del Caos", url: "#" },
+                    { name: "Paleobiología", url: "#" }
+                ]
+            },
+            {
+                id: "l-5", title: "1984", author: "George Orwell", genre: "distopia",
+                color: "bg-slate-800", icon: "fa-eye",
+                mainUrl: "#",
+                desc: "Un examen escalofriante sobre la vigilancia tecnológica (telepantallas), la manipulación de la verdad histórica y la psicología del control de masas.",
+                science: ["Tecnología", "Psicología", "Sociología"],
+                subtopics: [
+                    { name: "Tecnología de Vigilancia", url: "#" },
+                    { name: "Psicología Conductista", url: "#" },
+                    { name: "Neurolingüística", url: "#" }
+                ]
+            },
+            {
+                id: "l-15", title: "Un Mundo Feliz", author: "Aldous Huxley", genre: "distopia",
+                color: "bg-pink-900", icon: "fa-vial",
+                mainUrl: "#",
+                desc: "Una sociedad 'perfecta' construida sobre la eugenesia (decantación), el condicionamiento psicológico hipnopédico y el control farmacológico mediante el Soma.",
+                science: ["Biología", "Farmacología", "Psicología"],
+                subtopics: [
+                    { name: "Eugenesia y Clonación", url: "#" },
+                    { name: "Farmacología (Soma)", url: "#" },
+                    { name: "Condicionamiento Pavloviano", url: "#" }
+                ]
+            },
+            {
+                id: "l-17", title: "El Marciano", author: "Andy Weir", genre: "scifi",
+                color: "bg-orange-800", icon: "fa-space-shuttle",
+                mainUrl: "#",
+                desc: "La guía definitiva de supervivencia espacial: botánica en suelo marciano estéril, química básica para crear agua y física orbital para calcular el rescate.",
+                science: ["Botánica", "Química", "Física"],
+                subtopics: [
+                    { name: "Botánica en Marte", url: "#" },
+                    { name: "Química del Agua", url: "#" },
+                    { name: "Dinámica Orbital", url: "#" }
+                ]
+            },
+            {
+                id: "l-16", title: "Solaris", author: "Stanislaw Lem", genre: "scifi",
+                color: "bg-indigo-900", icon: "fa-brain",
+                mainUrl: "#",
+                desc: "El contacto con una inteligencia totalmente ajena. Un océano viviente que desafía nuestra comprensión de la biología, la evolución y la consciencia.",
+                science: ["Xenobiología", "Neurociencia", "Física"],
+                subtopics: [
+                    { name: "Xenobiología", url: "#" },
+                    { name: "Teoría de la Mente", url: "#" },
+                    { name: "Física de Océanos", url: "#" }
+                ]
+            },
+            {
+                id: "l-3", title: "La Odisea", author: "Homero", genre: "clasico",
+                color: "bg-sky-800", icon: "fa-ship",
+                mainUrl: "articles/Odisea.html",
+                desc: "La ciencia en la antigüedad: navegación astronómica sin brújula, geografía del Mediterráneo y la posible base biológica de los monstruos mitológicos.",
+                science: ["Astronomía", "Geografía", "Biología"],
+                subtopics: [
+                    { name: "Astronomía y Navegación", url: "#" },
+                    { name: "Biología Marina y Mitos", url: "#" },
+                    { name: "Geografía del Mediterráneo", url: "#" }
+                ]
+            },
+            {
+                id: "l-2", title: "Utopía", author: "Tomás Moro", genre: "clasico",
+                color: "bg-blue-900", icon: "fa-city",
+                mainUrl: "#",
+                desc: "El diseño de la sociedad ideal. Ingeniería social, planificación urbana sostenible y economía de recursos distribuidos en una isla imaginaria.",
+                science: ["Urbanismo", "Economía", "Sociología"],
+                subtopics: [
+                    { name: "Urbanismo y Geografía", url: "#" },
+                    { name: "Economía de Recursos", url: "#" },
+                    { name: "Ingeniería Social", url: "#" }
+                ]
+            },
+            {
+                id: "l-4", title: "Divina Comedia", author: "Dante Alighieri", genre: "clasico",
+                color: "bg-purple-900", icon: "fa-fire",
+                mainUrl: "#",
+                desc: "Una enciclopedia medieval: la estructura cosmológica del universo ptolemaico, geología infernal estratificada y simbolismo matemático preciso.",
+                science: ["Astronomía", "Geología", "Matemáticas"],
+                subtopics: [
+                    { name: "Astronomía Medieval", url: "#" },
+                    { name: "Geología del Infierno", url: "#" },
+                    { name: "Simbolismo Numérico", url: "#" }
+                ]
+            },
+            {
+                id: "l-6", title: "Fahrenheit 451", author: "Ray Bradbury", genre: "distopia",
+                color: "bg-red-800", icon: "fa-fire-extinguisher",
+                mainUrl: "#",
+                desc: "La temperatura a la que arde el papel. Un análisis de la química de la combustión, la censura y el impacto de la tecnología acelerada en la memoria humana.",
+                science: ["Química", "Tecnología", "Neurociencia"],
+                subtopics: [
+                    { name: "Química de la Combustión", url: "#" },
+                    { name: "Tecnología de Pantallas", url: "#" },
+                    { name: "Memoria y Cerebro", url: "#" }
+                ]
+            },
+            {
+                id: "l-7", title: "Viaje al Centro de la Tierra", author: "Julio Verne", genre: "clasico",
+                color: "bg-stone-800", icon: "fa-mountain",
+                mainUrl: "articles/Vaije al centro de la tierra_.html",
+                desc: "La aventura geológica por excelencia. Estratigrafía, mineralogía y paleontología de vertebrados en las profundidades inexploradas del planeta.",
+                science: ["Geología", "Paleontología", "Vulcanología"],
+                subtopics: [
+                    { name: "Geología y Estratos", url: "#" },
+                    { name: "Paleontología de Vertebrados", url: "#" },
+                    { name: "Vulcanología", url: "#" }
+                ]
+            },
+            {
+                id: "l-8", title: "La Guerra de los Mundos", author: "H.G. Wells", genre: "scifi",
+                color: "bg-lime-900", icon: "fa-rocket",
+                mainUrl: "#",
+                desc: "La invasión biológica. Un estudio pionero sobre astrobiología, la evolución convergente y el papel fundamental del sistema inmunológico.",
+                science: ["Astrobiología", "Inmunología", "Tecnología"],
+                subtopics: [
+                    { name: "Astrobiología y Exovida", url: "#" },
+                    { name: "Inmunología y Bacterias", url: "#" },
+                    { name: "Tecnología Bélica", url: "#" }
+                ]
+            },
+            {
+                id: "l-9", title: "Yo, Robot", author: "Isaac Asimov", genre: "scifi",
+                color: "bg-cyan-900", icon: "fa-robot",
+                mainUrl: "#",
+                desc: "Los fundamentos de la ética robótica. Lógica algorítmica, inteligencia artificial y los dilemas imprevistos de la programación rígida.",
+                science: ["Robótica", "Lógica", "Psicología"],
+                subtopics: [
+                    { name: "Lógica de las 3 Leyes", url: "#" },
+                    { name: "Inteligencia Artificial", url: "#" },
+                    { name: "Psicología Robótica", url: "#" }
+                ]
+            },
+            {
+                id: "l-10", title: "Frankenstein", author: "Mary Shelley", genre: "fantasia",
+                color: "bg-teal-950", icon: "fa-bolt",
+                mainUrl: "articles/Frankestein.html",
+                desc: "El Prometeo moderno. Bioética fundacional, los límites de la vida y la muerte, y el uso histórico de la electricidad (galvanismo) en la biología.",
+                science: ["Bioética", "Electricidad", "Anatomía"],
+                subtopics: [
+                    { name: "Bioética y Límites", url: "#" },
+                    { name: "Galvanismo y Electricidad", url: "#" },
+                    { name: "Anatomía y Trasplantes", url: "#" }
+                ]
+            },
+            {
+                id: "l-11", title: "Drácula", author: "Bram Stoker", genre: "fantasia",
+                color: "bg-rose-950", icon: "fa-wine-glass",
+                mainUrl: "#",
+                desc: "El vampirismo como metáfora de la enfermedad. Un análisis desde la epidemiología victoriana, la hematología y la psicología del miedo.",
+                science: ["Epidemiología", "Hematología", "Psicología"],
+                subtopics: [
+                    { name: "Epidemiología y Contagio", url: "#" },
+                    { name: "Hematología", url: "#" },
+                    { name: "Hipnosis y Psicología", url: "#" }
+                ]
+            },
+            {
+                id: "l-12", title: "Sherlock Holmes", author: "A. Conan Doyle", genre: "clasico",
+                color: "bg-gray-800", icon: "fa-search",
+                mainUrl: "articles/Sherlock.html",
+                desc: "El nacimiento de la ciencia forense moderna. Química analítica de venenos, estudio de huellas y la aplicación rigurosa del método deductivo.",
+                science: ["Forense", "Química", "Lógica"],
+                subtopics: [
+                    { name: "Venenos", url: "articles/Venenos.html" },
+                    { name: "Lógica", url: "articles/Logica.html" },
+                    { name: "Ciencia Forense", url: "#" }
+                ]
+            }
+        ];
+
+        let currentFilter = 'all';
+        let searchQuery = '';
+
+        function renderLibrary() {
+            const grid = document.getElementById('libraryGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            grid.innerHTML = '';
+
+            const filtered = library.filter(book => {
+                const matchFilter = currentFilter === 'all' || book.genre === currentFilter;
+                const matchSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    book.author.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchFilter && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            filtered.forEach(book => {
+                const card = document.createElement('div');
+                // Estructura de libro vertical en estantería
+                card.className = 'book-container group relative w-full aspect-[2/3.2] cursor-pointer';
+                card.onclick = () => openModal(book);
+
+                card.innerHTML = `
+                    <div class="book-cover w-full h-full rounded-r-[6px] rounded-l-[2px] ${book.color} flex flex-col justify-between p-3 relative overflow-hidden z-10 border border-white/10">
+                        <!-- Textura de portada -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent"></div>
+                        <div class="absolute inset-0 texture-dust opacity-50"></div>
+                        
+                        <!-- Contenido Portada -->
+                        <div class="relative z-10 text-center mt-2">
+                            <h3 class="book-title text-amber-100 text-sm md:text-base font-bold leading-tight drop-shadow-md mb-1">${book.title}</h3>
+                            <div class="w-8 h-[1px] bg-amber-500/50 mx-auto"></div>
+                        </div>
+
+                        <div class="relative z-10 flex items-center justify-center flex-grow">
+                             <i class="fas ${book.icon} text-4xl text-white/20 group-hover:text-amber-400/80 transition-colors duration-500 transform group-hover:scale-110"></i>
+                        </div>
+
+                        <div class="relative z-10 text-center mb-2">
+                            <p class="text-[9px] text-slate-400 uppercase tracking-wider font-bold">${book.author.split(' ').pop()}</p>
+                        </div>
+                        
+                        <!-- Marco dorado decorativo (opcional) -->
+                        <div class="absolute inset-2 border border-white/10 rounded-sm pointer-events-none"></div>
+                    </div>
+                    
+                    <!-- Sombra Estante -->
+                    <div class="shelf absolute bottom-[-15px] left-[-10%] right-[-10%] z-0"></div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function getGenreName(code) {
+            const names = {
+                'distopia': 'Distopía',
+                'scifi': 'Ciencia Ficción',
+                'clasico': 'Clásicos',
+                'fantasia': 'Fantasía / Terror'
+            };
+            return names[code] || 'General';
+        }
+
+        function filterBooks(category) {
+            currentFilter = category;
+
+            // Botones
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                // Lógica de estilos activa/inactiva
+                if ((category === 'all' && btn.textContent.toLowerCase().includes('todo')) ||
+                    btn.textContent.toLowerCase().includes(getGenreName(category).toLowerCase().split(' ')[0])) {
+                    btn.classList.add('bg-amber-600', 'text-white', 'shadow-lg');
+                    btn.classList.remove('bg-[#1a1824]', 'text-slate-400');
+                } else {
+                    btn.classList.remove('bg-amber-600', 'text-white', 'shadow-lg');
+                    btn.classList.add('bg-[#1a1824]', 'text-slate-400');
+                }
+            });
+
+            renderLibrary();
+        }
+
+        // Búsqueda
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderLibrary();
+        });
+
+        // --- MODAL LÓGICA ---
+        function openModal(book) {
+            // Efecto de sonido
+            const sound = document.getElementById('openBookSound');
+            if (sound) {
+                sound.currentTime = 0;
+                sound.play().catch(e => console.log("Audio play failed:", e));
+            }
+
+            const modal = document.getElementById('bookModal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const panel = document.getElementById('modalPanel');
+
+            // Set Content
+            document.getElementById('modalTitle').textContent = book.title;
+            document.getElementById('modalAuthor').textContent = book.author;
+            document.getElementById('modalDesc').textContent = book.desc;
+            document.getElementById('modalGenre').textContent = getGenreName(book.genre);
+
+            // Icon & Background
+            document.getElementById('modalIcon').className = `fas ${book.icon} text-5xl text-white/90`;
+            const colorClass = book.color.replace('bg-', 'from-').replace('800', '900').replace('900', '950');
+            document.getElementById('modalBg').className = `absolute inset-0 opacity-60 bg-gradient-to-br ${colorClass} to-black`;
+
+            // Topics (Ahora con enlaces)
+            const list = document.getElementById('modalSubtopics');
+            list.innerHTML = book.subtopics.map(topic => {
+                const isLink = topic.url && topic.url !== "#";
+                const content = `
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-amber-600 mt-1 text-xs"></i>
+                        ${isLink
+                        ? `<a href="${topic.url}" class="subtopic-link text-sm font-bold text-indigo-700 transition-colors">${topic.name} <i class="fas fa-external-link-alt text-[10px] ml-1 opacity-50"></i></a>`
+                        : `<span class="text-sm text-slate-700 font-medium">${topic.name}</span>`
+                    }
+                    </li>
+                `;
+                return content;
+            }).join('');
+
+            // Tags
+            document.getElementById('modalScienceTags').innerHTML = book.science.map(tag =>
+                `<span class="px-2 py-1 bg-slate-200 text-slate-600 rounded text-[10px] font-bold uppercase">${tag}</span>`
+            ).join('');
+
+            // Button
+            const btn = document.getElementById('modalLink');
+            const noLink = document.getElementById('modalNoLink');
+
+            if (book.mainUrl && book.mainUrl !== '#') {
+                btn.href = book.mainUrl;
+                btn.classList.remove('hidden', 'flex');
+                btn.classList.add('flex');
+                noLink.classList.add('hidden');
+            } else {
+                btn.classList.add('hidden');
+                btn.classList.remove('flex');
+                noLink.classList.remove('hidden');
+            }
+
+            // Animate In
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+
+            requestAnimationFrame(() => {
+                backdrop.classList.remove('opacity-0');
+                panel.classList.remove('opacity-0', 'scale-95');
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('bookModal');
+            const backdrop = document.getElementById('modalBackdrop');
+            const panel = document.getElementById('modalPanel');
+
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('opacity-0', 'scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        document.getElementById('modalBackdrop').onclick = closeModal;
+
+        // Init
+        renderLibrary();
+
+    </script>
 </body>
 
 </html>
