@@ -4,192 +4,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tratado de Ciencias Forenses | Sherlock Holmes Edition - Profesor Carlos Martinez</title>
+    <title>Mundo Holmes | El Arte de la Deducción</title>
+
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/components.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/mundos-premium.css">
+
+    <style>
+        .holmes-font {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #8B2E16 0%, #B45327 100%);
+        }
+
+        .deduction-area {
+            background: linear-gradient(to bottom, #FEF3C7 0%, #FDE68A 100%);
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-[#f9f7f4] text-slate-800">
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="../../index.html" class="navbar-logo">
-                <i class="fas fa-atom"></i> Profesor Carlos Martinez
-            </a>
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
-                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
-                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
-                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Shared Navigation Placeholder -->
+    <div id="shared-navbar"></div>
 
-    <!-- Main Content -->
-    <main class="container py-10">
-        <!-- Back Button -->
-        <div class="mb-4 mt-4">
-            <a href="../../index.html" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Volver al Inicio
-            </a>
-        </div>
-
-        <article class="content-article">
-            <!-- Injected Content Starts Here -->
-            
-
-
-
-
-    <article>
-        
-
-        
-        <div>
-            
-            <img src="https://lh3.googleusercontent.com/d/1ABGDy6ZxYZxosrVxpbaEcbu0yPSliusm" alt="Escena del Crimen Victoriana">
-            <div>Fig. I: Evidencia recolectada en el callejón de Whitechapel - Archivo 221B</div>
-        </div>
-
-        <section>
-            <div>📜 I. El Principio de Intercambio</div>
-            <div>
-                <p>
-                    <span>E</span>n el ámbito de la criminalística moderna, debemos honrar el postulado del Dr. Edmond Locard. Este principio dicta que es imposible que un criminal actúe, especialmente en la tensión de un acto delictivo, sin dejar rastros de su presencia. "Todo contacto deja un rastro". Ya sea un filamento de lana, una partícula de polvo o una huella invisible, el investigador debe poseer la agudeza visual para hallarlo.
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="mb-12 mt-20 text-center md:text-left flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1">
+                <span
+                    class="inline-block px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm font-semibold mb-4">Elemental,
+                    querido Watson</span>
+                <h1 class="holmes-font premium-title text-4xl md:text-6xl font-bold mb-4 text-slate-900 leading-tight">
+                    El Arte de la <span class="text-amber-700">Deducción Holmesiana</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-6 font-medium">
+                    Domina las Ciencias Forenses a través de la lente de Sherlock Holmes. Aprende a pensar con rigor
+                    científico para resolver los misterios de la materia y el crimen.
                 </p>
-                <p>
-                    La <b>Criminalística de Campo</b> es la disciplina que emplea métodos y técnicas destinadas a observar, fijar, proteger y conservar el lugar de los hechos. No confundir con la Criminología, que busca el "por qué"; nosotros buscamos el "cómo" y el "quién" a través de la evidencia material.
-                </p>
-            </div>
-        </section>
-
-        <section>
-            <h3>🔍 Las Siete Reglas de Oro</h3>
-            <p>Todo investigador debe responder estas interrogantes ante una escena:</p>
-            <div>
-                <div><b>¿QUÉ?</b><br><small>Sucedió</small></div>
-                <div><b>¿QUIÉN?</b><br><small>Es la víctima/autor</small></div>
-                <div><b>¿CUÁNDO?</b><br><small>Cronotanatodiagnóstico</small></div>
-                <div><b>¿DÓNDE?</b><br><small>Lugar de hallazgo</small></div>
-                <div><b>¿CÓMO?</b><br><small>Mecánica de hechos</small></div>
-                <div><b>¿CON QUÉ?</b><br><small>Agente vulnerante</small></div>
-                <div><b>¿POR QUÉ?</b><br><small>Móvil del crimen</small></div>
-            </div>
-        </section>
-
-        <section>
-            <div>🧪 II. Especialidades Forenses</div>
-            <div>
-                
-                
-                <div>
-                    
-                    <img src="https://lh3.googleusercontent.com/d/1ABGDy6ZxYZxosrVxpbaEcbu0yPSliusm" alt="Lofoscopia">
-                    <h4>Lofoscopia</h4>
-                    <p><small>Estudio de los dibujos lineales que se presentan en las caras y en los bordes de las manos y pies. Se divide en dactiloscopia (dedos), quiroscopia (palmas) y pelmatoscopia (plantas).</small></p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#simulador"
+                        class="px-6 py-3 bg-amber-700 text-white rounded-xl font-bold hover:bg-amber-800 transition shadow-lg shadow-amber-200">Resolver
+                        un Caso</a>
+                    <a href="#metodo"
+                        class="px-6 py-3 bg-white border-2 border-amber-200 text-slate-700 rounded-xl font-bold hover:bg-amber-50 transition">Conocer
+                        el Método</a>
                 </div>
-
-                
-                <div>
-                    <img src="https://lh3.googleusercontent.com/d/1ABGDy6ZxYZxosrVxpbaEcbu0yPSliusm" alt="Tanatología">
-                    <h4>Tanatología</h4>
-                    <p><small>Estudio de los fenómenos de la muerte. Analizamos la <i>Lividez Cadavérica</i> (manchas purpúreas) y la <i>Rigidez</i> para determinar el tiempo preciso del deceso.</small></p>
-                </div>
-
-                
-                <div>
-                    <img src="https://lh3.googleusercontent.com/d/1ABGDy6ZxYZxosrVxpbaEcbu0yPSliusm" alt="Balística">
-                    <h4>Balística Forense</h4>
-                    <p><small>Estudia los proyectiles y los efectos que producen. La balística <i>identificativa</i> analiza las marcas únicas producidas por el ánima del cañón en el casquillo.</small></p>
-                </div>
-
             </div>
-        </section>
-
-        
-        <section>
-            <div>🕯️ III. Laboratorio de Reactivos</div>
-            <p>Utilice la lámpara de Wood para revelar fluidos invisibles al ojo humano en este espécimen de tela.</p>
-            <div>
-                <div id="labContainer">
-                    <canvas id="forensicCanvas"></canvas>
-                    <div>
-                        REVELADO QUÍMICO ACTIVO
+            <div class="flex-1 max-w-sm animate-float">
+                <div class="bg-amber-50 p-6 rounded-3xl shadow-xl border border-amber-100 victorian-border">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="holmes-font font-bold text-amber-800 uppercase text-xs tracking-wider">Principio
+                            Holmesiano</span>
+                        <div
+                            class="w-10 h-10 bg-amber-800 rounded-full flex items-center justify-center text-amber-100">
+                            🕵️</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-amber-100 rounded-2xl border-l-4 border-amber-700">
+                            <p class="holmes-font text-sm font-medium italic text-amber-900 leading-relaxed">"Cuando has
+                                eliminado lo imposible, lo que queda, por improbable que parezca, debe ser la verdad."
+                            </p>
+                            <p class="text-xs text-amber-800 mt-2 text-right">— Sherlock Holmes</p>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <b>Sustancia:</b> LUMINOL (C<sub>8</sub>H<sub>7</sub>N<sub>3</sub>O<sub>2</sub>)<br>
-                        <b>Reacción:</b> Quimioluminiscencia con hierro
+            </div>
+        </section>
+
+        <!-- El Método Holmesiano -->
+        <section id="metodo" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="holmes-font text-3xl font-bold mb-2">El Método de Investigación</h2>
+                <p class="text-slate-500">Postulados de Edmond Locard y la Escuela Holmesiana.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-3xl border border-amber-100 card-hover">
+                    <div
+                        class="step-number w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-xl mb-4">
+                        1</div>
+                    <h3 class="holmes-font font-bold text-xl mb-4 text-amber-800">Observación Locard</h3>
+                    <p class="text-slate-600 mb-4">"Todo contacto deja rastro". Es imposible que un criminal actúe sin
+                        dejar evidencia de su presencia.</p>
+                    <div class="bg-amber-50 p-3 rounded-xl font-mono text-xs">
+                        <strong>Foco:</strong> Huellas dactilares, fibras, polen y residuos químicos.
                     </div>
-                    <button onclick="resetLab()">Limpiar Muestra</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-amber-100 card-hover">
+                    <div
+                        class="step-number w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-xl mb-4">
+                        2</div>
+                    <h3 class="holmes-font font-bold text-xl mb-4 text-amber-800">Deducción de Especialidad</h3>
+                    <p class="text-slate-600 mb-4">Uso de la Lofoscopia, Tanatología y Balística para conectar
+                        sospechosos con la escena.</p>
+                    <div class="bg-amber-50 p-3 rounded-xl font-mono text-xs">
+                        <strong>Metodología:</strong> Si A rastro → B presencia, y B presencia → C implicación.
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl border border-amber-100 card-hover">
+                    <div
+                        class="step-number w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-xl mb-4">
+                        3</div>
+                    <h3 class="holmes-font font-bold text-xl mb-4 text-amber-800">Conclusión Forense</h3>
+                    <p class="text-slate-600 mb-4">Garantizar la Cadena de Custodia. No basta con hallar la prueba; hay
+                        que asegurar su integridad.</p>
+                    <div class="bg-amber-100 p-3 rounded-xl border border-amber-200">
+                        <p class="holmes-font font-bold text-amber-900 text-sm">"Los datos sin teoría son ciegos."</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <div>🔍 IV. Cadena de Custodia</div>
-            <p>
-                No basta con hallar la prueba; hay que garantizar su integridad. La <b>Cadena de Custodia</b> es el sistema de control y registro que se aplica al indicio, evidencia o muestra, desde su localización hasta su valoración por los encargados de administrar justicia. Cualquier ruptura en este protocolo invalida el razonamiento deductivo más brillante ante el tribunal.
-            </p>
+        <!-- Simulador de Caso -->
+        <section id="simulador"
+            class="mb-16 bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-amber-100 overflow-hidden relative">
+            <div class="absolute top-0 right-0 p-4 opacity-5">
+                <i class="fas fa-search-plus text-9xl"></i>
+            </div>
+
+            <h2 class="holmes-font text-3xl font-bold mb-2 text-center text-amber-900">Laboratorio de Investigación</h2>
+            <p class="text-slate-500 mb-8 text-center max-w-2xl mx-auto">Aplica el método holmesiano para descubrir al
+                culpable. Examina las pistas científicas y deduce la solución.</p>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/2">
+                    <div class="deduction-area rounded-3xl p-8 mb-8 relative border-2 border-amber-200 shadow-inner">
+                        <div class="mb-8">
+                            <h3 class="holmes-font font-bold text-xl mb-3 text-amber-900 flex items-center gap-2">
+                                <i class="fas fa-scroll"></i> El Caso del Museo
+                            </h3>
+                            <p class="text-amber-900/70 text-sm leading-relaxed italic">
+                                Un valioso diamante ha sido robado. El culpable ha dejado rastros que solo una mente
+                                científica puede decodificar.
+                            </p>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="holmes-font font-bold text-lg mb-4 text-amber-800">Pistas Halladas</h3>
+                            <div id="clues-container" class="space-y-4">
+                                <!-- Dinámico -->
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="holmes-font font-bold text-lg mb-4 text-amber-800">Sospechosos en Custodia</h3>
+                            <div id="suspects-container" class="grid grid-cols-2 gap-4">
+                                <!-- Dinámico -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-amber-50 p-6 rounded-2xl text-center border border-amber-200">
+                            <div class="text-xs text-amber-700 font-bold uppercase mb-2 tracking-widest">Pistas</div>
+                            <div class="text-4xl font-bold text-amber-900" id="clues-count">0/5</div>
+                        </div>
+                        <div class="bg-emerald-50 p-6 rounded-2xl text-center border border-emerald-200">
+                            <div class="text-xs text-emerald-700 font-bold uppercase mb-2 tracking-widest">Confianza
+                            </div>
+                            <div class="text-4xl font-bold text-emerald-900" id="probability">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <button id="investigate-btn"
+                            class="w-full py-4 bg-amber-800 text-amber-50 rounded-2xl font-bold hover:bg-amber-900 transition flex items-center justify-center gap-2 shadow-lg">
+                            <i class="fas fa-microscope"></i> Investigar Nueva Evidencia
+                        </button>
+                        <button id="accuse-btn"
+                            class="w-full py-4 bg-rose-700 text-white rounded-2xl font-bold hover:bg-rose-800 transition flex items-center justify-center gap-2">
+                            <i class="fas fa-gavel"></i> Emitir Orden de Arresto
+                        </button>
+                        <button id="reset-case-btn"
+                            class="w-full py-3 bg-slate-100 text-slate-500 rounded-2xl font-bold hover:bg-slate-200 transition">
+                            Reiniciar Investigación
+                        </button>
+                    </div>
+
+                    <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                        <h4 class="holmes-font font-bold text-slate-800 mb-4 flex items-center gap-2">
+                            <i class="fas fa-pen-fancy"></i> Cuaderno de Campo
+                        </h4>
+                        <textarea id="observations" rows="4"
+                            class="w-full p-4 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none text-sm font-mono"
+                            placeholder="Anotaciones forenses..."></textarea>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        
-    </article>
+        <!-- Lógica & Probabilidad -->
+        <section class="grid lg:grid-cols-2 gap-8 mb-16">
+            <div class="bg-slate-900 text-white p-10 rounded-[2.5rem] shadow-xl">
+                <h3 class="holmes-font text-2xl font-bold mb-6 text-amber-400">Calculadora Bayesiana de Culpa</h3>
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase">Evidencia Incriminatoria</label>
+                        <input type="number" id="clues-for"
+                            class="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl focus:border-amber-500 outline-none text-xl font-bold text-amber-300"
+                            value="3">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold text-slate-400 uppercase">Evidencia Exculpatoria</label>
+                        <input type="number" id="clues-against"
+                            class="w-full bg-slate-800 border border-slate-700 p-3 rounded-xl focus:border-amber-500 outline-none text-xl font-bold text-rose-300"
+                            value="1">
+                    </div>
+                    <button onclick="calculateProbability()"
+                        class="w-full py-4 bg-amber-600 rounded-xl font-bold hover:bg-amber-500 transition shadow-lg shadow-amber-900/50">Analizar
+                        Probabilidad</button>
 
-    
+                    <div class="pt-6 border-t border-slate-800">
+                        <div class="flex justify-between items-center bg-slate-800/50 p-6 rounded-2xl">
+                            <span class="text-slate-400 font-bold uppercase text-xs">Probabilidad de Acierto</span>
+                            <span class="text-4xl font-bold text-amber-400" id="probability-result">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="bg-white p-10 rounded-[2.5rem] border border-amber-100 shadow-xl">
+                <h3 class="holmes-font text-2xl font-bold mb-6 text-amber-900">Reglas de Inferencia Lógica</h3>
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start border-b border-amber-50 pb-4">
+                        <div
+                            class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-800 shrink-0">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Modus Ponens</h4>
+                            <p class="text-sm text-slate-500 italic">"Si el veneno es arsénico, los síntomas deben ser
+                                X. Los síntomas son X. Por lo tanto, el veneno es arsénico."</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start border-b border-amber-50 pb-4">
+                        <div
+                            class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-800 shrink-0">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Modus Tollens</h4>
+                            <p class="text-sm text-slate-500 italic">"Si hubiera entrado por la puerta, el perro habría
+                                ladrado. El perro no ladró. Por tanto, no entró por la puerta."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Injected Content Ends Here -->
-        </article>
-
-        <!-- Dynamic Navigation (Next/Prev) -->
-        <div id="article-navigation" class="article-nav">
-            <!-- Content injected by js/article-nav.js -->
-        </div>
+        <!-- Navegación de Artículos -->
+        <div id="article-navigation" class="mb-16"></div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-section">
-                <h3>Profesor Carlos Martinez</h3>
-                <p>Educación de calidad para todos.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="../../pages/guias.html">Guías</a></li>
-                    <li><a href="../../pages/mundos.html">Mundos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Sígueme</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <!-- Shared Footer Placeholder -->
+    <div id="shared-footer"></div>
 
-    <script src="../../js/app.js"></script>
+    <!-- Scripts -->
+    <script src="../../js/shared-nav.js"></script>
+    <script>
+        // Lógica del juego adaptada
+        const caseData = {
+            clues: [
+                { id: 1, text: "Fibras de lana azul encontradas en la vitrina (Lofoscopia).", reveals: "azul" },
+                { id: 2, text: "Huellas talla 42 en el barro (Criminalística de campo).", reveals: "42" },
+                { id: 3, text: "Residuos de Luminol detectan sangre invisible (Química forense).", reveals: "sangre" },
+                { id: 4, text: "Acceso detectado mediante clave de administrador a la 1:00 AM.", reveals: "admin" },
+                { id: 5, text: "Polen de orquídea en la alfombra (Biología forense).", reveals: "orquidea" }
+            ],
+            suspects: [
+                { id: 1, name: "Prof. Moriarty", desc: "Matemático", guilty: false },
+                { id: 2, name: "Dr. Watson", desc: "Médico", guilty: false },
+                { id: 3, name: "Sra. Hudson", desc: "Administradora", guilty: true },
+                { id: 4, name: "Insp. Lestrade", desc: "Oficial", guilty: false }
+            ],
+            found: 0
+        };
+
+        const cluesCont = document.getElementById('clues-container');
+        const suspectsCont = document.getElementById('suspects-container');
+
+        function init() {
+            cluesCont.innerHTML = '<p class="text-amber-800/50 text-sm italic">Sin evidencia recolectada...</p>';
+            suspectsCont.innerHTML = '';
+            caseData.found = 0;
+            updateUI();
+
+            caseData.suspects.forEach(s => {
+                const div = document.createElement('div');
+                div.className = 'p-4 bg-white rounded-2xl border border-amber-100 cursor-pointer hover:border-amber-500 transition shadow-sm';
+                div.innerHTML = `<div class="font-bold text-amber-900">${s.name}</div><div class="text-xs opacity-60">${s.desc}</div>`;
+                div.onclick = () => accuse(s);
+                suspectsCont.appendChild(div);
+            });
+        }
+
+        function updateUI() {
+            document.getElementById('clues-count').textContent = `${caseData.found}/5`;
+            document.getElementById('probability').textContent = `${caseData.found * 18 + 5}%`;
+        }
+
+        document.getElementById('investigate-btn').onclick = () => {
+            if (caseData.found >= 5) return alert("Todas las pruebas han sido analizadas.");
+            const clue = caseData.clues[caseData.found];
+            if (caseData.found === 0) cluesCont.innerHTML = '';
+            const div = document.createElement('div');
+            div.className = 'p-3 bg-amber-50/50 border border-amber-200 rounded-xl text-xs animate-float';
+            div.innerHTML = `<span class="font-bold">EVIDENCIA #${caseData.found + 1}:</span> ${clue.text}`;
+            cluesCont.prepend(div);
+            caseData.found++;
+            updateUI();
+        };
+
+        function accuse(s) {
+            if (caseData.found < 2) return alert("Se necesita más evidencia antes de proceder al arresto.");
+            if (s.guilty) {
+                alert("¡EXCELENTE! Los rastros químicos y el acceso administrativo confirman tu sospecha.");
+            } else {
+                alert("INCORRECTO. Las leyes de la lógica dictan que este sospechoso tenía una coartada sólida.");
+            }
+        }
+
+        function calculateProbability() {
+            const f = parseInt(document.getElementById('clues-for').value) || 0;
+            const a = parseInt(document.getElementById('clues-against').value) || 0;
+            const res = total => total === 0 ? 0 : (f / (f + a)) * 100;
+            document.getElementById('probability-result').textContent = Math.round(res(f + a)) + '%';
+        }
+
+        document.getElementById('reset-case-btn').onclick = init;
+        init();
+    </script>
     <script type="module" src="../../js/article-nav.js"></script>
 </body>
 

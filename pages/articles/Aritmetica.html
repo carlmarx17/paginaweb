@@ -4,181 +4,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aritmética: La Base de Todo - Profesor Carlos Martinez</title>
+    <title>Aritmética: La Base de Todo | Guías de Estudio</title>
+
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/components.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/mundos-premium.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .math-card {
+            @apply bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all;
+        }
+
+        .gradient-text {
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="../../index.html" class="navbar-logo">
-                <i class="fas fa-atom"></i> Profesor Carlos Martinez
-            </a>
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="navbar-menu">
-                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
-                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
-                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
-                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Shared Navigation Placeholder -->
+    <div id="shared-navbar"></div>
 
-    <!-- Main Content -->
-    <main class="container py-10">
-        <!-- Back Button -->
-        <div class="mb-4 mt-4">
-            <a href="../../index.html" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Volver al Inicio
-            </a>
-        </div>
+    <main class="max-w-4xl mx-auto px-4 py-8 mt-24">
+        <!-- Header -->
+        <header class="mb-12 text-center">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Matemáticas •
+                Secundaria</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
+                Aritmética: <span class="gradient-text">La Base del Pensamiento</span>
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Antes de construir puentes o programar inteligencias artificiales, debemos dominar el lenguaje de los
+                números y sus operaciones fundamentales.
+            </p>
+        </header>
 
-        <article class="content-article">
-            <!-- Injected Content Starts Here -->
-            
+        <!-- Content Section -->
+        <div class="space-y-12">
 
-
-
-
-    
-
-    
-
-    <div>
-        
-        <section>
-            <h2><i></i> Los Conjuntos Numéricos</h2>
-            <p>Antes de operar, hay que saber con quién estamos tratando. No todos los números son iguales.</p>
-            
-            
-
-            <div>
-                <div>
-                    <span>ℕ</span>
-                    <h4>Naturales</h4>
-                    <p>Para contar ovejas.</p>
+            <!-- Conjuntos Numéricos -->
+            <section class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100">
+                <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fas fa-layer-group text-blue-500"></i> Los Conjuntos Numéricos
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="math-card border-l-4 border-l-blue-400">
+                        <div class="text-2xl font-black text-blue-100 mb-2">ℕ</div>
+                        <h4 class="font-bold text-slate-900">Naturales</h4>
+                        <p class="text-sm text-slate-500">Para contar elementos discretos y positivos.</p>
+                    </div>
+                    <div class="math-card border-l-4 border-l-indigo-400">
+                        <div class="text-2xl font-black text-indigo-100 mb-2">ℤ</div>
+                        <h4 class="font-bold text-slate-900">Enteros</h4>
+                        <p class="text-sm text-slate-500">Incluimos el cero y los negativos (deudas, temperaturas).</p>
+                    </div>
+                    <div class="math-card border-l-4 border-l-purple-400">
+                        <div class="text-2xl font-black text-purple-100 mb-2">ℚ</div>
+                        <h4 class="font-bold text-slate-900">Racionales</h4>
+                        <p class="text-sm text-slate-500">Fracciones y decimales que expresan partes del todo.</p>
+                    </div>
+                    <div class="math-card border-l-4 border-l-rose-400">
+                        <div class="text-2xl font-black text-rose-100 mb-2">ℝ</div>
+                        <h4 class="font-bold text-slate-900">Reales</h4>
+                        <p class="text-sm text-slate-500">Todo el espectro de la recta numérica continua.</p>
+                    </div>
                 </div>
-                <div>
-                    <span>ℤ</span>
-                    <h4>Enteros</h4>
-                    <p>Cuando debes dinero.</p>
+            </section>
+
+            <!-- La Jerarquía -->
+            <section class="bg-blue-600 rounded-[2.5rem] p-10 md:p-16 text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-6">La Jerarquía de Operaciones</h2>
+                    <p class="text-blue-100 mb-8 max-w-xl">El orden importa más que la intuición. Sigue el protocolo
+                        <strong>PEMDAS</strong> para evitar errores fatales en ingeniería y física.</p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                            <span class="text-2xl font-bold block mb-1">P</span>
+                            <span class="text-[0.6rem] uppercase tracking-wider opacity-60">Paréntesis</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                            <span class="text-2xl font-bold block mb-1">E</span>
+                            <span class="text-[0.6rem] uppercase tracking-wider opacity-60">Exponentes</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                            <span class="text-2xl font-bold block mb-1">M / D</span>
+                            <span class="text-[0.6rem] uppercase tracking-wider opacity-60">Mult / Div</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                            <span class="text-2xl font-bold block mb-1">A / S</span>
+                            <span class="text-[0.6rem] uppercase tracking-wider opacity-60">Add / Sub</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <span>ℚ</span>
-                    <h4>Racionales</h4>
-                    <p>Para partir el pastel.</p>
+                <div class="absolute -right-20 -bottom-20 opacity-10">
+                    <i class="fas fa-calculator text-[20rem]"></i>
                 </div>
-                <div>
-                    <span>ℝ</span>
-                    <h4>Reales</h4>
-                    <p>Todo lo que existe en la recta.</p>
+            </section>
+
+            <!-- Herramienta Interactiva -->
+            <section class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100">
+                <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fas fa-microchip text-indigo-500"></i> Aritmética Modular
+                </h2>
+                <p class="text-slate-500 mb-8 italic">¿Qué hora será dentro de 15 horas si ahora son las 10? No son las
+                    25, es la 1:00 (25 mod 12).</p>
+                <div class="bg-slate-50 p-6 rounded-3xl flex flex-wrap items-center gap-4 border border-slate-100">
+                    <input type="number" id="numA" placeholder="Número"
+                        class="p-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 outline-none w-32 font-bold">
+                    <span class="font-black text-slate-400">MOD</span>
+                    <input type="number" id="numB" placeholder="Módulo"
+                        class="p-3 rounded-xl border-2 border-slate-200 focus:border-blue-500 outline-none w-32 font-bold">
+                    <button onclick="calcMod()"
+                        class="px-6 py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-black transition shadow-lg">Calcular</button>
+                    <div id="modResult" class="text-2xl font-black text-blue-600 ml-auto"></div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <h2><i></i> La Jerarquía Sagrada</h2>
-            <p>Si resuelves <code>2 + 3 × 4</code> y dices que es 20, tenemos un problema. El orden importa más que tus sentimientos.</p>
-            
-            
-
-            <div>
-                "PEMDAS: Paréntesis, Exponentes, Multiplicación/División, Adición/Sustracción. Ignóralo y verás cómo tu puente se cae en la simulación." 🏗️
-            </div>
-        </section>
-
-        <section>
-            <h2><i></i> Números Primos</h2>
-            <p>Son los números que solo se dividen por sí mismos y por 1. Son los bloques de construcción de todos los demás números.</p>
-            
-            <div>
-                <div>
-                    <p>¿Por qué le importan a un físico/programador? Porque toda la criptografía de internet (RSA) se basa en que es fácil multiplicar dos primos grandes, pero casi imposible factorizarlos de vuelta.</p>
-                </div>
-                
-            </div>
-        </section>
-
-        <section>
-            <h2><i></i> Aritmética de Residuos</h2>
-            <p>También llamada aritmética de reloj. ¿Qué hora será dentro de 15 horas si ahora son las 10? No son las 25, son las 1 (25 mod 12).</p>
-            
-            <div>
-                <h3>Calculadora de Módulo (Remanente)</h3>
-                <input type="number" id="numA" placeholder="Número">
-                <span> mod </span>
-                <input type="number" id="numB" placeholder="Divisor">
-                <button onclick="calcMod()">Calcular</button>
-                <div id="modResult"></div>
-            </div>
-        </section>
-
-        <section>
-            <h2><i></i> El Terror del Físico</h2>
-            <p>En aritmética pura, 1/3 es 0.333... infinito. En tu PC, es un número truncado. Si sumas ese error un millón de veces en un bucle de simulación...</p>
-            <div>
-                "Dato real: En 1991, un error de redondeo en un misil Patriot causó que fallara por 0.34 segundos. A 1,600 m/s, eso es mucha distancia. La aritmética salva vidas." 🚀
-            </div>
-        </section>
-
-    </div>
-
-    
-
-    
-
-
-            <!-- Injected Content Ends Here -->
-        </article>
-
-        <!-- Dynamic Navigation (Next/Prev) -->
-        <div id="article-navigation" class="article-nav">
-            <!-- Content injected by js/article-nav.js -->
+            <!-- Curiosidad Histórica -->
+            <section class="p-8 bg-amber-50 rounded-3xl border-l-4 border-l-amber-400">
+                <h3 class="font-bold text-amber-900 mb-4 flex items-center gap-2 italic">
+                    <i class="fas fa-rocket"></i> La Aritmética Salva Vidas
+                </h3>
+                <p class="text-sm text-amber-800 leading-relaxed">
+                    En 1991, un error de redondeo en un misil Patriot causó un desfase de 0.34 segundos. A velocidades
+                    supersónicas, esto resultó en una tragedia. La precisión aritmética no es solo académica, es vital.
+                </p>
+            </section>
         </div>
 
+        <!-- Pagination -->
+        <div id="article-navigation" class="mt-20"></div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-section">
-                <h3>Profesor Carlos Martinez</h3>
-                <p>Educación de calidad para todos.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="../../pages/guias.html">Guías</a></li>
-                    <li><a href="../../pages/mundos.html">Mundos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Sígueme</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <!-- Shared Footer Placeholder -->
+    <div id="shared-footer"></div>
 
-    <script src="../../js/app.js"></script>
+    <!-- Scripts -->
+    <script src="../../js/shared-nav.js"></script>
+    <script>
+        function calcMod() {
+            const a = parseInt(document.getElementById('numA').value);
+            const b = parseInt(document.getElementById('numB').value);
+            if (!isNaN(a) && !isNaN(b) && b !== 0) {
+                document.getElementById('modResult').textContent = "Resultado: " + (a % b);
+            } else {
+                document.getElementById('modResult').textContent = "?";
+            }
+        }
+    </script>
     <script type="module" src="../../js/article-nav.js"></script>
 </body>
 

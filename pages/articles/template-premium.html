@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la Guía | Guías de Estudio Premium</title>
+
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/mundos-premium.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .content-card {
+            @apply bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 mb-12;
+        }
+
+        .gradient-text {
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Shared Navigation Placeholder -->
+    <div id="shared-navbar"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 mt-24">
+        <!-- Header -->
+        <header class="mb-16 text-center">
+            <span class="text-blue-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Categoría • Nivel</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+                Título de la <span class="gradient-text">Guía Premium</span>
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Breve descripción introductoria que explique la importancia del tema y conecte con el estudiante.
+            </p>
+        </header>
+
+        <!-- Main Content -->
+        <article>
+
+            <section class="content-card">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-book-open text-blue-500"></i> Sección del Tema
+                </h2>
+                <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                    <p class="mb-4">Aquí va el contenido explicativo. Utiliza párrafos cortos y lenguaje claro.</p>
+                    <ul class="list-disc pl-6 space-y-2 mb-6">
+                        <li>Punto clave de estudio 1</li>
+                        <li>Punto clave de estudio 2</li>
+                        <li>Concepto fundamental a recordar</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Highlight Section -->
+            <section class="bg-indigo-600 rounded-[2.5rem] p-10 md:p-16 text-white mb-12 relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-6">Concepto Destacado</h2>
+                    <p class="text-indigo-100 mb-8 max-w-xl">Utiliza este bloque para resaltar leyes, teoremas o datos
+                        críticos que el estudiante debe memorizar o comprender profundamente.</p>
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 font-mono">
+                        F = m · a
+                    </div>
+                </div>
+                <div class="absolute -right-20 -bottom-20 opacity-10">
+                    <i class="fas fa-microscope text-[20rem]"></i>
+                </div>
+            </section>
+
+            <section class="content-card">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-vial text-indigo-500"></i> Aplicación Práctica
+                </h2>
+                <p class="text-slate-600 mb-8 italic">Ejemplos del mundo real donde se aplica este conocimiento.</p>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                        <h4 class="font-bold text-slate-900 mb-2">Ejemplo 1</h4>
+                        <p class="text-sm text-slate-500">Descripción de la aplicación 1.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
+                        <h4 class="font-bold text-slate-900 mb-2">Ejemplo 2</h4>
+                        <p class="text-sm text-slate-500">Descripción de la aplicación 2.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <!-- Pagination -->
+        <div id="article-navigation" class="mt-20"></div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="shared-footer"></div>
+
+    <!-- Scripts -->
+    <script src="../../js/shared-nav.js"></script>
+    <script type="module" src="../../js/article-nav.js"></script>
+</body>
+
+</html>

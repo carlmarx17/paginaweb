@@ -4,93 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundos Literarios - Biblioteca 3D</title>
+    <title>Mundos Literarios | Biblioteca Premium 3D</title>
 
     <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/mundos-premium.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .search-container {
+            @apply flex items-center bg-white/5 border border-white/10 rounded-2xl px-6 py-3 transition-all focus-within:border-amber-500/50 focus-within:bg-white/10;
+        }
+
+        .filter-chip {
+            @apply px-5 py-2 rounded-full border border-white/10 text-slate-400 text-sm font-medium transition-all hover:border-amber-500/30 hover:text-amber-200;
+        }
+
+        .filter-chip.active {
+            @apply bg-amber-600 border-amber-500 text-white shadow-lg shadow-amber-900/20;
+        }
+    </style>
 </head>
 
-<body class="dark-theme">
-    <!-- Navegación compartida se inyectará aquí -->
+<body class="bg-[#0f172a] text-slate-300">
+    <!-- Navbar Placeholder -->
     <div id="shared-navbar"></div>
 
-    <!-- Header Biblioteca (Mundos) -->
-    <header class="library-header dark-mode" style="margin-top: 70px;">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <a href="../index.html" class="logo"
-                style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <div class="logo-icon"
-                    style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%); box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);">
-                    <i class="fas fa-book-open"></i>
+    <main class="min-h-screen">
+        <!-- Premium Header -->
+        <header class="hero-gradient pt-32 pb-20 px-4 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20 pointer-events-none"
+                style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+            <div class="max-w-6xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-3 mb-6 animate-float">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center text-white shadow-xl">
+                        <i class="fas fa-scroll text-xl"></i>
+                    </div>
                 </div>
-                <div>
-                    <h1
-                        style="font-family: 'Cinzel', serif; font-size: 1.4rem; margin: 0; color: #fef3c7; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-                        Biblioteca Infinita</h1>
-                    <span
-                        style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: #9ca3af;">Mundos
-                        Literarios</span>
+
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-6 cinzel tracking-wider">
+                    BIBLIOTECA <span class="text-amber-500">INFINITA</span>
+                </h1>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12">
+                    Sumérgete en realidades alternativas y dimensiones literarias. Explora clásicos y mundos 3D
+                    diseñados para una experiencia de lectura inmersiva.
+                </p>
+
+                <!-- Premium Search -->
+                <div class="max-w-xl mx-auto mb-16">
+                    <div class="search-container">
+                        <i class="fas fa-search text-slate-500 mr-3"></i>
+                        <input type="text" id="searchInput" placeholder="Buscar: Macondo, Baker Street, Gilead..."
+                            class="bg-transparent border-none outline-none w-full text-white placeholder:text-slate-600">
+                    </div>
                 </div>
-            </a>
 
-            <!-- Buscador -->
-            <div class="search-box">
-                <i class="fas fa-search search-icon" style="color: #6b7280;"></i>
-                <input type="text" id="searchInput" placeholder="Buscar: Macondo, Dune, Orwell..."
-                    style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white;"
-                    aria-label="Buscar libros">
-            </div>
-        </div>
-    </header>
-
-    <main class="container" style="padding: 2rem 1rem;">
-
-        <!-- Barra de Filtros -->
-        <div class="filters-bar" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
-            <div style="width: 100%;">
-                <div class="filter-group" style="justify-content: center;">
-                    <button class="filter-btn active" data-filter="all"
-                        style="background: #d97706; color: white; border-color: #d97706;">Todo</button>
-                    <button class="filter-btn" data-filter="distopia"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Distopías</button>
-                    <button class="filter-btn" data-filter="scifi"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Sci-Fi</button>
-                    <button class="filter-btn" data-filter="clasico"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Clásicos</button>
-                    <button class="filter-btn" data-filter="fantasia"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Fantasía</button>
+                <!-- Premium Filters -->
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="filter-btn filter-chip active" data-filter="all">Todas las Realidades</button>
+                    <button class="filter-btn filter-chip" data-filter="distopia">Distopías</button>
+                    <button class="filter-btn filter-chip" data-filter="scifi">Sci-Fi</button>
+                    <button class="filter-btn filter-chip" data-filter="clasico">Clásicos</button>
+                    <button class="filter-btn filter-chip" data-filter="fantasia">Fantasía</button>
+                    <button class="filter-btn filter-chip" data-filter="biologia">Ciencia</button>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <!-- Grid de Libros 3D -->
-        <div id="libraryGrid" class="library-grid-books">
-            <!-- 3D Books injected by JS -->
-        </div>
+        <!-- Library Grid Section -->
+        <section class="max-w-7xl mx-auto px-4 py-20">
+            <div id="libraryGrid" class="library-grid-books">
+                <!-- 3D Books injected by library.js -->
+            </div>
 
-        <!-- Estado Vacío -->
-        <div id="emptyState" class="hidden" style="text-align: center; padding: 4rem 1rem; opacity: 0.5;">
-            <i class="fas fa-ghost" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-            <h3>No se encontraron libros</h3>
-        </div>
-
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden py-24 text-center">
+                <div class="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-ghost text-4xl text-slate-700"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-500 cinzel">No se encontraron universos</h3>
+                <p class="text-slate-600 mt-2">Prueba con otros términos de búsqueda.</p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer compartido se inyectará aquí -->
+    <!-- Footer Placeholder -->
     <div id="shared-footer"></div>
 
     <!-- Scripts -->
     <script src="../js/shared-nav.js"></script>
     <script type="module" src="../js/library.js"></script>
+    <script>
+        // Smooth scroll for nav links if needed
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -4,408 +4,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expresiones Algebraicas - Guía Gen Z - Profesor Carlos Martinez</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/components.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Expresiones Algebraicas | Guía Premium Gen Z</title>
+
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;500;700&display=swap"
         rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/mundos-premium.css">
+
+    <style>
+        :root {
+            --color-primary: #0ea5e9;
+            --color-secondary: #6366f1;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .math-font {
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        .gradient-text {
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-600;
+        }
+
+        .content-card {
+            @apply bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 mb-12 transition-all duration-300 hover:shadow-md;
+        }
+
+        .term-part {
+            @apply p-4 rounded-2xl border-2 transition-all duration-300;
+        }
+
+        .step-pill {
+            @apply px-4 py-1 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-2 inline-block;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="../../index.html" class="navbar-logo">
-                <i class="fas fa-atom"></i> Profesor Carlos Martinez
-            </a>
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <!-- Shared Navigation Placeholder -->
+    <div id="shared-navbar"></div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 mt-24">
+        <!-- Header -->
+        <header class="mb-16 text-center animate-float">
+            <span class="text-sky-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Álgebra • Nivel
+                Secundaria</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+                🧩 Expresiones <span class="gradient-text">Algebraicas</span>
+            </h1>
+            <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                Domina el lenguaje de las matemáticas con ejemplos de tu vida diaria: desde el daño en tus videojuegos
+                hasta el engagement en Instagram.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <span
+                    class="px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-sm font-medium text-slate-600"><i
+                        class="fas fa-gamepad text-sky-500 mr-2"></i>Gaming</span>
+                <span
+                    class="px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-sm font-medium text-slate-600"><i
+                        class="fas fa-hashtag text-indigo-500 mr-2"></i>Social Media</span>
+                <span
+                    class="px-4 py-2 rounded-full bg-white shadow-sm border border-slate-100 text-sm font-medium text-slate-600"><i
+                        class="fas fa-music text-pink-500 mr-2"></i>Música</span>
             </div>
-            <ul class="navbar-menu">
-                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
-                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
-                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
-                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+        </header>
 
-    <!-- Main Content -->
-    <main class="container py-10">
-        <!-- Back Button -->
-        <div class="mb-4 mt-4">
-            <a href="../../index.html" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Volver al Inicio
-            </a>
-        </div>
+        <!-- Main Content -->
+        <article>
 
-        <article class="content-article">
-            <!-- Injected Content Starts Here -->
-            
+            <!-- What is it? -->
+            <section class="content-card">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3 text-slate-900">
+                    <i class="fas fa-lightbulb text-yellow-500"></i> ¿Qué son las Expresiones?
+                </h2>
+                <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+                    <p class="mb-6">Una <strong>expresión algebraica</strong> es como una receta matemática: combinas
+                        números, variables y operaciones para crear algo nuevo. Es el lenguaje que te permite
+                        representar situaciones de la vida real de forma compacta.</p>
 
-
-
-    
-    
-
-    
-    <section>
-        <div>
-            <h1>🧩 Expresiones Algebraicas</h1>
-            <p>Domina el lenguaje de las matemáticas con ejemplos de tu vida diaria</p>
-            <div>
-                <span>🎮 Gaming</span>
-                <span>📱 Social Media</span>
-                <span>🎵 Música</span>
-                <span>💻 Tech</span>
-                <span>🛒 Shopping</span>
-            </div>
-        </div>
-    </section>
-
-    
-    <main>
-        
-        <div>
-            <div id="progress-bar"></div>
-        </div>
-
-        
-        <div>
-            <h2>🧩 ¿Qué son las Expresiones Algebraicas?</h2>
-            
-            <p>Una <strong>expresión algebraica</strong> es como una receta matemática: combinas números, variables y operaciones para crear algo nuevo. Es el lenguaje fundamental del álgebra que te permite representar situaciones de la vida real.</p>
-
-            <div>
-                <h4>🎮 Expresiones = Recetas de videojuegos</h4>
-                <p>En los videojuegos, las expresiones algebraicas se usan para:</p>
-                <ul>
-                    <li><strong>Daño de armas:</strong> Daño = Ataque base × Multiplicador de crítico</li>
-                    <li><strong>Experiencia:</strong> XP = XP base + (Nivel × Modificador)</li>
-                    <li><strong>Estadísticas:</strong> Vida máxima = Vida base + (Constitución × 10)</li>
-                </ul>
-            </div>
-
-            <h3>Partes de una expresión algebraica</h3>
-            <p>Toda expresión algebraica está formada por:</p>
-            <ul>
-                <li><strong>Variables:</strong> Letras que representan valores desconocidos (x, y, z)</li>
-                <li><strong>Constantes:</strong> Números fijos que no cambian (5, -3, 2.5)</li>
-                <li><strong>Coeficientes:</strong> Números que multiplican a las variables</li>
-                <li><strong>Operadores:</strong> Símbolos que indican operaciones (+, -, ×, ÷)</li>
-                <li><strong>Exponentes:</strong> Números que indican potencias (x², y³)</li>
-            </ul>
-        </div>
-
-        
-        <div>
-            <h2>🔍 Anatomía de un Término Algebraico</h2>
-
-            <p>Un <strong>término algebraico</strong> es la unidad básica de una expresión. Es como un personaje en un juego con sus estadísticas específicas.</p>
-
-            <div>
-                <div>Anatomía de un Término Algebraico</div>
-                
-                <div id="termino-central">
-                    -5x²
-                </div>
-
-                <div>
-                    <div>
-                        <h4>📊 Signo</h4>
-                        <p>Indica si el término es positivo (+) o negativo (-).</p>
-                        <p><strong>En nuestro ejemplo:</strong> El signo es negativo (-)</p>
-                    </div>
-
-                    <div>
-                        <h4>🔢 Coeficiente</h4>
-                        <p>El número que multiplica a la variable.</p>
-                        <p><strong>En nuestro ejemplo:</strong> El coeficiente es 5</p>
-                    </div>
-
-                    <div>
-                        <h4>📝 Variable</h4>
-                        <p>La letra que representa un valor desconocido.</p>
-                        <p><strong>En nuestro ejemplo:</strong> La variable es x</p>
-                    </div>
-
-                    <div>
-                        <h4>🚀 Exponente</h4>
-                        <p>Indica la potencia a la que está elevada la variable.</p>
-                        <p><strong>En nuestro ejemplo:</strong> El exponente es 2</p>
+                    <div class="bg-sky-50 p-6 rounded-3xl border border-sky-100 mb-6">
+                        <h4 class="font-bold text-sky-900 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fas fa-gamepad"></i> Recetas de Videojuegos
+                        </h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                                <div><strong class="text-sky-800">Daño de armas:</strong> <code
+                                        class="math-font bg-white px-2 py-0.5 rounded shadow-sm text-sm">Daño = Atk × Crit</code>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                                <div><strong class="text-sky-800">Experiencia:</strong> <code
+                                        class="math-font bg-white px-2 py-0.5 rounded shadow-sm text-sm">XP = XP_base + (Lvl × 50)</code>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                                <div><strong class="text-sky-800">Vida:</strong> <code
+                                        class="math-font bg-white px-2 py-0.5 rounded shadow-sm text-sm">HP = HP_base + (Const × 10)</code>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div>
-                <h4>📱 Términos en redes sociales</h4>
-                <p>Imagina que estás analizando tu perfil de Instagram:</p>
-                <ul>
-                    <li><strong>5x</strong> = 5 veces el número de seguidores (x)</li>
-                    <li><strong>3y</strong> = 3 veces el número de likes (y)</li>
-                    <li><strong>-2z</strong> = 2 veces el número de unfollows (z) con signo negativo</li>
-                </ul>
-                <p>Cada término representa una parte diferente de tu engagement en redes.</p>
-            </div>
-        </div>
+            <!-- Anatomy Section -->
+            <section class="content-card overflow-hidden">
+                <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-900">
+                    <i class="fas fa-microscope text-indigo-500"></i> Anatomía de un Término
+                </h2>
 
-        
-        <div>
-            <h2>✨ Simplificando Expresiones Algebraicas</h2>
-
-            <p>Simplificar una expresión es como organizar tu inventario en un juego: agrupas elementos similares para tener una visión más clara.</p>
-
-            <h3>Términos semejantes</h3>
-            <p>Los <strong>términos semejantes</strong> son aquellos que tienen las mismas variables con los mismos exponentes. Es como tener diferentes skins del mismo personaje.</p>
-
-            <div onclick="showExplanation('semejantes')">
-                3x + 5x = 8x
-            </div>
-
-            <p><em>¡Solo puedes sumar o restar términos semejantes!</em></p>
-
-            <div>
-                <h4>Ejemplo Música: Tu playlist favorita</h4>
-                <p><strong>Situación:</strong> Tienes 3x canciones de reggaeton, 2x canciones de pop, y agregas 4x canciones más de reggaeton. ¿Cuántas canciones tienes de cada género?</p>
-                
-                <div>
-                    <p><strong>Expresión inicial:</strong></p>
-                    <p>3x (reggaeton) + 2x (pop) + 4x (reggaeton)</p>
-                </div>
-
-                <div>
-                    <p><strong>Agrupar términos semejantes:</strong></p>
-                    <p>= (3x + 4x) + 2x</p>
-                    <p>= 7x + 2x</p>
-                </div>
-
-                <div>
-                    <p><strong>Resultado:</strong></p>
-                    <p>7x canciones de reggaeton y 2x canciones de pop</p>
-                </div>
-
-                <div>
-                    <p><strong>Si x = 10:</strong></p>
-                    <p>= 70 canciones de reggaeton y 20 canciones de pop</p>
-                    <p>¡Tienes una playlist de 90 canciones! 🎧</p>
-                </div>
-            </div>
-
-            <h3>Simplificación paso a paso</h3>
-            <p>Para simplificar una expresión compleja, sigue estos pasos:</p>
-
-            <div>
-                <h4>💻 Pasos para simplificar</h4>
-                <ol>
-                    <li><strong>Eliminar paréntesis:</strong> Usa la propiedad distributiva</li>
-                    <li><strong>Identificar términos semejantes:</strong> Busca variables y exponentes iguales</li>
-                    <li><strong>Agrupar términos semejantes:</strong> Reúnelos juntos</li>
-                    <li><strong>Combinar coeficientes:</strong> Suma o resta los números</li>
-                    <li><strong>Escribir la expresión simplificada:</strong> Ordena los términos</li>
-                </ol>
-            </div>
-
-            <div>
-                <h4>Ejemplo Instagram: Engagement total</h4>
-                <p><strong>Problema:</strong> Tienes 3 posts con x likes cada uno, 2 stories con 2x likes cada una, y pierdes x likes por un post que borraste. ¿Cuántos likes tienes en total?</p>
-                
-                <div>
-                    <p><strong>Expresión:</strong></p>
-                    <p>Likes totales = 3x + 2(2x) - x</p>
-                </div>
-
-                <div>
-                    <p><strong>Paso 1: Eliminar paréntesis</strong></p>
-                    <p>= 3x + 4x - x</p>
-                </div>
-
-                <div>
-                    <p><strong>Paso 2: Agrupar términos semejantes</strong></p>
-                    <p>= (3 + 4 - 1)x</p>
-                    <p>= 6x</p>
-                </div>
-
-                <div>
-                    <p><strong>Respuesta:</strong></p>
-                    <p>Tienes <strong>6x likes</strong> en total. Si cada post original tenía 100 likes (x=100), tienes 600 likes totales. 📸✨</p>
-                </div>
-            </div>
-
-            
-            <div onclick="toggleContent('simplification-tip')">
-                💡 Haz clic para ver un truco de simplificación
-            </div>
-            <div id="simplification-tip">
-                <p><strong>El truco del color:</strong> Cuando tengas una expresión con muchos términos, usa colores para agrupar términos semejantes.</p>
-                <p>Por ejemplo: <span>3x</span> + <span>2y</span> + <span>5x</span> - <span>y</span> + 7</p>
-                <p>Agrupa: <span>(3x + 5x)</span> + <span>(2y - y)</span> + 7 = <span>8x</span> + <span>y</span> + 7</p>
-                <p>¡Así es más fácil no perder ningún término!</p>
-            </div>
-        </div>
-
-        
-        <div>
-            <h2>🔢 Evaluando Expresiones Algebraicas</h2>
-
-            <p>Evaluar una expresión significa reemplazar las variables con valores numéricos específicos. Es como personalizar una configuración en tu juego favorito.</p>
-
-            <div>
-                <h4>Ejemplo Gaming: Daño de un arma</h4>
-                <p><strong>Situación:</strong> En tu juego favorito, el daño de un arma se calcula con la expresión: <strong>3x + 2y + 10</strong>, donde x es tu nivel de fuerza e y es el nivel del arma.</p>
-                
-                <div>
-                    <p><strong>Si tienes:</strong></p>
-                    <p>• Fuerza (x) = 5</p>
-                    <p>• Nivel del arma (y) = 3</p>
-                </div>
-
-                <div>
-                    <p><strong>Sustituir en la expresión:</strong></p>
-                    <p>Daño = 3(5) + 2(3) + 10</p>
-                </div>
-
-                <div>
-                    <p><strong>Calcular:</strong></p>
-                    <p>= 15 + 6 + 10</p>
-                    <p>= 31</p>
-                </div>
-
-                <div>
-                    <p><strong>Resultado:</strong></p>
-                    <p>¡Tu arma hace 31 puntos de daño! ⚔️</p>
-                </div>
-            </div>
-
-            <div>
-                <p>"Evaluar expresiones es como poner códigos de trucos en un juego: cambias las variables y obtienes resultados diferentes" 😎</p>
-            </div>
-
-            <h3>Orden de operaciones</h3>
-            <p>Para evaluar correctamente una expresión, sigue el orden de operaciones:</p>
-
-            <div>
-                <h4>📱 PEMDAS: Tu aliado en matemáticas</h4>
-                <p><strong>P</strong> - Paréntesis primero</p>
-                <p><strong>E</strong> - Exponentes (potencias)</p>
-                <p><strong>MD</strong> - Multiplicación y División (de izquierda a derecha)</p>
-                <p><strong>AS</strong> - Adición y Sustracción (de izquierda a derecha)</p>
-                <p>¡Recuerda: "Por favor, Excusa Mi Deber Asignado Señor"!</p>
-            </div>
-
-            
-            <div>
-                <h3>🔄 Práctica rápida</h3>
-                <div>
-                    <p>Simplifica la siguiente expresión: 2(x + 3) + 3(2x - 1)</p>
-                    <div>
-                        <div onclick="checkAnswer(this, 'incorrect')">5x + 3</div>
-                        <div onclick="checkAnswer(this, 'correct')">8x + 3</div>
-                        <div onclick="checkAnswer(this, 'incorrect')">8x + 9</div>
-                        <div onclick="checkAnswer(this, 'incorrect')">2x + 6</div>
+                <div class="text-center py-12 bg-slate-900 rounded-[2.5rem] mb-12 relative">
+                    <div class="absolute inset-0 opacity-10"
+                        style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 20px 20px;">
+                    </div>
+                    <div class="relative z-10">
+                        <span class="text-slate-400 text-xs uppercase tracking-widest mb-4 block">Un solo término</span>
+                        <div class="math-font text-7xl md:text-8xl font-bold text-white tracking-tight">
+                            <span class="text-red-400" title="Signo">-</span><span class="text-sky-400"
+                                title="Coeficiente">5</span><span class="text-emerald-400" title="Variable">x</span><sup
+                                class="text-amber-400" title="Exponente">2</sup>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <p>Evalúa la expresión 4x - 2y + 7 cuando x = 3 e y = 2</p>
-                    <div>
-                        <div onclick="checkAnswer(this, 'incorrect')">9</div>
-                        <div onclick="checkAnswer(this, 'incorrect')">13</div>
-                        <div onclick="checkAnswer(this, 'correct')">15</div>
-                        <div onclick="checkAnswer(this, 'incorrect')">17</div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div class="term-part border-red-100 bg-red-50/30">
+                        <h4 class="font-bold text-red-700 mb-1">📊 Signo</h4>
+                        <p class="text-sm text-slate-500">Indica si el término es positivo (+) o negativo (-).</p>
+                    </div>
+                    <div class="term-part border-sky-100 bg-sky-50/30">
+                        <h4 class="font-bold text-sky-700 mb-1">🔢 Coeficiente</h4>
+                        <p class="text-sm text-slate-500">Es el multiplicador numérico de la variable.</p>
+                    </div>
+                    <div class="term-part border-emerald-100 bg-emerald-50/30">
+                        <h4 class="font-bold text-emerald-700 mb-1">📝 Variable</h4>
+                        <p class="text-sm text-slate-500">La letra que representa el valor desconocido.</p>
+                    </div>
+                    <div class="term-part border-amber-100 bg-amber-50/30">
+                        <h4 class="font-bold text-amber-700 mb-1">🚀 Exponente</h4>
+                        <p class="text-sm text-slate-500">Indica la potencia de la variable.</p>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
 
-        
-        <div>
-            <h2>📚 Resumen: Expresiones Algebraicas</h2>
+            <!-- Steps Section -->
+            <section class="content-card relative overflow-hidden">
+                <div class="flex items-start justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-6 text-slate-900">✨ Simplificando el Caos</h2>
+                        <p class="text-slate-600 mb-8 max-w-lg">Como organizar tu inventario en un RPG: agrupas lo que
+                            es igual para no perderte.</p>
+                    </div>
+                    <i class="fas fa-wand-magic-sparkles text-6xl text-slate-100 rotate-12"></i>
+                </div>
 
-            <div>
-                <h4>💡 Conceptos clave que aprendiste</h4>
-                <ul>
-                    <li><strong>Expresión algebraica:</strong> Combinación de números, variables y operaciones</li>
-                    <li><strong>Término algebraico:</strong> Unidad básica con signo, coeficiente, variable y exponente</li>
-                    <li><strong>Términos semejantes:</strong> Tienen las mismas variables con los mismos exponentes</li>
-                    <li><strong>Simplificación:</strong> Agrupar y combinar términos semejantes</li>
-                    <li><strong>Evaluación:</strong> Sustituir variables por valores y calcular</li>
-                </ul>
-            </div>
+                <div class="space-y-6">
+                    <div
+                        class="group p-6 bg-slate-50 rounded-3xl border border-slate-200 transition-all hover:border-sky-300">
+                        <span class="step-pill">Paso 1</span>
+                        <h4 class="font-bold text-slate-900 mb-2">Eliminar Paréntesis</h4>
+                        <p class="text-sm text-slate-500">Usa la propiedad distributiva para "liberar" los términos.</p>
+                    </div>
+                    <div
+                        class="group p-6 bg-slate-50 rounded-3xl border border-slate-200 transition-all hover:border-sky-300">
+                        <span class="step-pill">Paso 2</span>
+                        <h4 class="font-bold text-slate-900 mb-2">Cazar Términos Semejantes</h4>
+                        <p class="text-sm text-slate-500">Busca los que tienen la misma variable y exponente (como skins
+                            del mismo personaje).</p>
+                    </div>
+                    <div
+                        class="group p-6 bg-indigo-600 rounded-3xl border border-indigo-500 text-white shadow-lg shadow-indigo-100">
+                        <span
+                            class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block uppercase">Ejemplo
+                            Pro</span>
+                        <div class="math-font text-2xl font-bold mb-2">3x + 4x - x = <span
+                                class="text-amber-400">6x</span></div>
+                        <p class="text-indigo-100 text-sm">"Tienes 3 skins, compras 4 más y regalas 1. Te quedan 6."</p>
+                    </div>
+                </div>
+            </section>
 
-            <div>
-                <p>"Las expresiones algebraicas son como los emojis en tus mensajes: combinaciones simples que transmiten ideas complejas" 🤔➗✖️➕➖</p>
-            </div>
+            <!-- Quiz Section -->
+            <section class="content-card">
+                <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-900">
+                    <i class="fas fa-vial text-pink-500"></i> Boss Fight: Práctica Rápida
+                </h2>
 
-            <h3>¿Listo para el siguiente nivel?</h3>
-            <p>Ahora que dominas las expresiones algebraicas, estás listo para enfrentarte a ecuaciones, donde usarás estas expresiones para resolver problemas del mundo real.</p>
+                <div class="space-y-8">
+                    <div class="p-6 bg-slate-50 rounded-3xl">
+                        <p class="font-medium text-slate-700 mb-6">1. Simplifica: <code
+                                class="bg-white px-2 py-1 rounded border shadow-sm">2(x + 3) + 3(2x - 1)</code></p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="checkResult(this, false)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">5x
+                                + 3</button>
+                            <button onclick="checkResult(this, true)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">8x
+                                + 3</button>
+                            <button onclick="checkResult(this, false)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">8x
+                                + 9</button>
+                            <button onclick="checkResult(this, false)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">2x
+                                + 6</button>
+                        </div>
+                    </div>
 
-            <div onclick="toggleContent('next-steps')">
-                🚀 Haz clic para ver qué sigue
-            </div>
-            <div id="next-steps">
-                <p><strong>Próximos temas:</strong></p>
-                <ul>
-                    <li><strong>Ecuaciones lineales:</strong> Resolver problemas como "si gasto x en skins, ¿cuánto me queda?"</li>
-                    <li><strong>Sistemas de ecuaciones:</strong> Resolver múltiples variables a la vez</li>
-                    <li><strong>Inecuaciones:</strong> Determinar rangos de valores posibles</li>
-                </ul>
-                <p>¡Cada tema te acerca más a dominar completamente el álgebra!</p>
-            </div>
-        </div>
+                    <div class="p-6 bg-slate-50 rounded-3xl">
+                        <p class="font-medium text-slate-700 mb-6">2. Evalúa <code
+                                class="bg-white px-2 py-1 rounded border shadow-sm">4x - 2y + 7</code> si <span
+                                class="text-sky-600">x=3</span> y <span class="text-indigo-600">y=2</span></p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="checkResult(this, false)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">9</button>
+                            <button onclick="checkResult(this, false)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">13</button>
+                            <button onclick="checkResult(this, true)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">15</button>
+                            <button onclick="checkResult(this, false)"
+                                class="quiz-btn p-4 bg-white border-2 border-slate-200 rounded-2xl hover:border-sky-500 transition-all text-left">17</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        
-        
-    </main>
-
-    
-
-
-            <!-- Injected Content Ends Here -->
         </article>
 
-        <!-- Dynamic Navigation (Next/Prev) -->
-        <div id="article-navigation" class="article-nav">
-            <!-- Content injected by js/article-nav.js -->
-        </div>
-
+        <!-- Pagination -->
+        <div id="article-navigation" class="mt-20"></div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-section">
-                <h3>Profesor Carlos Martinez</h3>
-                <p>Educación de calidad para todos.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="../../pages/guias.html">Guías</a></li>
-                    <li><a href="../../pages/mundos.html">Mundos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Sígueme</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <!-- Shared Footer Placeholder -->
+    <div id="shared-footer"></div>
 
-    <script src="../../js/app.js"></script>
+    <!-- Scripts -->
+    <script src="../../js/shared-nav.js"></script>
     <script type="module" src="../../js/article-nav.js"></script>
+    <script>
+        function checkResult(btn, isCorrect) {
+            const container = btn.parentElement;
+            const buttons = container.querySelectorAll('.quiz-btn');
+
+            buttons.forEach(b => {
+                b.disabled = true;
+                b.className = 'quiz-btn p-4 bg-slate-100 border-2 border-transparent rounded-2xl text-slate-400 text-left cursor-not-allowed';
+            });
+
+            if (isCorrect) {
+                btn.className = 'quiz-btn p-4 bg-emerald-50 border-2 border-emerald-500 rounded-2xl text-emerald-700 text-left font-bold scale-105 transition-all shadow-lg';
+                btn.innerHTML += ' <i class="fas fa-check-circle ml-2"></i>';
+            } else {
+                btn.className = 'quiz-btn p-4 bg-red-50 border-2 border-red-500 rounded-2xl text-red-700 text-left font-bold';
+                btn.innerHTML += ' <i class="fas fa-times-circle ml-2"></i>';
+            }
+        }
+    </script>
 </body>
 
 </html>

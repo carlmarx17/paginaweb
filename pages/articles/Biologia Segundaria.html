@@ -4,298 +4,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biología Interactiva | El Mundo Vivo - Profesor Carlos Martinez</title>
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/components.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Biología Interactiva | Guía Premium</title>
+
+    <!-- Fonts & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;500;700&display=swap"
         rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/mundos-premium.css">
+
+    <style>
+        :root {
+            --color-primary: #10b981;
+            --color-secondary: #059669;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .outfit-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .gradient-text-bio {
+            @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-teal-600;
+        }
+
+        .content-card {
+            @apply bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100 mb-12 transition-all duration-300 hover:shadow-md;
+        }
+
+        .module-card {
+            @apply bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-emerald-200;
+        }
+
+        .lab-ui {
+            @apply bg-slate-900 rounded-[2.5rem] p-6 md:p-10 text-white border-4 border-emerald-500/20 shadow-2xl;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="../../index.html" class="navbar-logo">
-                <i class="fas fa-atom"></i> Profesor Carlos Martinez
-            </a>
-            <div class="navbar-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <!-- Shared Navigation Placeholder -->
+    <div id="shared-navbar"></div>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 mt-24">
+        <!-- Hero Section -->
+        <header class="mb-20 text-center relative pointer-events-none">
+            <div class="absolute inset-0 -z-10 bg-gradient-to-b from-emerald-50/50 to-transparent rounded-[3rem]"></div>
+            <span class="text-emerald-600 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Ciencias • Nivel
+                Secundaria</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-tight outfit-font">
+                El Secreto de la <span class="gradient-text-bio">Vida</span>
+            </h1>
+            <p class="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+                Desde la microscópica célula hasta los vastos ecosistemas. Aprende biología de forma visual, interactiva
+                y natural.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4 pointer-events-auto">
+                <a href="#microscopio"
+                    class="px-8 py-4 bg-emerald-600 text-white rounded-full font-bold shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all">
+                    <i class="fas fa-microscope mr-2"></i> Entrar al Laboratorio
+                </a>
+                <a href="#genetica"
+                    class="px-8 py-4 bg-white text-emerald-600 border border-emerald-100 rounded-full font-bold hover:bg-emerald-50 transition-all">
+                    Explorar Temas
+                </a>
             </div>
-            <ul class="navbar-menu">
-                <li><a href="../../index.html" class="navbar-link">Inicio</a></li>
-                <li><a href="../../pages/guias.html" class="navbar-link">Guías</a></li>
-                <li><a href="../../pages/mundos.html" class="navbar-link">Mundos</a></li>
-                <li><a href="../../index.html#contacto" class="navbar-button">Contacto</a></li>
-            </ul>
-        </div>
-    </nav>
+        </header>
 
-    <!-- Main Content -->
-    <main class="container py-10">
-        <!-- Back Button -->
-        <div class="mb-4 mt-4">
-            <a href="../../index.html" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Volver al Inicio
-            </a>
-        </div>
+        <!-- Virtual Microscope Section -->
+        <section id="microscopio" class="mb-24">
+            <div class="lab-ui relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i class="fas fa-flask text-[15rem] text-emerald-400"></i>
+                </div>
 
-        <article class="content-article">
-            <!-- Injected Content Starts Here -->
-            
-
-
-
-
-    
-
-    <section>
-        <div>
-            <h1>Explora el Secreto de la <span>Vida</span></h1>
-            <p>Desde la microscópica célula hasta los vastos ecosistemas. Aprende biología de forma visual, interactiva y natural.</p>
-            <a href="#microscopio">Entrar al Laboratorio</a>
-        </div>
-    </section>
-
-    <section id="microscopio">
-        <div>
-            <h2>🔬 Microscopio Virtual</h2>
-            <p>Explora las células animales y vegetales en detalle. Haz clic en los orgánulos para aprender sobre sus funciones.</p>
-            
-            <div>
-                <div>
+                <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                        <button onclick="setCellType('animal')">Célula Animal</button>
-                        <button onclick="setCellType('vegetal')">Célula Vegetal</button>
+                        <h2 class="text-3xl font-bold mb-4 flex items-center gap-3">
+                            <span class="p-3 bg-emerald-500/20 rounded-2xl text-emerald-400">🔬</span>
+                            Microscopio Virtual
+                        </h2>
+                        <p class="text-slate-400 mb-8 max-w-md">Analiza las estructuras fundamentales. Selecciona una
+                            muestra para visualizar sus componentes internos.</p>
+
+                        <div class="space-y-4 mb-8">
+                            <button onclick="setCellSample('animal')"
+                                class="w-full p-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-emerald-500 text-left transition-all group">
+                                <span class="font-bold text-lg group-hover:text-white">Célula Animal</span>
+                                <p class="text-xs text-slate-500 group-hover:text-emerald-100">Sin pared celular,
+                                    flexible y dinámica.</p>
+                            </button>
+                            <button onclick="setCellSample('vegetal')"
+                                class="w-full p-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-emerald-500 text-left transition-all group">
+                                <span class="font-bold text-lg group-hover:text-white">Célula Vegetal</span>
+                                <p class="text-xs text-slate-500 group-hover:text-emerald-100">Con cloroplastos y pared
+                                    celular rígida.</p>
+                            </button>
+                        </div>
+
+                        <div
+                            class="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 italic text-emerald-400">
+                            <strong>💡 Dato Curioso:</strong> <span id="bioFact">Las células animales no tienen pared
+                                celular, por eso son flexibles.</span>
+                        </div>
                     </div>
 
-                    <div id="listaPartes">
-                        
+                    <div
+                        class="aspect-square bg-slate-800 rounded-[2.5rem] border-4 border-slate-700 relative flex items-center justify-center group">
+                        <!-- Visual representation placeholder -->
+                        <div id="cellViewport"
+                            class="w-64 h-64 rounded-full border-4 border-emerald-500/50 bg-emerald-500/5 pulse animate-pulse-slow relative">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <i id="cellIcon" class="fas fa-dog text-6xl text-emerald-500/30"></i>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
+                            <div>
+                                <h4 id="cellTitle" class="text-xl font-bold text-emerald-400">Muestra: <span
+                                        class="text-white">Célula Animal</span></h4>
+                                <p id="cellStatus"
+                                    class="text-xs text-emerald-400/60 uppercase tracking-widest font-bold">Estado:
+                                    Escaneando...</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <strong>💡 Dato Curioso:</strong> <span id="datoCurioso">Las células animales no tienen pared celular, por eso son flexibles.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module Grid -->
+        <section id="genetica" class="mb-24">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4 outfit-font">Unidades de Aprendizaje</h2>
+                <p class="text-slate-500">Módulos especializados para dominar la biología moderna.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Genetics -->
+                <div class="module-card">
+                    <div
+                        class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 text-2xl mb-6">
+                        <i class="fas fa-dna"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Genética</h3>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Descubre los secretos de la herencia, el ADN
+                        y cómo se transmite la información.</p>
+                    <a href="#"
+                        class="text-emerald-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                        Explorar Guía <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
-                <div>
-                    <canvas id="cellCanvas"></canvas>
+                <!-- Evolution -->
+                <div class="module-card">
+                    <div
+                        class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 text-2xl mb-6">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Evolución</h3>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Comprende cómo las especies cambian a través
+                        de la selección natural.</p>
+                    <a href="#"
+                        class="text-amber-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                        Explorar Guía <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Ecology -->
+                <div class="module-card">
+                    <div
+                        class="w-14 h-14 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600 text-2xl mb-6">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ecología</h3>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Estudia las relaciones entre los organismos y
+                        su equilibrio ambiental.</p>
+                    <a href="#"
+                        class="text-sky-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                        Explorar Guía <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Human Body -->
+                <div class="module-card">
+                    <div
+                        class="w-14 h-14 bg-rose-100 rounded-2xl flex items-center justify-center text-rose-600 text-2xl mb-6">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Cuerpo Humano</h3>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Explora la anatomía y los sistemas que te
+                        mantienen con vida.</p>
+                    <a href="#"
+                        class="text-rose-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                        Explorar Guía <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="genetica">
-        <div>
-            <h2>🧬 Genética</h2>
-            <p>Descubre los secretos de la herencia, el ADN y cómo se transmite la información biológica de generación en generación.</p>
-            
-            <div>
-                <div>
-                    <div>🧬</div>
-                    <h3>ADN y ARN</h3>
-                    <p>Estructura del ADN, replicación, transcripción y traducción. El código genético y la síntesis de proteínas.</p>
-                    <a href="#">Explorar</a>
+        <!-- CTA Section -->
+        <section class="mb-12">
+            <div class="bg-slate-900 rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20 pointer-events-none"
+                    style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');">
                 </div>
-                <div>
-                    <div>🧫</div>
-                    <h3>Leyes de Mendel</h3>
-                    <p>Los principios de la herencia genética. Cruzamientos, genotipos, fenotipos y cuadros de Punnett.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🧬</div>
-                    <h3>Mutaciones</h3>
-                    <p>Tipos de mutaciones genéticas, sus causas y consecuencias. Mutaciones somáticas y germinales.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>👨‍👩‍👧‍👦</div>
-                    <h3>Herencia Humana</h3>
-                    <p>Patrones de herencia en humanos. Enfermedades genéticas, pedigrís y consejo genético.</p>
-                    <a href="#">Explorar</a>
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 outfit-font">¿Listo para el examen?</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">Prepara tus evaluaciones con tutorías
+                        personalizadas y material exclusivo de nivel universitario.</p>
+                    <button
+                        class="px-10 py-5 bg-emerald-500 text-white rounded-full font-bold text-lg shadow-2xl shadow-emerald-500/20 hover:bg-emerald-400 hover:scale-105 transition-all">
+                        <i class="fab fa-whatsapp mr-2"></i> Solicitar Apoyo Académico
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="evolucion">
-        <div>
-            <h2>🦖 Evolución</h2>
-            <p>Comprende cómo las especies cambian a lo largo del tiempo a través de la selección natural, la deriva genética y otros mecanismos evolutivos.</p>
-            
-            <div>
-                <div>
-                    <div>📜</div>
-                    <h3>Teoría de Darwin</h3>
-                    <p>Selección natural, variación, adaptación y la evidencia de la evolución. El viaje del HMS Beagle.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🦴</div>
-                    <h3>Registro Fósil</h3>
-                    <p>Fósiles como evidencia de la evolución. Datación relativa y absoluta. Los principales hallazgos fósiles.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🧬</div>
-                    <h3>Genética de Poblaciones</h3>
-                    <p>Frecuencias alélicas, equilibrio de Hardy-Weinberg, deriva genética y flujo génico.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🌳</div>
-                    <h3>Árbol Filogenético</h3>
-                    <p>Relaciones evolutivas entre especies. Cladogramas y taxonomía. El árbol de la vida.</p>
-                    <a href="#">Explorar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ecologia">
-        <div>
-            <h2>🌍 Ecología</h2>
-            <p>Estudia las relaciones entre los organismos y su entorno, los ecosistemas, y cómo mantener el equilibrio ambiental.</p>
-            
-            <div>
-                <div>
-                    <div>🌿</div>
-                    <h3>Ecosistemas</h3>
-                    <p>Componentes bióticos y abióticos. Tipos de ecosistemas terrestres y acuáticos. Dinámica de poblaciones.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🔄</div>
-                    <h3>Ciclos Biogeoquímicos</h3>
-                    <p>Ciclo del agua, carbono, nitrógeno y fósforo. Importancia para el mantenimiento de la vida.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🦁</div>
-                    <h3>Cadenas Alimentarias</h3>
-                    <p>Flujo de energía en los ecosistemas. Niveles tróficos, productores, consumidores y descomponedores.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🏞️</div>
-                    <h3>Conservación</h3>
-                    <p>Biodiversidad, especies en peligro y áreas protegidas. Impacto humano y desarrollo sostenible.</p>
-                    <a href="#">Explorar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cuerpo-humano">
-        <div>
-            <h2>👤 Cuerpo Humano</h2>
-            <p>Explora la anatomía y fisiología humana, los sistemas que nos mantienen vivos y cómo interactúan entre sí.</p>
-            
-            <div>
-                <div>
-                    <div>🫀</div>
-                    <h3>Sistema Circulatorio</h3>
-                    <p>Corazón, vasos sanguíneos y sangre. Transporte de oxígeno, nutrientes y desechos.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🧠</div>
-                    <h3>Sistema Nervioso</h3>
-                    <p>Cerebro, médula espinal y neuronas. Procesamiento de información y control del cuerpo.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🫁</div>
-                    <h3>Sistema Respiratorio</h3>
-                    <p>Pulmones, tráquea y bronquios. Intercambio de gases: oxígeno y dióxido de carbono.</p>
-                    <a href="#">Explorar</a>
-                </div>
-                <div>
-                    <div>🍎</div>
-                    <h3>Sistema Digestivo</h3>
-                    <p>Proceso de digestión, absorción de nutrientes y eliminación de desechos. Órganos involucrados.</p>
-                    <a href="#">Explorar</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tutorias">
-        <div>
-            <h2>¿Necesitas ayuda con Biología?</h2>
-            <p>Prepara tus exámenes de secundaria o universidad con explicaciones claras y diagramas visuales.</p>
-            <form id="contactForm">
-                <input type="text" placeholder="Tu nombre" required>
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <select>
-                    <option value="">Selecciona un tema de interés</option>
-                    <option value="celulas">Células</option>
-                    <option value="genetica">Genética</option>
-                    <option value="evolucion">Evolución</option>
-                    <option value="ecologia">Ecología</option>
-                    <option value="cuerpo-humano">Cuerpo Humano</option>
-                </select>
-                <button type="submit">Solicitar Tutoría</button>
-            </form>
-        </div>
-    </section>
-
-    
-
-    
-    <a href="#" id="backToTop">
-        <i></i>
-    </a>
-
-    
-
-
-            <!-- Injected Content Ends Here -->
-        </article>
-
-        <!-- Dynamic Navigation (Next/Prev) -->
-        <div id="article-navigation" class="article-nav">
-            <!-- Content injected by js/article-nav.js -->
-        </div>
-
+        <!-- Pagination -->
+        <div id="article-navigation" class="mt-20"></div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-section">
-                <h3>Profesor Carlos Martinez</h3>
-                <p>Educación de calidad para todos.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="../../index.html">Inicio</a></li>
-                    <li><a href="../../pages/guias.html">Guías</a></li>
-                    <li><a href="../../pages/mundos.html">Mundos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Sígueme</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Profesor Carlos Martinez. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <!-- Shared Footer Placeholder -->
+    <div id="shared-footer"></div>
 
-    <script src="../../js/app.js"></script>
+    <!-- Scripts -->
+    <script src="../../js/shared-nav.js"></script>
     <script type="module" src="../../js/article-nav.js"></script>
+    <script>
+        const samples = {
+            animal: {
+                title: 'Célula Animal',
+                fact: 'Las células animales no tienen pared celular, por eso son flexibles y pueden formar tejidos complejos.',
+                icon: 'fa-dog'
+            },
+            vegetal: {
+                title: 'Célula Vegetal',
+                fact: 'Poseen cloroplastos para la fotosíntesis y una pared de celulosa que les da estructura rígida.',
+                icon: 'fa-leaf'
+            }
+        };
+
+        function setCellSample(type) {
+            const data = samples[type];
+            document.getElementById('cellTitle').innerHTML = `Muestra: <span class="text-white">${data.title}</span>`;
+            document.getElementById('bioFact').innerText = data.fact;
+            document.getElementById('cellIcon').className = `fas ${data.icon} text-6xl text-emerald-500/30`;
+
+            const viewport = document.getElementById('cellViewport');
+            viewport.classList.remove('animate-pulse-slow');
+            void viewport.offsetWidth; // Trigger reflow
+            viewport.classList.add('animate-pulse-slow');
+        }
+    </script>
 </body>
 
 </html>
