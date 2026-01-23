@@ -9,66 +9,268 @@
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Outfit:wght@300;400;600;800&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/library.css">
+
+    <style>
+        :root {
+            --bg-deep: #0f1016;
+            --accent-gold: #d97706;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-theme {
+            background-color: var(--bg-deep);
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.05) 0%, transparent 40%);
+            min-height: 100vh;
+        }
+
+        .library-header {
+            background: rgba(15, 16, 22, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1.5rem 0;
+        }
+
+        .hero-section {
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 900;
+            background: linear-gradient(to bottom, #fff 30%, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Outfit', sans-serif;
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .filters-bar {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1rem;
+            border-radius: 100px;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .filter-btn:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gold);
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.4);
+        }
+
+        .library-grid-books {
+            gap: 4rem 2.5rem;
+            padding-bottom: 6rem;
+        }
+
+        /* Upgrade book appearance */
+        .book-container {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .book-container:hover {
+            transform: translateY(-10px);
+        }
+
+        .book-cover {
+            border-radius: 4px 12px 12px 4px;
+            box-shadow:
+                -5px 5px 15px rgba(0, 0, 0, 0.5),
+                inset 1px 1px 1px rgba(255, 255, 255, 0.1);
+        }
+
+        .book-spine-effect {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.3) 0%,
+                    rgba(0, 0, 0, 0) 20%,
+                    rgba(255, 255, 255, 0.1) 40%,
+                    rgba(0, 0, 0, 0.2) 100%);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-box {
+            max-width: 300px;
+            margin-bottom: 0;
+        }
+
+        .search-box input {
+            background: rgba(15, 16, 22, 0.5);
+            border-radius: 100px;
+            padding-left: 2.5rem;
+        }
+
+        /* Modal Enhancements */
+        .modal-overlay {
+            background: rgba(10, 11, 16, 0.9);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content.dark {
+            background: #161822 !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9) translateY(20px);
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            max-width: 800px;
+            width: 90%;
+            overflow: hidden;
+        }
+
+        .modal-overlay.active .modal-content.dark {
+            transform: scale(1) translateY(0);
+        }
+
+        .subtopics-list li a {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+        }
+
+        .subtopics-list li a:hover {
+            background: rgba(217, 119, 6, 0.1);
+            border-color: rgba(217, 119, 6, 0.3);
+            transform: translateX(5px);
+            color: #fbbf24 !important;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8 !important;
+        }
+
+        #emptyState h3 {
+            color: #64748b;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+        }
+
+        /* Decorative Background Elements */
+        .bg-glow {
+            position: fixed;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(217, 119, 6, 0.03) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body class="dark-theme">
+    <div class="bg-glow" style="top: -10%; left: -10%;"></div>
+    <div class="bg-glow" style="bottom: -10%; right: -10%;"></div>
 
     <!-- Header Biblioteca (Mundos) -->
-    <header class="library-header dark-mode">
+    <header class="library-header">
         <div class="container"
             style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
             <a href="../index.html" class="logo"
-                style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
                 <div class="logo-icon"
-                    style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%); box-shadow: 0 0 15px rgba(217, 119, 6, 0.4);">
-                    <i class="fas fa-book-open"></i>
+                    style="background: linear-gradient(135deg, #d97706 0%, #b45309 100%); box-shadow: 0 0 15px rgba(217, 119, 6, 0.4); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+                    <i class="fas fa-book-open" style="color: white; font-size: 1.2rem;"></i>
                 </div>
                 <div>
                     <h1
-                        style="font-family: 'Cinzel', serif; font-size: 1.4rem; margin: 0; color: #fef3c7; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-                        Biblioteca Infinita</h1>
+                        style="font-family: 'Cinzel', serif; font-size: 1.2rem; margin: 0; color: #fff; letter-spacing: 1px;">
+                        BIBLIOTECA INFINITA</h1>
                     <span
-                        style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; color: #9ca3af;">Mundos
+                        style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; color: #64748b; font-weight: 700;">Mundos
                         Literarios</span>
                 </div>
             </a>
 
             <!-- Buscador -->
             <div class="search-box">
-                <i class="fas fa-search search-icon" style="color: #6b7280;"></i>
-                <input type="text" id="searchInput" placeholder="Buscar: Macondo, Dune, Orwell..."
-                    style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: white;"
-                    aria-label="Buscar libros">
+                <i class="fas fa-search search-icon" style="color: #475569; font-size: 0.9rem;"></i>
+                <input type="text" id="searchInput" placeholder="Buscar un mundo..."
+                    style="border: 1px solid var(--glass-border); color: white;" aria-label="Buscar libros">
             </div>
         </div>
     </header>
 
-    <main class="container" style="padding: 2rem 1rem;">
+    <main class="container">
 
-        <!-- Barra de Filtros -->
-        <div class="filters-bar" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
-            <div style="width: 100%;">
-                <div class="filter-group" style="justify-content: center;">
-                    <button class="filter-btn active" data-filter="all"
-                        style="background: #d97706; color: white; border-color: #d97706;">Todo</button>
-                    <button class="filter-btn" data-filter="distopia"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Distopías</button>
-                    <button class="filter-btn" data-filter="scifi"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Sci-Fi</button>
-                    <button class="filter-btn" data-filter="clasico"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Clásicos</button>
-                    <button class="filter-btn" data-filter="fantasia"
-                        style="background: transparent; color: #9ca3af; border-color: rgba(255,255,255,0.1);">Fantasía</button>
-                </div>
+        <section class="hero-section">
+            <h2 class="hero-title">Mundos Literarios</h2>
+            <p class="hero-subtitle">Explora la ciencia y la imaginación a través de las obras más icónicas de la
+                literatura. Cada libro es un portal a un conocimiento nuevo.</p>
+
+            <!-- Barra de Filtros -->
+            <div class="filters-bar">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="distopia">Distopías</button>
+                <button class="filter-btn" data-filter="scifi">Sci-Fi</button>
+                <button class="filter-btn" data-filter="clasico">Clásicos</button>
+                <button class="filter-btn" data-filter="fantasia">Fantasía</button>
             </div>
-        </div>
+        </section>
 
         <!-- Grid de Libros 3D -->
         <div id="libraryGrid" class="library-grid-books">
@@ -76,12 +278,17 @@
         </div>
 
         <!-- Estado Vacío -->
-        <div id="emptyState" class="hidden" style="text-align: center; padding: 4rem 1rem; opacity: 0.5;">
-            <i class="fas fa-ghost" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-            <h3>No se encontraron libros</h3>
+        <div id="emptyState" class="hidden" style="text-align: center; padding: 4rem 1rem;">
+            <div style="font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.2;">
+                <i class="fas fa-book-reader"></i>
+            </div>
+            <h3>El archivo está vacío, intenta otra búsqueda</h3>
         </div>
 
     </main>
+
+    <!-- Audio Element -->
+    <audio id="bookSound" src="../openbook.mp3" preload="auto"></audio>
 
     <!-- Scripts -->
     <script type="module" src="../js/library.js"></script>

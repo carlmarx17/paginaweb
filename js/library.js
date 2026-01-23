@@ -54,11 +54,19 @@ function initWorlds() {
         filtered.forEach(book => {
             const card = document.createElement('div');
             card.className = 'book-container';
-            card.onclick = () => openModal(book, 'book');
+            card.onclick = () => {
+                const sound = document.getElementById('bookSound');
+                if (sound) {
+                    sound.currentTime = 0;
+                    sound.play().catch(e => console.log("Audio play failed:", e));
+                }
+                openModal(book, 'book');
+            };
             card.style.setProperty('--book-color', getBookColor(book.color));
 
             card.innerHTML = `
                 <div class="book-cover">
+                    <div class="book-spine-effect"></div>
                     <div class="book-title">${book.title}</div>
                     <i class="fas ${book.icon} book-icon"></i>
                     <div class="book-author">${book.author.split(' ').pop()}</div>

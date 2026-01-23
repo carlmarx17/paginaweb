@@ -46,23 +46,23 @@ export function openModal(item, type) {
                             <p class="author" style="font-size: 1.1rem; color: #94a3b8; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em;">${item.author}</p>
                             <p class="desc" style="font-size: 1.05rem; line-height: 1.7; color: #cbd5e1; margin-bottom: 2rem;">${item.desc}</p>
                             
-                            <div class="tags-container" style="display: flex; gap: 0.5rem; margin-bottom: 2.5rem;">
+                            <div class="tags-container" style="display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
                                 ${scienceTags}
                             </div>
                         </div>
 
                         ${subtopics ? `
                         <div style="width: 200px;">
-                             <h3 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 1rem;">Análisis</h3>
-                             <ul class="subtopics-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                             <h3 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: #64748b; margin-bottom: 1.5rem; font-weight: 800;">Análisis</h3>
+                             <ul class="subtopics-list" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem;">
                                  ${subtopics}
                              </ul>
                         </div>` : ''}
                     </div>
 
-                    <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
-                           <button class="btn btn-secondary close-modal" style="background: transparent; color: #94a3b8; border-color: #334155;">Cerrar</button>
-                           ${item.mainUrl !== '#' ? `<a href="${item.mainUrl}" target="_blank" class="btn btn-primary" style="background: var(--color-acento); box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);">Explorar Mundo</a>` : ''}
+                    <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
+                           <button class="btn btn-secondary close-modal" style="background: transparent; color: #64748b; border: 1px solid #334155; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;">Cerrar</button>
+                           ${item.mainUrl !== '#' ? `<a href="${item.mainUrl}" class="btn btn-primary" style="background: #d97706; color: white; padding: 0.75rem 2rem; border-radius: 12px; font-weight: 700; box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.4); transition: all 0.3s;">Explorar Mundo</a>` : ''}
                     </div>
                 </div>
             </div>
