@@ -3,6 +3,7 @@ const { useState, useMemo, createElement: h, Fragment } = React;
 const SearchFilter = ({ data, openModal }) => {
     const [searchQuery, setSearchQuery] = useState('');
     const [currentFilter, setCurrentFilter] = useState('all');
+    const [currentLevel, setCurrentLevel] = useState('all');
 
     const categories = [
         { id: 'all', name: 'Todo', icon: 'fa-layer-group', color: '#94a3b8' },
@@ -10,7 +11,13 @@ const SearchFilter = ({ data, openModal }) => {
         { id: 'fisica', name: 'Física', icon: 'fa-atom', color: '#06b6d4' },
         { id: 'quimica', name: 'Química', icon: 'fa-flask', color: '#14b8a6' },
         { id: 'biologia', name: 'Biología', icon: 'fa-dna', color: '#22c55e' },
-        { id: 'literatura', name: 'Literatura', icon: 'fa-book-open', color: '#10b981' }
+        { id: 'literatura', name: 'Mundos', icon: 'fa-book-open', color: '#10b981' }
+    ];
+
+    const levels = [
+        { id: 'all', name: 'Todos los Niveles' },
+        { id: 'secundaria', name: 'Secundaria' },
+        { id: 'universitario', name: 'Universidad' }
     ];
 
     const getCategoryFromId = (id) => {
@@ -29,47 +36,77 @@ const SearchFilter = ({ data, openModal }) => {
                 ? true
                 : (currentFilter === 'literatura' ? item.type === 'literatura' : cat === currentFilter);
 
+            const matchesLevel = (currentLevel === 'all')
+                ? true
+                : (item.level === currentLevel);
+
             const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 item.desc.toLowerCase().includes(searchQuery.toLowerCase());
 
-            return matchesType && matchesSearch;
+            return matchesType && matchesLevel && matchesSearch;
         });
-    }, [data, searchQuery, currentFilter]);
+    }, [data, searchQuery, currentFilter, currentLevel]);
 
     return h(Fragment, null,
         // Barra de Filtros
-        h('div', { className: 'filters-bar' },
-            h('div', { style: { flex: 1 } },
-                h('h3', { style: { fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#94a3b8', fontWeight: 800, marginBottom: '0.8rem' } },
-                    h('i', { className: 'fas fa-layer-group' }),
-                    ' Explorar Materias'
+        h('div', { className: 'filters-container', style: { display: 'flex', flexDirection: 'column', gap: '2rem', marginBottom: '3rem' } },
+            h('div', { className: 'filters-bar' },
+                h('div', { style: { flex: 1 } },
+                    h('h3', { style: { fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#94a3b8', fontWeight: 800, marginBottom: '0.8rem' } },
+                        h('i', { className: 'fas fa-layer-group' }),
+                        ' Explorar Materias'
+                    ),
+                    h('div', { className: 'filter-group' },
+                        categories.map(cat => (
+                            h('button', {
+                                key: cat.id,
+                                className: `filter-btn ${currentFilter === cat.id ? 'active' : ''}`,
+                                onClick: () => setCurrentFilter(cat.id)
+                            },
+                                h('i', {
+                                    className: `fas ${cat.icon}`,
+                                    style: { marginRight: '5px', color: currentFilter === cat.id ? '#fff' : cat.color }
+                                }),
+                                cat.name
+                            )
+                        ))
+                    )
                 ),
-                h('div', { className: 'filter-group' },
-                    categories.map(cat => (
-                        h('button', {
-                            key: cat.id,
-                            className: `filter-btn ${currentFilter === cat.id ? 'active' : ''}`,
-                            onClick: () => setCurrentFilter(cat.id)
-                        },
-                            h('i', {
-                                className: `fas ${cat.icon}`,
-                                style: { marginRight: '5px', color: currentFilter === cat.id ? '#fff' : cat.color }
-                            }),
-                            cat.name
-                        )
-                    ))
+                // Buscador
+                h('div', { className: 'search-box' },
+                    h('i', { className: 'fas fa-search search-icon' }),
+                    h('input', {
+                        type: 'text',
+                        placeholder: 'Buscar: Genética, Cálculo...',
+                        value: searchQuery,
+                        onChange: (e) => setSearchQuery(e.target.value),
+                        'aria-label': 'Buscar guías'
+                    })
                 )
             ),
-            // Buscador
-            h('div', { className: 'search-box' },
-                h('i', { className: 'fas fa-search search-icon' }),
-                h('input', {
-                    type: 'text',
-                    placeholder: 'Buscar: Genética, Cálculo, Aritmética...',
-                    value: searchQuery,
-                    onChange: (e) => setSearchQuery(e.target.value),
-                    'aria-label': 'Buscar guías'
-                })
+
+            // Filtro de Nivel
+            h('div', { className: 'level-filters', style: { display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' } },
+                h('span', { style: { fontSize: '0.8rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' } }, 'Nivel Educativo:'),
+                h('div', { style: { display: 'flex', gap: '0.5rem' } },
+                    levels.map(level => (
+                        h('button', {
+                            key: level.id,
+                            style: {
+                                padding: '8px 16px',
+                                borderRadius: '30px',
+                                border: 'none',
+                                background: currentLevel === level.id ? 'var(--gradiente-primario)' : '#f1f5f9',
+                                color: currentLevel === level.id ? '#fff' : '#64748b',
+                                fontSize: '0.85rem',
+                                fontWeight: 600,
+                                cursor: 'pointer',
+                                transition: 'all 0.3s ease'
+                            },
+                            onClick: () => setCurrentLevel(level.id)
+                        }, level.name)
+                    ))
+                )
             )
         ),
 
@@ -91,6 +128,11 @@ const SearchFilter = ({ data, openModal }) => {
                         item.status === 'pronto' && h('span', { className: 'status-badge' }, 'Pronto')
                     ),
                     h('div', { className: 'guide-body' },
+                        h('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' } },
+                            h('span', { style: { fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 800, color: '#94a3b8', letterSpacing: '1px' } },
+                                item.level === 'universitario' ? 'Universidad' : item.level === 'secundaria' ? 'Secundaria' : 'General'
+                            )
+                        ),
                         h('h3', { className: 'guide-title' }, item.title),
                         h('p', { className: 'guide-desc' }, item.desc),
                         h('div', { className: 'guide-topics' },

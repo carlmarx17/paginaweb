@@ -325,3 +325,20 @@ h6 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Footer Social Links */
+.footer .social-links a:hover {
+    background: var(--color-secundario) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    border-color: var(--color-secundario) !important;
+}
+
+.footer .footer-links a:hover {
+    color: white !important;
+    padding-left: 5px;
+}
+
+.footer .footer-links a {
+    transition: all 0.3s ease !important;
+}

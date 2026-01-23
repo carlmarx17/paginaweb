@@ -13,24 +13,35 @@
     box-shadow: var(--sombra-vidrio);
 }
 
-.filters-bar {
+.filters-container {
     background: var(--color-superficie);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: var(--radius-2xl);
     box-shadow: var(--sombra-suave);
-    margin-bottom: 2.5rem;
+    border: 1px solid var(--slate-100);
+}
+
+.filters-bar {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border: 1px solid var(--slate-100);
 }
 
 @media (min-width: 1024px) {
     .filters-bar {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
     }
+}
+
+.level-filters button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.level-filters button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .filter-group {

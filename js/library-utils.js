@@ -18,7 +18,7 @@ export function openModal(item, type) {
 
     if (type === 'guide') {
         const subtopics = item.subtopics.map(sub =>
-            `<li><a href="${sub.url}" target="_blank" style="color: var(--slate-700); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 500;"><i class="fas fa-chevron-right" style="color: ${cat.color}; font-size: 0.7rem;"></i> ${sub.name}</a></li>`
+            `<li><a href="${sub.url}" style="color: var(--slate-700); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 500;"><i class="fas fa-chevron-right" style="color: ${cat.color}; font-size: 0.7rem;"></i> ${sub.name}</a></li>`
         ).join('');
 
         contentHTML = `
@@ -41,7 +41,7 @@ export function openModal(item, type) {
                     </ul>
                     <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 1.25rem; padding-top: 2rem; border-top: 1px solid var(--slate-100);">
                         <button class="btn btn-secondary close-modal">Cerrar</button>
-                        ${item.mainUrl !== '#' ? `<a href="${item.mainUrl}" target="_blank" class="btn" style="background: ${cat.gradient}; color: white; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1)">Comenzar Lectura</a>` : ''}
+                        ${item.mainUrl !== '#' ? `<a href="${item.mainUrl}" class="btn" style="background: ${cat.gradient}; color: white; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1)">Comenzar Lectura</a>` : ''}
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ export function openModal(item, type) {
         // Book Modal
         const scienceTags = item.science ? item.science.map(tag => `<span class="tag" style="background: rgba(255,255,255,0.05); color: #fef3c7; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; border: 1px solid rgba(255,255,255,0.1);">${tag}</span>`).join(' ') : '';
         const subtopics = item.subtopics ? item.subtopics.map(sub =>
-            `<li><a href="${sub.url}" target="_blank" style="color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500; transition: color 0.3s;"><i class="fas fa-bookmark" style="font-size: 0.7rem; color: var(--color-acento); opacity: 0.7;"></i> ${sub.name}</a></li>`
+            `<li><a href="${sub.url}" style="color: #cbd5e1; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500; transition: color 0.3s;"><i class="fas fa-bookmark" style="font-size: 0.7rem; color: var(--color-acento); opacity: 0.7;"></i> ${sub.name}</a></li>`
         ).join('') : '';
 
         contentHTML = `
@@ -79,7 +79,7 @@ export function openModal(item, type) {
 
                     <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 1.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05);">
                            <button class="btn btn-secondary close-modal" style="background: transparent; color: #64748b; border-color: #334155;">Cerrar</button>
-                           ${item.mainUrl !== '#' ? `<a href="${item.mainUrl}" target="_blank" class="btn" style="background: var(--color-acento); color: #0f172a; font-weight: 800; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);">Explorar Mundo</a>` : ''}
+                           ${item.mainUrl !== '#' ? `<a href="${item.mainUrl}" class="btn" style="background: var(--color-acento); color: #0f172a; font-weight: 800; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);">Explorar Mundo</a>` : ''}
                     </div>
                 </div>
             </div>
