@@ -8,13 +8,10 @@
 
     <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/premium-academic.css">
 </head>
 
 <body>
@@ -24,35 +21,95 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <header class="library-header">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <a href="../index.html" class="logo"
-                style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-                <div class="logo-icon" style="background: var(--gradiente-secundario);">
-                    <i class="fas fa-book-sparkles"></i>
-                </div>
-                <div>
-                    <h1
-                        style="font-size: 1.2rem; margin: 0; background: var(--gradiente-secundario); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
-                        Universo de Saberes</h1>
-                    <span
-                        style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #94a3b8; font-weight: 700;">Ciencia
-                        & Humanidades</span>
-                </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="../index.html" class="logo">
+            <span class="logo-img">🎓</span>
+            <span>Universo de Saberes</span>
+        </a>
+        <div class="botones-nav">
+            <a href="mundos.html" class="btn-nav">
+                <i class="fas fa-book"></i> Mundos
             </a>
-            <!-- React will handle the search box inside the main container -->
+            <a href="guias.html" class="btn-nav">
+                <i class="fas fa-file-pdf"></i> Guías
+            </a>
+            <button class="btn-nav" id="botonModo">
+                <i class="fas fa-moon"></i> Modo
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <main class="container" style="padding: 3rem 1rem;">
+    <main class="contenedor">
         <!-- React App Mount Point -->
         <div id="guias-root">
             <div style="text-align: center; padding: 4rem;">
                 <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--color-secundario);"></i>
-                <p style="margin-top: 1rem; color: var(--slate-500);">Cargando experiencia interactiva...</p>
+                <p style="margin-top: 1rem; color: var(--color-texto);">Cargando experiencia interactiva...</p>
             </div>
         </div>
+
+        <!-- Noticias Section -->
+        <section id="noticias" class="noticias-section animacion-entrada" style="margin-top: 80px;">
+            <div class="operaciones-header">
+                <h2 style="color: var(--color-principal); font-size: 2.5rem; text-align: center;">📰 Noticias del Mundo
+                    Académico</h2>
+                <p style="text-align: center; color: var(--color-texto);">Mantente al día con los últimos
+                    descubrimientos y actualizaciones.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="tarjeta azul" onclick="alert('Próximamente: Nuevos laboratorios virtuales de Química')">
+                    <span class="emoji-grande">🧪</span>
+                    <h3 style="color: var(--color-denominador);">Laboratorios Virtuales</h3>
+                    <p>Estamos trabajando en simulaciones interactivas para experimentos de química orgánica.</p>
+                    <div class="badge-tarjeta">Nuevo</div>
+                </div>
+                <div class="tarjeta verde" onclick="alert('¡Ya disponible! Guía completa de Mitosis y Meiosis')">
+                    <span class="emoji-grande">🧬</span>
+                    <h3 style="color: var(--color-equivalente);">Actualización de Biología</h3>
+                    <p>Se ha añadido nuevo contenido gráfico sobre la reproducción celular.</p>
+                    <div class="badge-tarjeta">Actualizado</div>
+                </div>
+                <div class="tarjeta roja" onclick="alert('Próximo evento: Olimpiadas de Matemáticas Mundo Fracción')">
+                    <span class="emoji-grande">🏆</span>
+                    <h3 style="color: var(--color-numerador);">Eventos Académicos</h3>
+                    <p>¡Prepárate para las próximas olimpiadas de matemáticas! Inscripciones abiertas pronto.</p>
+                    <div class="badge-tarjeta">Evento</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="contenedor">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Mundo Académico</h3>
+                        <p>Aprende de forma divertida e interactiva. Diseñado para estudiantes de todas las edades.</p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Recursos</h3>
+                        <ul class="footer-links">
+                            <li><a href="mundos.html">Mundos</a></li>
+                            <li><a href="guias.html">Guías de Estudio</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <p>¿Preguntas o sugerencias?</p>
+                        <p>Email: <a href="mailto:info@mundoacademico.com">info@mundoacademico.com</a></p>
+                    </div>
+                </div>
+
+                <div
+                    style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--color-gris-claro);">
+                    <p>© 2023 Mundo Académico. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <!-- React Logic -->
@@ -71,6 +128,7 @@
     <!-- Scripts -->
     <!-- Type module allows using imports in library.js -->
     <script type="module" src="../js/library.js"></script>
+    <script src="../js/premium-logic.js"></script>
 </body>
 
 </html>

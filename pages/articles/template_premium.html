@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculus Inferno | Mundo Académico</title>
+    <title>{{TITLE}} | Mundo Académico</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
         rel="stylesheet">
@@ -41,8 +41,8 @@
         <!-- Hero Section -->
         <header class="hero animacion-entrada">
             <div class="hero-content">
-                <h1>Calculus Inferno</h1>
-                <p>Explora este fascinante tema con nosotros....</p>
+                <h1>{{TITLE}}</h1>
+                <p>{{DESCRIPTION}}</p>
 
                 <div class="hero-estadisticas">
                     <div class="estadistica">
@@ -55,77 +55,11 @@
 
         <!-- Main Content Area -->
         <main class="main-content animacion-entrada animacion-retraso-1">
-            <div id="game-container">
-    <h1>Calculus Inferno</h1>
-    
-    <div id="dialogue-box">
-        <strong>Virgilio:</strong> "¡Detente, alma perdida! Para cruzar el primer círculo del Limbo, debes demostrar que dominas el límite de la razón. Resuelve o arde."
-    </div>
-
-    <div id="battle-screen">
-        <div>
-            <div>DANTE (Tú)</div>
-            <div>👤</div>
-            <div id="player-hp">Vida: 100</div>
-        </div>
-
-        <div id="problem-display">
-            </div>
-
-        <div>
-            <div>DEMONIO DE LOS LÍMITES</div>
-            <div id="monster-icon">👿</div>
-            <div id="monster-hp">Vida: 50</div>
-        </div>
-    </div>
-
-    <div id="quiz-section">
-        <p id="question-text">¿Cuál es el resultado?</p>
-        <input type="text" id="answer-input" placeholder="Respuesta..." autocomplete="off">
-        <button onclick="checkAnswer()">ATACAR</button>
-    </div>
-</div>
+            {{CONTENT}}
         </main>
 
         <!-- Noticias Section (Injected) -->
-        <section id="noticias" class="noticias-section animacion-entrada">
-    <div class="operaciones-header">
-        <h2 style="color: var(--color-principal); font-size: 2.5rem;">📰 Noticias del Mundo Académico</h2>
-        <p>Mantente al día con los últimos descubrimientos y actualizaciones.</p>
-    </div>
-
-    <div class="grid-3">
-        <div class="tarjeta azul" onclick="alert('Próximamente: Nuevos laboratorios virtuales de Química')">
-            <span class="emoji-grande">🧪</span>
-            <h3 style="color: var(--color-denominador);">Laboratorios Virtuales</h3>
-            <p>Estamos trabajando en simulaciones interactivas para experimentos de química orgánica.</p>
-            <div class="badge-tarjeta">Nuevo</div>
-        </div>
-        <div class="tarjeta verde" onclick="alert('¡Ya disponible! Guía completa de Mitosis y Meiosis')">
-            <span class="emoji-grande">🧬</span>
-            <h3 style="color: var(--color-equivalente);">Actualización de Biología</h3>
-            <p>Se ha añadido nuevo contenido gráfico sobre la reproducción celular.</p>
-            <div class="badge-tarjeta">Actualizado</div>
-        </div>
-        <div class="tarjeta roja" onclick="alert('Próximo evento: Olimpiadas de Matemáticas Mundo Fracción')">
-            <span class="emoji-grande">🏆</span>
-            <h3 style="color: var(--color-numerador);">Eventos Académicos</h3>
-            <p>¡Prepárate para las próximas olimpiadas de matemáticas! Inscripciones abiertas pronto.</p>
-            <div class="badge-tarjeta">Evento</div>
-        </div>
-    </div>
-</section>
-
-<style>
-    .noticias-section {
-        margin: 80px 0;
-        padding: 40px;
-        background: var(--color-blanco);
-        border-radius: var(--radio-borde);
-        box-shadow: var(--sombra-suave);
-        border: 3px solid var(--color-gris-claro);
-    }
-</style>
+        {{NOTICIAS}}
 
         <!-- Footer -->
         <footer class="footer">

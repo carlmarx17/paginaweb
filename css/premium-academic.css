@@ -1,0 +1,390 @@
+:root {
+    /* Paleta Pedagógica Mejorada */
+    --color-principal: #ff6b35;       /* Naranja vibrante */
+    --color-secundario: #ff9e1f;      /* Naranja suave */
+    --color-acento: #00b4d8;          /* Azul turquesa */
+    --color-multiplicacion: #7209b7;  /* Morado para multiplicación */
+    --color-division: #f72585;        /* Rosa para división */
+    --color-suma: #4cc9f0;            /* Azul claro para suma */
+    --color-resta: #ff9e00;           /* Amarillo naranja */
+    
+    --color-numerador: #e63946;       /* Rojo vibrante */
+    --color-denominador: #1d3557;     /* Azul oscuro */
+    --color-equivalente: #2a9d8f;     /* Verde para equivalentes */
+    
+    --color-fondo: #f8f9fa;
+    --color-texto: #2b2d42;
+    --color-blanco: #ffffff;
+    --color-gris-claro: #e9ecef;
+    --color-gris-medio: #adb5bd;
+    
+    --gradiente-principal: linear-gradient(135deg, var(--color-principal), var(--color-secundario));
+    --gradiente-secundario: linear-gradient(135deg, var(--color-acento), #4cc9f0);
+    --sombra-suave: 0 8px 25px rgba(0,0,0, 0.1);
+    --sombra-fuerte: 0 15px 35px rgba(255, 107, 53, 0.25);
+    --radio-borde: 28px;
+    --transicion: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transicion-rapida: all 0.2s ease;
+}
+
+.modo-oscuro {
+    --color-principal: #ff9f1c;
+    --color-secundario: #d67d00;
+    --color-acento: #4cdbc9;
+    --color-multiplicacion: #b589e8;
+    --color-division: #ff8ec6;
+    --color-suma: #72efdd;
+    --color-resta: #ffb347;
+    --color-numerador: #ff6b6b;
+    --color-denominador: #aeb8c3;
+    --color-equivalente: #80ffdb;
+    --color-fondo: #121826;
+    --color-texto: #e9ecef;
+    --color-blanco: #1e293b;
+    --color-gris-claro: #2d3748;
+    --color-gris-medio: #4a5568;
+    --sombra-suave: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Fredoka', 'Nunito', 'Segoe UI', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.7;
+    overflow-x: hidden;
+    transition: var(--transicion);
+    min-height: 100vh;
+}
+
+.contenedor { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 25px;
+}
+
+/* --- Animaciones Mejoradas --- */
+@keyframes rebotar { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-15px); } 
+}
+
+@keyframes aparecer { 
+    from { opacity: 0; transform: translateY(30px) scale(0.95); } 
+    to { opacity: 1; transform: translateY(0) scale(1); } 
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes brillo {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+}
+
+.animacion-entrada { 
+    animation: aparecer 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; 
+    opacity: 0; 
+}
+
+.animacion-retraso-1 { animation-delay: 0.2s; }
+.animacion-retraso-2 { animation-delay: 0.4s; }
+.animacion-retraso-3 { animation-delay: 0.6s; }
+
+/* --- Navbar Mejorada --- */
+.navbar {
+    background-color: var(--color-blanco);
+    padding: 18px 35px;
+    border-radius: 50px;
+    margin: 25px auto 40px;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    position: sticky; 
+    top: 25px; 
+    z-index: 1000;
+    border: 3px solid var(--color-gris-claro);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.8rem; 
+    font-weight: 900; 
+    color: var(--color-principal); 
+    text-decoration: none;
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+    transition: var(--transicion);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    color: var(--color-secundario);
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    animation: rebotar 3s infinite ease-in-out;
+}
+
+.botones-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-nav {
+    background: var(--color-fondo);
+    border: 2px solid var(--color-gris-claro);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicion);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn-nav:hover {
+    background: var(--color-principal);
+    color: white;
+    border-color: var(--color-principal);
+    transform: translateY(-3px);
+}
+
+/* --- Hero Mejorado --- */
+.hero {
+    background: var(--gradiente-principal);
+    color: white;
+    padding: 80px 30px;
+    border-radius: var(--radio-borde);
+    text-align: center;
+    margin-bottom: 60px;
+    box-shadow: var(--sombra-fuerte);
+    position: relative; 
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: girar 60s linear infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+    line-height: 1.2;
+}
+
+.hero p { 
+    font-size: 1.4rem; 
+    opacity: 0.95; 
+    max-width: 800px; 
+    margin: 0 auto 40px; 
+    font-weight: 500;
+}
+
+.hero-estadisticas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.estadistica {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.estadistica .numero {
+    font-size: 2.5rem;
+    font-weight: 900;
+    display: block;
+    animation: brillo 2s infinite;
+}
+
+/* --- Grid Conceptos Mejorado --- */
+.grid-3 { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 60px; 
+}
+
+.tarjeta {
+    background: var(--color-blanco); 
+    padding: 30px; 
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave); 
+    border-bottom: 8px solid var(--color-gris-claro);
+    transition: var(--transicion); 
+    text-align: center; 
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.tarjeta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--color-principal);
+    transform: scaleX(0);
+    transition: var(--transicion);
+}
+
+.tarjeta:hover::before {
+    transform: scaleX(1);
+}
+
+.tarjeta:hover { 
+    transform: translateY(-12px) scale(1.02); 
+    border-bottom-width: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.tarjeta.roja { border-bottom-color: var(--color-numerador); }
+.tarjeta.azul { border-bottom-color: var(--color-denominador); }
+.tarjeta.verde { border-bottom-color: var(--color-equivalente); }
+.tarjeta.morada { border-bottom-color: var(--color-multiplicacion); }
+
+.emoji-grande { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+    display: block; 
+    animation: rebotar 2s infinite ease-in-out;
+}
+
+.badge-tarjeta {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-fondo);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+/* --- Visualizador Container --- */
+.visualizador-container {
+    background: var(--color-blanco); 
+    border-radius: var(--radio-borde);
+    padding: 50px 30px; 
+    margin: 60px 0; 
+    border: 4px dashed var(--color-secundario);
+    box-shadow: var(--sombra-suave); 
+    position: relative;
+    overflow: hidden;
+}
+
+.etiqueta-pedagogica {
+    position: absolute; 
+    top: -20px; 
+    left: 50%; 
+    transform: translateX(-50%);
+    background: var(--color-principal); 
+    color: white; 
+    padding: 12px 30px;
+    border-radius: 30px; 
+    font-weight: bold; 
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 2;
+    animation: latido 3s infinite;
+}
+
+/* --- Footer Mejorado --- */
+.footer {
+    background: var(--color-blanco);
+    padding: 50px 0;
+    margin-top: 80px;
+    border-top: 3px solid var(--color-gris-claro);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer h3 {
+    color: var(--color-principal);
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: var(--transicion-rapida);
+}
+
+.footer-links a:hover {
+    color: var(--color-principal);
+    padding-left: 5px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.2rem; }
+    .navbar { padding: 15px 20px; margin: 15px 15px 30px; }
+    .logo { font-size: 1.5rem; }
+    .grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+}
