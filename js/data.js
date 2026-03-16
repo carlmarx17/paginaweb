@@ -60,6 +60,20 @@ export const guidesData = [
         color: "text-rose-600", bg: "bg-rose-500", icon: "fa-chart-bar", status: "pronto",
         mainUrl: "#", desc: "Análisis de datos e interpretación.", subtopics: [] 
     },
+    {
+        id: "m-s-6", title: "Matemáticas Secundaria", type: "academico", level: "secundaria",
+        color: "text-rose-600", bg: "bg-rose-500", icon: "fa-square-root-alt", status: "disponible",
+        mainUrl: "articles/Matematicas Segundaria.html",
+        desc: "Ruta general de refuerzo con guías base, ejercicios y preparación escolar.",
+        subtopics: [
+            { name: "Funciones", url: "articles/Funciones.html" },
+            { name: "Función Cuadrática", url: "articles/Funcion Cuadratica.html" },
+            { name: "Potencia", url: "articles/Potencia.html" },
+            { name: "Reglas de 3", url: "articles/Reglas de 3.html" },
+            { name: "Problemas Resueltos", url: "articles/Problemas Resueltos.html" },
+            { name: "Simulacro ICFES", url: "articles/Simulacro ICFES.html" }
+        ]
+    },
 
     // ================== MATEMÁTICAS - UNIVERSITARIA ==================
     {
@@ -120,6 +134,18 @@ export const guidesData = [
             { name: "Deducción", url: "articles/Deduccion.html" }
         ] 
     },
+    {
+        id: "m-u-6", title: "Métodos Numéricos", type: "academico", level: "universitario",
+        color: "text-rose-800", bg: "bg-rose-800", icon: "fa-laptop-code", status: "disponible",
+        mainUrl: "articles/Metodos Numericos.html",
+        desc: "Aproximación computacional para resolver ecuaciones, integrar y modelar sistemas.",
+        subtopics: [
+            { name: "Newton Rapson", url: "articles/Newton Rapson.html" },
+            { name: "Runge Kuta", url: "articles/Runge Kuta.html" },
+            { name: "Integración Numérica", url: "articles/Integracion Numerica.html" },
+            { name: "Diferencias Finitas", url: "articles/Diferencias Finitas.html" }
+        ]
+    },
 
     // ================== FÍSICA - SECUNDARIA ==================
     {
@@ -166,6 +192,18 @@ export const guidesData = [
         ]
     },
     {
+        id: "f-s-5", title: "Física Secundaria", type: "academico", level: "secundaria",
+        color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-person-running", status: "disponible",
+        mainUrl: "articles/Fisica Segundaria.html",
+        desc: "Panorama completo de cinemática, calor, óptica y electricidad para bachillerato.",
+        subtopics: [
+            { name: "Cinemática", url: "articles/Cinematica.html" },
+            { name: "Calorimetría", url: "articles/Calorimetria.html" },
+            { name: "Electricidad", url: "articles/Electricidad.html" },
+            { name: "Óptica", url: "articles/Optica.html" }
+        ]
+    },
+    {
         id: "f-s-6", title: "Astronomía", type: "academico", level: "secundaria",
         color: "text-cyan-600", bg: "bg-cyan-500", icon: "fa-star", status: "disponible",
         mainUrl: "articles/Astronomia.html",
@@ -178,9 +216,21 @@ export const guidesData = [
 
     // ================== FÍSICA - UNIVERSITARIA ==================
     {
+        id: "f-u-5", title: "Física Universitaria", type: "academico", level: "universitario",
+        color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-satellite-dish", status: "disponible",
+        mainUrl: "articles/Fisica Universitaria.html",
+        desc: "Colección avanzada con mecánica, electromagnetismo y termodinámica aplicada.",
+        subtopics: [
+            { name: "Mecánica", url: "articles/Mecanica.html" },
+            { name: "Electromagnetismo", url: "articles/Electromagnetismo.html" },
+            { name: "Calor y Temperatura", url: "articles/Calor y Temperatura.html" },
+            { name: "Movimiento Circular", url: "articles/Movimiento Circular.html" }
+        ]
+    },
+    {
         id: "f-u-1", title: "Mecánica Univ.", type: "academico", level: "universitario",
         color: "text-cyan-800", bg: "bg-cyan-700", icon: "fa-atom", status: "disponible",
-        mainUrl: "articles/Mecanica.html",
+        mainUrl: "articles/Fisica Universitaria.html",
         desc: "Física clásica avanzada.",
         subtopics: [
             { name: "Cinemática Vectorial", url: "articles/Cinematica Vectorial.html" },
@@ -253,7 +303,7 @@ export const guidesData = [
     {
         id: "q-s-7", title: "Nomenclatura", type: "academico", level: "secundaria",
         color: "text-teal-600", bg: "bg-teal-500", icon: "fa-tag", status: "disponible",
-        mainUrl: "#", 
+        mainUrl: "articles/Nomenclatura.html", 
         desc: "Reglas para nombrar compuestos.", 
         subtopics: [
             { name: "Estados de Oxidación", url: "articles/Estados de Oxidacion.html" }
@@ -264,6 +314,21 @@ export const guidesData = [
         color: "text-teal-600", bg: "bg-teal-500", icon: "fa-cloud", status: "disponible",
         mainUrl: "articles/Gases.html", 
         desc: "Leyes y comportamiento de los gases.", subtopics: []
+    },
+    {
+        id: "q-s-9", title: "Química Secundaria", type: "academico", level: "secundaria",
+        color: "text-teal-600", bg: "bg-teal-500", icon: "fa-vials", status: "disponible",
+        mainUrl: "articles/Quimica Segundaria.html",
+        desc: "Mapa general con estructura atómica, enlaces, mezclas y química del carbono.",
+        subtopics: [
+            { name: "Mezclas, Elementos y Compuestos", url: "articles/Mezclas  Elementos y Compuestos.html" },
+            { name: "Enlaces Químicos", url: "articles/Enlaces Quimicos_.html" },
+            { name: "Estructuras de Lewis", url: "articles/Estructuras de lewis.html" },
+            { name: "Propiedades periódicas", url: "articles/Propiedades periodicas.html" },
+            { name: "Solubilidad y Factores", url: "articles/Solubilidad y Factores que la Afectan.html" },
+            { name: "Hidrocarburos", url: "articles/Hidrocarburos.html" },
+            { name: "Funciones Oxigenadas", url: "articles/Funciones Oxigenadas.html" }
+        ]
     },
 
     // ================== QUÍMICA - UNIVERSITARIA / BIOQUÍMICA ==================
@@ -325,10 +390,22 @@ export const guidesData = [
     {
         id: "b-u-10", title: "Biología Univ.", type: "academico", level: "universitario",
         color: "text-green-800", bg: "bg-green-700", icon: "fa-microscope", status: "disponible",
-        mainUrl: "#", 
+        mainUrl: "articles/Biologia Universitaria.html", 
         desc: "Biología avanzada.", 
         subtopics: [
             { name: "Neurociencia del Soma", url: "articles/Neurociencia del Soma.html" }
+        ]
+    },
+    {
+        id: "b-s-5", title: "Biología Secundaria", type: "academico", level: "secundaria",
+        color: "text-green-600", bg: "bg-green-500", icon: "fa-seedling", status: "disponible",
+        mainUrl: "articles/Biologia Segundaria.html",
+        desc: "Biblioteca general de biología con genética, célula, cuerpo humano y ecología.",
+        subtopics: [
+            { name: "Teoría Celular", url: "articles/Teoria Celular.html" },
+            { name: "Genética", url: "articles/Genetica.html" },
+            { name: "Cuerpo Humano", url: "articles/Cuerpo Humano.html" },
+            { name: "Ecología", url: "articles/Ecologia.html" }
         ]
     },
 
@@ -340,7 +417,8 @@ export const guidesData = [
         desc: "Cien años de soledad. Ecología y genética.",
         subtopics: [
             { name: "Peligros de la endogamia", url: "articles/Peligros de la Endogamia.html" },
-            { name: "Descubrimientos científicos", url: "articles/Descubrimientos cientificos.html" }
+            { name: "Descubrimientos científicos", url: "articles/Descubrimientos cientificos.html" },
+            { name: "Metrología Macondo", url: "articles/Metrologia Macondo.html" }
         ]
     },
     { 
@@ -348,7 +426,9 @@ export const guidesData = [
         color: "text-orange-700", bg: "bg-orange-500", icon: "fa-ship", status: "disponible", 
         mainUrl: "articles/Odisea.html",
         desc: "Homero. Ciencia antigua y navegación.",
-        subtopics: []
+        subtopics: [
+            { name: "Astronomía Homérica", url: "articles/Astronomia Homerica.html" }
+        ]
     },
     { 
         id: "l-12", title: "Sherlock Holmes", type: "literatura", level: null,
@@ -416,7 +496,8 @@ export const booksData = [
         science: ["Genética", "Química", "Ecología"],
         subtopics: [
             { name: "Peligros de la Endogamia", url: "articles/Peligros de la Endogamia.html" },
-            { name: "Descubrimientos Científicos", url: "articles/Descubrimientos cientificos.html" }
+            { name: "Descubrimientos Científicos", url: "articles/Descubrimientos cientificos.html" },
+            { name: "Metrología Macondo", url: "articles/Metrologia Macondo.html" }
         ]
     },
     { 
@@ -473,9 +554,9 @@ export const booksData = [
         desc: "Una sociedad 'perfecta' construida sobre la eugenesia (decantación), el condicionamiento psicológico hipnopédico y el control farmacológico mediante el Soma.",
         science: ["Biología", "Farmacología", "Psicología"],
         subtopics: [
-            { name: "Eugenesia y Clonación", url: "#" },
-            { name: "Farmacología (Soma)", url: "#" },
-            { name: "Condicionamiento Pavloviano", url: "#" }
+             { name: "Eugenesia y Clonación", url: "#" },
+             { name: "Neurociencia del Soma", url: "articles/Neurociencia del Soma.html" },
+             { name: "Condicionamiento Pavloviano", url: "#" }
         ]
     },
     { 
@@ -509,7 +590,7 @@ export const booksData = [
         desc: "La ciencia en la antigüedad: navegación astronómica sin brújula, geografía del Mediterráneo y la posible base biológica de los monstruos mitológicos.",
         science: ["Astronomía", "Geografía", "Biología"],
         subtopics: [
-            { name: "Astronomía y Navegación", url: "#" },
+            { name: "Astronomía y Navegación", url: "articles/Astronomia Homerica.html" },
             { name: "Biología Marina y Mitos", url: "#" },
             { name: "Geografía del Mediterráneo", url: "#" }
         ]
