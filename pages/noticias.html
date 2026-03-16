@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Profesor Carlos Martínez</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+
+        body {
+            background: radial-gradient(circle at top right, #f1f5f9, #e2e8f0);
+            min-height: 100vh;
+        }
+
+        .news-hero {
+            background: var(--gradiente-primario);
+            color: white;
+            padding: 6rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 70%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: rgba(37, 99, 235, 0.4);
+        }
+
+        .badge-category {
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-science { background: #dbeafe; color: #1e40af; }
+        .badge-tech { background: #dcfce7; color: #166534; }
+        .badge-energy { background: #fef3c7; color: #92400e; }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar fixed top-0 w-full z-50">
+        <div class="container flex justify-between items-center py-4">
+            <a href="../index.html" class="logo flex items-center gap-2 font-bold text-xl text-slate-800">
+                <div class="bg-blue-600 p-2 rounded-lg shadow-lg">
+                    <i class="fas fa-graduation-cap text-white"></i>
+                </div>
+                Carlos Martínez
+            </a>
+            <nav>
+                <ul class="flex gap-6 items-center">
+                    <li><a href="../index.html" class="text-slate-600 hover:text-blue-600 font-medium">Inicio</a></li>
+                    <li><a href="guias.html" class="text-slate-600 hover:text-blue-600 font-medium">Guías</a></li>
+                    <li><a href="mundos.html" class="text-slate-600 hover:text-blue-600 font-medium">Mundos 3D</a></li>
+                    <li><a href="noticias.html" class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold shadow-md">Noticias</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="news-hero text-center relative z-10">
+        <div class="container">
+            <div class="inline-block bg-blue-500/20 px-4 py-1 rounded-full text-blue-200 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-400/30">
+                Actualización Febrero 2026
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Horizonte Científico</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed">
+                Una curaduría de los hallazgos más impactantes en física solar, biotecnología y energía de fusión. 
+                Ciencia verificada para mentes curiosas.
+            </p>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <main class="container py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="glass-card p-8 flex flex-col">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-category badge-science">Física Solar</span>
+                    <span class="text-slate-400 text-xs font-medium">12 Feb, 2026</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 leading-snug">Parker Solar Probe: Tocando lo Intocable</h2>
+                <p class="text-slate-600 mb-6 flex-grow leading-relaxed">
+                    La sonda de la NASA ha revelado el origen del viento solar rápido y las ondas de Alfvén en la corona solar, desafiando nuestras teorías actuales sobre el comportamiento de nuestra estrella.
+                </p>
+                <div class="pt-6 border-t border-slate-200 flex items-center justify-between">
+                    <a href="#" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        Leer más <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="glass-card p-8 flex flex-col">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-category badge-tech">IA & Bio</span>
+                    <span class="text-slate-400 text-xs font-medium">08 Feb, 2026</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 leading-snug">La Revolución AlphaFold 3</h2>
+                <p class="text-slate-600 mb-6 flex-grow leading-relaxed">
+                    Google DeepMind lanza AlphaFold 3, capaz de predecir no solo proteínas, sino interacciones con ADN, ARN y ligandos con precisión atómica, acelerando décadas de investigación biomédica.
+                </p>
+                <div class="pt-6 border-t border-slate-200 flex items-center justify-between">
+                    <a href="https://www.nature.com/articles/d41586-024-01383-w" target="_blank" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        Ver Paper en Nature <i class="fas fa-external-link-alt text-xs"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="glass-card p-8 flex flex-col">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-category badge-energy">Fusión Nuclear</span>
+                    <span class="text-slate-400 text-xs font-medium">02 Feb, 2026</span>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 leading-snug">Ignición Nuclear Sostenida</h2>
+                <p class="text-slate-600 mb-6 flex-grow leading-relaxed">
+                    Logros del NIF (National Ignition Facility) confirman rendimientos energéticos netos superiores a los 5 MJ, marcando un hito histórico hacia la energía limpia e inagotable.
+                </p>
+                <div class="pt-6 border-t border-slate-200 flex items-center justify-between">
+                    <a href="#" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        Leer más <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 mt-20">
+        <div class="container text-center">
+            <p class="text-slate-400">&copy; 2026 Profesor Carlos Martínez - Educación de Alto Nivel</p>
+        </div>
+    </footer>
+</body>
+
+</html>
