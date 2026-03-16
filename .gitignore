@@ -1,0 +1,7 @@
+# Gitignore for Profe Carlos Martinez website
+backups/
+pages/raw_content/
+*.zip
+*.log
+.DS_Store
+node_modules/
